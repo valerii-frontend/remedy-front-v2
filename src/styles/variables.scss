@@ -1,0 +1,38 @@
+@import './mixins';
+
+:root {
+  /* Fonts */
+  --remedy-Global--font-header: 'PP Telegraf', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --remedy-Global--font-text: 'PP Neue Montreal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Colors */
+  --remedy-Global--color-text: #1E1E1E;
+  --remedy-Global--color-text-inverted: #FFFFFF;
+  --remedy-Global--color-text-secondary: #7A7A7A;
+
+  --remedy-Global--color-background: #FFFFFF;
+  --remedy-Global--color-background-alternative: #F1F1F1;
+  --remedy-Global--color-background-dim: #E6E6E6;
+  --remedy-Global--color-background-secondary: #7A7A7A;
+  --remedy-Global--color-background-secondary-alternative: #3D3D3D;
+  --remedy-Global--color-background-inverted: #1E1E1E;
+  --remedy-Global--color-background-inverted-alternative: #333333;
+  --remedy-Global--color-green: #64D27D;
+  --remedy-Global--color-red: #FA5A3C;
+  --remedy-Global--color-violet: #785AFA;
+
+  /* Responsive sizes */
+  --remedy-Global--font-size: 10px;
+
+  @include remedy-media-query(lg, Infinity) {
+    --remedy-Global--font-size: 16px;
+  }
+
+  @include remedy-media-query(xl, Infinity) {
+    --remedy-Global--font-size: 18px;
+  }
+
+  @include remedy-media-query(xxxl, Infinity) {
+    --remedy-Global--font-size: 20px;
+  }
+}

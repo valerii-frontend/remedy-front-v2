@@ -1,0 +1,124 @@
+@use 'sass:math';
+@import './bootstrap-customization.scss';
+
+/**
+  This mixin applies media-queries using bootstrap-like syntax
+
+  Examples:
+
+  div {
+    // Covers 576-992px:
+    // - from the "sm" breakpoint of 576
+    // - to the entire "md" span (up to the "lg" breakpoint of 992)
+    @include remedy-media-query(sm, md) { background: red; }
+  }
+
+  div {
+    // Covers 0-768px:
+    // - from zero
+    // - to the entire "sm" span (up to the "md" breakpoint of 768)
+    @include remedy-media-query(0, sm) { background: cyan; }
+  }
+
+  div {
+    // Covers 992px and above (from the "lg" breakpoint)
+    @include remedy-media-query(lg, Infinity) { background: yellow; }
+  }
+
+  div {
+    // Accepts numbers and Infinity as well
+    @include remedy-media-query(400px, 800px) { background: yellow; }
+    @include remedy-media-query(0, Infinity) { background: red; }
+  }
+
+ */
+
+
+@mixin remedy-media-query($screen-size-from, $screen-size-to) {
+
+  $breakpoint-xs: map-get($grid-breakpoints, xs);
+  $breakpoint-sm: map-get($grid-breakpoints, sm);
+  $breakpoint-md: map-get($grid-breakpoints, md);
+  $breakpoint-lg: map-get($grid-breakpoints, lg);
+  $breakpoint-xl: map-get($grid-breakpoints, xl);
+  $breakpoint-xxl: map-get($grid-breakpoints, xxl);
+  $breakpoint-xxxl: map-get($grid-breakpoints, xxxl);
+
+  $MIN_VALUE: 0;
+  $MAX_VALUE: 99999px;
+
+  $from: $MIN_VALUE;
+  $to: $MAX_VALUE;
+
+  @if type_of($screen-size-from) == string {
+    @if $screen-size-from == xs {
+      $from: $MIN_VALUE;
+    }
+    @else if $screen-size-from == sm {
+      $from: $breakpoint-sm;
+    }
+    @else if $screen-size-from == md {
+      $from: $breakpoint-md;
+    }
+    @else if $screen-size-from == lg {
+      $from: $breakpoint-lg;
+    }
+    @else if $screen-size-from == xl {
+      $from: $breakpoint-xl;
+    }
+    @else if $screen-size-from == xxl {
+      $from: $breakpoint-xxl;
+    }
+    @else if $screen-size-from == xxxl {
+      $from: $breakpoint-xxxl;
+    }
+  }
+  @else if $screen-size-from == null {
+    $from: $MIN_VALUE;
+  }
+  @else {
+    $from: $screen-size-from;
+  }
+
+
+  @if type_of($screen-size-to) == string {
+    @if $screen-size-to == xs {
+      $to: $breakpoint-sm - 1;
+    }
+    @else if $screen-size-to == sm {
+      $to: $breakpoint-md - 1;
+    }
+    @else if $screen-size-to == md {
+      $to: $breakpoint-lg - 1;
+    }
+    @else if $screen-size-to == lg {
+      $to: $breakpoint-xl - 1;
+    }
+    @else if $screen-size-to == xl {
+      $to: $breakpoint-xxl - 1;
+    }
+    @else if $screen-size-to == xxl {
+      $to: $breakpoint-xxxl - 1;
+    }
+    @else if $screen-size-to == xxxl {
+      $to: $MAX_VALUE;
+    }
+  }
+  @else if $screen-size-to == Infinity or $screen-size-to == null {
+    $to: $MAX_VALUE;
+  }
+  @else {
+    $to: $screen-size-to;
+  }
+
+  @media (min-width: $from) and (max-width: $to) {
+    & {
+      @content;
+    }
+  }
+}
+
+
+@mixin remedy-default-focus-outline(){
+  outline: 5px auto -webkit-focus-ring-color;
+}

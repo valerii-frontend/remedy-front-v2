@@ -1,0 +1,116 @@
+@import './variables';
+@import './mixins';
+
+.remedy-cross {
+  --remedy-UICross--width: 2.2em;
+  --remedy-UICross--height: 2.2em;
+  --remedy-UICross-icon-size: 0.8em;
+  --remedy-UICross-icon-color: var(--remedy-Global--color-text);
+
+  display: inline-block;
+  position: relative;
+  width: var(--remedy-UICross--width);
+  height: var(--remedy-UICross--height);
+  cursor: pointer;
+  transition: opacity 200ms;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: '';
+    width: var(--remedy-UICross-icon-size);
+    height: 0.05em;
+    background: var(--remedy-UICross-icon-color);
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+
+.remedy-checkbox {
+  --remedy-UICheckbox--size: 1em;
+
+  appearance: none;
+  width: var(--remedy-UICheckbox--size);
+  height: var(--remedy-UICheckbox--size);
+  border: 1px solid var(--remedy-Global--color-text-secondary);
+  border-radius: 0.2em;
+  transition: opacity 200ms;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:checked {
+    background: var(--remedy-Global--color-violet) url('../assets/images/iconCheckMark.svg') no-repeat center;
+    background-size: 60%;
+    border: 0;
+  }
+}
+
+
+.remedy-button {
+  --remedy-UIButton--text-color: var(--remedy-Global--color-text-inverted);
+  --remedy-UIButton--background-color: var(--remedy-Global--color-background-inverted);
+  --remedy-UIButton--text-size: 1em;
+  --remedy-UIButton--button-height: 2.6em;
+  --remedy-UIButton--button-vertical-paddings: calc(var(--remedy-UIButton--button-height) - var(--remedy-UIButton--text-size));
+
+  color: var(--remedy-UIButton--text-color);
+  background: var(--remedy-UIButton--background-color);
+  text-decoration: none;
+  font-size: var(--remedy-UIButton--text-size);
+  line-height: 1em;
+  border-radius: 0.8em;
+  border: 0;
+  transition: opacity 200ms, transform 100ms;
+  padding:
+    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.56)
+    0.8em
+    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.44)
+    0.8em;
+
+  &:hover {
+    opacity: 0.85;
+    color: var(--remedy-UIButton--text-color);
+  }
+
+  &:focus {
+    @include remedy-default-focus-outline();
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--light {
+    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
+    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
+  }
+
+  &--light-outline {
+    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
+    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
+    border: 1px solid rgba(0,0,0,.1);
+  }
+
+  &--violet {
+    --remedy-UIButton--background-color: var(--remedy-Global--color-violet)
+  }
+
+  &--red {
+    --remedy-UIButton--background-color: var(--remedy-Global--color-red)
+  }
+}

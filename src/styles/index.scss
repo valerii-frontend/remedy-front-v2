@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/bootstrap';
+@import './fonts';
+@import './variables';
+@import './mixins';
+@import './ui';
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--remedy-Global--color-background-dim);
+  font-variation-settings: 'slnt' 0;
+}
+
+.Global__no-scroll {
+  overflow: hidden;
+  padding-right: var(--remedy-Global--scrollbar-width);
+}
