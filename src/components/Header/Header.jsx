@@ -1,32 +1,31 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { auth } from '../../services/auth.js';
-import { AuthCurrentUserContext } from '../../context/AuthContext.js';
+import { AuthUserContext } from '../../context/AuthUserContext.js';
+import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import './Header.scss';
 
 
 export function Header(){
-  const { currentUser, setCurrentUser } = useContext(AuthCurrentUserContext);
-  const navigate = useNavigate();
-
-  function onLogOutClick(){
-    setCurrentUser(null);
-    navigate('/');
-    auth.logOut();
-  }
+  const { user, logOut } = useContext(AuthUserContext);
+  const { openAuthSidebar } = useContext(AuthSidebarContext);
 
   return (
     <div className="Header">
       <h1>Header</h1>
 
-      {currentUser
-        ? `Logged in: ${currentUser.username}, ${currentUser.role} (${currentUser.email})`
-        : 'Not logged in'
-      }
-
-      {currentUser && (
-        <button onClick={onLogOutClick}>Log Out</button>
+      {user && (
+        <div>
+          Logged in: {user.username}, {user.role} ({user.email})
+          <button onClick={logOut}>Log Out</button>
+        </div>
       )}
+
+      {!user && (
+        <div>
+          Not logged in
+          <button onClick={openAuthSidebar}>Log In</button>
+        </div>
+      )}
+
     </div>
   );
 }

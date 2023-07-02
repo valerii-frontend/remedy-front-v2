@@ -1,60 +1,40 @@
-import React, { Fragment, useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { Fragment, useContext } from 'react';
 import cn from 'classnames';
-import { AuthCurrentUserContext } from '../../context/AuthContext.js';
-import { auth } from '../../services/auth.js';
+import { AuthUserContext } from '../../context/AuthUserContext.js';
+import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import './AuthForm.scss';
 
 
-export function AuthForm({ className }){
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-  const { currentUser, setCurrentUser } = useContext(AuthCurrentUserContext);
-
-  useEffect(() => {
-    setIsLoading(true);
-    auth.getCurrentUser().then(user => {
-      setCurrentUser(user);
-      setIsLoading(false);
-    });
-  }, []);
-
-  function onLogIn(role){
-    setIsLoading(true);
-    auth.logIn(role).then(user => {
-      setCurrentUser(user);
-      setIsLoading(false);
-    });
-  }
+export function AuthForm(){
+  const { user, isUserBeingFetched, logIn, logOut } = useContext(AuthUserContext);
+  const { closeAuthSidebar } = useContext(AuthSidebarContext);
 
   function onLogOut(){
-    setCurrentUser(null);
-    navigate('/');
-    auth.logOut();
+    logOut();
+    closeAuthSidebar();
   }
 
   return (
     <div className={cn({
       'AuthForm': true,
-      'AuthForm--loading': isLoading,
-      [className]: Boolean(className),
+      'AuthForm--loading': isUserBeingFetched,
     })}>
 
-      {currentUser && (
+      {user && (
         <Fragment>
           Logged in as:<br/>
-          <b>{currentUser.username} ({currentUser.role})</b><br/>
-          {currentUser.email}<br/>
+          <b>{user.username} ({user.role})</b><br/>
+          {user.email}<br/>
           <button onClick={onLogOut}>Log Out</button>
         </Fragment>
       )}
 
-      {!currentUser && (
+      {!user && (
         <Fragment>
           Log in as:<br/>
-          <button onClick={() => onLogIn('hunter')}>Hunter</button><br/>
-          <button onClick={() => onLogIn('organization')}>Organization</button><br/>
-          <button onClick={() => onLogIn('triager')}>Triager</button><br/>
+          <button onClick={() => logIn('hunter')}>Hunter</button><br/>
+          <button onClick={() => logIn('organization')}>Organization</button><br/>
+          <button onClick={() => logIn('triager')}>Triager</button><br/>
         </Fragment>
       )}
     </div>

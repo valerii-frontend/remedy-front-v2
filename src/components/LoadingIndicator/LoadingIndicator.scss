@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.LoadingIndicator {
+  &:before {
+    content: '[';
+  }
+  &:after {
+    content: ']';
+  }
+}

@@ -1,20 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import cn from 'classnames';
-import { AuthIsSidebarOpenContext } from '../../context/AuthContext.js';
+import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { AuthForm } from './AuthForm.jsx';
 import './AuthSidebar.scss';
 
 
 export function AuthSidebar(){
-  const { isAuthSidebarOpen, setIsAuthSidebarOpen } = useContext(AuthIsSidebarOpenContext);
+  const { isAuthSidebarOpen, closeAuthSidebar } = useContext(AuthSidebarContext);
 
   useEffect(() => {
     const onEscKeyPress = (e) => {
       if (e.key === 'Escape') {
-
-        console.warn('__close');
-
-        setIsAuthSidebarOpen(false);
+        closeAuthSidebar();
       }
     };
 
@@ -29,10 +26,9 @@ export function AuthSidebar(){
       'AuthSidebar': true,
       'AuthSidebar--open': isAuthSidebarOpen,
     })}>
-      <i className="AuthSidebar__backdrop" onClick={() => setIsAuthSidebarOpen(false)}/>
-
+      <i className="AuthSidebar__backdrop" onClick={closeAuthSidebar}/>
       <div className="AuthSidebar__panel">
-        <i className="AuthSidebar__close" onClick={() => setIsAuthSidebarOpen(false)}/>
+        <i className="AuthSidebar__close" onClick={closeAuthSidebar}/>
         <AuthForm/>
       </div>
     </div>
