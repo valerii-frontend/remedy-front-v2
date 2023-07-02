@@ -2,5 +2,5 @@
 @import '../../styles/mixins';
 
 .Header {
-  background: maroon;
+  padding-left: var(--remedy-Global--menu-sidebar-width);
 }

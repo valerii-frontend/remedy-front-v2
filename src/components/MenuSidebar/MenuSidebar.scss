@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--remedy-Global--menu-sidebar-width);
+  background: var(--remedy-Global--color-background-secondary);
+}

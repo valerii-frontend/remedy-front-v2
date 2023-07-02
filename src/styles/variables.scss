@@ -1,38 +1,58 @@
 @import './mixins';
 
 :root {
+
   /* Fonts */
-  --remedy-Global--font-header: 'PP Telegraf', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --remedy-Global--font-text: 'PP Neue Montreal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --remedy-Global--font-header: 'PP Telegraf', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
 
   /* Colors */
-  --remedy-Global--color-text: #1E1E1E;
-  --remedy-Global--color-text-inverted: #FFFFFF;
-  --remedy-Global--color-text-secondary: #7A7A7A;
+  --remedy-Global--color-text: #FFFFFF;
+  --remedy-Global--color-text-secondary: #808080;
+  --remedy-Global--color-background: #2C2C2C;
+  --remedy-Global--color-background-secondary: #1F1F1F;
+  --remedy-Global--color-green: #6AFFAF;
 
-  --remedy-Global--color-background: #FFFFFF;
-  --remedy-Global--color-background-alternative: #F1F1F1;
-  --remedy-Global--color-background-dim: #E6E6E6;
-  --remedy-Global--color-background-secondary: #7A7A7A;
-  --remedy-Global--color-background-secondary-alternative: #3D3D3D;
-  --remedy-Global--color-background-inverted: #1E1E1E;
-  --remedy-Global--color-background-inverted-alternative: #333333;
-  --remedy-Global--color-green: #64D27D;
-  --remedy-Global--color-red: #FA5A3C;
-  --remedy-Global--color-violet: #785AFA;
 
-  /* Responsive sizes */
-  --remedy-Global--font-size: 10px;
+  /*
+    Responsive font size (also @see src/styles/bootstrap-customization.scss)
+  */
+  --remedy-Global--font-size: 10px; // 0-1200px
 
-  @include remedy-media-query(lg, Infinity) {
-    --remedy-Global--font-size: 16px;
+  @include remedy-media-query(lg, Infinity) { // 992px-1200px
+    --remedy-Global--font-size: 10px;
   }
 
-  @include remedy-media-query(xl, Infinity) {
-    --remedy-Global--font-size: 18px;
+  @include remedy-media-query(xl, Infinity) { // 1200-1400px
+    --remedy-Global--font-size: 10px;
   }
 
-  @include remedy-media-query(xxxl, Infinity) {
-    --remedy-Global--font-size: 20px;
+  @include remedy-media-query(xxl, Infinity) { // 1400-1900px
+    /**
+      Why --remedy-Global--font-size is 10px?
+        Because that way it's easy to use rem units.
+        Rem units are relative to the :root font-size
+        Example: 20px = 2rem, 16px = 1.6rem
+
+      Why 10px is specifically on the 1400-1900px range?
+        Because the design is made for the 1400px width, therefore it's easy:
+        1. to take sizes from the design to convert to rem units.
+        2. then downsize/upsize --remedy-Global--font-size for other resolutions and see how it looks on smaller/bigger screens.
+     */
+    --remedy-Global--font-size: 10px;
   }
+
+  @include remedy-media-query(xxxl, Infinity) { // 1900px+
+    --remedy-Global--font-size: 10px;
+  }
+
+
+  /*  Block sizes */
+  --remedy-Global--menu-sidebar-width: 24rem;
+  --remedy-Global--app-content-max-width: 1400px; // TODO: check other resolutions, change?
+
+  /* Dynamically updated in JavaScript */
+  // TODO: fix
+  //--remedy-Global--scrollbar-width: 15px; // Dynamically updated in src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
 }

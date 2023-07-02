@@ -1,17 +1,58 @@
-@import '~bootstrap/scss/bootstrap';
+/* KEEP THE @IMPORT ORDER */
+
+/* Boostrap configuration */
+@import 'bootstrap/scss/functions';
+
+/* Overwriting Boostrap grid & breakpoints */
+@import './bootstrap-customization.scss';
+
+/* Boostrap utilities, layout & components */
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+
+/* Boostrap components */
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+// TODO: import other Bootstrap components?
+
+/* Boostrap utilities API (must be placed after the rest of Bootstrap files) */
+@import 'bootstrap/scss/utilities/api';
+
 @import './fonts';
 @import './variables';
 @import './mixins';
 @import './ui';
 
-body {
-  padding: 0;
-  margin: 0;
-  background: var(--remedy-Global--color-background-dim);
-  font-variation-settings: 'slnt' 0;
+:root {
+  font-size: var(--remedy-Global--font-size);
 }
 
-.Global__no-scroll {
-  overflow: hidden;
-  padding-right: var(--remedy-Global--scrollbar-width);
+body {
+  font-size: 1.6rem;
+  font-family: var(--remedy-Global--font-text);
+  font-variation-settings: 'slnt' 0;
+  color: var(--remedy-Global--color-text);
+  background: var(--remedy-Global--color-background);
+  padding: 0;
+  margin: 0;
 }
+
+.Global__app-content-max-width {
+  max-width: var(--remedy-Global--app-content-max-width);
+  margin: 0 auto;
+}
+
+// TODO: fix
+//.Global__no-scroll {
+//  overflow: hidden;
+//  padding-right: var(--remedy-Global--scrollbar-width);
+//}
