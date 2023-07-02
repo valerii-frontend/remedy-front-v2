@@ -3,9 +3,10 @@ import { createContext } from 'react';
 
 /**
  * @typedef {Object} User
- * @property {string} username - The username of the user
- * @property {'hunter'|'organization'|'triager'} role - The role of the user
- * @property {string} email - The email of the user
+ * @property {string} username
+ * @property {'hunter'|'organization'|'triager'} role
+ * @property {string} email
+ * @property {string} avatar
  */
 
 /**

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import cn from 'classnames';
+import { NavLink } from 'react-router-dom';
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 
@@ -11,7 +12,7 @@ const ROUTES_REQUIRING_AUTH = [
 ];
 
 
-export function AuthRequiredLink({ children, onClick, ...props }) {
+export function AuthRequiredLink({ children, className, onClick, ...props }) {
   const { user } = useContext(AuthUserContext);
   const { openAuthSidebar } = useContext(AuthSidebarContext);
 
@@ -30,6 +31,15 @@ export function AuthRequiredLink({ children, onClick, ...props }) {
   }
 
   return (
-    <Link onClick={onClickHandler} {...props}>{children}</Link>
+    <NavLink
+      className={({ isActive }) =>
+        isActive
+          ? cn(className, 'active')
+          : className
+      }
+      onClick={onClickHandler}
+      {...props}>
+      {children}
+    </NavLink>
   );
 }

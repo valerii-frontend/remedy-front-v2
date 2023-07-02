@@ -1,24 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-const USERS_BY_ROLE = {
-  hunter: {
-    username: 'pwn_master',
-    role: 'hunter',
-    email: '0xDEAD666@protonmail.com',
-  },
-  organization: {
-    username: 'BitLocker Inc.',
-    role: 'organization',
-    email: 'jeffrey@bitlocker.io',
-  },
-  triager: {
-    username: 'Puni',
-    role: 'triager',
-    email: 'a.s@hexens.io',
-  },
-};
+import { __MOCK_USERS_BY_ROLE } from '../__MOCK/users.js';
 
 
 export function useAuthUser(){
@@ -37,7 +19,7 @@ export function useAuthUser(){
   }, []);
 
   function logIn(role){
-    const userData = USERS_BY_ROLE[role];
+    const userData = __MOCK_USERS_BY_ROLE[role];
 
     setTimeout(() => {
       localStorage.setItem('remedy_user', JSON.stringify(userData));

@@ -15,6 +15,7 @@ export function Header(){
       {user && (
         <div>
           Logged in: {user.username}, {user.role} ({user.email})
+          <img src={user.avatar} alt={user.username} width="40" height="40"/>
           <button onClick={logOut}>Log Out</button>
         </div>
       )}
