@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.UserContainer {
+
+}
+
+.UserContainer__main {
+  padding-left: var(--remedy-Global--menu-sidebar-width);
+}

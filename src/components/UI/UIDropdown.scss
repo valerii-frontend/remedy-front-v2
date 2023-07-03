@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// TODO: implement CSS based on the design
+
+.UIDropdown {
+  position: relative;
+}
+
+.UIDropdown__list {
+
+}
+
+.UIDropdown__inner {
+  &:hover,
+  &:focus,
+  &--active {
+    background: var(--remedy-Global--color-background);
+  }
+}

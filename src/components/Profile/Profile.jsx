@@ -1,9 +1,16 @@
 import React from 'react';
+import { UserContainer } from '../User/UserContainer.jsx';
 import './Profile.scss';
 
 
 export function Profile(){
   return (
-    <h1 className="Profile">Profile</h1>
+    <UserContainer>
+      <div className="Profile">
+        <div className="Global__app-content-max-width">
+          <h1>Profile</h1>
+        </div>
+      </div>
+    </UserContainer>
   );
 }

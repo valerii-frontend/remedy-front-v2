@@ -7,16 +7,15 @@ import { useAuthUser } from '../../hooks/useAuthUser.js';
 import { useAuthSidebar } from '../../hooks/useAuthSidebar.js';
 
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator.jsx';
-import { AuthRequiredRoute } from '../Auth/AuthRequiredRoute.jsx';
-import { Header } from '../Header/Header.jsx';
 import { AuthSidebar } from '../Auth/AuthSidebar.jsx';
-import { MenuSidebar } from '../MenuSidebar/MenuSidebar.jsx';
+import { AuthRequiredRoute } from '../Auth/AuthRequiredRoute.jsx';
 import { Home } from '../Home/Home.jsx';
-import { Home2 } from '../Home2/Home2.jsx';
+import { AboutUs } from '../AboutUs/AboutUs.jsx';
 import { Profile } from '../Profile/Profile.jsx';
 import { Reports } from '../Reports/Reports.jsx';
 import { ProgramList } from '../ProgramList/ProgramList.jsx';
 import './App.scss';
+import { __Placeholder } from '../User/__Placeholder.jsx';
 
 
 export function App(){
@@ -33,32 +32,34 @@ export function App(){
     <AuthUserContext.Provider value={{ user, isUserBeingFetched, logIn, logOut }}>
       <AuthSidebarContext.Provider value={{ isAuthSidebarOpen, openAuthSidebar, closeAuthSidebar }}>
 
-        <Header/>
         <AuthSidebar/>
-        <MenuSidebar/>
 
-        <div className="App__content">
-          <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/home2" element={<Home2/>}/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<AboutUs/>}/>
 
-            <Route path="/profile" element={
-              <AuthRequiredRoute>
-                <Profile/>
-              </AuthRequiredRoute>
-            }/>
-            <Route path="/reports" element={
-              <AuthRequiredRoute>
-                <Reports/>
-              </AuthRequiredRoute>
-            }/>
-            <Route path="/programs" element={
-              <AuthRequiredRoute>
-                <ProgramList/>
-              </AuthRequiredRoute>
-            }/>
-          </Routes>
-        </div>
+          <Route path="/profile" element={
+            <AuthRequiredRoute>
+              <Profile/>
+            </AuthRequiredRoute>
+          }/>
+          <Route path="/reports" element={
+            <AuthRequiredRoute>
+              <Reports/>
+            </AuthRequiredRoute>
+          }/>
+          <Route path="/programs" element={
+            <AuthRequiredRoute>
+              <ProgramList/>
+            </AuthRequiredRoute>
+          }/>
+          <Route path="/*" element={
+            <AuthRequiredRoute>
+              <__Placeholder/>
+            </AuthRequiredRoute>
+          }/>
+
+        </Routes>
 
       </AuthSidebarContext.Provider>
     </AuthUserContext.Provider>

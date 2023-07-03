@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import cn from 'classnames';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
-import { AuthForm } from './AuthForm.jsx';
+import { AuthLoginForm } from './AuthLoginForm.jsx';
 import './AuthSidebar.scss';
 
 
@@ -29,7 +29,7 @@ export function AuthSidebar(){
       <i className="AuthSidebar__backdrop" onClick={closeAuthSidebar}/>
       <div className="AuthSidebar__panel">
         <i className="AuthSidebar__close" onClick={closeAuthSidebar}/>
-        <AuthForm/>
+        <AuthLoginForm/>
       </div>
     </div>
   );

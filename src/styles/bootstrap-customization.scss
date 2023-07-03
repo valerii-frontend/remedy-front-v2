@@ -1,5 +1,14 @@
 $enable-smooth-scroll: false;
 
+
+/**
+  * Changing Bootstrap's default 'rem' into 'em'
+ */
+$font-size-base: 1em;
+$nav-link-padding-x: 1em;
+$nav-link-padding-y: 0.5em;
+
+
 /**
  * Custom Remedy breakpoints
  */

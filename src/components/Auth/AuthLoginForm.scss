@@ -1,16 +1,12 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.AuthForm {
+.AuthLoginForm {
   padding: 10px;
   transition: opacity 100ms;
 
   &--loading {
     pointer-events: none;
     opacity: 0.5;
-  }
-
-  button {
-    margin-top: 5px;
   }
 }

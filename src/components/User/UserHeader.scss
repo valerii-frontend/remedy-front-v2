@@ -1,10 +1,14 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.Header {
+.UserHeader {
   padding-left: var(--remedy-Global--menu-sidebar-width);
+}
 
-  button {
-    margin-left: 5px;
+.UserHeader__search {}
+
+.UserHeader__search-input {
+  &::-webkit-search-cancel-button{
+    display: none;
   }
 }

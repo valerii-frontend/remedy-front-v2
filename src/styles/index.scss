@@ -22,6 +22,7 @@
 @import 'bootstrap/scss/buttons';
 @import 'bootstrap/scss/nav';
 @import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/dropdown';
 // TODO: import other Bootstrap components?
 
 /* Boostrap utilities API (must be placed after the rest of Bootstrap files) */
@@ -37,6 +38,7 @@
 }
 
 body {
+  --bs-dropdown-font-size: 1.6rem;
   font-size: 1.6rem;
   font-family: var(--remedy-Global--font-text);
   font-variation-settings: 'slnt' 0;

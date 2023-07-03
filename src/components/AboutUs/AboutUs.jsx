@@ -3,16 +3,15 @@ import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { AuthRequiredLink } from '../Auth/AuthRequiredLink.jsx';
-import './Home.scss';
+import './AboutUs.scss';
 
-
-export function Home(){
+export function AboutUs(){
   const { user, logOut } = useContext(AuthUserContext);
   const { openAuthSidebar } = useContext(AuthSidebarContext);
 
   return (
-    <div className="Home">
-      <h1 className="display-1 mb-4 text-success">Home</h1>
+    <div className="AboutUs">
+      <h1 className="display-1 mb-4 text-danger">About Us</h1>
 
       <div className="p-3 rounded-3 border">
         {user && (
