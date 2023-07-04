@@ -2,11 +2,10 @@
   "name": "remedy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html",
-    "build": "parcel build index.html",
-    "deploy": "npm run build && surge dist --domain remedy-front-v2.surge.sh"
+    "start": "./bin/dev.sh",
+    "build": "./bin/build.sh",
+    "deploy": "./bin/deploy.sh"
   },
   "author": "",
   "license": "ISC",

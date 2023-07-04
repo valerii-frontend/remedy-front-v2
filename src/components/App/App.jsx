@@ -13,7 +13,7 @@ import { Home } from '../Home/Home.jsx';
 import { AboutUs } from '../AboutUs/AboutUs.jsx';
 import { Profile } from '../Profile/Profile.jsx';
 import { Reports } from '../Reports/Reports.jsx';
-import { ProgramList } from '../ProgramList/ProgramList.jsx';
+import { Programs } from '../Programs/Programs.jsx';
 import './App.scss';
 import { __Placeholder } from '../User/__Placeholder.jsx';
 
@@ -50,7 +50,7 @@ export function App(){
           }/>
           <Route path="/programs" element={
             <AuthRequiredRoute>
-              <ProgramList/>
+              <Programs/>
             </AuthRequiredRoute>
           }/>
           <Route path="/*" element={
