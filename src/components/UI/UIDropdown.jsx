@@ -83,6 +83,7 @@ export const UIDropdown = (props) => {
       <ul className={cn({
         'UIDropdown__list': true,
         'dropdown-menu': true,
+        'dropdown-menu-dark': true,
         'show': isMenuOpen,
         [classNameList]: Boolean(classNameList),
       })}>

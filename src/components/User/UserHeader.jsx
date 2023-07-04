@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthRequiredLink } from '../Auth/AuthRequiredLink.jsx';
 import { UIDropdown } from '../UI/UIDropdown.jsx';
@@ -11,20 +13,22 @@ export function UserHeader(){
   return (
     <div className="UserHeader">
 
-      <AuthRequiredLink className="" to="/profile">
+      <AuthRequiredLink className="UserHeader__user" to="/profile">
         <img
-          className=""
+          className="UserHeader__user-avatar"
           src={user.avatar}
           alt={user.username}
           width="40"
           height="40"/>
-        {user.username}
-        <span>{user.email}</span>
+        <div className="UserHeader__user-info">
+          {user.username}
+          <span className="UserHeader__user-email">{user.email}</span>
+        </div>
       </AuthRequiredLink>
 
       <UIDropdown
-        classNameButton="btn btn-primary"
-        classNameList=""
+        className="UserHeader__settings"
+        classNameButton="UserHeader__settings-icon UserHeader__icon"
         title="Settings"
         items={[
           { title: 'Settings', linkTo: '/settings' },
@@ -32,7 +36,7 @@ export function UserHeader(){
           { title: 'Log Out', onClick: logOut },
         ]}/>
 
-      <span>Help</span>
+      <Link className="UserHeader__help-icon UserHeader__icon" to="/help">Help</Link>
 
       <div className="UserHeader__search">
         <input className="UserHeader__search-input"
@@ -41,8 +45,12 @@ export function UserHeader(){
       </div>
 
       <UIDropdown
-        classNameButton="btn btn-primary"
-        classNameList=""
+        className="UserHeader__notifications"
+        classNameButton={cn({
+          'UserHeader__icon': true,
+          'UserHeader__notifications-icon': true,
+          'UserHeader__notifications-icon--unread': true,
+        })}
         title="Notifications">
         Notifications menu has not yet been implemented
       </UIDropdown>

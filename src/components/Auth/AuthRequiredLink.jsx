@@ -17,8 +17,9 @@ export function AuthRequiredLink({ children, className, onClick, ...props }) {
   const { openAuthSidebar } = useContext(AuthSidebarContext);
 
   function onClickHandler(e){
+    const { pathname } = e.currentTarget;
     const isAuthRequired = ROUTES_REQUIRING_AUTH.find((route) => {
-      return e.target.pathname.startsWith(route);
+      return pathname.startsWith(route);
     });
 
     if (isAuthRequired && !user) {
