@@ -63,56 +63,67 @@
 //}
 //
 //
-//.remedy-button {
-//  --remedy-UIButton--text-color: var(--remedy-Global--color-text-inverted);
-//  --remedy-UIButton--background-color: var(--remedy-Global--color-background-inverted);
-//  --remedy-UIButton--text-size: 1em;
-//  --remedy-UIButton--button-height: 2.6em;
-//  --remedy-UIButton--button-vertical-paddings: calc(var(--remedy-UIButton--button-height) - var(--remedy-UIButton--text-size));
-//
-//  color: var(--remedy-UIButton--text-color);
-//  background: var(--remedy-UIButton--background-color);
-//  text-decoration: none;
-//  font-size: var(--remedy-UIButton--text-size);
-//  line-height: 1em;
-//  border-radius: 0.8em;
-//  border: 0;
-//  transition: opacity 200ms, transform 100ms;
-//  padding:
-//    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.56)
-//    0.8em
-//    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.44)
-//    0.8em;
-//
-//  &:hover {
-//    opacity: 0.85;
-//    color: var(--remedy-UIButton--text-color);
-//  }
-//
-//  &:focus {
-//    @include remedy-default-focus-outline();
-//  }
-//
-//  &:active {
-//    transform: scale(0.97);
-//  }
-//
-//  &--light {
-//    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
-//    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
-//  }
-//
-//  &--light-outline {
-//    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
-//    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
-//    border: 1px solid rgba(0,0,0,.1);
-//  }
-//
-//  &--violet {
-//    --remedy-UIButton--background-color: var(--remedy-Global--color-violet)
-//  }
-//
-//  &--red {
-//    --remedy-UIButton--background-color: var(--remedy-Global--color-red)
-//  }
-//}
+
+.UIButton {
+  --remedy-UIButton--text-color: var(--remedy-Global--color-text-inverted);
+  --remedy-UIButton--background-color: var(--remedy-Global--color-background-inverted);
+  --remedy-UIButton--text-size: 1em;
+  --remedy-UIButton--button-height: 2.6em;
+  --remedy-UIButton--button-vertical-paddings: calc(var(--remedy-UIButton--button-height) - var(--remedy-UIButton--text-size));
+
+  color: var(--remedy-Global--color-text);
+  background: var(--remedy-Global--color-background-secondary);
+
+
+
+  //color: var(--remedy-UIButton--text-color);
+  //background: var(--remedy-UIButton--background-color);
+  //text-decoration: none;
+  //font-size: var(--remedy-UIButton--text-size);
+  //line-height: 1em;
+  //border-radius: 0.8em;
+  //border: 0;
+  //transition: opacity 200ms, transform 100ms;
+  padding:
+    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.56)
+    0.8em
+    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.44)
+    0.8em;
+
+  &:hover {
+    opacity: 0.85;
+    color: var(--remedy-UIButton--text-color);
+  }
+
+  &:focus {
+
+    //@include remedy-default-focus-outline();
+  }
+
+  &:active {
+    //transform: scale(0.97);
+  }
+
+  &:disabled {
+
+  }
+
+
+  /* Colors */
+
+  &--green {
+    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
+    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
+  }
+
+  &--green-outline {
+    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
+    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
+    border: 1px solid rgba(0,0,0,.1);
+  }
+
+
+  /* Sizes */
+
+  &--lg {}
+}

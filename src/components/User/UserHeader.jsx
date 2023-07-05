@@ -31,8 +31,8 @@ export function UserHeader(){
         classNameButton="UserHeader__settings-icon UserHeader__icon"
         title="Settings"
         items={[
-          { title: 'Settings', linkTo: '/settings' },
-          { title: 'KYC', linkTo: '/kyc' },
+          { title: 'Settings', linkTo: '/profile/settings' },
+          { title: 'KYC', linkTo: '/profile/kyc' },
           { title: 'Log Out', onClick: logOut },
         ]}/>
 

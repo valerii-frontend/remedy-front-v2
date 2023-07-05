@@ -1,0 +1,47 @@
+export function inflect(count, words) {
+  if (count === 1) {
+    return `${count} ${words[0]}`;
+  }
+  return `${count} ${words[1]}`;
+}
+
+export function formatDate(timestamp) {
+  return new Date(timestamp).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+export function formatSum(sum) {
+  return sum.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  });
+}
+
+export function parseLocationPathname(pathname){
+  return pathname.replace(/^\/?/, '').split('/');
+}
+
+export function parseLocationSearch(locationSearch){
+  if (locationSearch === '') {
+    return {}
+  }
+
+  const params = new URLSearchParams(locationSearch);
+  const entries = Array.from(params.entries());
+
+  return Object.fromEntries(entries.map(([key, value]) => {
+    if (value === 'true' || value === 'false') {
+      return [key, value === 'true'];
+    }
+    else if (!isNaN(value)) {
+      return [key, parseInt(value, 10)];
+    }
+    else {
+      return [key, value];
+    }
+  }));
+}

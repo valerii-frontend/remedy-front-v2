@@ -1,5 +1,5 @@
-import React, { Fragment, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useEffect, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { AuthRequiredLink } from '../Auth/AuthRequiredLink.jsx';
@@ -9,6 +9,13 @@ import './Home.scss';
 export function Home(){
   const { user, logOut } = useContext(AuthUserContext);
   const { openAuthSidebar } = useContext(AuthSidebarContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.isAuthSidebarOpen) {
+      openAuthSidebar();
+    }
+  }, [location]);
 
   return (
     <div className="Home">

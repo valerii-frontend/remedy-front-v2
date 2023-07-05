@@ -5,6 +5,7 @@ import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { AuthRequiredLink } from '../Auth/AuthRequiredLink.jsx';
 import './AboutUs.scss';
 
+
 export function AboutUs(){
   const { user, logOut } = useContext(AuthUserContext);
   const { openAuthSidebar } = useContext(AuthSidebarContext);

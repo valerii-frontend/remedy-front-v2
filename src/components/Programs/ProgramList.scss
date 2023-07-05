@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.Programs {
+  padding: 2.4rem;
+}
+
+.Programs__header {}
+.Programs__header-title {}
+.Programs__header-actions {}
+
+.Programs__tabs {}
+
+// TODO: remove
+.lolo {
+  background: red;
+}
+
+.Programs__tabs-item {
+  &.active {
+    @extend .lolo;
+  }
+}
+
+.Programs__toolbar {}
+.Programs__toolbar-search {}
+.Programs__toolbar-search-input {}
+
+.Programs__toolbar-sort {}
+
+.Programs__toolbar-filters {
+  &:after {}
+}
+
+.Programs__count {}
+
+.Programs__list {}
+
+.Programs__item {}
+.Programs__item-link {}
+.Programs__item-logo {}
+.Programs__item-logo-img {}
+.Programs__item-content {}
+.Programs__item-primary {}
+.Programs__item-info {}
+.Programs__item-title {}
+.Programs__item-title-reward {}
+.Programs__item-description {}
+.Programs__item-cta {}
+.Programs__item-secondary {}
+.Programs__item-secondary-item {}
+.Programs__item-secondary-title {}
+.Programs__item-secondary-value {}
+.Programs__item-actions {}
+
+.Programs__item-actions-item {
+  &--view {}
+  &--upvote {}
+  &--bookmark {}
+}

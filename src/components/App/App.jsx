@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
@@ -8,14 +8,17 @@ import { useAuthSidebar } from '../../hooks/useAuthSidebar.js';
 
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator.jsx';
 import { AuthSidebar } from '../Auth/AuthSidebar.jsx';
-import { AuthRequiredRoute } from '../Auth/AuthRequiredRoute.jsx';
 import { Home } from '../Home/Home.jsx';
 import { AboutUs } from '../AboutUs/AboutUs.jsx';
 import { Profile } from '../Profile/Profile.jsx';
-import { Reports } from '../Reports/Reports.jsx';
-import { Programs } from '../Programs/Programs.jsx';
+import { ReportList } from '../Reports/ReportList.jsx';
+import { ReportNew } from '../Reports/ReportNew.jsx';
+import { ProgramList } from '../Programs/ProgramList.jsx';
+import { ProgramNew } from '../Programs/ProgramNew.jsx';
+import { ProgramDetails } from '../Programs/ProgramDetails.jsx';
+import { Page404 } from '../Page404/Page404.jsx';
+
 import './App.scss';
-import { __Placeholder } from '../User/__Placeholder.jsx';
 
 
 export function App(){
@@ -28,6 +31,10 @@ export function App(){
     );
   }
 
+  function checkAuth(element){
+    return user ? element : <Navigate to="/" state={{ isAuthSidebarOpen: true }}/>;
+  }
+
   return (
     <AuthUserContext.Provider value={{ user, isUserBeingFetched, logIn, logOut }}>
       <AuthSidebarContext.Provider value={{ isAuthSidebarOpen, openAuthSidebar, closeAuthSidebar }}>
@@ -38,27 +45,25 @@ export function App(){
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<AboutUs/>}/>
 
-          <Route path="/profile" element={
-            <AuthRequiredRoute>
-              <Profile/>
-            </AuthRequiredRoute>
-          }/>
-          <Route path="/reports" element={
-            <AuthRequiredRoute>
-              <Reports/>
-            </AuthRequiredRoute>
-          }/>
-          <Route path="/programs" element={
-            <AuthRequiredRoute>
-              <Programs/>
-            </AuthRequiredRoute>
-          }/>
-          <Route path="/*" element={
-            <AuthRequiredRoute>
-              <__Placeholder/>
-            </AuthRequiredRoute>
-          }/>
+          <Route path="/profile" element={checkAuth(<Profile/>)}>
+            <Route index element={checkAuth(<Profile/>)}/>
+            <Route path="settings" element={checkAuth(<Profile/>)}/>
+            <Route path="kyc" element={checkAuth(<Profile/>)}/>
+          </Route>
 
+          <Route path="/reports">
+            <Route index element={checkAuth(<ReportList/>)}/>
+          </Route>
+
+          <Route path="/programs">
+            <Route index element={checkAuth(<ProgramList/>)}/>
+            <Route path=":programId" element={checkAuth(<ProgramDetails/>)}/>
+            <Route path=":programId/submit-bug" element={checkAuth(<ReportNew/>)}/>
+            <Route path="create" element={checkAuth(<ProgramNew/>)}/>
+            <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
+          </Route>
+
+          <Route path="/*" element={<Page404/>}/>
         </Routes>
 
       </AuthSidebarContext.Provider>
