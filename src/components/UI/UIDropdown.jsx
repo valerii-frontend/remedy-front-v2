@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './UIDropdown.scss';
@@ -41,6 +42,8 @@ import './UIDropdown.scss';
  * @returns {ReactElement}
  */
 export const UIDropdown = (props) => {
+  const [hoveredItemIndex, setHoveredItemIndex] = useState(-1);
+  const navigate = useNavigate();
 
   const {
     className,
@@ -59,11 +62,11 @@ export const UIDropdown = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onBodyClick = (e) => {
+    function onBodyClick(e){
       if (e.target !== buttonRef.current && !buttonRef.current.contains(e.target)) {
         setIsMenuOpen(false);
       }
-    };
+    }
 
     document.addEventListener('click', onBodyClick);
     return () => {
@@ -71,28 +74,82 @@ export const UIDropdown = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    function onArrowNavigation(e){
+      if (isMenuOpen && items?.length) {
+        if (e.key === 'Enter') {
+          const hoveredItem = items[hoveredItemIndex];
+          if (hoveredItem) {
+            e.preventDefault();
+            onItemClick(e, hoveredItem, hoveredItem.onClick);
+            hoveredItem.linkTo && navigate(hoveredItem.linkTo);
+            setIsMenuOpen(false);
+          }
+        }
+        else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const delta = e.key === 'ArrowUp' ? -1 : 1;
+          const nextHoveredItemIndex = getNextHoveredItemIndex(hoveredItemIndex, delta);
+          setHoveredItemIndex(nextHoveredItemIndex);
+        }
+        else if (e.key === 'Escape') {
+          e.preventDefault();
+          setIsMenuOpen(false);
+        }
+      }
+    }
+
+    document.addEventListener('keydown', onArrowNavigation);
+    return () => {
+      document.removeEventListener('keydown', onArrowNavigation);
+    }
+  }, [isMenuOpen, hoveredItemIndex, items]);
+
+
+  function getNextHoveredItemIndex(currentIndex, delta) {
+    let nextIndex = currentIndex + delta;
+    if (nextIndex < 0) {
+      return items.length - 1;
+    }
+    else if (nextIndex >= items.length) {
+      return 0;
+    }
+    return nextIndex;
+  }
+
   function onButtonClick(e){
     e.preventDefault();
     setIsMenuOpen(!isMenuOpen);
   }
 
+  function onItemClick(e, item, onClick){
+    onChange && onChange(item);
+    onClick && onClick(e, item);
+  }
+
+  function onItemMouseEnter(index){
+    setHoveredItemIndex(index);
+  }
+
   function renderItem(item, index){
     const { title, linkTo, onClick } = item;
-    const isItemActive = selectedItem?.title === item.title;
 
-    const onItemClick = (e, item) => {
-      onChange && onChange(item);
-      onClick && onClick(e, item);
+    const isItemActive = selectedItem?.title === item.title;
+    const itemInnerProps = {
+      className: 'UIDropdown__inner',
+      onClick: (e) => onItemClick(e, item, onClick),
+      onMouseEnter: () => onItemMouseEnter(index),
     };
 
     return (
       <li key={index} className={cn({
         'UIDropdown__item': true,
         'UIDropdown__item--active': isItemActive,
+        'UIDropdown__item--hovered': hoveredItemIndex === index,
       })}>
         {Boolean(linkTo)
-          ? <Link className="UIDropdown__inner" onClick={(e) => onItemClick(e, item)} to={linkTo}>{title}</Link>
-          : <span className="UIDropdown__inner" onClick={(e) => onItemClick(e, item)}>{title}</span>
+          ? <Link {...itemInnerProps} to={linkTo}>{title}</Link>
+          : <span {...itemInnerProps}>{title}</span>
         }
       </li>
     );

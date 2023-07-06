@@ -66,7 +66,7 @@
 
 
 .UIInput {
-  background: #181818;
+  background: $remedy-Global--color-dark-3;
   border: 0;
   outline: 1px solid rgba($remedy-Global--color-white, 0.06);
   outline-offset: 0;
@@ -101,7 +101,7 @@
   font-family: var(--remedy-Global--font-text);
   font-weight: 500;
   transition: box-shadow 300ms, background-color 150ms, color 150ms;
-  background: $remedy-Global--color-dark-2;
+  background: $remedy-Global--color-dark-3;
   color: $remedy-Global--color-white;
 
   &:hover {

@@ -9,15 +9,28 @@
 
 .UIDropdown__button {
   display: inline-block;
+  width: 100%;
   font-size: 1.4rem;
   line-height: 2rem;
   padding: 1rem 5.6rem 1rem 1.6rem;
   cursor: pointer;
   margin: 0;
-  background: $remedy-Global--color-dark-2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $remedy-Global--color-dark-3;
 
   &--is-placeholder {
     color: rgba($remedy-Global--color-white, 0.25);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4rem;
+    border-left: 1px solid #494949;
   }
 
   &:after {
@@ -27,9 +40,6 @@
     bottom: 0;
     right: 0;
     width: 4rem;
-    border-width: 0 0 0 1px;
-    border-style: solid;
-    border-color: #494949;
     opacity: 0.75;
     background: {
       image: url('../../assets/images/icon-arrow-down.svg');
@@ -37,24 +47,25 @@
       size: 1.6rem;
       position: 50% 55%;
     }
+    transition: transform 200ms;
   }
 
   .UIDropdown--open & {
     &:after {
       transform: rotate(180deg);
-      border-width: 0 1px 0 0;
     }
   }
 }
 
 .UIDropdown__list {
   position: absolute;
+  min-width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
   z-index: 2000;
   display: none;
-  background: $remedy-Global--color-dark-2;
+  background: $remedy-Global--color-dark-3;
   outline: 1px solid $remedy-Global--color-green;
   outline-offset: 0;
 
@@ -73,19 +84,23 @@
   position: relative;
   font-size: 1.4rem;
   line-height: 2rem;
-  padding: 1rem 5.6rem 1rem 1.6rem;
+  padding: 1rem 1.6rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: $remedy-Global--color-white;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 150ms, color 150ms;
 
-  &:hover {
+  .UIDropdown__item--hovered & {
     background: $remedy-Global--color-green;
-    color: $remedy-Global--color-dark-2;
+    color: $remedy-Global--color-dark-3;
   }
 
   .UIDropdown__item--active & {
+    padding-right: 3.6rem;
+
     &:after {
       content: '';
       position: absolute;
@@ -99,10 +114,10 @@
         repeat: no-repeat;
       }
     }
+  }
 
-    &:hover:after {
-      filter: brightness(0);
-      opacity: 0.8;
-    }
+  .UIDropdown__item--hovered.UIDropdown__item--active &:after {
+    filter: brightness(0);
+    opacity: 0.8;
   }
 }
