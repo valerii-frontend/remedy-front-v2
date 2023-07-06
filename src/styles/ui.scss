@@ -68,17 +68,18 @@
 .UIInput {
   background: #181818;
   border: 0;
-  box-shadow: 0 0 0 1px rgba($remedy-Global--color-white, 0.06);
+  outline: 1px solid rgba($remedy-Global--color-white, 0.06);
+  outline-offset: 0;
   color: $remedy-Global--color-white;
-  padding: 0.95rem 1rem;
+  padding: 1rem;
   margin: 0;
   font-size: 1.4rem;
+  line-height: 1.8rem;
   font-family: var(--remedy-Global--font-text);
-  transition: box-shadow 200ms;
+  transition: outline-color 200ms;
 
   &:focus {
-    box-shadow: 0 0 0 1px rgba($remedy-Global--color-white, 0.18);
-    outline: none;
+    outline-color: rgba($remedy-Global--color-white, 0.18);
   }
 
   &::placeholder {

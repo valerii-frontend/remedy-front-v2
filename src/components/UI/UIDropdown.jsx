@@ -4,6 +4,42 @@ import { Link } from 'react-router-dom';
 import './UIDropdown.scss';
 
 
+/**
+ * @typedef UIDropdownItem
+ * @type {Object}
+ * @property {string} title - The title of the item.
+ * @property {string} [linkTo] - The URL that the item links to.
+ * @property {UIDropdownItemClickCallback} [onClick] - The function to be called when the item is clicked.
+ */
+
+/**
+ * @callback UIDropdownItemClickCallback
+ * @param {Event} e - The click event.
+ * @param {Item} item - The clicked item.
+ */
+
+/**
+ * @callback UIDropdownItemChangeCallback
+ * @param {Item} item - The selected item.
+ */
+
+/**
+ * UI Dropdown
+ *
+ * @component
+ * @param {Object} props - The properties that define the component.
+ * @param {string} [props.className] - The CSS class for the main component.
+ * @param {string} [props.classNameButton] - The CSS class for the button.
+ * @param {string} [props.classNameList] - The CSS class for the dropdown.
+ * @param {string|ReactNode} props.title - The button text title or component.
+ * @param {Function} props.renderTitle - The function to render button title (overrides default dropdown button CSS).
+ * @param {string} props.placeholder - The button placeholder (displayed when there's no title).
+ * @param {UIDropdownItem[]} [props.items] - The items to be displayed in the dropdown.
+ * @param {UIDropdownItem} [props.selectedItem] - The selected item (will be highlighted in the dropdown).
+ * @param {ReactNode} [props.children] - The child elements of the dropdown (to be used instead of <props.items>).
+ * @param {UIDropdownItemChangeCallback} [props.onChange] - The function to be called when a new item selected.
+ * @returns {ReactElement}
+ */
 export const UIDropdown = (props) => {
 
   const {
@@ -11,10 +47,12 @@ export const UIDropdown = (props) => {
     classNameButton,
     classNameList,
     title,
-    linkTo,
+    renderTitle,
+    placeholder, // TODO: clarify the UX
     items,
-    renderButton,
+    selectedItem,
     children,
+    onChange,
   } = props;
 
   const buttonRef = useRef(null);
@@ -33,58 +71,58 @@ export const UIDropdown = (props) => {
     };
   }, []);
 
-  const onToggle = (e) => {
+  function onButtonClick(e){
     e.preventDefault();
     setIsMenuOpen(!isMenuOpen);
-  };
+  }
 
-  const renderItem = (item, index) => {
-    const { title, linkTo, onClick, isActive } = item;
+  function renderItem(item, index){
+    const { title, linkTo, onClick } = item;
+    const isItemActive = selectedItem?.title === item.title;
 
-    const className = cn({
-      'UIDropdown__inner': true,
-      'UIDropdown__inner--active': isActive,
-      'dropdown-item': true,
-    });
+    const onItemClick = (e, item) => {
+      onChange && onChange(item);
+      onClick && onClick(e, item);
+    };
 
     return (
-      <li className="UIDropdown__item" key={index}>
+      <li key={index} className={cn({
+        'UIDropdown__item': true,
+        'UIDropdown__item--active': isItemActive,
+      })}>
         {Boolean(linkTo)
-          ? <Link className={className} onClick={onClick} to={linkTo}>{title}</Link>
-          : <span className={className} onClick={onClick}>{title}</span>
+          ? <Link className="UIDropdown__inner" onClick={(e) => onItemClick(e, item)} to={linkTo}>{title}</Link>
+          : <span className="UIDropdown__inner" onClick={(e) => onItemClick(e, item)}>{title}</span>
         }
       </li>
     );
-  };
-
-  const buttonProps = {
-    className: cn(classNameButton, 'UIDropdown__button dropdown-toggle'),
-    onClick: onToggle,
-    ref: buttonRef,
-    to: linkTo,
-  };
+  }
 
   return (
     <div className={cn({
       'UIDropdown': true,
+      'UIDropdown--open': isMenuOpen,
       [className]: Boolean(className),
     })}>
 
-      {renderButton && (
-        <span {...buttonProps}>{renderButton()}</span>
-      )}
-
-      {!renderButton && (
-        Boolean(linkTo)
-          ? <Link {...buttonProps}>{title}</Link>
-          : <span {...buttonProps}>{title}</span>
-      )}
+      {renderTitle
+        ? <span ref={buttonRef} onClick={onButtonClick}>{renderTitle()}</span>
+        : (
+          <span
+            className={cn({
+              'UIDropdown__button': true,
+              'UIDropdown__button--is-placeholder': !title,
+              [classNameButton]: Boolean(classNameButton),
+            })}
+            onClick={onButtonClick}
+            ref={buttonRef}>
+            {title || placeholder}
+          </span>
+        )
+      }
 
       <ul className={cn({
         'UIDropdown__list': true,
-        'dropdown-menu': true,
-        'dropdown-menu-dark': true,
-        'show': isMenuOpen,
         [classNameList]: Boolean(classNameList),
       })}>
         {children ? children : items.map(renderItem)}

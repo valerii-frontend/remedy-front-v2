@@ -1,16 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { UserContainer } from '../User/UserContainer.jsx';
-import { formatDate, formatSum, inflect } from '../../utils.js';
+import { formatDate, formatSum, inflect, parseLocationSearch } from '../../utils.js';
 import { UIDropdown } from '../UI/UIDropdown.jsx';
 import './ProgramList.scss';
 
 
 export function ProgramList(){
-  const [programs, setPrograms] = React.useState([]);
+  const [programs, setPrograms] = useState([]);
+  const [currentSort, setCurrentSort] = useState(undefined);
   const location = useLocation();
 
+  const sortOptions = [
+    { value: null, title: 'Default', linkTo: '/programs' },
+    { value: 'sort1', title: 'Company name (A-Z)', linkTo: '/programs?sort=sort1' },
+    { value: 'sort2', title: 'Company name (Z-A)', linkTo: '/programs?sort=sort2' },
+    { value: 'sort3', title: 'Type (A-Z)', linkTo: '/programs?sort=sort3' },
+    { value: 'sort4', title: 'Type (Z-A)', linkTo: '/programs?sort=sort4' },
+    { value: 'sort5', title: 'Budget (Ascending-Descending)', linkTo: '/programs?sort=sort5' },
+    { value: 'sort6', title: 'Budget (Descending-Ascending)', linkTo: '/programs?sort=sort6' },
+    { value: 'sort7', title: 'Expiration date (Soonest - Latest)', linkTo: '/programs?sort=sort7' },
+    { value: 'sort8', title: 'Expiration date (Latest - Soonest)', linkTo: '/programs?sort=sort8' },
+  ];
+
   useEffect(() => {
+    const currentSortValue = parseLocationSearch(location.search).sort || null;
+    const currentSortOption = sortOptions.find(option => option.value === currentSortValue);
+    setCurrentSort(currentSortOption);
+
     fetchPrograms().then(setPrograms);
   }, [location]);
 
@@ -64,17 +81,11 @@ export function ProgramList(){
               <input className="Programs__toolbar-search-input UIInput" type="search" placeholder="Search for programs"/>
             </div>
             <UIDropdown
+              title={currentSort?.title}
+              placeholder="Sort by"
               className="Programs__toolbar-sort"
-              items={[
-                { title: 'Company name (A-Z)', linkTo: '/programs?sort=1' },
-                { title: 'Company name (Z-A)', linkTo: '/programs?sort=2' },
-                { title: 'Type (A-Z)', linkTo: '/programs?sort=3' },
-                { title: 'Type (Z-A)', linkTo: '/programs?sort=4' },
-                { title: 'Budget (Ascending-Descending)', linkTo: '/programs?sort=5' },
-                { title: 'Budget (Descending-Ascending)', linkTo: '/programs?sort=6' },
-                { title: 'Expiration date (Soonest - Latest)', linkTo: '/programs?sort=7' },
-                { title: 'Expiration date (Latest - Soonest)', linkTo: '/programs?sort=8' },
-              ]}
+              items={sortOptions}
+              selectedItem={currentSort}
             />
             <button className="Programs__toolbar-filters UIButton">Filters</button>
           </div>

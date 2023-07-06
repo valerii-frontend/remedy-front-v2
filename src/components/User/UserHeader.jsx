@@ -28,8 +28,9 @@ export function UserHeader(){
 
       <UIDropdown
         className="UserHeader__settings"
-        classNameButton="UserHeader__settings-icon UserHeader__icon"
-        title="Settings"
+        renderTitle={() => (
+          <i className="UserHeader__settings-icon UserHeader__icon"/>
+        )}
         items={[
           { title: 'Settings', linkTo: '/profile/settings' },
           { title: 'KYC', linkTo: '/profile/kyc' },
@@ -46,12 +47,15 @@ export function UserHeader(){
 
       <UIDropdown
         className="UserHeader__notifications"
-        classNameButton={cn({
-          'UserHeader__icon': true,
-          'UserHeader__notifications-icon': true,
-          'UserHeader__notifications-icon--unread': true,
-        })}
-        title="Notifications">
+        classNameList="UserHeader__notifications-list"
+        renderTitle={() => (
+          <i className={cn({
+            'UserHeader__icon': true,
+            'UserHeader__notifications-icon': true,
+            'UserHeader__notifications-icon--unread': true, // TODO: fix
+          })}/>
+        )}
+      >
         Notifications menu has not yet been implemented
       </UIDropdown>
 
