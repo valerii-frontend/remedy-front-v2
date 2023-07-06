@@ -94,7 +94,22 @@
   font-family: var(--remedy-Global--font-text);
   font-weight: 500;
   box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.05);
-  &:after {}
+  vertical-align: middle;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    margin-left: 1rem;
+    width: 1.6rem;
+    height: 1.5rem;
+    transform: translateY(0.2rem);
+    background: {
+      image: url('../../assets/images/icon-filter.svg');
+      size: contain;
+      repeat: no-repeat;
+      position: center;
+    };
+  }
 }
 
 .Programs__count {
@@ -104,10 +119,16 @@
 .Programs__list {}
 
 .Programs__item {
+  background: $remedy-Global--color-dark-3;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+  margin-bottom: 1.6rem;
 }
 
-.Programs__item-link {}
+.Programs__item-link {
+  color: $remedy-Global--color-white;
+  text-decoration: none;
+}
+
 .Programs__item-logo {}
 .Programs__item-logo-img {}
 .Programs__item-content {}
