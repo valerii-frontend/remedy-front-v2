@@ -64,66 +64,122 @@
 //
 //
 
-.UIButton {
-  --remedy-UIButton--text-color: var(--remedy-Global--color-text-inverted);
-  --remedy-UIButton--background-color: var(--remedy-Global--color-background-inverted);
-  --remedy-UIButton--text-size: 1em;
-  --remedy-UIButton--button-height: 2.6em;
-  --remedy-UIButton--button-vertical-paddings: calc(var(--remedy-UIButton--button-height) - var(--remedy-UIButton--text-size));
 
-  color: var(--remedy-Global--color-text);
-  background: var(--remedy-Global--color-background-secondary);
-
-
-
-  //color: var(--remedy-UIButton--text-color);
-  //background: var(--remedy-UIButton--background-color);
-  //text-decoration: none;
-  //font-size: var(--remedy-UIButton--text-size);
-  //line-height: 1em;
-  //border-radius: 0.8em;
-  //border: 0;
-  //transition: opacity 200ms, transform 100ms;
-  padding:
-    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.56)
-    0.8em
-    calc(var(--remedy-UIButton--button-vertical-paddings) * 0.44)
-    0.8em;
-
-  &:hover {
-    opacity: 0.85;
-    color: var(--remedy-UIButton--text-color);
-  }
+.UIInput {
+  background: #181818;
+  border: 0;
+  box-shadow: 0 0 0 1px rgba($remedy-Global--color-white, 0.06);
+  color: $remedy-Global--color-white;
+  padding: 0.95rem 1rem;
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: var(--remedy-Global--font-text);
+  transition: box-shadow 200ms;
 
   &:focus {
-
-    //@include remedy-default-focus-outline();
+    box-shadow: 0 0 0 1px rgba($remedy-Global--color-white, 0.18);
+    outline: none;
   }
 
-  &:active {
-    //transform: scale(0.97);
+  &::placeholder {
+    color: #525252;
   }
 
-  &:disabled {
-
+  &::-webkit-search-cancel-button{
+    display: none;
   }
+}
 
+
+.UIButton {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  padding: 1.05rem 3.2rem;
+  border: 0;
+  text-decoration: none;
+  font-family: var(--remedy-Global--font-text);
+  font-weight: 500;
+  transition: box-shadow 300ms, background-color 150ms, color 150ms;
+  background: $remedy-Global--color-dark-2;
+  color: $remedy-Global--color-white;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.05);
+  }
 
   /* Colors */
-
   &--green {
-    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
-    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
+    background: $remedy-Global--color-green;
+    color: $remedy-Global--color-dark-2;
+
+    &:hover {
+      color: $remedy-Global--color-dark-2;
+      box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.35);
+    }
+
+    &:focus {
+      box-shadow:
+        inset 0 0 0 1px $remedy-Global--color-white,
+        0 8px 16px rgba($remedy-Global--color-green, 0.05);
+      outline: none;
+    }
+
+    &:active {
+      background: darken($remedy-Global--color-green, 8%);
+      box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.05);
+    }
+
+    &.disabled,
+    &:disabled {
+      background: #585858;
+      color: rgba($remedy-Global--color-dark-2, 0.4);
+      pointer-events: none;
+      box-shadow: none;
+    }
   }
 
   &--green-outline {
-    --remedy-UIButton--text-color: var(--remedy-Global--color-text);
-    --remedy-UIButton--background-color: var(--remedy-Global--color-background);
-    border: 1px solid rgba(0,0,0,.1);
+    background: $remedy-Global--color-dark-2;
+    color: $remedy-Global--color-green;
+    box-shadow:
+      inset 0 0 0 1px $remedy-Global--color-green,
+      0 0 0 transparent;
+
+    &:hover {
+      background: $remedy-Global--color-green;
+      color: $remedy-Global--color-dark-2;
+      box-shadow:
+        inset 0 0 0 1px $remedy-Global--color-green,
+        0 8px 16px rgba($remedy-Global--color-green, 0.35);
+    }
+
+    &:focus {
+      box-shadow:
+        inset 0 0 0 1px $remedy-Global--color-white,
+        0 8px 16px rgba($remedy-Global--color-green, 0.05);
+      outline: none;
+    }
+
+    &:active {
+      background: darken($remedy-Global--color-green, 8%);
+      box-shadow:
+        inset 0 0 0 1px $remedy-Global--color-green,
+        0 8px 16px rgba($remedy-Global--color-green, 0.05);
+    }
+
+    &.disabled,
+    &:disabled {
+      background: #585858;
+      color: rgba($remedy-Global--color-dark-2, 0.4);
+      pointer-events: none;
+      box-shadow: none;
+    }
   }
 
 
   /* Sizes */
-
-  &--lg {}
+  &--sm {
+    font-size: 1.4rem;
+    padding: 0.75rem 3.2rem;
+  }
 }

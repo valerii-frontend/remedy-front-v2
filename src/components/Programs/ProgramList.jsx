@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { UserContainer } from '../User/UserContainer.jsx';
 import { formatDate, formatSum, inflect } from '../../utils.js';
 import { UIDropdown } from '../UI/UIDropdown.jsx';
@@ -8,13 +8,18 @@ import './ProgramList.scss';
 
 export function ProgramList(){
   const [programs, setPrograms] = React.useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     fetchPrograms().then(setPrograms);
-  }, []);
+  }, [location]);
 
   function fetchPrograms(){
-    return fetch('/__MOCK/programs.json').then(res => res.json())
+    return fetch('/__MOCK/programs.json')
+      .then(res => res.json())
+      .then(programs => {
+        return programs.sort(() => Math.random() - 0.5);
+      });
   }
 
   return (
@@ -23,13 +28,15 @@ export function ProgramList(){
         <div className="Global__app-content-max-width">
 
           <div className="Programs__header">
-            <h2 className="Programs__header-title">ProgramList</h2>
-            <div className="Programs__header-actions">
-              <Link className="UIButton UIButton--green" to="/programs/create">Create New Program</Link>
+            <div className="Programs__header-inner">
+              <h2 className="Programs__header-title">Programs</h2>
+              <div className="Programs__header-actions">
+                <Link className="UIButton UIButton--green" to="/programs/create">Create New Program</Link>
+              </div>
             </div>
           </div>
 
-          <ul className="my-5 py-3">
+          <ul className="my-5 py-3" hidden>
             <li>
               <Link to="/programs/CBB7755098">Program CBB7755098</Link>
             </li>
@@ -54,7 +61,7 @@ export function ProgramList(){
 
           <div className="Programs__toolbar">
             <div className="Programs__toolbar-search">
-              <input className="Programs__toolbar-search-input" type="search" placeholder="Search for programs"/>
+              <input className="Programs__toolbar-search-input UIInput" type="search" placeholder="Search for programs"/>
             </div>
             <UIDropdown
               className="Programs__toolbar-sort"
@@ -100,7 +107,7 @@ export function ProgramList(){
                           {program.program_name}
                         </div>
                       </div>
-                      <button className="Programs__item-cta UIButton UIButton--lg UIButton--green">
+                      <button className="Programs__item-cta UIButton UIButton--green">
                         Submit a bug
                       </button>
                     </div>

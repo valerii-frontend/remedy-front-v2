@@ -39,7 +39,7 @@ export function UserHeader(){
       <Link className="UserHeader__help-icon UserHeader__icon" to="/help">Help</Link>
 
       <div className="UserHeader__search">
-        <input className="UserHeader__search-input"
+        <input className="UserHeader__search-input UIInput"
           placeholder="Search for bounty programs and reports"
           type="search"/>
       </div>

@@ -15,6 +15,6 @@
   &:hover,
   &:focus,
   &--active {
-    background: var(--remedy-Global--color-background);
+    background: $remedy-Global--color-dark-1;
   }
 }

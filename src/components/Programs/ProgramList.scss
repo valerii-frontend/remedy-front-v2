@@ -2,29 +2,84 @@
 @import '../../styles/mixins';
 
 .Programs {
-  padding: 2.4rem;
+  padding: 2.5rem 3.2rem;
 }
 
-.Programs__header {}
-.Programs__header-title {}
-.Programs__header-actions {}
+.Programs__header {
+  filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.05));
+  margin-bottom: 3.2rem;
+}
 
-.Programs__tabs {}
+.Programs__header-inner {
+  background: $remedy-Global--color-dark-2;
+  display: flex;
+  align-items: center;
+  padding: 2.05rem 4.8rem 2.05rem 3.2rem;
+  clip-path: polygon(calc(100% - 28px) 0%, 100% 28px, 100% 100%, 0 100%, 0 0);
+}
 
-// TODO: remove
-.lolo {
-  background: red;
+.Programs__header-title {
+  font-family: var(--remedy-Global--font-header);
+  font-weight: 400;
+  font-size: 3.6rem;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.Programs__header-actions {
+  margin-left: auto;
+}
+
+.Programs__tabs {
+  display: flex;
+  margin-bottom: 2.4rem;
 }
 
 .Programs__tabs-item {
-  &.active {
-    @extend .lolo;
+  width: 50%;
+  text-align: center;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+
+  &.active,
+  &.active:hover {
+    box-shadow: inset 0 0 0 2px $remedy-Global--color-green !important;
+    color: $remedy-Global--color-green;
   }
 }
 
-.Programs__toolbar {}
-.Programs__toolbar-search {}
-.Programs__toolbar-search-input {}
+.Programs__toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.Programs__toolbar-search {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 1.6rem;
+    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.25;
+    background: {
+      image: url('../../assets/images/icon-search.svg');
+      repeat: no-repeat;
+      position: center;
+      size: contain;
+    };
+  }
+}
+
+.Programs__toolbar-search-input {
+  padding-left: 4.8rem !important;
+}
+
 
 .Programs__toolbar-sort {}
 
@@ -36,7 +91,10 @@
 
 .Programs__list {}
 
-.Programs__item {}
+.Programs__item {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+}
+
 .Programs__item-link {}
 .Programs__item-logo {}
 .Programs__item-logo-img {}

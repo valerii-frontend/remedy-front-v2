@@ -1,19 +1,19 @@
 @import './mixins';
 
+
+/* Colors (Sass vars rather than CSS vars in order to be able to use inside Sass functions) */
+$remedy-Global--color-white: #FFFFFF;
+$remedy-Global--color-gray: #808080;
+$remedy-Global--color-dark-1: #2C2C2C;
+$remedy-Global--color-dark-2: #1F1F1F;
+$remedy-Global--color-green: #6AFFAF;
+
+
 :root {
 
   /* Fonts */
   --remedy-Global--font-text: 'PP Neue Montreal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --remedy-Global--font-header: 'PP Telegraf', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-
-
-  /* Colors */
-  --remedy-Global--color-text: #FFFFFF;
-  --remedy-Global--color-text-inverted: #1F1F1F;
-  --remedy-Global--color-text-secondary: #808080;
-  --remedy-Global--color-background: #2C2C2C;
-  --remedy-Global--color-background-secondary: #1F1F1F;
-  --remedy-Global--color-green: #6AFFAF;
 
 
   /*

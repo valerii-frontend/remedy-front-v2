@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   height: 7rem;
-  background-color: #1F1F1F;
+  background-color: $remedy-Global--color-dark-2;
   background-image:
     linear-gradient(182.5deg, rgba(106, 255, 175, 0.08) 0%, rgba(106, 255, 175, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   margin-left: 3.2rem;
-  color: var(--remedy-Global--color-text);
+  color: $remedy-Global--color-white;
   text-decoration: none;
   font-family: var(--remedy-Global--font-header);
   transition: opacity 200ms;
@@ -42,7 +42,7 @@
 .UserHeader__user-email {
   display: block;
   font-size: 1.2rem;
-  color: var(--remedy-Global--color-text-secondary);
+  color: $remedy-Global--color-gray;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -64,7 +64,7 @@
   transition: background-color 200ms;
 
   &:hover {
-    background-color: rgba(#FFFFFF, 0.05);
+    background-color: rgba($remedy-Global--color-white, 0.05);
   }
 }
 
@@ -114,28 +114,8 @@
 }
 
 .UserHeader__search-input {
-  background: #181818;
   width: 38.5rem;
-  border: 0;
-  box-shadow: 0 0 0 1px rgba(#FFFFFF, 0.06);
-  padding: 0.95rem 1rem 0.95rem 4.8rem;
-  margin: 0;
-  font-size: 1.4rem;
-  color: var(--remedy-Global--color-text);
-  transition: box-shadow 200ms;
-
-  &:focus {
-    box-shadow: 0 0 0 1px rgba(#FFFFFF, 0.18);
-    outline: none;
-  }
-
-  &::placeholder {
-    color: #525252;
-  }
-
-  &::-webkit-search-cancel-button{
-    display: none;
-  }
+  padding-left: 4.8rem !important;
 }
 
 .UserHeader__notifications {
