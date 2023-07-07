@@ -58,8 +58,10 @@ export const UIDropdown = (props) => {
     onChange,
   } = props;
 
+  const containerRef = useRef(null);
   const buttonRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
   useEffect(() => {
     function onBodyClick(e){
@@ -74,34 +76,60 @@ export const UIDropdown = (props) => {
     };
   }, []);
 
+
   useEffect(() => {
-    function onArrowNavigation(e){
-      if (isMenuOpen && items?.length) {
-        if (e.key === 'Enter') {
-          const hoveredItem = items[hoveredItemIndex];
-          if (hoveredItem) {
-            e.preventDefault();
-            onItemClick(e, hoveredItem, hoveredItem.onClick);
-            hoveredItem.linkTo && navigate(hoveredItem.linkTo);
-            setIsMenuOpen(false);
-          }
+    function onEnterOrSpacePress(e){
+      if (isMenuOpen) {
+        e.preventDefault();
+
+        const hoveredItem = items?.[hoveredItemIndex];
+        if (hoveredItem) {
+          onItemClick(e, hoveredItem, hoveredItem.onClick);
+          hoveredItem.linkTo && navigate(hoveredItem.linkTo);
+          setIsMenuOpen(false);
         }
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-          e.preventDefault();
-          const delta = e.key === 'ArrowUp' ? -1 : 1;
-          const nextHoveredItemIndex = getNextHoveredItemIndex(hoveredItemIndex, delta);
-          setHoveredItemIndex(nextHoveredItemIndex);
-        }
-        else if (e.key === 'Escape') {
-          e.preventDefault();
+        else {
           setIsMenuOpen(false);
         }
       }
+
+      const isDropdownFocused = containerRef.current === document.activeElement;
+      if (isDropdownFocused && !isMenuOpen) {
+        e.preventDefault();
+        setIsMenuOpen(true);
+      }
     }
 
-    document.addEventListener('keydown', onArrowNavigation);
+    function onArrowNavigation(e){
+      if (isMenuOpen && items?.length) {
+        e.preventDefault();
+        const delta = e.key === 'ArrowUp' ? -1 : 1;
+        const nextHoveredItemIndex = getNextHoveredItemIndex(hoveredItemIndex, delta);
+        setHoveredItemIndex(nextHoveredItemIndex);
+      }
+    }
+
+    function onEscapePress(e){
+      e.preventDefault();
+      setIsMenuOpen(false);
+    }
+
+    function onBodyKeyPress(e){
+      const keyHandlers = {
+        'Enter': onEnterOrSpacePress,
+        ' ': onEnterOrSpacePress, // Space
+        'ArrowDown': onArrowNavigation,
+        'ArrowUp': onArrowNavigation,
+        'Escape': onEscapePress,
+      };
+      if (keyHandlers[e.key]) {
+        keyHandlers[e.key](e);
+      }
+    }
+
+    document.addEventListener('keydown', onBodyKeyPress);
     return () => {
-      document.removeEventListener('keydown', onArrowNavigation);
+      document.removeEventListener('keydown', onBodyKeyPress);
     }
   }, [isMenuOpen, hoveredItemIndex, items]);
 
@@ -156,7 +184,7 @@ export const UIDropdown = (props) => {
   }
 
   return (
-    <div className={cn({
+    <div tabIndex={0} ref={containerRef} className={cn({
       'UIDropdown': true,
       'UIDropdown--open': isMenuOpen,
       [className]: Boolean(className),

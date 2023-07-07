@@ -1,7 +1,7 @@
 @import './mixins';
 
 
-/* Colors (Sass vars rather than CSS vars in order to be able to use inside Sass functions) */
+/* Colors (Sass vars rather than CSS vars in order to be able to use them inside Sass functions) */
 $remedy-Global--color-white: #FFFFFF;
 $remedy-Global--color-gray: #808080;
 $remedy-Global--color-dark-1: #2C2C2C;
@@ -51,10 +51,10 @@ $remedy-Global--color-green: #6AFFAF;
 
 
   /*  Block sizes */
-  --remedy-Global--menu-sidebar-width: 24rem;
-  --remedy-Global--app-content-max-width: 1400px; // TODO: check other resolutions, change?
+  --remedy-Global--UserHeader-height: 7rem;
+  --remedy-Global--UserSidebarNav-width: 24rem;
+  --remedy-Global--UserContainer-max-width: 1400px; // TODO: check other resolutions, change?
 
   /* Dynamically updated in JavaScript */
-  // TODO: fix
-  //--remedy-Global--scrollbar-width: 15px; // Dynamically updated in src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
+  --remedy-Global--scrollbar-width: 15px; // Dynamically updated in src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
 }

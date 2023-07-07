@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { useAuthUser } from '../../hooks/useAuthUser.js';
 import { useAuthSidebar } from '../../hooks/useAuthSidebar.js';
+import { getScrollbarWidth, setRootCSSVariable } from '../../utils.js';
 
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator.jsx';
 import { AuthSidebar } from '../Auth/AuthSidebar.jsx';
@@ -24,6 +25,14 @@ import './App.scss';
 export function App(){
   const { user, isUserBeingFetched, logIn, logOut } = useAuthUser();
   const { isAuthSidebarOpen, openAuthSidebar, closeAuthSidebar } = useAuthSidebar();
+
+  useEffect(() => {
+    /**
+     * Setting global CSS variables
+     * @see src/styles/variables.scss
+     */
+    setRootCSSVariable('--remedy-Global--scrollbar-width', getScrollbarWidth() + 'px');
+  });
 
   if (isUserBeingFetched) {
     return (

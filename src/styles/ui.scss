@@ -2,69 +2,6 @@
 @import './mixins';
 
 
-// TODO: fix
-//.remedy-cross {
-//  --remedy-UICross--width: 2.2em;
-//  --remedy-UICross--height: 2.2em;
-//  --remedy-UICross-icon-size: 0.8em;
-//  --remedy-UICross-icon-color: var(--remedy-Global--color-text);
-//
-//  display: inline-block;
-//  position: relative;
-//  width: var(--remedy-UICross--width);
-//  height: var(--remedy-UICross--height);
-//  cursor: pointer;
-//  transition: opacity 200ms;
-//
-//  &:before,
-//  &:after {
-//    position: absolute;
-//    left: 50%;
-//    top: 50%;
-//    content: '';
-//    width: var(--remedy-UICross-icon-size);
-//    height: 0.05em;
-//    background: var(--remedy-UICross-icon-color);
-//  }
-//
-//  &:before {
-//    transform: translate(-50%, -50%) rotate(45deg);
-//  }
-//
-//  &:after {
-//    transform: translate(-50%, -50%) rotate(-45deg);
-//  }
-//
-//  &:hover {
-//    opacity: 0.75;
-//  }
-//}
-//
-//
-//.remedy-checkbox {
-//  --remedy-UICheckbox--size: 1em;
-//
-//  appearance: none;
-//  width: var(--remedy-UICheckbox--size);
-//  height: var(--remedy-UICheckbox--size);
-//  border: 1px solid var(--remedy-Global--color-text-secondary);
-//  border-radius: 0.2em;
-//  transition: opacity 200ms;
-//
-//  &:hover {
-//    opacity: 0.9;
-//  }
-//
-//  &:checked {
-//    //background: var(--remedy-Global--color-violet) url('../assets/images/iconCheckMark.svg') no-repeat center;
-//    background-size: 60%;
-//    border: 0;
-//  }
-//}
-//
-//
-
-
 .UIInput {
   background: $remedy-Global--color-dark-3;
   border: 0;
@@ -118,13 +55,6 @@
       box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.35);
     }
 
-    &:focus {
-      box-shadow:
-        inset 0 0 0 1px $remedy-Global--color-white,
-        0 8px 16px rgba($remedy-Global--color-green, 0.05);
-      outline: none;
-    }
-
     &:active {
       background: darken($remedy-Global--color-green, 8%);
       box-shadow: 0 8px 16px rgba($remedy-Global--color-green, 0.05);
@@ -152,13 +82,6 @@
       box-shadow:
         inset 0 0 0 1px $remedy-Global--color-green,
         0 8px 16px rgba($remedy-Global--color-green, 0.35);
-    }
-
-    &:focus {
-      box-shadow:
-        inset 0 0 0 1px $remedy-Global--color-white,
-        0 8px 16px rgba($remedy-Global--color-green, 0.05);
-      outline: none;
     }
 
     &:active {

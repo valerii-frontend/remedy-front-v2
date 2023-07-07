@@ -2,9 +2,9 @@
 @import '../../styles/mixins';
 
 .UserContainer {
-
+  padding-top: var(--remedy-Global--UserHeader-height);
 }
 
 .UserContainer__main {
-  padding-left: var(--remedy-Global--menu-sidebar-width);
+  padding-left: var(--remedy-Global--UserSidebarNav-width);
 }

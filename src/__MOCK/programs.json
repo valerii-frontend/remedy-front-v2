@@ -15,6 +15,7 @@
     "submitted_reports_count": 9,
     "upvotes_count": 2081,
     "bookmarked_count": 5,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -34,6 +35,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 1423,
     "bookmarked_count": 19,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -54,6 +56,7 @@
     "submitted_reports_count": 5,
     "upvotes_count": 3503,
     "bookmarked_count": 24,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -73,6 +76,7 @@
     "submitted_reports_count": 1,
     "upvotes_count": 2877,
     "bookmarked_count": 33,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -91,6 +95,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 3138,
     "bookmarked_count": 38,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -109,6 +114,7 @@
     "submitted_reports_count": 9,
     "upvotes_count": 807,
     "bookmarked_count": 10,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -128,6 +134,7 @@
     "submitted_reports_count": 23,
     "upvotes_count": 909,
     "bookmarked_count": 28,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -147,6 +154,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 3667,
     "bookmarked_count": 9,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -167,6 +175,7 @@
     "submitted_reports_count": 23,
     "upvotes_count": 1066,
     "bookmarked_count": 37,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -186,6 +195,7 @@
     "submitted_reports_count": 9,
     "upvotes_count": 1400,
     "bookmarked_count": 31,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -206,6 +216,7 @@
     "submitted_reports_count": 8,
     "upvotes_count": 3585,
     "bookmarked_count": 23,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -224,6 +235,7 @@
     "submitted_reports_count": 14,
     "upvotes_count": 3306,
     "bookmarked_count": 5,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -244,6 +256,7 @@
     "submitted_reports_count": 11,
     "upvotes_count": 2227,
     "bookmarked_count": 46,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -263,6 +276,7 @@
     "submitted_reports_count": 6,
     "upvotes_count": 186,
     "bookmarked_count": 47,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -281,6 +295,7 @@
     "submitted_reports_count": 7,
     "upvotes_count": 613,
     "bookmarked_count": 9,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -299,6 +314,7 @@
     "submitted_reports_count": 22,
     "upvotes_count": 3908,
     "bookmarked_count": 21,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -317,6 +333,7 @@
     "submitted_reports_count": 19,
     "upvotes_count": 3771,
     "bookmarked_count": 28,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -335,6 +352,7 @@
     "submitted_reports_count": 5,
     "upvotes_count": 3393,
     "bookmarked_count": 56,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -353,6 +371,7 @@
     "submitted_reports_count": 11,
     "upvotes_count": 1468,
     "bookmarked_count": 15,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -371,6 +390,7 @@
     "submitted_reports_count": 23,
     "upvotes_count": 3744,
     "bookmarked_count": 44,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -390,6 +410,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 2900,
     "bookmarked_count": 56,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -409,6 +430,7 @@
     "submitted_reports_count": 1,
     "upvotes_count": 1731,
     "bookmarked_count": 30,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -427,6 +449,7 @@
     "submitted_reports_count": 20,
     "upvotes_count": 3431,
     "bookmarked_count": 29,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -446,6 +469,7 @@
     "submitted_reports_count": 7,
     "upvotes_count": 1013,
     "bookmarked_count": 44,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -465,6 +489,7 @@
     "submitted_reports_count": 3,
     "upvotes_count": 1941,
     "bookmarked_count": 34,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -483,6 +508,7 @@
     "submitted_reports_count": 1,
     "upvotes_count": 2910,
     "bookmarked_count": 37,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -501,6 +527,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 1094,
     "bookmarked_count": 8,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -520,6 +547,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 3115,
     "bookmarked_count": 14,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -540,6 +568,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 2489,
     "bookmarked_count": 51,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -559,6 +588,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 2559,
     "bookmarked_count": 30,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -579,6 +609,7 @@
     "submitted_reports_count": 16,
     "upvotes_count": 25,
     "bookmarked_count": 3,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -598,6 +629,7 @@
     "submitted_reports_count": 5,
     "upvotes_count": 1251,
     "bookmarked_count": 39,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -618,6 +650,7 @@
     "submitted_reports_count": 21,
     "upvotes_count": 674,
     "bookmarked_count": 19,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -637,6 +670,7 @@
     "submitted_reports_count": 16,
     "upvotes_count": 3084,
     "bookmarked_count": 24,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -655,13 +689,17 @@
     "submitted_reports_count": 8,
     "upvotes_count": 1885,
     "bookmarked_count": 39,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
     "company_name": "Etherium Solutions",
     "reward": 308800,
     "program_name": "Summer Bounty 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 7,
     "last_updated": "2023-05-26T06:39:35.228Z",
     "expiration_date": null,
@@ -671,6 +709,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 3822,
     "bookmarked_count": 9,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -690,6 +729,7 @@
     "submitted_reports_count": 20,
     "upvotes_count": 1755,
     "bookmarked_count": 27,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -710,6 +750,7 @@
     "submitted_reports_count": 25,
     "upvotes_count": 3183,
     "bookmarked_count": 33,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -728,6 +769,7 @@
     "submitted_reports_count": 16,
     "upvotes_count": 534,
     "bookmarked_count": 53,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -747,13 +789,17 @@
     "submitted_reports_count": 4,
     "upvotes_count": 2557,
     "bookmarked_count": 6,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
     "company_name": "CryptoSecure",
     "reward": 66300,
     "program_name": "Crypto Challenge 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 7,
     "last_updated": "2023-06-17T18:13:50.909Z",
     "expiration_date": "2023-09-21T22:40:40.537Z",
@@ -763,6 +809,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 2688,
     "bookmarked_count": 22,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -781,6 +828,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 1811,
     "bookmarked_count": 8,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -800,6 +848,7 @@
     "submitted_reports_count": 20,
     "upvotes_count": 3082,
     "bookmarked_count": 7,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -818,6 +867,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 2200,
     "bookmarked_count": 48,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -836,6 +886,7 @@
     "submitted_reports_count": 8,
     "upvotes_count": 1876,
     "bookmarked_count": 25,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -855,6 +906,7 @@
     "submitted_reports_count": 25,
     "upvotes_count": 1237,
     "bookmarked_count": 35,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -873,6 +925,7 @@
     "submitted_reports_count": 8,
     "upvotes_count": 3258,
     "bookmarked_count": 26,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -892,6 +945,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 3068,
     "bookmarked_count": 55,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -912,6 +966,7 @@
     "submitted_reports_count": 4,
     "upvotes_count": 3414,
     "bookmarked_count": 17,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -930,6 +985,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 207,
     "bookmarked_count": 28,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -948,13 +1004,17 @@
     "submitted_reports_count": 17,
     "upvotes_count": 2939,
     "bookmarked_count": 8,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
     "company_name": "CryptoCorp",
     "reward": 384000,
     "program_name": "Epic Contest 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 6,
     "last_updated": "2023-05-28T14:45:24.979Z",
     "expiration_date": "2023-09-13T16:26:04.243Z",
@@ -964,6 +1024,7 @@
     "submitted_reports_count": 21,
     "upvotes_count": 3403,
     "bookmarked_count": 51,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -983,6 +1044,7 @@
     "submitted_reports_count": 3,
     "upvotes_count": 1511,
     "bookmarked_count": 23,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1001,6 +1063,7 @@
     "submitted_reports_count": 6,
     "upvotes_count": 2373,
     "bookmarked_count": 12,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1019,13 +1082,17 @@
     "submitted_reports_count": 18,
     "upvotes_count": 2162,
     "bookmarked_count": 43,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
     "company_name": "Etherium Solutions",
     "reward": 207700,
     "program_name": "Security Showdown 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 5,
     "last_updated": "2023-06-11T22:18:43.572Z",
     "expiration_date": "2023-09-06T11:36:16.695Z",
@@ -1035,6 +1102,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 2100,
     "bookmarked_count": 52,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1054,13 +1122,17 @@
     "submitted_reports_count": 8,
     "upvotes_count": 1161,
     "bookmarked_count": 41,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
     "company_name": "CryptoSecure",
     "reward": 351400,
     "program_name": "Crypto Challenge 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 5,
     "last_updated": "2023-06-29T06:00:53.869Z",
     "expiration_date": null,
@@ -1070,6 +1142,7 @@
     "submitted_reports_count": 11,
     "upvotes_count": 3950,
     "bookmarked_count": 27,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1090,6 +1163,7 @@
     "submitted_reports_count": 3,
     "upvotes_count": 2895,
     "bookmarked_count": 21,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1108,6 +1182,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 1352,
     "bookmarked_count": 14,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -1127,6 +1202,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 727,
     "bookmarked_count": 54,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1145,6 +1221,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 582,
     "bookmarked_count": 38,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1164,6 +1241,7 @@
     "submitted_reports_count": 4,
     "upvotes_count": 3579,
     "bookmarked_count": 12,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1182,6 +1260,7 @@
     "submitted_reports_count": 17,
     "upvotes_count": 1880,
     "bookmarked_count": 47,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1200,6 +1279,7 @@
     "submitted_reports_count": 10,
     "upvotes_count": 2738,
     "bookmarked_count": 12,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1218,13 +1298,17 @@
     "submitted_reports_count": 9,
     "upvotes_count": 2712,
     "bookmarked_count": 54,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
     "company_name": "CryptoCorp",
     "reward": 217000,
     "program_name": "Summer Bounty 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 6,
     "last_updated": "2023-06-22T15:19:03.836Z",
     "expiration_date": "2023-07-31T04:41:44.067Z",
@@ -1234,6 +1318,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 1968,
     "bookmarked_count": 20,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1252,6 +1337,7 @@
     "submitted_reports_count": 2,
     "upvotes_count": 2577,
     "bookmarked_count": 20,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1270,6 +1356,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 1925,
     "bookmarked_count": 48,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1288,6 +1375,7 @@
     "submitted_reports_count": 12,
     "upvotes_count": 1191,
     "bookmarked_count": 16,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1307,6 +1395,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 1534,
     "bookmarked_count": 18,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1325,6 +1414,7 @@
     "submitted_reports_count": 14,
     "upvotes_count": 657,
     "bookmarked_count": 22,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1343,6 +1433,7 @@
     "submitted_reports_count": 25,
     "upvotes_count": 459,
     "bookmarked_count": 19,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1362,13 +1453,17 @@
     "submitted_reports_count": 10,
     "upvotes_count": 1826,
     "bookmarked_count": 45,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
     "company_name": "Etherium Solutions",
     "reward": 182300,
     "program_name": "Security Showdown 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 7,
     "last_updated": "2023-05-16T05:25:28.371Z",
     "expiration_date": null,
@@ -1378,6 +1473,7 @@
     "submitted_reports_count": 19,
     "upvotes_count": 770,
     "bookmarked_count": 35,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1397,6 +1493,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 1763,
     "bookmarked_count": 37,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1416,6 +1513,7 @@
     "submitted_reports_count": 4,
     "upvotes_count": 3036,
     "bookmarked_count": 52,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1436,6 +1534,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 290,
     "bookmarked_count": 9,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1455,6 +1554,7 @@
     "submitted_reports_count": 21,
     "upvotes_count": 1294,
     "bookmarked_count": 48,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -1475,13 +1575,17 @@
     "submitted_reports_count": 7,
     "upvotes_count": 832,
     "bookmarked_count": 51,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
     "company_name": "Etherium Solutions",
     "reward": 271700,
     "program_name": "Hackathon 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 2,
     "last_updated": "2023-06-02T10:48:29.707Z",
     "expiration_date": "2023-08-12T12:41:44.714Z",
@@ -1491,6 +1595,7 @@
     "submitted_reports_count": 17,
     "upvotes_count": 1721,
     "bookmarked_count": 20,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1509,6 +1614,7 @@
     "submitted_reports_count": 6,
     "upvotes_count": 507,
     "bookmarked_count": 41,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1527,6 +1633,7 @@
     "submitted_reports_count": 4,
     "upvotes_count": 2331,
     "bookmarked_count": 26,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1546,6 +1653,7 @@
     "submitted_reports_count": 25,
     "upvotes_count": 3949,
     "bookmarked_count": 47,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1565,6 +1673,7 @@
     "submitted_reports_count": 3,
     "upvotes_count": 2846,
     "bookmarked_count": 18,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -1583,13 +1692,17 @@
     "submitted_reports_count": 13,
     "upvotes_count": 1133,
     "bookmarked_count": 52,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
     "company_name": "DigiCoin",
     "reward": 316600,
     "program_name": "Crypto Challenge 2023",
-    "type": [],
+    "type": [
+      "Websites and Applications",
+      "Blockchain/DLT"
+    ],
     "participating_experts": 5,
     "last_updated": "2023-05-15T21:59:31.488Z",
     "expiration_date": null,
@@ -1599,6 +1712,7 @@
     "submitted_reports_count": 5,
     "upvotes_count": 2224,
     "bookmarked_count": 23,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -1617,6 +1731,7 @@
     "submitted_reports_count": 23,
     "upvotes_count": 1981,
     "bookmarked_count": 26,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1636,6 +1751,7 @@
     "submitted_reports_count": 9,
     "upvotes_count": 3704,
     "bookmarked_count": 17,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1654,6 +1770,7 @@
     "submitted_reports_count": 19,
     "upvotes_count": 2667,
     "bookmarked_count": 56,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-2.png"
   },
   {
@@ -1672,6 +1789,7 @@
     "submitted_reports_count": 15,
     "upvotes_count": 447,
     "bookmarked_count": 23,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1691,6 +1809,7 @@
     "submitted_reports_count": 4,
     "upvotes_count": 3930,
     "bookmarked_count": 30,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1710,6 +1829,7 @@
     "submitted_reports_count": 18,
     "upvotes_count": 3202,
     "bookmarked_count": 15,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-1.png"
   },
   {
@@ -1728,6 +1848,7 @@
     "submitted_reports_count": 13,
     "upvotes_count": 3890,
     "bookmarked_count": 17,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   },
   {
@@ -1747,6 +1868,7 @@
     "submitted_reports_count": 10,
     "upvotes_count": 1419,
     "bookmarked_count": 52,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1766,6 +1888,7 @@
     "submitted_reports_count": 13,
     "upvotes_count": 3029,
     "bookmarked_count": 45,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1785,6 +1908,7 @@
     "submitted_reports_count": 14,
     "upvotes_count": 3188,
     "bookmarked_count": 6,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-3.png"
   },
   {
@@ -1805,6 +1929,7 @@
     "submitted_reports_count": 14,
     "upvotes_count": 2083,
     "bookmarked_count": 23,
+    "is_bookmarked": false,
     "logo": "/__MOCK/images/company-5.png"
   },
   {
@@ -1825,6 +1950,7 @@
     "submitted_reports_count": 24,
     "upvotes_count": 881,
     "bookmarked_count": 9,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-4.png"
   },
   {
@@ -1845,6 +1971,7 @@
     "submitted_reports_count": 0,
     "upvotes_count": 2129,
     "bookmarked_count": 25,
+    "is_bookmarked": true,
     "logo": "/__MOCK/images/company-6.png"
   }
 ]

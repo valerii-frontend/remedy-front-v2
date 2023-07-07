@@ -49,12 +49,11 @@ body {
 }
 
 .Global__app-content-max-width {
-  max-width: var(--remedy-Global--app-content-max-width);
+  max-width: var(--remedy-Global--UserContainer-max-width);
   margin: 0 auto;
 }
 
-// TODO: fix
-//.Global__no-scroll {
-//  overflow: hidden;
-//  padding-right: var(--remedy-Global--scrollbar-width);
-//}
+.Global__no-scroll {
+  overflow: hidden;
+  padding-right: var(--remedy-Global--scrollbar-width);
+}

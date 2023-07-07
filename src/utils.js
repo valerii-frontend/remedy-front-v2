@@ -45,3 +45,24 @@ export function parseLocationSearch(locationSearch){
     }
   }));
 }
+
+
+export function getScrollbarWidth() {
+  const scrollableElement = document.createElement('div');
+  scrollableElement.style.width = '100px';
+  scrollableElement.style.height = '100px';
+  scrollableElement.style.overflow = 'scroll';
+  scrollableElement.style.position = 'absolute';
+  scrollableElement.style.top = '-9999px';
+  document.body.appendChild(scrollableElement);
+
+  const scrollbarWidth = scrollableElement.offsetWidth - scrollableElement.clientWidth;
+
+  document.body.removeChild(scrollableElement);
+  return scrollbarWidth;
+}
+
+
+export function setRootCSSVariable(key, value) {
+  document.documentElement.style.setProperty(key, value);
+}

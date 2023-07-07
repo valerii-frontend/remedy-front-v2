@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import cn from 'classnames';
 import { UserContainer } from '../User/UserContainer.jsx';
 import { formatDate, formatSum, inflect, parseLocationSearch } from '../../utils.js';
 import { UIDropdown } from '../UI/UIDropdown.jsx';
@@ -35,6 +36,7 @@ export function ProgramList(){
     return fetch('/__MOCK/programs.json')
       .then(res => res.json())
       .then(programs => {
+        window.__programs = programs;
         return programs.sort(() => Math.random() - 0.5);
       });
   }
@@ -96,7 +98,10 @@ export function ProgramList(){
 
           <ul className="Programs__list">
             {programs.map(program => (
-              <li className="Programs__item" key={program.public_id}>
+              <li key={program.public_id} className={cn({
+                'Programs__item': true,
+                'Programs__item--bookmarked': program.is_bookmarked,
+              })}>
                 <Link className="Programs__item-link" to={'/programs/' + program.public_id}>
                   <div className="Programs__item-logo">
                     <img
@@ -112,7 +117,7 @@ export function ProgramList(){
                       <div className="Programs__item-info">
                         <h3 className="Programs__item-title">
                           {program.company_name}
-                          <span>{formatSum(program.reward)}</span>
+                          <span className="Programs__item-title-reward">{formatSum(program.reward)}</span>
                         </h3>
                         <div className="Programs__item-description">
                           {program.program_name}
@@ -124,13 +129,13 @@ export function ProgramList(){
                     </div>
 
                     <ul className="Programs__item-secondary">
-                      <li className="Programs__item-secondary-item">
+                      <li className="Programs__item-secondary-item me-auto">
                         <span className="Programs__item-secondary-title">Type</span>
                         <span className="Programs__item-secondary-value">
                           {program.type.join(', ')}
                         </span>
                       </li>
-                      <li className="Programs__item-secondary-item ms-auto">
+                      <li className="Programs__item-secondary-item">
                         <span className="Programs__item-secondary-title">Participating experts</span>
                         <span className="Programs__item-secondary-value">{program.participating_experts}</span>
                       </li>
@@ -146,13 +151,14 @@ export function ProgramList(){
                   </div>
 
                   <div className="Programs__item-actions">
-                    <span className="Programs__item-actions-item Programs__item-actions-item--view">
+                    <span className="Programs__item-actions-item Programs__item-actions-item--view" title="View program">
                       View
                     </span>
-                    <span className="Programs__item-actions-item Programs__item-actions-item--upvote">
+                    <span className="Programs__item-actions-item Programs__item-actions-item--upvote" title="Upvote program">
                       Upvote
                     </span>
-                    <span className="Programs__item-actions-item Programs__item-actions-item--bookmark">
+                    <span className="Programs__item-actions-item Programs__item-actions-item--bookmark"
+                      title={program.is_bookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}>
                       Bookmark
                     </span>
                   </div>

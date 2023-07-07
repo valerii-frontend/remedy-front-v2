@@ -116,36 +116,150 @@
   margin: 1.6rem 0;
 }
 
-.Programs__list {}
+.Programs__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 .Programs__item {
-  background: $remedy-Global--color-dark-3;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
   margin-bottom: 1.6rem;
+  filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.05));
 }
 
 .Programs__item-link {
+  display: flex;
+  background: $remedy-Global--color-dark-3;
   color: $remedy-Global--color-white;
   text-decoration: none;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
 }
 
-.Programs__item-logo {}
-.Programs__item-logo-img {}
-.Programs__item-content {}
-.Programs__item-primary {}
-.Programs__item-info {}
-.Programs__item-title {}
-.Programs__item-title-reward {}
-.Programs__item-description {}
+.Programs__item-logo {
+  margin: 1.6rem;
+}
+
+.Programs__item-logo-img {
+  width: 7.2rem;
+  height: 7.2rem;
+  object-fit: cover;
+}
+
+.Programs__item-content {
+  flex-grow: 1;
+}
+
+.Programs__item-primary {
+  display: flex;
+  align-items: center;
+  margin: 1.6rem 0;
+}
+
+.Programs__item-info {
+  flex-grow: 1;
+}
+
+.Programs__item-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding-top: 0.3rem;
+}
+
+.Programs__item-title-reward {
+  color: $remedy-Global--color-green;
+  margin-left: 1.6rem;
+}
+
+.Programs__item-description {
+  font-size: 2rem;
+  color: $remedy-Global--color-gray;
+}
+
 .Programs__item-cta {}
-.Programs__item-secondary {}
-.Programs__item-secondary-item {}
-.Programs__item-secondary-title {}
+
+.Programs__item-secondary {
+  margin: 0;
+  padding: 1.6rem 0;
+  list-style: none;
+  display: flex;
+  font-size: 1.4rem;
+  border-top: 1px solid #2C2C2C;
+}
+
+.Programs__item-secondary-item {
+  margin: 0 0 0 2.4rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.Programs__item-secondary-title {
+  color: $remedy-Global--color-gray;
+  margin-right: 0.8rem;
+  font-weight: 500;
+}
+
 .Programs__item-secondary-value {}
-.Programs__item-actions {}
+
+.Programs__item-actions {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px 0 rgba($remedy-Global--color-green, 0.05);
+  margin-left: 1.6rem;
+  padding: 0 0.4rem;
+}
 
 .Programs__item-actions-item {
-  &--view {}
-  &--upvote {}
-  &--bookmark {}
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-top: 1.4rem;
+  cursor: pointer;
+  text-indent: -100rem;
+  overflow: hidden;
+  transition: background-color 150ms;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: {
+      position: center;
+      repeat: no-repeat;
+    };
+  }
+
+  &:hover {
+    background-color: $remedy-Global--color-green;
+
+    &:after {
+      filter: brightness(0);
+    }
+  }
+
+  &--view:after {
+    background-image: url('../../assets/images/icon-program-view.svg');
+    background-size: 1.6rem;
+  }
+
+  &--upvote:after {
+    background-image: url('../../assets/images/icon-program-upvote.svg');
+    background-size: 1.6rem;
+  }
+
+  &--bookmark:after {
+    background-image: url('../../assets/images/icon-program-bookmark.svg');
+    background-size: 1.4rem;
+    background-position-x: 55%;
+
+    .Programs__item--bookmarked & {
+      background-position-x: 50%;
+      background-image: url('../../assets/images/icon-program-bookmarked.svg');
+      background-size: 1.2rem;
+    }
+  }
 }
