@@ -69,15 +69,16 @@ export const UIDropdown = (props) => {
         setIsMenuOpen(false);
       }
     }
-
     document.addEventListener('click', onBodyClick);
     return () => {
       document.removeEventListener('click', onBodyClick);
     };
-  }, []);
+  }, [isMenuOpen]);
 
 
+  /* Dropdown key events */
   useEffect(() => {
+
     function onEnterOrSpacePress(e){
       if (isMenuOpen) {
         e.preventDefault();
@@ -165,6 +166,7 @@ export const UIDropdown = (props) => {
     const isItemActive = selectedItem?.title === item.title;
     const itemInnerProps = {
       className: 'UIDropdown__inner',
+      tabIndex: -1,
       onClick: (e) => onItemClick(e, item, onClick),
       onMouseEnter: () => onItemMouseEnter(index),
     };
@@ -184,11 +186,15 @@ export const UIDropdown = (props) => {
   }
 
   return (
-    <div tabIndex={0} ref={containerRef} className={cn({
-      'UIDropdown': true,
-      'UIDropdown--open': isMenuOpen,
-      [className]: Boolean(className),
-    })}>
+    <div
+      className={cn({
+        'UIDropdown': true,
+        'UIDropdown--open': isMenuOpen,
+        [className]: Boolean(className),
+      })}
+      onBlur={() => setIsMenuOpen(false)}
+      tabIndex={0}
+      ref={containerRef}>
 
       {renderTitle
         ? <span ref={buttonRef} onClick={onButtonClick}>{renderTitle()}</span>

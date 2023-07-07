@@ -56,7 +56,7 @@ export function UserHeader(){
           })}/>
         )}
       >
-        Notifications menu has not yet been implemented
+        Notifications has&nbsp;not&nbsp;yet&nbsp;been implemented
       </UIDropdown>
 
     </div>
