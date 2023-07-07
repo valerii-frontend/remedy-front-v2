@@ -119,7 +119,6 @@
 }
 
 
-// TODO: fix
-//@mixin remedy-default-focus-outline(){
-//  outline: 5px auto -webkit-focus-ring-color;
-//}
+@mixin remedy-default-focus-outline(){
+  outline: 5px auto -webkit-focus-ring-color;
+}

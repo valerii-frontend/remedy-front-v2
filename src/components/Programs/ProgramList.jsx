@@ -101,14 +101,16 @@ export function ProgramList(){
                 'Programs__item': true,
                 'Programs__item--bookmarked': program.is_bookmarked,
               })}>
-                <Link className="Programs__item-link" to={'/programs/' + program.public_id}>
+                <span className="Programs__item-inner">
+                  <Link className="Programs__item-link" to={'/programs/' + program.public_id}/>
+
                   <div className="Programs__item-logo">
                     <img
                       className="Programs__item-logo-img"
                       src={program.logo}
                       alt={program.company_name}
-                      width="60"
-                      height="60"/>
+                      width="72"
+                      height="72"/>
                   </div>
 
                   <div className="Programs__item-content">
@@ -122,46 +124,50 @@ export function ProgramList(){
                           {program.program_name}
                         </div>
                       </div>
-                      <button className="Programs__item-cta UIButton UIButton--green">
+                      <Link className="Programs__item-cta UIButton UIButton--green"
+                        to={'/programs/' + program.public_id + '/submit-bug'}>
                         Submit a bug
-                      </button>
+                      </Link>
                     </div>
 
                     <ul className="Programs__item-secondary">
                       <li className="Programs__item-secondary-item me-auto">
                         <span className="Programs__item-secondary-title">Type</span>
-                        <span className="Programs__item-secondary-value">
-                          {program.type.join(', ')}
-                        </span>
+                        {program.type.join(', ')}
                       </li>
                       <li className="Programs__item-secondary-item">
                         <span className="Programs__item-secondary-title">Participating experts</span>
-                        <span className="Programs__item-secondary-value">{program.participating_experts}</span>
+                        {program.participating_experts}
                       </li>
                       <li className="Programs__item-secondary-item">
                         <span className="Programs__item-secondary-title">Last updated</span>
-                        <span className="Programs__item-secondary-value">{formatDate(program.last_updated)}</span>
+                        {formatDate(program.last_updated)}
                       </li>
                       <li className="Programs__item-secondary-item">
                         <span className="Programs__item-secondary-title">Expiration date</span>
-                        <span className="Programs__item-secondary-value">{formatDate(program.expiration_date)}</span>
+                        {formatDate(program.expiration_date)}
                       </li>
                     </ul>
                   </div>
 
                   <div className="Programs__item-actions">
-                    <span className="Programs__item-actions-item Programs__item-actions-item--view" title="View program">
+                    <Link className="Programs__item-actions-item Programs__item-actions-item--view"
+                      to={'/programs/' + program.public_id}
+                      title="View program">
                       View
-                    </span>
-                    <span className="Programs__item-actions-item Programs__item-actions-item--upvote" title="Upvote program">
+                    </Link>
+                    <span className="Programs__item-actions-item Programs__item-actions-item--upvote"
+                      title="Upvote program"
+                      tabIndex={0}>
                       Upvote
                     </span>
                     <span className="Programs__item-actions-item Programs__item-actions-item--bookmark"
-                      title={program.is_bookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}>
+                      title={program.is_bookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
+                      tabIndex={0}>
                       Bookmark
                     </span>
                   </div>
-                </Link>
+                </span>
               </li>
             ))}
           </ul>

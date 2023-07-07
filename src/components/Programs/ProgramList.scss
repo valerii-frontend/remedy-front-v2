@@ -43,6 +43,10 @@
     box-shadow: none !important;
   }
 
+  &:focus {
+    position: relative;
+  }
+
   &.active,
   &.active:hover {
     box-shadow: inset 0 0 0 2px $remedy-Global--color-green !important;
@@ -123,16 +127,45 @@
 }
 
 .Programs__item {
+  position: relative;
   margin-bottom: 1.6rem;
   filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.05));
+  transition: filter 150ms;
+
+  &:has(.Programs__item-link:hover) {
+    filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.1));
+  }
+
+  &:has(.Programs__item-link:focus) {
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      @include remedy-default-focus-outline();
+    }
+  }
 }
 
-.Programs__item-link {
+.Programs__item-inner {
   display: flex;
   background: $remedy-Global--color-dark-3;
   color: $remedy-Global--color-white;
   text-decoration: none;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+}
+
+.Programs__item-link {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .Programs__item-logo {
@@ -175,7 +208,10 @@
   color: $remedy-Global--color-gray;
 }
 
-.Programs__item-cta {}
+.Programs__item-cta {
+  position: relative;
+  z-index: 2;
+}
 
 .Programs__item-secondary {
   margin: 0;
@@ -200,8 +236,6 @@
   font-weight: 500;
 }
 
-.Programs__item-secondary-value {}
-
 .Programs__item-actions {
   display: flex;
   flex-direction: column;
@@ -219,6 +253,7 @@
   overflow: hidden;
   transition: background-color 150ms;
   position: relative;
+  z-index: 2;
 
   &:after {
     content: '';
