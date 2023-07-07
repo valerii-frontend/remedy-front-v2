@@ -82,9 +82,8 @@ export function ProgramList(){
               <input className="Programs__toolbar-search-input UIInput" type="search" placeholder="Search for programs"/>
             </div>
             <UIDropdown
-              title={currentSort?.title}
-              placeholder="Sort by"
               className="Programs__toolbar-sort"
+              title={currentSort?.title}
               items={sortOptions}
               selectedItem={currentSort}
             />

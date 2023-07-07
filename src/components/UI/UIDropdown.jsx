@@ -34,7 +34,6 @@ import './UIDropdown.scss';
  * @param {string} [props.classNameList] - The CSS class for the dropdown.
  * @param {string|ReactNode} props.title - The button text title or component.
  * @param {Function} props.renderTitle - The function to render button title (overrides default dropdown button CSS).
- * @param {string} props.placeholder - The button placeholder (displayed when there's no title).
  * @param {UIDropdownItem[]} [props.items] - The items to be displayed in the dropdown.
  * @param {UIDropdownItem} [props.selectedItem] - The selected item (will be highlighted in the dropdown).
  * @param {ReactNode} [props.children] - The child elements of the dropdown (to be used instead of <props.items>).
@@ -51,7 +50,6 @@ export const UIDropdown = (props) => {
     classNameList,
     title,
     renderTitle,
-    placeholder, // TODO: clarify the UX
     items,
     selectedItem,
     children,
@@ -87,11 +85,9 @@ export const UIDropdown = (props) => {
         if (hoveredItem) {
           onItemClick(e, hoveredItem, hoveredItem.onClick);
           hoveredItem.linkTo && navigate(hoveredItem.linkTo);
-          setIsMenuOpen(false);
         }
-        else {
-          setIsMenuOpen(false);
-        }
+        setIsMenuOpen(false);
+        containerRef.current.blur();
       }
 
       const isDropdownFocused = containerRef.current === document.activeElement;
@@ -113,6 +109,7 @@ export const UIDropdown = (props) => {
     function onEscapePress(e){
       e.preventDefault();
       setIsMenuOpen(false);
+      containerRef.current.blur();
     }
 
     function onBodyKeyPress(e){
@@ -207,7 +204,7 @@ export const UIDropdown = (props) => {
             })}
             onClick={onButtonClick}
             ref={buttonRef}>
-            {title || placeholder}
+            {title}
           </span>
         )
       }

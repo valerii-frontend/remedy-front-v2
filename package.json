@@ -5,7 +5,7 @@
   "scripts": {
     "start": "./bin/dev.sh",
     "build": "./bin/build.sh",
-    "deploy": "./bin/deploy.sh"
+    "deploy": "vercel --prod"
   },
   "author": "",
   "license": "ISC",

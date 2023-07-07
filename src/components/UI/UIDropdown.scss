@@ -5,6 +5,10 @@
   position: relative;
   font-family: var(--remedy-Global--font-text);
   font-weight: 500;
+
+  &--open {
+    outline: none;
+  }
 }
 
 .UIDropdown__button {

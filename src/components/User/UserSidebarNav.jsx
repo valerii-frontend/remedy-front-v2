@@ -31,20 +31,6 @@ export function UserSidebarNav(){
           </AuthRequiredLink>
         </li>
       </ul>
-
-      {/*TODO: remove*/}
-      <pre hidden>
-        Debug:
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-        </ul>
-      </pre>
-
     </div>
   );
 }

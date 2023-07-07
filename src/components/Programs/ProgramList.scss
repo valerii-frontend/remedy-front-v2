@@ -28,6 +28,7 @@
 
 .Programs__header-actions {
   margin-left: auto;
+  padding-left: 2rem;
 }
 
 .Programs__tabs {
@@ -36,7 +37,7 @@
 }
 
 .Programs__tabs-item {
-  width: 50%;
+  flex-grow: 1;
   text-align: center;
 
   &:hover {

@@ -53,7 +53,7 @@ $remedy-Global--color-green: #6AFFAF;
   /*  Block sizes */
   --remedy-Global--UserHeader-height: 7rem;
   --remedy-Global--UserSidebarNav-width: 24rem;
-  --remedy-Global--UserContainer-max-width: 1400px; // TODO: check other resolutions, change?
+  --remedy-Global--UserContainer-max-width: 1400px;
 
   /* Dynamically updated in JavaScript */
   --remedy-Global--scrollbar-width: 15px; // Dynamically updated in src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
