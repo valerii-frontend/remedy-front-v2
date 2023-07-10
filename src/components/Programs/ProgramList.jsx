@@ -129,27 +129,30 @@ export function ProgramList(){
                       </Link>
                     </div>
 
-                    <ul className="Programs__item-secondary">
-                      <li className="Programs__item-secondary-item">
+                    <div className="Programs__item-secondary">
+                      <div className="Programs__item-secondary-initial" title={program.type.join(', ')}>
                         <span className="Programs__item-secondary-title">Type</span>
                         {program.type.join(', ')}
-                      </li>
-                      <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Participating experts</span>
-                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Participants</span>
-                        {program.participating_experts}
-                      </li>
-                      <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Last updated</span>
-                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Updated</span>
-                        {formatDate(program.last_updated)}
-                      </li>
-                      <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Expiration date</span>
-                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Expiring</span>
-                        {formatDate(program.expiration_date)}
-                      </li>
-                    </ul>
+                      </div>
+                      <ul className="Programs__item-secondary-list">
+                        <li className="Programs__item-secondary-item">
+                          <span className="Programs__item-secondary-title d-none d-xxl-inline">Participating experts</span>
+                          <span className="Programs__item-secondary-title d-inline d-xxl-none">Participants</span>
+                          {program.participating_experts}
+                        </li>
+                        <li className="Programs__item-secondary-item">
+                          <span className="Programs__item-secondary-title d-none d-xxl-inline">Last updated</span>
+                          <span className="Programs__item-secondary-title d-inline d-xxl-none">Updated</span>
+                          {formatDate(program.last_updated)}
+                        </li>
+                        <li className="Programs__item-secondary-item">
+                          <span className="Programs__item-secondary-title d-none d-xxl-inline">Expiration date</span>
+                          <span className="Programs__item-secondary-title d-inline d-xxl-none">Expiring</span>
+                          {formatDate(program.expiration_date)}
+                        </li>
+                      </ul>
+                    </div>
+
                   </div>
 
                   <div className="Programs__item-actions">

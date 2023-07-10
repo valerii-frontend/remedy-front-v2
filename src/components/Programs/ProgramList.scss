@@ -169,6 +169,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  pointer-events: none; // TODO: remove
 }
 
 .Programs__item-logo {
@@ -217,36 +219,47 @@
 }
 
 .Programs__item-secondary {
-  margin: 0;
   padding: 1.6rem 0;
-  list-style: none;
-  display: flex;
   font-size: 1.4rem;
   border-top: 1px solid #2C2C2C;
+  position: relative;
+}
+
+.Programs__item-secondary-initial {
+  position: absolute;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.Programs__item-secondary-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Programs__item-secondary-item {
-  margin: 0 0 0 2.4rem;
+  padding: 0 0 0 2.4rem;
+  margin: 0;
+  display: inline-block;
+  background: $remedy-Global--color-dark-3;
 
   &:first-child {
-    margin-left: 0;
-    margin-right: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    padding-left: 0;
+    position: relative;
 
-  @include remedy-media-query(md, Infinity) {
-    margin: 0 0 0 1rem;
-
-    &:first-child {
-      max-width: 42%;
-    }
-  }
-
-  @include remedy-media-query(lg, Infinity) {
-    &:first-child {
-      max-width: 30%;
+    &:before {
+      content: '';
+      width: 5rem;
+      position: absolute;
+      left: -5rem;
+      top: -0.5rem;
+      bottom: -0.5rem;
+      background: linear-gradient(to right, rgba($remedy-Global--color-dark-3, 0) 0%, $remedy-Global--color-dark-3 70%);
     }
   }
 }
