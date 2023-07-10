@@ -2,9 +2,19 @@
 @import '../../styles/mixins';
 
 .UserContainer {
-  padding-top: var(--remedy-Global--UserHeader-height);
+  display: flex;
+}
+
+.UserContainer__sidebar {
+  width: 24rem;
 }
 
 .UserContainer__main {
-  padding-left: var(--remedy-Global--UserSidebarNav-width);
+  flex-grow: 1;
+}
+
+.UserContainer__header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }

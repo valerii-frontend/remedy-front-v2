@@ -5,6 +5,7 @@
 .UIInput {
   background: $remedy-Global--color-dark-3;
   border: 0;
+  border-radius: 0 !important;
   outline: 1px solid rgba($remedy-Global--color-white, 0.06);
   outline-offset: 0;
   color: $remedy-Global--color-white;
@@ -14,6 +15,7 @@
   line-height: 1.8rem;
   font-family: var(--remedy-Global--font-text);
   transition: outline-color 200ms;
+  -webkit-appearance: none;
 
   &:focus {
     outline-color: rgba($remedy-Global--color-white, 0.18);

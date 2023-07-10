@@ -147,6 +147,12 @@ export const UIDropdown = (props) => {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  function onContainerBlur(e) {
+    if (e.target === containerRef.current) {
+      setTimeout(() => setIsMenuOpen(false), 100);
+    }
+  }
+
   function onItemClick(e, item, onClick){
     onChange && onChange(item);
     onClick && onClick(e, item);
@@ -188,7 +194,7 @@ export const UIDropdown = (props) => {
         'UIDropdown--open': isMenuOpen,
         [className]: Boolean(className),
       })}
-      onBlur={() => setTimeout(() => setIsMenuOpen(false), 100)}
+      onBlur={onContainerBlur}
       tabIndex={0}
       ref={containerRef}>
 

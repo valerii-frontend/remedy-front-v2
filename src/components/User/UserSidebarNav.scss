@@ -2,14 +2,13 @@
 @import '../../styles/mixins';
 
 .UserSidebarNav {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: var(--remedy-Global--UserSidebarNav-width);
   background: $remedy-Global--color-dark-2;
   box-shadow: 0 8px 16px rgba(106, 255, 175, 0.05);
+}
+
+.UserSidebarNav__inner {
+  position: sticky;
+  top: 0;
 }
 
 .UserSidebarNav__logo {

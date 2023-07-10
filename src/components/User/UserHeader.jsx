@@ -7,11 +7,14 @@ import { UIDropdown } from '../UI/UIDropdown.jsx';
 import './UserHeader.scss';
 
 
-export function UserHeader(){
+export function UserHeader({ className }){
   const { user, logOut } = useContext(AuthUserContext);
 
   return (
-    <div className="UserHeader">
+    <div className={cn({
+      'UserHeader': true,
+      [className]: Boolean(className),
+    })}>
 
       <AuthRequiredLink className="UserHeader__user" to="/profile">
         <img
