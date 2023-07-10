@@ -6,4 +6,4 @@ mkdir -p dist
 rm -rf dist/__MOCK
 cp -r src/__MOCK dist
 
-parcel build index.html
+parcel build index.html --no-cache

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "./bin/dev.sh",
     "build": "./bin/build.sh",
-    "deploy": "vercel --prod"
+    "deploy": "./bin/deploy.sh"
   },
   "browserslist": [
     "since 2016"
