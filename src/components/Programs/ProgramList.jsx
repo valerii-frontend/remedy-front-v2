@@ -13,14 +13,12 @@ export function ProgramList(){
   const location = useLocation();
 
   const sortOptions = [
-    { value: 'sort1', title: 'Company name (A-Z)', linkTo: '/programs?sort=sort1' },
-    { value: 'sort2', title: 'Company name (Z-A)', linkTo: '/programs?sort=sort2' },
-    { value: 'sort3', title: 'Type (A-Z)', linkTo: '/programs?sort=sort3' },
-    { value: 'sort4', title: 'Type (Z-A)', linkTo: '/programs?sort=sort4' },
-    { value: null, title: 'Budget (Ascending-Descending)', linkTo: '/programs' },
-    { value: 'sort6', title: 'Budget (Descending-Ascending)', linkTo: '/programs?sort=sort6' },
-    { value: 'sort7', title: 'Expiration date (Soonest - Latest)', linkTo: '/programs?sort=sort7' },
-    { value: 'sort8', title: 'Expiration date (Latest - Soonest)', linkTo: '/programs?sort=sort8' },
+    { value: null, title: 'Launch date (Newest-first)', linkTo: '/programs' },
+    { value: 'sort2', title: 'Launch date (Oldest-first)', linkTo: '/programs?sort=sort2' },
+    { value: 'sort3', title: 'Payout (Ascending-Descending)', linkTo: '/programs?sort=sort3' },
+    { value: 'sort4', title: 'Payout (Descending-Ascending)', linkTo: '/programs?sort=sort4' },
+    { value: 'sort5', title: 'Expiration date (Soonest - Latest)', linkTo: '/programs?sort=sort5' },
+    { value: 'sort6', title: 'Expiration date (Latest - Soonest)', linkTo: '/programs?sort=sort6' },
   ];
 
   useEffect(() => {

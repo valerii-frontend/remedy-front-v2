@@ -72,6 +72,7 @@
   background: $remedy-Global--color-dark-3;
   outline: 1px solid $remedy-Global--color-green;
   outline-offset: 0;
+  box-shadow: 0 4px 16px 0 rgba(#000000, 0.1);
 
   .UIDropdown--open & {
     display: block;
