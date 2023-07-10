@@ -135,8 +135,10 @@
   filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.05));
   transition: filter 150ms;
 
-  &:has(.Programs__item-link:hover) {
-    filter: drop-shadow(0 8px 16px rgba($remedy-Global--color-green, 0.1));
+  &:has(.Programs__item-link:active) {
+    &:before {
+      outline: none !important;
+    }
   }
 
   &:has(.Programs__item-link:focus) {
@@ -169,8 +171,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-
-  pointer-events: none; // TODO: remove
 }
 
 .Programs__item-logo {
@@ -195,6 +195,7 @@
 
 .Programs__item-info {
   flex-grow: 1;
+  padding-right: 2rem;
 }
 
 .Programs__item-title {
@@ -216,6 +217,7 @@
 .Programs__item-cta {
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .Programs__item-secondary {

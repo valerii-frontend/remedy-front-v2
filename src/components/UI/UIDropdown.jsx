@@ -76,7 +76,6 @@ export const UIDropdown = (props) => {
 
   /* Dropdown key events */
   useEffect(() => {
-
     function onEnterOrSpacePress(e){
       if (isMenuOpen) {
         e.preventDefault();
@@ -189,7 +188,7 @@ export const UIDropdown = (props) => {
         'UIDropdown--open': isMenuOpen,
         [className]: Boolean(className),
       })}
-      onBlur={() => setIsMenuOpen(false)}
+      onBlur={() => setTimeout(() => setIsMenuOpen(false), 100)}
       tabIndex={0}
       ref={containerRef}>
 

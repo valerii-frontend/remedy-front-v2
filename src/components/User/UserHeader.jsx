@@ -52,7 +52,7 @@ export function UserHeader(){
           <i className={cn({
             'UserHeader__icon': true,
             'UserHeader__notifications-icon': true,
-            'UserHeader__notifications-icon--unread': true, // TODO: fix
+            'UserHeader__notifications-icon--unread': true,
           })}/>
         )}
       >
