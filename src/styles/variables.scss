@@ -20,14 +20,18 @@ $remedy-Global--color-green: #6AFFAF;
   /*
     Responsive font size (also @see src/styles/bootstrap-customization.scss)
   */
-  --remedy-Global--font-size: 10px; // 0-1200px
+  --remedy-Global--font-size: 8px; // 0-1200px
+
+  @include remedy-media-query(md, Infinity) { // 992px-1200px
+    --remedy-Global--font-size: 8px;
+  }
 
   @include remedy-media-query(lg, Infinity) { // 992px-1200px
-    --remedy-Global--font-size: 10px;
+    --remedy-Global--font-size: 9px;
   }
 
   @include remedy-media-query(xl, Infinity) { // 1200-1400px
-    --remedy-Global--font-size: 10px;
+    --remedy-Global--font-size: 9px;
   }
 
   @include remedy-media-query(xxl, Infinity) { // 1400-1900px
@@ -46,7 +50,7 @@ $remedy-Global--color-green: #6AFFAF;
   }
 
   @include remedy-media-query(xxxl, Infinity) { // 1900px+
-    --remedy-Global--font-size: 10px;
+    --remedy-Global--font-size: 11px;
   }
 
 
@@ -56,5 +60,5 @@ $remedy-Global--color-green: #6AFFAF;
   --remedy-Global--UserContainer-max-width: 1400px;
 
   /* Dynamically updated in JavaScript */
-  --remedy-Global--scrollbar-width: 15px; // Dynamically updated in src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
+  --remedy-Global--scrollbar-width: 15px; // @see src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
 }

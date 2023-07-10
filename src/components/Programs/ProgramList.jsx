@@ -130,20 +130,23 @@ export function ProgramList(){
                     </div>
 
                     <ul className="Programs__item-secondary">
-                      <li className="Programs__item-secondary-item me-auto">
+                      <li className="Programs__item-secondary-item">
                         <span className="Programs__item-secondary-title">Type</span>
                         {program.type.join(', ')}
                       </li>
                       <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title">Participating experts</span>
+                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Participating experts</span>
+                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Participants</span>
                         {program.participating_experts}
                       </li>
                       <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title">Last updated</span>
+                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Last updated</span>
+                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Updated</span>
                         {formatDate(program.last_updated)}
                       </li>
                       <li className="Programs__item-secondary-item">
-                        <span className="Programs__item-secondary-title">Expiration date</span>
+                        <span className="Programs__item-secondary-title d-none d-xxl-inline">Expiration date</span>
+                        <span className="Programs__item-secondary-title d-inline d-xxl-none">Expiring</span>
                         {formatDate(program.expiration_date)}
                       </li>
                     </ul>
