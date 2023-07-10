@@ -33,7 +33,7 @@
 }
 
 .UserHeader__user-info {
-  max-width: 30rem;
+  max-width: 25rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -116,6 +116,13 @@
 .UserHeader__search-input {
   width: 38.5rem;
   padding-left: 4.8rem !important;
+
+  @include remedy-media-query(lg, Infinity) {
+    width: 30rem;
+  }
+  @include remedy-media-query(xl, Infinity) {
+    width: 38.5rem;
+  }
 }
 
 .UserHeader__notifications {
