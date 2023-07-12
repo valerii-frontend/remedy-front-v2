@@ -16,7 +16,7 @@ export function UserSidebarNav({ className }){
     })}>
       <div className="UserSidebarNav__inner">
         <Link className="UserSidebarNav__logo" to="/">
-          <img className="UserSidebarNav__logo-img" src={logoSrc} alt="Remedy" width="140" height="38"/>
+          <img className="UserSidebarNav__logo-img" src={logoSrc} alt="Remedy" width="140" height="35"/>
         </Link>
 
         <ul className="UserSidebarNav__menu">
