@@ -18,6 +18,7 @@ import { ProgramList } from '../Programs/ProgramList.jsx';
 import { ProgramNew } from '../Programs/ProgramNew.jsx';
 import { ProgramDetails } from '../Programs/ProgramDetails.jsx';
 import { Page404 } from '../Page404/Page404.jsx';
+import { UIStyleGuide } from '../UI/UIStyleGuide.jsx';
 
 import './App.scss';
 
@@ -53,6 +54,7 @@ export function App(){
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<AboutUs/>}/>
+          <Route path="/ui" element={<UIStyleGuide/>}/>
 
           <Route path="/profile" element={checkAuth(<Profile/>)}>
             <Route index element={checkAuth(<Profile/>)}/>

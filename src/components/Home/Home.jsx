@@ -41,7 +41,7 @@ export function Home(){
 
       <div className="mt-4 pt-2">
         No authorization:
-        <ul>
+        <ul className="mb-4">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -51,7 +51,7 @@ export function Home(){
         </ul>
 
         Requires authorization:
-        <ul>
+        <ul className="mb-4">
           <li>
             <AuthRequiredLink to="/profile">
               Profile
@@ -68,6 +68,14 @@ export function Home(){
             </AuthRequiredLink>
           </li>
         </ul>
+
+        UI Elements:
+        <ul className="mb-4">
+          <li>
+            <Link to="/ui">UI Style Guide</Link>
+          </li>
+        </ul>
+
       </div>
     </div>
   );

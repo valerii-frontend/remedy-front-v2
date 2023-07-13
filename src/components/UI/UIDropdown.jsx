@@ -32,6 +32,7 @@ import './UIDropdown.scss';
  * @param {string} [props.className] - The CSS class for the main component.
  * @param {string} [props.classNameButton] - The CSS class for the button.
  * @param {string} [props.classNameList] - The CSS class for the dropdown.
+ * @param {Object} [props.style] - The CSS style for the main component.
  * @param {string|ReactNode} props.title - The button text title or component.
  * @param {Function} props.renderTitle - The function to render button title (overrides default dropdown button CSS).
  * @param {UIDropdownItem[]} [props.items] - The items to be displayed in the dropdown.
@@ -48,6 +49,7 @@ export const UIDropdown = (props) => {
     className,
     classNameButton,
     classNameList,
+    style,
     title,
     renderTitle,
     items,
@@ -194,6 +196,7 @@ export const UIDropdown = (props) => {
         'UIDropdown--open': isMenuOpen,
         [className]: Boolean(className),
       })}
+      style={style}
       onBlur={onContainerBlur}
       tabIndex={0}
       ref={containerRef}>
