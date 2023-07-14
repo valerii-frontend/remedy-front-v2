@@ -76,6 +76,12 @@ export function Home(){
           </li>
         </ul>
 
+        <hr className="my-5"/>
+
+        <h3>
+          <AuthRequiredLink to="/your-code-here">Your code here</AuthRequiredLink>
+        </h3>
+
       </div>
     </div>
   );

@@ -10,9 +10,12 @@ How to use the demo:
 3. You can then proceed to any internal page, e.g. [Programs](https://remedy-front-v2.vercel.app/programs)
 
 
-### CLI
+### How to run locally
 
 ```
+# Install dependencies
+npm install
+
 # Start the project locally on http://localhost:1234
 npm start
 

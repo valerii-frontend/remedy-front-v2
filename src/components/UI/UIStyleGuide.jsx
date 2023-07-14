@@ -58,7 +58,7 @@ export function UIStyleGuide(){
       <pre className="mt-4">
         import &#123; UIDropdown &#125; from '../UI/UIDropdown.jsx';<br/>
         ...<br/>
-        &lt;UIDropdown className="my-custom-class" title="Dropdown title" items=&#123;[]&#125;&gt;&lt;/UIDropdown&gt;
+        &lt;UIDropdown className="my-custom-class" title="Dropdown title" items=&#123;[ &#123;title: "Item 1"&#125;, &#123;title: "Item 2"&#125; ]&#125;&gt;&lt;/UIDropdown&gt;
       </pre>
 
     </div>

@@ -19,6 +19,7 @@ import { ProgramNew } from '../Programs/ProgramNew.jsx';
 import { ProgramDetails } from '../Programs/ProgramDetails.jsx';
 import { Page404 } from '../Page404/Page404.jsx';
 import { UIStyleGuide } from '../UI/UIStyleGuide.jsx';
+import { YourCodeHere } from '../YourCodeHere/YourCodeHere.jsx';
 
 import './App.scss';
 
@@ -56,7 +57,7 @@ export function App(){
           <Route path="/about" element={<AboutUs/>}/>
           <Route path="/ui" element={<UIStyleGuide/>}/>
 
-          <Route path="/profile" element={checkAuth(<Profile/>)}>
+          <Route path="/profile">
             <Route index element={checkAuth(<Profile/>)}/>
             <Route path="settings" element={checkAuth(<Profile/>)}/>
             <Route path="kyc" element={checkAuth(<Profile/>)}/>
@@ -73,6 +74,8 @@ export function App(){
             <Route path="create" element={checkAuth(<ProgramNew/>)}/>
             <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
           </Route>
+
+          <Route path="/your-code-here" element={checkAuth(<YourCodeHere/>)}/>
 
           <Route path="/*" element={<Page404/>}/>
         </Routes>

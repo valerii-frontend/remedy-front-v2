@@ -9,14 +9,14 @@
   div {
     // Covers 576-992px:
     // - from the "sm" breakpoint of 576
-    // - to the entire "md" span (up to the "lg" breakpoint of 992)
+    // - through the entire "md" span (up to the "lg" breakpoint of 992)
     @include remedy-media-query(sm, md) { background: red; }
   }
 
   div {
     // Covers 0-768px:
     // - from zero
-    // - to the entire "sm" span (up to the "md" breakpoint of 768)
+    // - through the entire "sm" span (up to the "md" breakpoint of 768)
     @include remedy-media-query(0, sm) { background: cyan; }
   }
 
