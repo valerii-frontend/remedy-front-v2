@@ -14,10 +14,10 @@
   }
 
   div {
-    // Covers 0-768px:
+    // Covers 0-1400px:
     // - from zero
-    // - through the entire "sm" span (up to the "md" breakpoint of 768)
-    @include remedy-media-query(0, sm) { background: cyan; }
+    // - through the entire "xl" span (up to the "xxl" breakpoint of 1400)
+    @include remedy-media-query(0, xl) { background: cyan; }
   }
 
   div {
@@ -36,9 +36,6 @@
 
 @mixin remedy-media-query($screen-size-from, $screen-size-to) {
 
-  $breakpoint-xs: map-get($grid-breakpoints, xs);
-  $breakpoint-sm: map-get($grid-breakpoints, sm);
-  $breakpoint-md: map-get($grid-breakpoints, md);
   $breakpoint-lg: map-get($grid-breakpoints, lg);
   $breakpoint-xl: map-get($grid-breakpoints, xl);
   $breakpoint-xxl: map-get($grid-breakpoints, xxl);
@@ -51,16 +48,7 @@
   $to: $MAX_VALUE;
 
   @if type_of($screen-size-from) == string {
-    @if $screen-size-from == xs {
-      $from: $MIN_VALUE;
-    }
-    @else if $screen-size-from == sm {
-      $from: $breakpoint-sm;
-    }
-    @else if $screen-size-from == md {
-      $from: $breakpoint-md;
-    }
-    @else if $screen-size-from == lg {
+    @if $screen-size-from == lg {
       $from: $breakpoint-lg;
     }
     @else if $screen-size-from == xl {
@@ -82,16 +70,7 @@
 
 
   @if type_of($screen-size-to) == string {
-    @if $screen-size-to == xs {
-      $to: $breakpoint-sm - 1;
-    }
-    @else if $screen-size-to == sm {
-      $to: $breakpoint-md - 1;
-    }
-    @else if $screen-size-to == md {
-      $to: $breakpoint-lg - 1;
-    }
-    @else if $screen-size-to == lg {
+    @if $screen-size-to == lg {
       $to: $breakpoint-xl - 1;
     }
     @else if $screen-size-to == xl {

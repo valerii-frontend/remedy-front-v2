@@ -12,35 +12,35 @@ export function UIStyleGuide(){
 
       <button className="UIButton UIButton--green">Button</button>
       <pre className="mt-4">
-        &lt;button className="UIButton UIButton--green"&gt;Button&lt;/button&gt;
+        {'<button className="UIButton UIButton--green">Button</button>'}
       </pre>
 
       <hr className="my-5"/>
 
       <button className="UIButton UIButton--green UIButton--sm">Button</button>
       <pre className="mt-4">
-        &lt;button className="UIButton UIButton--green UIButton--sm"&gt;Button&lt;/button&gt;
+        {'<button className="UIButton UIButton--green UIButton--sm">Button</button>'}
       </pre>
 
       <hr className="my-5"/>
 
       <button className="UIButton UIButton--green-outline">Button</button>
       <pre className="mt-4">
-        &lt;button className="UIButton UIButton--green-outline"&gt;Button&lt;/button&gt;
+        {'<button className="UIButton UIButton--green-outline">Button</button>'}
       </pre>
 
       <hr className="my-5"/>
 
       <button className="UIButton UIButton--green-outline UIButton--sm">Button</button>
       <pre className="mt-4">
-        &lt;button className="UIButton UIButton--green-outline UIButton--sm"&gt;Button&lt;/button&gt;
+        {'<button className="UIButton UIButton--green-outline UIButton--sm">Button</button>'}
       </pre>
 
       <hr className="my-5"/>
 
-      <input className="UIInput" type="text" style={{ width: 300 }}/>
+      <input className="UIInput" type="text" placeholder="Placeholder..." style={{ width: 300 }}/>
       <pre className="mt-4">
-        &lt;input className="UIInput" type="text"/&gt;
+        {'<input className="UIInput" type="text" placeholder="Placeholder..."/>'}
       </pre>
 
       <hr className="my-5"/>
@@ -56,9 +56,9 @@ export function UIStyleGuide(){
       </UIDropdown>
 
       <pre className="mt-4">
-        import &#123; UIDropdown &#125; from '../UI/UIDropdown.jsx';<br/>
+        {`import { UIDropdown } from '../UI/UIDropdown.jsx';`}<br/>
         ...<br/>
-        &lt;UIDropdown className="my-custom-class" title="Dropdown title" items=&#123;[ &#123;title: "Item 1"&#125;, &#123;title: "Item 2"&#125; ]&#125;&gt;&lt;/UIDropdown&gt;
+        {`<UIDropdown className="my-custom-class" title="Dropdown title" items={[ {title: "Item 1"}, {title: "Item 2"} ]}></UIDropdown>`}
       </pre>
 
     </div>

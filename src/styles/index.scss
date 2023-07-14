@@ -19,7 +19,7 @@
 @import 'node_modules/bootstrap/scss/grid';
 
 /* Boostrap components */
-@import 'node_modules/bootstrap/scss/buttons';
+//@import 'node_modules/bootstrap/scss/buttons'; // TODO: decide if we want to use Bootstrap elements or just atomic classes
 
 /* Boostrap utilities API (must be placed after the rest of Bootstrap files) */
 @import 'node_modules/bootstrap/scss/utilities/api';
@@ -42,7 +42,7 @@ body {
   background: $remedy-Global--color-dark-1;
   padding: 0;
   margin: 0;
-  min-width: 1000px;
+  min-width: map-get($grid-breakpoints, lg); // 992px
 }
 
 .Global__app-content-max-width {

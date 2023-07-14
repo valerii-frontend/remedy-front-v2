@@ -20,11 +20,7 @@ $remedy-Global--color-green: #6AFFAF;
   /*
     Responsive font size (also @see src/styles/bootstrap-customization.scss)
   */
-  --remedy-Global--font-size: 8px; // 0-1200px
-
-  @include remedy-media-query(md, Infinity) { // 992px-1200px
-    --remedy-Global--font-size: 8px;
-  }
+  --remedy-Global--font-size: 8px; // 0-992px
 
   @include remedy-media-query(lg, Infinity) { // 992px-1200px
     --remedy-Global--font-size: 9px;
