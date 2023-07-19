@@ -67,3 +67,17 @@ export function getScrollbarWidth() {
 export function setRootCSSVariable(key, value) {
   document.documentElement.style.setProperty(key, value);
 }
+
+
+export function fetchGraphQL(query, variables) {
+  return fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: {
+      Authorization: `bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query, variables }),
+  })
+    .then((res) => res.json())
+    .then(json => json.data);
+}
