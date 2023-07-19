@@ -76,6 +76,13 @@ export function Home(){
           </li>
         </ul>
 
+        GraphQL:
+        <ul className="mb-4">
+          <li>
+            <AuthRequiredLink to="/relay">Relay Demo</AuthRequiredLink>
+          </li>
+        </ul>
+
         <hr className="my-5"/>
 
         <h3>

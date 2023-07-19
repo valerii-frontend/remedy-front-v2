@@ -19,6 +19,7 @@ import { ProgramNew } from '../Programs/ProgramNew.jsx';
 import { ProgramDetails } from '../Programs/ProgramDetails.jsx';
 import { Page404 } from '../Page404/Page404.jsx';
 import { UIStyleGuide } from '../UI/UIStyleGuide.jsx';
+import { RelayDemo } from '../RelayDemo/RelayDemo.jsx';
 import { YourCodeHere } from '../YourCodeHere/YourCodeHere.jsx';
 
 import './App.scss';
@@ -75,6 +76,7 @@ export function App(){
             <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
           </Route>
 
+          <Route path="/relay" element={checkAuth(<RelayDemo/>)}/>
           <Route path="/your-code-here" element={checkAuth(<YourCodeHere/>)}/>
 
           <Route path="/*" element={<Page404/>}/>
