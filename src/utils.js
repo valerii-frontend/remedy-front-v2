@@ -67,34 +67,3 @@ export function getScrollbarWidth() {
 export function setRootCSSVariable(key, value) {
   document.documentElement.style.setProperty(key, value);
 }
-
-
-export function fetchGraphQL(query, variables, isTransformedQuery) {
-  query = isTransformedQuery
-    ? query.params.text
-    : query;
-
-  return fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: {
-      Authorization: `bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query, variables }),
-  })
-    .then((res) => res.json())
-    .then(json => {
-      console.warn('__json.data', json, query);
-      // return json.data;
-      return json;
-    });
-}
-
-
-export function graphql(queryParts, ...variables){
-  let str = '';
-  for (let i = 0; i < queryParts.length; i ++) {
-    str += queryParts[i] + (variables[i] || '');
-  }
-  return str;
-}

@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// import { graphql } from 'relay-runtime';
-import { graphql } from '../../utils.js';
-import { RelayEnvironmentProvider, loadQuery } from 'react-relay/hooks';
+import { RelayEnvironmentProvider } from 'react-relay';
 import { RelayEnvironment } from '../../RelayEnvironment.js';
 
 import { AuthUserContext } from '../../context/AuthUserContext.js';
@@ -29,20 +27,6 @@ import { YourCodeHere } from '../YourCodeHere/YourCodeHere.jsx';
 
 import './App.scss';
 
-
-
-export const AppRepositoryInfoQuery = graphql`
-  query AppRepositoryInfoQuery {
-    repository(owner: "egorvinogradov", name: "shell-scripts") {
-      name
-      description
-    }
-  }
-`;
-
-
-const preloadedQuery = loadQuery(RelayEnvironment, AppRepositoryInfoQuery);
-// const preloadedQuery = null;
 
 
 export function App(){
@@ -97,7 +81,7 @@ export function App(){
               <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
             </Route>
 
-            <Route path="/relay" element={checkAuth(<RelayDemo preloadedQuery={preloadedQuery}/>)}/>
+            <Route path="/relay" element={checkAuth(<RelayDemo/>)}/>
             <Route path="/your-code-here" element={checkAuth(<YourCodeHere/>)}/>
 
             <Route path="/*" element={<Page404/>}/>

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d39050d7f967a914f7c869593a5aa591>>
+ * @generated SignedSource<<5cf291a4463c7f42132912f2ead2ea23>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -75,7 +75,7 @@ return {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "RelayDemoRepositoryInfoQuery",
+    "name": "RelayDemoTetrisQuery",
     "selections": [
       {
         "alias": null,
@@ -157,7 +157,7 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "RelayDemoRepositoryInfoQuery",
+    "name": "RelayDemoTetrisQuery",
     "selections": [
       {
         "alias": null,
@@ -245,16 +245,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "3265490123c0b4afc127925459d1929f",
+    "cacheID": "43535c8e64a99a8cf429fe4d4ed9afb5",
     "id": null,
     "metadata": {},
-    "name": "RelayDemoRepositoryInfoQuery",
+    "name": "RelayDemoTetrisQuery",
     "operationKind": "query",
-    "text": "query RelayDemoRepositoryInfoQuery {\n  repository(owner: \"egorvinogradov\", name: \"js-tetris\") {\n    name\n    owner {\n      __typename\n      login\n      id\n    }\n    diskUsage\n    description\n    createdAt\n    repositoryTopics(first: 10) {\n      edges {\n        node {\n          topic {\n            name\n            id\n          }\n          id\n        }\n      }\n    }\n    id\n  }\n}\n"
+    "text": "query RelayDemoTetrisQuery {\n  repository(owner: \"egorvinogradov\", name: \"js-tetris\") {\n    name\n    owner {\n      __typename\n      login\n      id\n    }\n    diskUsage\n    description\n    createdAt\n    repositoryTopics(first: 10) {\n      edges {\n        node {\n          topic {\n            name\n            id\n          }\n          id\n        }\n      }\n    }\n    id\n  }\n}\n"
   }
 };
 })();
 
-node.hash = "38b50abf668e74371193ef2c0f58d9ec";
+node.hash = "2712c255063a54bd6e2cf36b85b5d179";
 
 module.exports = node;

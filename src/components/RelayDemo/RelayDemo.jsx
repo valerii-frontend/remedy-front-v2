@@ -1,21 +1,8 @@
-import React, { useEffect, useState } from 'react';
-
-
-// import graphql from 'babel-plugin-relay/macro';
-import { loadQuery, usePreloadedQuery, useLazyLoadQuery } from 'react-relay/hooks';
-
-// import { graphql, useLazyLoadQuery } from 'react-relay';
-// import { graphql } from 'relay-runtime';
-
-// import { RelayEnvironment } from '../../RelayEnvironment.js';
-
-// import { fetchGraphQL } from '../../utils.js';
-
+import React from 'react';
+import { RelayEnvironment } from '../../RelayEnvironment.js';
+import { graphql, loadQuery, usePreloadedQuery, useLazyLoadQuery } from 'react-relay';
 import { UserContainer } from '../User/UserContainer.jsx';
-
 import './RelayDemo.scss';
-import { AppRepositoryInfoQuery } from '../App/App.jsx';
-import { fetchGraphQL, graphql } from '../../utils.js';
 
 
 /**
@@ -23,10 +10,8 @@ import { fetchGraphQL, graphql } from '../../utils.js';
  */
 
 
-
-
-const RelayDemoRepositoryInfoQuery = graphql`
-  query RelayDemoRepositoryInfoQuery {
+const RelayDemoTetrisQuery = graphql`
+  query RelayDemoTetrisQuery {
     repository(owner: "egorvinogradov", name: "js-tetris") {
       name
       owner {
@@ -49,27 +34,23 @@ const RelayDemoRepositoryInfoQuery = graphql`
 `;
 
 
+const RelayDemoShellQuery = graphql`
+  query RelayDemoShellQuery {
+    repository(owner: "egorvinogradov", name: "shell-scripts") {
+      name
+      description
+    }
+  }
+`;
 
-console.warn('__RelayDemoRepositoryInfoQuery', RelayDemoRepositoryInfoQuery);
-window.__RelayDemoRepositoryInfoQuery = RelayDemoRepositoryInfoQuery;
+
+const preloadedAppRepositoryInfoQuery = loadQuery(RelayEnvironment, RelayDemoShellQuery);
 
 
 
-
-export function RelayDemo(props){
-
-  const { preloadedQuery } = props;
-
-  const dataPreload = usePreloadedQuery(AppRepositoryInfoQuery, preloadedQuery);
-  const dataLazyLoad = useLazyLoadQuery(RelayDemoRepositoryInfoQuery);
-
-  // const [graphQLData, setGraphQLData] = useState(null);
-  // useEffect(() => {
-  //   fetchGraphQL(RelayDemoRepositoryInfoQuery, null, true).then(data => {
-  //     console.error('__data', data);
-  //     setGraphQLData(data);
-  //   });
-  // }, []);
+export function RelayDemo(){
+  const dataPreload = usePreloadedQuery(RelayDemoShellQuery, preloadedAppRepositoryInfoQuery);
+  const dataLazyLoad = useLazyLoadQuery(RelayDemoTetrisQuery);
 
   return (
     <UserContainer>

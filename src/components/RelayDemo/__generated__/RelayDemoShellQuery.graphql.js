@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f75944a4b701cc008b5bb373f0ccb3d6>>
+ * @generated SignedSource<<9049c2373a74bff43aef3dd1331ed417>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -40,7 +40,7 @@ return {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppRepositoryInfoQuery",
+    "name": "RelayDemoShellQuery",
     "selections": [
       {
         "alias": null,
@@ -63,7 +63,7 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "AppRepositoryInfoQuery",
+    "name": "RelayDemoShellQuery",
     "selections": [
       {
         "alias": null,
@@ -88,16 +88,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "d6cc0f8a051c42b29889f09589562863",
+    "cacheID": "4488a16cfba2e0810c70ae8e51dd515d",
     "id": null,
     "metadata": {},
-    "name": "AppRepositoryInfoQuery",
+    "name": "RelayDemoShellQuery",
     "operationKind": "query",
-    "text": "query AppRepositoryInfoQuery {\n  repository(owner: \"egorvinogradov\", name: \"shell-scripts\") {\n    name\n    description\n    id\n  }\n}\n"
+    "text": "query RelayDemoShellQuery {\n  repository(owner: \"egorvinogradov\", name: \"shell-scripts\") {\n    name\n    description\n    id\n  }\n}\n"
   }
 };
 })();
 
-node.hash = "0b4a6f8765ea28d8da2511b3cc330e06";
+node.hash = "52fe02c0a18a4acc0e61e39ba039e245";
 
 module.exports = node;
