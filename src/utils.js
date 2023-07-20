@@ -69,7 +69,11 @@ export function setRootCSSVariable(key, value) {
 }
 
 
-export function fetchGraphQL(query, variables) {
+export function fetchGraphQL(query, variables, isTransformedQuery) {
+  query = isTransformedQuery
+    ? query.params.text
+    : query;
+
   return fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
@@ -79,5 +83,18 @@ export function fetchGraphQL(query, variables) {
     body: JSON.stringify({ query, variables }),
   })
     .then((res) => res.json())
-    .then(json => json.data);
+    .then(json => {
+      console.warn('__json.data', json, query);
+      // return json.data;
+      return json;
+    });
+}
+
+
+export function graphql(queryParts, ...variables){
+  let str = '';
+  for (let i = 0; i < queryParts.length; i ++) {
+    str += queryParts[i] + (variables[i] || '');
+  }
+  return str;
 }

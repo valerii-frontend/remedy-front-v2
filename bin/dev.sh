@@ -6,6 +6,6 @@ mkdir -p dist
 rm -rf dist/__MOCK
 cp -r src/__MOCK dist
 
-relay-compiler
+npm run relay
 
 parcel serve index.html --no-cache

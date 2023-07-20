@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+// import { graphql } from 'relay-runtime';
+import { graphql } from '../../utils.js';
+import { RelayEnvironmentProvider, loadQuery } from 'react-relay/hooks';
+import { RelayEnvironment } from '../../RelayEnvironment.js';
+
 import { AuthUserContext } from '../../context/AuthUserContext.js';
 import { AuthSidebarContext } from '../../context/AuthSidebarContext.js';
 import { useAuthUser } from '../../hooks/useAuthUser.js';
@@ -23,6 +28,21 @@ import { RelayDemo } from '../RelayDemo/RelayDemo.jsx';
 import { YourCodeHere } from '../YourCodeHere/YourCodeHere.jsx';
 
 import './App.scss';
+
+
+
+export const AppRepositoryInfoQuery = graphql`
+  query AppRepositoryInfoQuery {
+    repository(owner: "egorvinogradov", name: "shell-scripts") {
+      name
+      description
+    }
+  }
+`;
+
+
+const preloadedQuery = loadQuery(RelayEnvironment, AppRepositoryInfoQuery);
+// const preloadedQuery = null;
 
 
 export function App(){
@@ -48,41 +68,43 @@ export function App(){
   }
 
   return (
-    <AuthUserContext.Provider value={{ user, isUserBeingFetched, logIn, logOut }}>
-      <AuthSidebarContext.Provider value={{ isAuthSidebarOpen, openAuthSidebar, closeAuthSidebar }}>
+    <RelayEnvironmentProvider environment={RelayEnvironment}>
+      <AuthUserContext.Provider value={{ user, isUserBeingFetched, logIn, logOut }}>
+        <AuthSidebarContext.Provider value={{ isAuthSidebarOpen, openAuthSidebar, closeAuthSidebar }}>
 
-        <AuthSidebar/>
+          <AuthSidebar/>
 
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<AboutUs/>}/>
-          <Route path="/ui" element={<UIStyleGuide/>}/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<AboutUs/>}/>
+            <Route path="/ui" element={<UIStyleGuide/>}/>
 
-          <Route path="/profile">
-            <Route index element={checkAuth(<Profile/>)}/>
-            <Route path="settings" element={checkAuth(<Profile/>)}/>
-            <Route path="kyc" element={checkAuth(<Profile/>)}/>
-          </Route>
+            <Route path="/profile">
+              <Route index element={checkAuth(<Profile/>)}/>
+              <Route path="settings" element={checkAuth(<Profile/>)}/>
+              <Route path="kyc" element={checkAuth(<Profile/>)}/>
+            </Route>
 
-          <Route path="/reports">
-            <Route index element={checkAuth(<ReportList/>)}/>
-          </Route>
+            <Route path="/reports">
+              <Route index element={checkAuth(<ReportList/>)}/>
+            </Route>
 
-          <Route path="/programs">
-            <Route index element={checkAuth(<ProgramList/>)}/>
-            <Route path=":programId" element={checkAuth(<ProgramDetails/>)}/>
-            <Route path=":programId/submit-bug" element={checkAuth(<ReportNew/>)}/>
-            <Route path="create" element={checkAuth(<ProgramNew/>)}/>
-            <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
-          </Route>
+            <Route path="/programs">
+              <Route index element={checkAuth(<ProgramList/>)}/>
+              <Route path=":programId" element={checkAuth(<ProgramDetails/>)}/>
+              <Route path=":programId/submit-bug" element={checkAuth(<ReportNew/>)}/>
+              <Route path="create" element={checkAuth(<ProgramNew/>)}/>
+              <Route path="bookmarked" element={checkAuth(<ProgramList/>)}/>
+            </Route>
 
-          <Route path="/relay" element={checkAuth(<RelayDemo/>)}/>
-          <Route path="/your-code-here" element={checkAuth(<YourCodeHere/>)}/>
+            <Route path="/relay" element={checkAuth(<RelayDemo preloadedQuery={preloadedQuery}/>)}/>
+            <Route path="/your-code-here" element={checkAuth(<YourCodeHere/>)}/>
 
-          <Route path="/*" element={<Page404/>}/>
-        </Routes>
+            <Route path="/*" element={<Page404/>}/>
+          </Routes>
 
-      </AuthSidebarContext.Provider>
-    </AuthUserContext.Provider>
+        </AuthSidebarContext.Provider>
+      </AuthUserContext.Provider>
+    </RelayEnvironmentProvider>
   );
 }

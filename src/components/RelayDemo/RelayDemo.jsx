@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { fetchGraphQL } from '../../utils.js';
+
+
+// import graphql from 'babel-plugin-relay/macro';
+import { loadQuery, usePreloadedQuery, useLazyLoadQuery } from 'react-relay/hooks';
+
+// import { graphql, useLazyLoadQuery } from 'react-relay';
+// import { graphql } from 'relay-runtime';
+
+// import { RelayEnvironment } from '../../RelayEnvironment.js';
+
+// import { fetchGraphQL } from '../../utils.js';
 
 import { UserContainer } from '../User/UserContainer.jsx';
+
 import './RelayDemo.scss';
+import { AppRepositoryInfoQuery } from '../App/App.jsx';
+import { fetchGraphQL, graphql } from '../../utils.js';
 
 
 /**
@@ -10,8 +23,10 @@ import './RelayDemo.scss';
  */
 
 
-const RepositoryInfoQuery = `
-  query RepositoryNameQuery {
+
+
+const RelayDemoRepositoryInfoQuery = graphql`
+  query RelayDemoRepositoryInfoQuery {
     repository(owner: "egorvinogradov", name: "js-tetris") {
       name
       owner {
@@ -34,12 +49,27 @@ const RepositoryInfoQuery = `
 `;
 
 
-export function RelayDemo(){
-  const [graphQLData, setGraphQLData] = useState(null);
 
-  useEffect(() => {
-    fetchGraphQL(RepositoryInfoQuery).then(setGraphQLData);
-  }, []);
+console.warn('__RelayDemoRepositoryInfoQuery', RelayDemoRepositoryInfoQuery);
+window.__RelayDemoRepositoryInfoQuery = RelayDemoRepositoryInfoQuery;
+
+
+
+
+export function RelayDemo(props){
+
+  const { preloadedQuery } = props;
+
+  const dataPreload = usePreloadedQuery(AppRepositoryInfoQuery, preloadedQuery);
+  const dataLazyLoad = useLazyLoadQuery(RelayDemoRepositoryInfoQuery);
+
+  // const [graphQLData, setGraphQLData] = useState(null);
+  // useEffect(() => {
+  //   fetchGraphQL(RelayDemoRepositoryInfoQuery, null, true).then(data => {
+  //     console.error('__data', data);
+  //     setGraphQLData(data);
+  //   });
+  // }, []);
 
   return (
     <UserContainer>
@@ -48,8 +78,14 @@ export function RelayDemo(){
           <h1>Relay Demo</h1>
           {process.env.REACT_APP_GITHUB_AUTH_TOKEN}
           <hr/>
+          <h4>useLazyLoadQuery</h4>
           <pre>
-            {JSON.stringify(graphQLData, null, 2)}
+            {JSON.stringify(dataLazyLoad, null, 2)}
+          </pre>
+          <hr/>
+          <h4>usePreloadedQuery</h4>
+          <pre>
+            {JSON.stringify(dataPreload, null, 2)}
           </pre>
         </div>
       </div>
