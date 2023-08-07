@@ -5,7 +5,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "./bin/dev.sh",
+    "start": "bin\\dev.sh",
     "build": "./bin/build.sh",
     "deploy": "./bin/deploy.sh",
     "relay": "relay-compiler"
