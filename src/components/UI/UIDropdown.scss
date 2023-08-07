@@ -14,9 +14,9 @@
 .UIDropdown__button {
   display: inline-block;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 2rem;
-  padding: 1rem 5.6rem 1rem 1.6rem;
+  padding: 1.2rem 5.6rem 1.2rem 1.6rem;
   cursor: pointer;
   margin: 0;
   white-space: nowrap;
@@ -26,15 +26,6 @@
 
   &--is-placeholder {
     color: rgba($remedy-Global--color-white, 0.25);
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 4rem;
-    border-left: 1px solid #3C3C3C;
   }
 
   &:after {
@@ -48,7 +39,7 @@
     background: {
       image: url('../../assets/images/icon-arrow-down.svg');
       repeat: no-repeat;
-      size: 1.6rem;
+      size: 1.3rem;
       position: 50% 55%;
     }
     transition: transform 200ms;
