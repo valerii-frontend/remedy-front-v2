@@ -1,0 +1,135 @@
+@import '../../styles/scss-variables';
+@import '../../styles/mixins';
+
+
+.UIInput {
+  background: $remedy-Global--color-dark-3;
+  border: 0;
+  border-radius: 0;
+  outline: 1px solid transparent;
+  color: $remedy-Global--color-white;
+  padding: 1.3rem 1.6rem;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-family: var(--remedy-Global--font-text);
+  transition: outline-color 200ms;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 1px solid rgba($remedy-Global--color-white, 0.18);
+  }
+
+  &::placeholder {
+    color: #525252;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+
+.UIButton {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  padding: 1.25rem 2.4rem;
+  border: 0;
+  text-decoration: none;
+  font-family: var(--remedy-Global--font-text);
+  font-weight: 500;
+  transition: background 200ms, color 200ms;
+  background: $remedy-Global--color-dark-3;
+  color: $remedy-Global--color-white;
+
+  &:hover {
+    background: #383838;
+  }
+
+  &:active {
+    color: rgba($remedy-Global--color-white, 0.65);
+  }
+
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    background: $remedy-Global--color-dark-3;
+    color: $remedy-Global--color-dark-1;
+  }
+
+  /* Colors */
+  &--green {
+    background: $remedy-Global--color-green;
+    color: $remedy-Global--color-dark-3;
+
+    &:hover {
+      background: lighten($remedy-Global--color-green, 5);
+    }
+
+    &:active {
+      color: rgba($remedy-Global--color-dark-3, 0.7);
+    }
+  }
+
+  &--green-outline {
+    background: transparent;
+    color: $remedy-Global--color-green;
+    box-shadow: inset 0 0 0 1px $remedy-Global--color-green;
+
+    &:hover {
+      color: lighten($remedy-Global--color-green, 5);
+      box-shadow: inset 0 0 0 1px lighten($remedy-Global--color-green, 5);
+      background: radial-gradient(ellipse farthest-corner at center center, rgba($remedy-Global--color-green, 0.12) 0%, transparent 100%);
+    }
+
+    &:active {
+      color: lighten($remedy-Global--color-green, 12);
+      box-shadow: inset 0 0 0 1px lighten($remedy-Global--color-green, 12);
+      background: radial-gradient(ellipse farthest-corner at center center, rgba($remedy-Global--color-green, 0.1) 0%, transparent 100%);
+    }
+
+    &.disabled,
+    &:disabled {
+      box-shadow: inset 0 0 0 1px $remedy-Global--color-dark-1;
+      background: transparent;
+      color: $remedy-Global--color-dark-1;
+    }
+  }
+
+  /* Sizes */
+  &--sm {
+    font-size: 1.4rem;
+    padding: 0.85rem 2rem;
+  }
+}
+
+
+.UICrossIcon {
+  --remedy-UICrossIcon--area-size: 2.4rem;
+  --remedy-UICrossIcon--icon-size: 1.2rem;
+
+  display: inline-block;
+  position: relative;
+  width: var(--remedy-UICrossIcon--area-size);
+  height: var(--remedy-UICrossIcon--area-size);
+  cursor: pointer;
+  transition: opacity 200ms;
+
+  &:before {
+    content: '';
+    width: var(--remedy-UICrossIcon--icon-size);
+    height: var(--remedy-UICrossIcon--icon-size);
+    position: absolute;
+    left: calc((var(--remedy-UICrossIcon--area-size) - var(--remedy-UICrossIcon--icon-size)) / 2);
+    top: calc((var(--remedy-UICrossIcon--area-size) - var(--remedy-UICrossIcon--icon-size)) / 2);
+    background: {
+      image: url('/src/assets/images/icon-cross.svg');
+      repeat: no-repeat;
+      position: center;
+    };
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

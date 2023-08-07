@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import cn from 'classnames';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import './UIDropdown.scss';
 
 
@@ -25,8 +25,6 @@ import './UIDropdown.scss';
  */
 
 /**
- * UI Dropdown
- *
  * @component
  * @param {Object} props - The properties that define the component.
  * @param {string} [props.className] - The CSS class for the main component.
@@ -41,7 +39,7 @@ import './UIDropdown.scss';
  * @param {UIDropdownItemChangeCallback} [props.onChange] - The function to be called when a new item selected.
  * @returns {ReactElement}
  */
-export const UIDropdown = (props) => {
+export function UIDropdown(props){
   const [hoveredItemIndex, setHoveredItemIndex] = useState(-1);
   const navigate = useNavigate();
 
@@ -225,4 +223,4 @@ export const UIDropdown = (props) => {
       </ul>
     </div>
   );
-};
+}

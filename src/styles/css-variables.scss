@@ -1,15 +1,5 @@
 @import './mixins';
 
-
-/* Colors (Sass vars rather than CSS vars in order to be able to use them inside Sass functions) */
-$remedy-Global--color-white: #FFFFFF;
-$remedy-Global--color-gray: #808080;
-$remedy-Global--color-dark-1: #2C2C2C;
-$remedy-Global--color-dark-2: #1F1F1F;
-$remedy-Global--color-dark-3: #181818;
-$remedy-Global--color-green: #6AFFAF;
-
-
 :root {
 
   /* Fonts */
@@ -51,5 +41,5 @@ $remedy-Global--color-green: #6AFFAF;
 
 
   /* Dynamically updated in JavaScript */
-  --remedy-Global--scrollbar-width: 15px; // @see src/components/App/App.jsx → setGlobalCSSVariablesAndHelperClasses()
+  --remedy-Global--scrollbar-width: 15px; // @see src/components/App/App.jsx → setRootCSSVariable(...)
 }

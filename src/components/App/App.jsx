@@ -36,7 +36,7 @@ export function App(){
   useEffect(() => {
     /**
      * Setting global CSS variables
-     * @see src/styles/variables.scss
+     * @see src/styles/css-variables.scss
      */
     setRootCSSVariable('--remedy-Global--scrollbar-width', getScrollbarWidth() + 'px');
   });

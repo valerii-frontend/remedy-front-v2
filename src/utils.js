@@ -67,3 +67,10 @@ export function getScrollbarWidth() {
 export function setRootCSSVariable(key, value) {
   document.documentElement.style.setProperty(key, value);
 }
+
+export function toggleBodyScroll({ isScrollable }){
+  const noScrollClassName = 'Global__no-scroll';
+  isScrollable
+    ? document.body.classList.remove(noScrollClassName)
+    : document.body.classList.add(noScrollClassName);
+}

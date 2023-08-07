@@ -19,15 +19,18 @@
 @import 'node_modules/bootstrap/scss/grid';
 
 /* Boostrap components */
-//@import 'node_modules/bootstrap/scss/buttons'; // TODO: decide if we want to use Bootstrap elements or just atomic classes
+/* TODO: decide if we want to use any Bootstrap components (e.g. 'node_modules/bootstrap/scss/buttons') */
 
 /* Boostrap utilities API (must be placed after the rest of Bootstrap files) */
 @import 'node_modules/bootstrap/scss/utilities/api';
 
-@import './fonts';
-@import './variables';
 @import './mixins';
-@import './ui';
+@import './fonts';
+@import './scss-variables';
+@import './css-variables';
+
+/* Styles for global UI elements (e.g. buttons, inputs, etc) */
+@import '../components/UI/UI';
 
 :root {
   font-size: var(--remedy-Global--font-size);

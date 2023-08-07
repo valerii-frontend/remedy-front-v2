@@ -1,13 +1,12 @@
-@import '../../styles/variables';
+@import '../../styles/scss-variables';
 @import '../../styles/mixins';
 
 .UserHeader {
   display: flex;
   align-items: center;
-  height: 7rem;
-  background-color: $remedy-Global--color-dark-2;
-  background-image:
-    linear-gradient(182.5deg, rgba(106, 255, 175, 0.08) 0%, rgba(106, 255, 175, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
+  height: 6.8rem;
+  background: $remedy-Global--color-dark-2;
+  box-shadow: 0 1px 0 rgba(#656565, 0.5);
 }
 
 .UserHeader__user {
@@ -34,6 +33,7 @@
 
 .UserHeader__user-info {
   max-width: 25rem;
+  padding-top: 0.2rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -41,7 +41,7 @@
 
 .UserHeader__user-email {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: $remedy-Global--color-gray;
   max-width: 100%;
   overflow: hidden;
@@ -69,7 +69,7 @@
 }
 
 .UserHeader__settings {
-  margin-left: 2.2rem;
+  margin-left: 4rem;
 }
 
 .UserHeader__settings-icon {
@@ -85,75 +85,35 @@
 }
 
 .UserHeader__help-icon {
-  margin-left: 1.2rem;
   background: {
     image: url('../../assets/images/icon-info.svg');
   };
 }
 
-.UserHeader__search {
-  margin-left: auto;
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 1rem;
-    left: 1.6rem;
-    pointer-events: none;
-    width: 2rem;
-    height: 2rem;
-    opacity: 0.25;
-    background: {
-      image: url('../../assets/images/icon-search.svg');
-      repeat: no-repeat;
-      position: center;
-      size: contain;
-    };
-  }
-}
-
-.UserHeader__search-input {
-  width: 38.5rem;
-  padding-left: 4.8rem !important;
-
-  @include remedy-media-query(lg, Infinity) {
-    width: 30rem;
-  }
-  @include remedy-media-query(xl, Infinity) {
-    width: 38.5rem;
-  }
-}
-
 .UserHeader__notifications {
-  margin-right: 3.2rem;
-  margin-left: 2.2rem;
+  margin-right: 2.8rem;
+  margin-left: auto;
 }
 
 .UserHeader__notifications-icon {
   position: relative;
   background: {
     image: url('../../assets/images/icon-notifications.svg');
+    size: 1.5rem 1.7rem;
   };
 
   &--unread {
     &:before {
       content: '';
       position: absolute;
-      width: 0.55rem;
-      height: 0.55rem;
+      width: 0.5rem;
+      height: 0.5rem;
       top: 1.1rem;
-      right: 1.05rem;
+      right: 1.25rem;
       border-radius: 0.6rem;
-      background: #B14641;
-      box-shadow: 0 0 0 2px #272F2A;
+      background: $remedy-Global--color-green;
       z-index: 2;
       transition: box-shadow 200ms
-    }
-    &:hover {
-      &:before {
-        box-shadow: 0 0 0 2px #323A35;
-      }
     }
   }
 }
