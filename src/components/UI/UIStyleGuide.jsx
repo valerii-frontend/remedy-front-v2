@@ -4,13 +4,14 @@ import { UIDropdown } from './UIDropdown.jsx';
 
 export function UIStyleGuide(){
   return (
-    <div className="p-5 m-5">
+    <div className="p-5 bg-dark">
 
       <Link to="/">← Back to homepage</Link>
 
       <h1 className="my-5">UI Elements</h1>
 
-      <button className="UIButton UIButton--green">Button</button>
+      <button className="UIButton UIButton--green me-5">Button</button>
+      <button className="UIButton UIButton--green" disabled={true}>Disabled</button>
       <pre className="mt-4">
         {'<button className="UIButton UIButton--green">Button</button>'}
       </pre>
@@ -24,7 +25,8 @@ export function UIStyleGuide(){
 
       <hr className="my-5"/>
 
-      <button className="UIButton UIButton--green-outline">Button</button>
+      <button className="UIButton UIButton--green-outline me-5">Button2</button>
+      <button className="UIButton UIButton--green-outline" disabled={true}>Disabled</button>
       <pre className="mt-4">
         {'<button className="UIButton UIButton--green-outline">Button</button>'}
       </pre>
