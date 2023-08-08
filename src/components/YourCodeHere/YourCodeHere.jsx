@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { UserContainer } from "../User/UserContainer.jsx";
+import { UIDropdown } from "../UI/UIDropdown.jsx";
 import "./YourCodeHere.scss";
 
 export function YourCodeHere() {
@@ -10,8 +11,8 @@ export function YourCodeHere() {
         <div className='Creation'>
           <div className='Creation__header'>
             <h1 className='Creation__title'>New program creation</h1>
-            <div className='Creation__actions Actions-creation'>
-              <div className='Actions-creation__back'>
+            <div className='Creation__actions Actions-creation d-flex align-items-center justify-content-between'>
+              <div className='d-flex align-items-center'>
                 <button className='UIButton UIButton--sm UIButton--green-outline Actions-creation__btn-back'></button>
                 <div className='Actions-creation__label'>Currencyzen</div>
               </div>
@@ -23,10 +24,95 @@ export function YourCodeHere() {
               </div>
             </div>
           </div>
-          <div className='Creation__form'>general information</div>
+          <form className='Creation__form Form-general' onSubmit={() => {}}>
+            <h2 className='Creation__subtitle'>general information</h2>
+            <div className='Form-general__row row'>
+              <div className='col-6'>
+                <label className='General-form-item General-form-item--required General-form-item--invalid w-100'>
+                  <span className='General-form-item__text d-block'>Program name</span>
+                  <input required className='UIInput w-100' type='text' placeholder='Enter program name' />
+                  <span className='Creation__error'>
+                    Use alphanumeric field with allowed special characters, spaces and upper and lowercase letters
+                  </span>
+                </label>
+              </div>
+              <div className='col-6'>
+                <label className='General-form-item w-100 position-relative'>
+                  <span className='General-form-item__text d-block'>Program logo</span>
+                  <span className='General-form-item__placeholder General-form-item__placeholder--empty'>
+                    Upload your program logo
+                  </span>
+                  <input
+                    className='UIInput w-100 General-form-item__file'
+                    type='file'
+                    placeholder='Upload your program logo'
+                  />
+                </label>
+              </div>
+            </div>
+            <div className='Form-general__row row'>
+              <div className='col-6'>
+                <label className='General-form-item w-100'>
+                  <span className='General-form-item__text d-block'>Programming language</span>
+                  <UIDropdown
+                    className='Form-general__select'
+                    title='Select programming language'
+                    items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </label>
+              </div>
+              <div className='col-6'>
+                <label className='General-form-item General-form-item--required w-100'>
+                  <span className='General-form-item__text d-block'>Chains</span>
+                  <UIDropdown
+                    className='Form-general__select'
+                    title='Select chain'
+                    items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </label>
+              </div>
+            </div>
+            <div className='Form-general__row row'>
+              <div className='col-6'>
+                <label className='General-form-item w-100'>
+                  <span className='General-form-item__text d-block'>Product types</span>
+                  <UIDropdown
+                    className='Form-general__select'
+                    title='Select product type'
+                    items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </label>
+              </div>
+              <div className='col-6'>
+                <label className='General-form-item General-form-item--required w-100'>
+                  <span className='General-form-item__text d-block'>Project categories</span>
+                  <UIDropdown
+                    className='Form-general__select'
+                    title='Select project category'
+                    items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </label>
+              </div>
+            </div>
+            <div className='Form-general__row row'>
+              <div className='col-12'>
+                <label className='General-form-item General-form-item--required w-100'>
+                  <span className='General-form-item__text d-block'>Program description</span>
+                  <textarea
+                    className='UIInput General-form-item__description w-100'
+                    required
+                    placeholder='Enter program description'></textarea>
+                </label>
+              </div>
+            </div>
+          </form>
+          <div className='Creation__form Form-details'>
+            <h2 className='Creation__subtitle'>Program details</h2>
+          </div>
         </div>
       </div>
-      <div className='Test'>
+
+      {/* TEST ITEMS */}
+      {/* TEST ITEMS */}
+      {/* TEST ITEMS */}
+
+      <div className='Test d-none'>
         <h1 className='mb-5'>Ваш код будет тут</h1>
         <hr className='my-5' />
 

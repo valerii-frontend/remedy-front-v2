@@ -4,34 +4,42 @@
 .Creation {
   background-color: $remedy-Global--color-dark-2;
   padding: 0 3.2rem;
+  font-family: var(--remedy-Global--font-text);
   &__header {
     padding-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
   &__title {
-    font-family: var(--remedy-Global--font-header);
     font-size: 3.6rem;
-    margin-bottom: 1.75rem;
-  }
-  &__actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__form {
-    color: $remedy-Global--color-green;
+    margin-bottom: 1.65rem;
     font-family: var(--remedy-Global--font-header);
-    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-family: var(--remedy-Global--font-header);
     font-size: 1.2rem;
-    font-style: normal;
     font-weight: 800;
+    color: $remedy-Global--color-green;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 0.1rem solid $remedy-Global--color-dark-4;
+  }
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 110%;
+    letter-spacing: 0.03rem;
+    visibility: hidden;
+    transform: translateY(0);
+    opacity: 0;
+    color: $remedy-Global--color-light;
+    transition: 0.5s;
   }
 }
 .Actions-creation {
-  &__back {
-    display: flex;
-    align-items: center;
-  }
   &__btn-back {
     position: relative;
     width: 4rem;
@@ -44,7 +52,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("../../assets/images/icon-arrow-left.svg") center/20px 20px no-repeat;
+      background: url("../../assets/images/icon-arrow-left.svg") center/2rem 2rem no-repeat;
     }
     &.UIButton--sm {
       padding: 0;
@@ -59,7 +67,67 @@
     }
   }
 }
+.Form-general {
+  margin-bottom: 3.2rem;
+  &__row {
+    margin-bottom: 3.4rem;
+  }
+}
+.General-form-item {
+  &--required {
+    .Creation-form-item__text:before {
+      content: "*";
+    }
+  }
+  &--invalid {
+    position: relative;
+    & .Creation__error {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(125%);
+    }
+  }
+  &__file {
+    &.UIInput {
+      font-size: 0;
+    }
+    &::file-selector-button {
+      display: none;
+    }
+  }
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  &__placeholder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4.4rem;
+    display: flex;
+    align-items: flex-end;
+    line-height: 4.4rem;
+    padding-left: 1rem;
+    background-size: 1.6rem 1.6rem;
+    background-position: center right 1rem;
+    background-repeat: no-repeat;
+    &--empty {
+      background-image: url("../../assets/images/icon-file-upload.svg");
+      color: rgba($remedy-Global--color-gray, 0.5);
+    }
+    &--filled {
+      background-image: url("../../assets/images/icon-cross.svg");
+      color: $remedy-Global--color-white;
+    }
+  }
+  &__description {
+    resize: none;
+    height: 10rem;
+  }
+}
 
+// TEST
 .Test {
   padding: 50px;
 }
