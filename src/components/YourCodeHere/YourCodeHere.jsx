@@ -123,28 +123,46 @@ export function YourCodeHere() {
               </div>
             </div>
             <div className='Program-details-form__body'>
-              <div className='Program-details-form__header row'>
-                <div className='col-3 d-flex align-items-center gap-2'>
-                  <span>*Payout type</span>
-                  <span className='Tooltip'>
-                    <div className='Tooltip__icon'></div>
-                    <div className='Tooltip__body'>
-                      Once checked payout’s maximum value and description become mandatory. At least one payout type’s
-                      maximum has to be $1000 or bigger.
-                    </div>
-                  </span>
+              <div className='Program-details-form__columns Program-details-form__columns--header'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <div className='d-flex align-items-center gap-2'>
+                    <span>*Payout type</span>
+                    <span className='Tooltip'>
+                      <div className='Tooltip__icon'></div>
+                      <div className='Tooltip__body'>
+                        Once checked payout’s maximum value and description become mandatory. At least one payout type’s
+                        maximum has to be $1000 or bigger.
+                      </div>
+                    </span>
+                  </div>
                 </div>
-                <div className='col-4'>
+                <div className='Program-details-form__column Program-details-form__column--max'>
                   <span>Payout maximum</span>
                 </div>
-                <div className='col-5 d-flex align-items-center gap-2'>
-                  <span>*Severity description</span>
-                  <span className='Tooltip'>
-                    <div className='Tooltip__icon'></div>
-                    <div className='Tooltip__body'>
-                      You have to input at least one payout type’s severity description.
-                    </div>
-                  </span>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <div className='d-flex align-align-items-center gap-2'>
+                    <span>*Severity description</span>
+                    <span className='Tooltip'>
+                      <div className='Tooltip__icon'></div>
+                      <div className='Tooltip__body'>
+                        You have to input at least one payout type’s severity description.
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className='Program-details-form__columns'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <label className='Checkbox'>
+                    <input type='checkbox' className='Checkbox__input' />
+                    <span className='Checkbox__text'>Information</span>
+                  </label>
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--max'>
+                  <input className='UIInput w-100' type='text' placeholder='Placeholder...' />
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <input className='UIInput w-100' type='text' placeholder='Placeholder...' />
                 </div>
               </div>
             </div>
