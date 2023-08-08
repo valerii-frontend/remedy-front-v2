@@ -28,8 +28,8 @@ export function YourCodeHere() {
             <h2 className='Creation__subtitle'>general information</h2>
             <div className='Information-form__row row'>
               <div className='col-6'>
-                <label className='General-form-item Creation__item--required Creation__item--invalid w-100'>
-                  <span className='General-form-item__text d-block'>Program name</span>
+                <label className='Creation__item--required Creation__item--invalid w-100'>
+                  <span className='Creation__label d-block'>Program name</span>
                   <input required className='UIInput w-100' type='text' placeholder='Enter program name' />
                   <span className='Creation__error'>
                     Use alphanumeric field with allowed special characters, spaces and upper and lowercase letters
@@ -48,8 +48,8 @@ export function YourCodeHere() {
             </div>
             <div className='Information-form__row row'>
               <div className='col-6'>
-                <label className='General-form-item w-100'>
-                  <span className='General-form-item__text d-block'>Programming language</span>
+                <label className='w-100'>
+                  <span className='Creation__label d-block'>Programming language</span>
                   <UIDropdown
                     className='Information-form__select'
                     title='Select programming language'
@@ -57,8 +57,8 @@ export function YourCodeHere() {
                 </label>
               </div>
               <div className='col-6'>
-                <label className='General-form-item Creation__item--required w-100'>
-                  <span className='General-form-item__text d-block'>Chains</span>
+                <label className='Creation__item--required w-100'>
+                  <span className='Creation__label d-block'>Chains</span>
                   <UIDropdown
                     className='Information-form__select'
                     title='Select chain'
@@ -68,8 +68,8 @@ export function YourCodeHere() {
             </div>
             <div className='Information-form__row row'>
               <div className='col-6'>
-                <label className='General-form-item w-100'>
-                  <span className='General-form-item__text d-block'>Product types</span>
+                <label className='w-100'>
+                  <span className='Creation__label d-block'>Product types</span>
                   <UIDropdown
                     className='Information-form__select'
                     title='Select product type'
@@ -77,8 +77,8 @@ export function YourCodeHere() {
                 </label>
               </div>
               <div className='col-6'>
-                <label className='General-form-item Creation__item--required w-100'>
-                  <span className='General-form-item__text d-block'>Project categories</span>
+                <label className='Creation__item--required w-100'>
+                  <span className='Creation__label d-block'>Project categories</span>
                   <UIDropdown
                     className='Information-form__select'
                     title='Select project category'
@@ -88,10 +88,13 @@ export function YourCodeHere() {
             </div>
             <div className='Information-form__row row'>
               <div className='col-12'>
-                <label className='General-form-item Creation__item--required w-100'>
-                  <span className='General-form-item__text d-block'>Program description</span>
+                <label className='Creation__item--required w-100'>
+                  <div className='d-flex justify-content-between w-100'>
+                    <span className='Creation__label d-block'>Program description</span>
+                    <span className='Creation__counter'>250</span>
+                  </div>
                   <textarea
-                    className='UIInput General-form-item__description w-100'
+                    className='UIInput Creation__textarea w-100'
                     required
                     placeholder='Enter program description'></textarea>
                 </label>
@@ -118,27 +121,27 @@ export function YourCodeHere() {
                 </div>
               </div>
             </div>
-            <div className='Program-details-form__body'>
+            <div className='Program-details-form__body1'>
               <div className='Product-details-form__item'>
                 <div className='Program-details-form__columns Program-details-form__columns--header'>
                   <div className='Program-details-form__column Program-details-form__column--type'>
                     <div className='d-flex align-items-center gap-2'>
-                      <span>*Payout type</span>
+                      <span className='Creation__label mb-0'>*Payout type</span>
                       <span className='Tooltip'>
                         <div className='Tooltip__icon'></div>
                         <div className='Tooltip__body'>
-                          Once checked payout’s maximum value and description become mandatory. At least one payout
-                          type’s maximum has to be $1000 or bigger.
+                          {`Once checked payout’s maximum value and description become mandatory. At least one payout
+                          type’s maximum has to be $1000 or bigger.`}
                         </div>
                       </span>
                     </div>
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--max'>
-                    <span>Payout maximum</span>
+                    <span className='Creation__label mb-0'>Payout maximum</span>
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--description'>
                     <div className='d-flex align-align-items-center gap-2'>
-                      <span>*Severity description</span>
+                      <span className='Creation__label mb-0'>*Severity description</span>
                       <span className='Tooltip'>
                         <div className='Tooltip__icon'></div>
                         <div className='Tooltip__body'>
@@ -151,19 +154,24 @@ export function YourCodeHere() {
                 <div className='Program-details-form__columns'>
                   <div className='Program-details-form__column Program-details-form__column--type'>
                     <label className='Checkbox'>
-                      <input type='checkbox' className='Checkbox__input' checked />
+                      <input type='checkbox' className='Checkbox__input' defaultChecked />
                       <span className='Checkbox__text'>Information</span>
                     </label>
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency active'>
-                    <input className='UIInput UIInput--price w-100' value={1000} type='number' placeholder='100' />
+                    <input
+                      className='UIInput UIInput--price w-100'
+                      defaultValue={1000}
+                      type='number'
+                      placeholder='100'
+                    />
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--description'>
                     <input
                       className='UIInput w-100'
                       type='text'
                       placeholder='Enter severity description'
-                      value={"Lorem ipsum dolor sit amet."}
+                      defaultValue={"Lorem ipsum dolor sit amet."}
                     />
                   </div>
                 </div>
@@ -227,10 +235,10 @@ export function YourCodeHere() {
               <div className='Product-details-form__item'>
                 <div className='Program-details-form__columns Program-details-form__columns--header'>
                   <div className='Program-details-form__column Program-details-form__column--asset'>
-                    <span>*Program assets</span>
+                    <span className='Creation__label'>*Program assets</span>
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--asset'>
-                    <span>Asset description</span>
+                    <span className='Creation__label'>Asset description</span>
                   </div>
                 </div>
                 <div className='Program-details-form__columns'>
@@ -239,7 +247,7 @@ export function YourCodeHere() {
                       className='UIInput w-100'
                       type='text'
                       placeholder='http://      Enter asset URL'
-                      value={"https://www.google.com/images/bitcoin.png"}
+                      defaultValue={"https://www.google.com/images/bitcoin.png"}
                     />
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--asset'>
@@ -247,7 +255,7 @@ export function YourCodeHere() {
                       className='UIInput w-100'
                       type='text'
                       placeholder='Enter asset description'
-                      value={"Bitcoin logo"}
+                      defaultValue={"Bitcoin logo"}
                     />
                   </div>
                 </div>
@@ -289,6 +297,32 @@ export function YourCodeHere() {
                   </div>
                   <div className='Program-details-form__column Program-details-form__column--asset'>
                     <input className='UIInput w-100' type='text' placeholder='Enter asset description' />
+                  </div>
+                </div>
+                <div className='Program-details-form__add-url'>
+                  <span>+</span>Add another URL
+                </div>
+              </div>
+              <div className='Product-details-form__item'>
+                <div className='Program-details-form__column Program-details-form__column--editor'>
+                  <div className='d-flex justify-content-between align-items-start'>
+                    <span className='Creation__label'>Known exceptions (out of scope)</span>
+                    <span className='Creation__counter'>2000</span>
+                  </div>
+                  <div className='Creation__editor Editor'>
+                    <div className='Editor__controls d-flex'>
+                      <div className='Editor__btn Editor__btn--bold'></div>
+                      <div className='Editor__btn Editor__btn--h1'></div>
+                      <div className='Editor__btn Editor__btn--h2'></div>
+                      <div className='Editor__btn Editor__btn--line'></div>
+                      <div className='Editor__btn Editor__btn--ul'></div>
+                      <div className='Editor__btn Editor__btn--ol'></div>
+                      <div className='Editor__btn Editor__btn--link'></div>
+                    </div>
+                    <textarea
+                      className='UIInput Creation__textarea Creation__textarea--lg w-100'
+                      required
+                      placeholder='Enter exceptions out of scope'></textarea>
                   </div>
                 </div>
               </div>
