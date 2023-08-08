@@ -154,15 +154,76 @@ export function YourCodeHere() {
               <div className='Program-details-form__columns'>
                 <div className='Program-details-form__column Program-details-form__column--type'>
                   <label className='Checkbox'>
-                    <input type='checkbox' className='Checkbox__input' />
+                    <input type='checkbox' className='Checkbox__input' checked />
                     <span className='Checkbox__text'>Information</span>
                   </label>
                 </div>
-                <div className='Program-details-form__column Program-details-form__column--max'>
-                  <input className='UIInput w-100' type='text' placeholder='Placeholder...' />
+                <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency active'>
+                  <input className='UIInput UIInput--price w-100' value={1000} type='number' placeholder='100' />
                 </div>
                 <div className='Program-details-form__column Program-details-form__column--description'>
-                  <input className='UIInput w-100' type='text' placeholder='Placeholder...' />
+                  <input
+                    className='UIInput w-100'
+                    type='text'
+                    placeholder='Enter severity description'
+                    value={"Lorem ipsum dolor sit amet."}
+                  />
+                </div>
+              </div>
+              <div className='Program-details-form__columns'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <label className='Checkbox'>
+                    <input type='checkbox' className='Checkbox__input' />
+                    <span className='Checkbox__text'>Low</span>
+                  </label>
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency'>
+                  <input className='UIInput UIInput--price w-100' type='number' placeholder='100' />
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <input className='UIInput w-100' type='text' placeholder='Enter severity description' />
+                </div>
+              </div>
+              <div className='Program-details-form__columns'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <label className='Checkbox'>
+                    <input type='checkbox' className='Checkbox__input' />
+                    <span className='Checkbox__text'>Medium</span>
+                  </label>
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency'>
+                  <input className='UIInput UIInput--price w-100' type='number' placeholder='100' />
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <input className='UIInput w-100' type='text' placeholder='Enter severity description' />
+                </div>
+              </div>
+              <div className='Program-details-form__columns'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <label className='Checkbox'>
+                    <input type='checkbox' className='Checkbox__input' />
+                    <span className='Checkbox__text'>High</span>
+                  </label>
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency'>
+                  <input className='UIInput UIInput--price w-100' type='number' placeholder='100' />
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <input className='UIInput w-100' type='text' placeholder='Enter severity description' />
+                </div>
+              </div>
+              <div className='Program-details-form__columns'>
+                <div className='Program-details-form__column Program-details-form__column--type'>
+                  <label className='Checkbox'>
+                    <input type='checkbox' className='Checkbox__input' />
+                    <span className='Checkbox__text'>Critical</span>
+                  </label>
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--max Program-details-form__column--currency'>
+                  <input className='UIInput UIInput--price w-100' type='number' placeholder='100' />
+                </div>
+                <div className='Program-details-form__column Program-details-form__column--description'>
+                  <input className='UIInput w-100' type='text' placeholder='Enter severity description' />
                 </div>
               </div>
             </div>
