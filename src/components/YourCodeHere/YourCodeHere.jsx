@@ -122,7 +122,32 @@ export function YourCodeHere() {
                 </div>
               </div>
             </div>
-            <div className='Program-details-form__body'></div>
+            <div className='Program-details-form__body'>
+              <div className='Program-details-form__header row'>
+                <div className='col-3 d-flex align-items-center gap-2'>
+                  <span>*Payout type</span>
+                  <span className='Tooltip'>
+                    <div className='Tooltip__icon'></div>
+                    <div className='Tooltip__body'>
+                      Once checked payout’s maximum value and description become mandatory. At least one payout type’s
+                      maximum has to be $1000 or bigger.
+                    </div>
+                  </span>
+                </div>
+                <div className='col-4'>
+                  <span>Payout maximum</span>
+                </div>
+                <div className='col-5 d-flex align-items-center gap-2'>
+                  <span>*Severity description</span>
+                  <span className='Tooltip'>
+                    <div className='Tooltip__icon'></div>
+                    <div className='Tooltip__body'>
+                      You have to input at least one payout type’s severity description.
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

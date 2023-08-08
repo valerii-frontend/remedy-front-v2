@@ -22,7 +22,7 @@
     text-transform: uppercase;
     padding-bottom: 0.8rem;
     margin-bottom: 1.6rem;
-    border-bottom: 0.1rem solid $remedy-Global--color-dark-4;
+    border-bottom: 1px solid $remedy-Global--color-dark-4;
   }
   &__error {
     position: absolute;
@@ -153,8 +153,66 @@
       }
     }
   }
+  &__header {
+  }
   &__body {
     height: 1000px;
+    border: 1px solid $remedy-Global--color-green;
+    border-top: none;
+    background-color: $remedy-Global--color-dark-5;
+    padding: 1.6rem 3.2rem;
+  }
+}
+
+.Details-item {
+}
+
+.Tooltip {
+  position: relative;
+  &:hover {
+    .Tooltip__body {
+      display: block;
+    }
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    background: url("../../assets/images/icon-tooltip.svg") center/1.5rem no-repeat;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      transition: 0.3s;
+      filter: brightness(2);
+    }
+  }
+  &__body {
+    display: none;
+    position: absolute;
+    bottom: 3rem;
+    left: -1rem;
+    width: 28rem;
+    background-color: $remedy-Global--color-tooltip;
+    border: 1px solid $remedy-Global--color-gray;
+    padding: 1.2rem 1.6rem;
+    color: $remedy-Global--color-light;
+    font-size: 1.4rem;
+    line-height: 140%;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 98%;
+      border: 1rem solid transparent;
+      border-top: 1rem solid $remedy-Global--color-tooltip;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 100%;
+      border: 1rem solid transparent;
+      border-top: 1rem solid $remedy-Global--color-gray;
+    }
   }
 }
 
