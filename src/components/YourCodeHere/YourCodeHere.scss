@@ -38,6 +38,22 @@
     color: $remedy-Global--color-light;
     transition: 0.5s;
   }
+  &__item {
+    &--required {
+      .Creation-form-item__text:before {
+        content: "*";
+      }
+    }
+    &--invalid {
+      position: relative;
+      & .Creation__error {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(135%);
+        transition: 0.5s;
+      }
+    }
+  }
 }
 .Actions-creation {
   &__btn-back {
@@ -67,26 +83,13 @@
     }
   }
 }
-.Form-general {
+.Information-form {
   margin-bottom: 3.2rem;
   &__row {
     margin-bottom: 3.4rem;
   }
 }
 .General-form-item {
-  &--required {
-    .Creation-form-item__text:before {
-      content: "*";
-    }
-  }
-  &--invalid {
-    position: relative;
-    & .Creation__error {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(125%);
-    }
-  }
   &__file {
     &.UIInput {
       font-size: 0;
@@ -124,6 +127,34 @@
   &__description {
     resize: none;
     height: 10rem;
+  }
+}
+.Program-details-form {
+  &__tab {
+    flex: 0 0 25rem;
+    border-top: 1px solid $remedy-Global--color-gray;
+    border-left: 1px solid $remedy-Global--color-gray;
+    border-right: 1px solid $remedy-Global--color-gray;
+    border-bottom: 1px solid $remedy-Global--color-green;
+    &--active {
+      border-color: $remedy-Global--color-green;
+      border-bottom-color: transparent;
+    }
+    &--action {
+      border-width: 0 0 1px 0;
+      height: 4.6rem;
+
+      & .UIButton {
+        margin-left: 0.5rem;
+        span {
+          font-size: 2rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  &__body {
+    height: 1000px;
   }
 }
 

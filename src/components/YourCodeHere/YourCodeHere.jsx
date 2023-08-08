@@ -24,11 +24,11 @@ export function YourCodeHere() {
               </div>
             </div>
           </div>
-          <form className='Creation__form Form-general' onSubmit={() => {}}>
+          <form className='Creation__form Information-form' onSubmit={() => {}}>
             <h2 className='Creation__subtitle'>general information</h2>
-            <div className='Form-general__row row'>
+            <div className='Information-form__row row'>
               <div className='col-6'>
-                <label className='General-form-item General-form-item--required General-form-item--invalid w-100'>
+                <label className='General-form-item Creation__item--required Creation__item--invalid w-100'>
                   <span className='General-form-item__text d-block'>Program name</span>
                   <input required className='UIInput w-100' type='text' placeholder='Enter program name' />
                   <span className='Creation__error'>
@@ -50,49 +50,49 @@ export function YourCodeHere() {
                 </label>
               </div>
             </div>
-            <div className='Form-general__row row'>
+            <div className='Information-form__row row'>
               <div className='col-6'>
                 <label className='General-form-item w-100'>
                   <span className='General-form-item__text d-block'>Programming language</span>
                   <UIDropdown
-                    className='Form-general__select'
+                    className='Information-form__select'
                     title='Select programming language'
                     items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
                 </label>
               </div>
               <div className='col-6'>
-                <label className='General-form-item General-form-item--required w-100'>
+                <label className='General-form-item Creation__item--required w-100'>
                   <span className='General-form-item__text d-block'>Chains</span>
                   <UIDropdown
-                    className='Form-general__select'
+                    className='Information-form__select'
                     title='Select chain'
                     items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
                 </label>
               </div>
             </div>
-            <div className='Form-general__row row'>
+            <div className='Information-form__row row'>
               <div className='col-6'>
                 <label className='General-form-item w-100'>
                   <span className='General-form-item__text d-block'>Product types</span>
                   <UIDropdown
-                    className='Form-general__select'
+                    className='Information-form__select'
                     title='Select product type'
                     items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
                 </label>
               </div>
               <div className='col-6'>
-                <label className='General-form-item General-form-item--required w-100'>
+                <label className='General-form-item Creation__item--required w-100'>
                   <span className='General-form-item__text d-block'>Project categories</span>
                   <UIDropdown
-                    className='Form-general__select'
+                    className='Information-form__select'
                     title='Select project category'
                     items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
                 </label>
               </div>
             </div>
-            <div className='Form-general__row row'>
+            <div className='Information-form__row row'>
               <div className='col-12'>
-                <label className='General-form-item General-form-item--required w-100'>
+                <label className='General-form-item Creation__item--required w-100'>
                   <span className='General-form-item__text d-block'>Program description</span>
                   <textarea
                     className='UIInput General-form-item__description w-100'
@@ -102,8 +102,27 @@ export function YourCodeHere() {
               </div>
             </div>
           </form>
-          <div className='Creation__form Form-details'>
+          <div className='Creation__form Program-details-form'>
             <h2 className='Creation__subtitle'>Program details</h2>
+            <div className='Program-details-form__tabs'>
+              <div className='Program-details-form__row row align-items-center g-0'>
+                <div className='Program-details-form__tab Program-details-form__tab--active'>
+                  <UIDropdown
+                    className='w-100'
+                    title='Select asset type'
+                    items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </div>
+                <div className='Program-details-form__tab'>
+                  <UIDropdown title='Select asset type' items={[{ title: "Item 1" }, { title: "Item 2" }]}></UIDropdown>
+                </div>
+                <div className='Program-details-form__tab Program-details-form__tab--action flex-grow-1 d-flex align-items-center'>
+                  <button className='UIButton UIButton--green-outline UIButton--sm d-flex align-items-center'>
+                    <span>+</span>Add asset type
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className='Program-details-form__body'></div>
           </div>
         </div>
       </div>
