@@ -1,219 +1,214 @@
 @import "../../styles/scss-variables";
 @import "../../styles/mixins";
 
+// .ProgramCreation
 .ProgramCreation {
   background-color: $remedy-Global--color-dark-2;
   font-family: var(--remedy-Global--font-text);
-  &__actions {
-    &-btn-back {
-      position: relative;
-      width: 4rem;
-      height: 4rem;
-      margin-right: 2.4rem;
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("../../assets/images/icon-arrow-left.svg") center/2rem
-          2rem no-repeat;
-      }
-      &.UIButton--sm {
-        padding: 0;
-      }
-    }
-    &-label {
-      font-size: 2rem;
-    }
-    &-buttons {
-      & > .UIButton--green-outline {
-        margin-right: 2rem;
-      }
-    }
-  }
-  &__wrap {
-    padding: 3.2rem;
-  }
-  &__header {
-    margin-bottom: 3.5rem;
-  }
-  &__title {
-    font-size: 3.6rem;
-    margin-bottom: 1.65rem;
-    font-family: var(--remedy-Global--font-header);
-  }
-  &__subtitle {
-    font-family: var(--remedy-Global--font-header);
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: $remedy-Global--color-green;
-    text-transform: uppercase;
-    padding-bottom: 0.8rem;
+}
+.ProgramCreation__confirugation-form {
+  & .ProgramCreation__label {
     margin-bottom: 1.6rem;
-    border-bottom: 1px solid $remedy-Global--color-dark-4;
   }
-  &__error {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    font-size: 1.2rem;
-    line-height: 110%;
-    letter-spacing: 0.03rem;
-    visibility: hidden;
-    transform: translateY(0);
-    opacity: 0;
-    transition: 0.5s;
+  & .ProgramCreation__form-radios {
+    gap: 0 3.2rem;
   }
-  &__form {
-    margin-bottom: 3.2rem;
-    &-row {
-      margin-bottom: 3.4rem;
-    }
+}
+.ProgramCreation__counter {
+  color: $remedy-Global--color-gray;
+  font-size: 1.4rem;
+}
+.ProgramCreation__label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.ProgramCreation__textarea {
+  resize: none;
+  height: 10rem;
+  &--lg {
+    height: 21.5rem;
   }
-  &__details-form {
-    &-tab {
-      flex: 0 0 25rem;
-      max-width: 25rem;
-      width: 100%;
-      border-top: 1px solid $remedy-Global--color-gray;
-      border-left: 1px solid $remedy-Global--color-gray;
-      border-right: 1px solid $remedy-Global--color-gray;
-      border-bottom: 1px solid $remedy-Global--color-green;
-      &--active {
-        border-color: $remedy-Global--color-green;
-        border-bottom-color: $remedy-Global--color-dark-5;
-      }
-      &--invalid {
-        border-color: $remedy-Global--color-invalid;
-        border-bottom-color: $remedy-Global--color-dark-5;
-      }
-      &--action {
-        border-width: 0 0 1px 0;
-        height: 4.6rem;
+}
+.ProgramCreation__date {
+  height: 4.4rem;
+}
+.ProgramCreation__always-active {
+  margin-top: 0.6rem;
+}
+.ProgramCreation__form {
+  margin-bottom: 3.2rem;
+}
+.ProgramCreation__form-row {
+  margin-bottom: 3.4rem;
+}
+.ProgramCreation__wrap {
+  padding: 3.2rem;
+}
+.ProgramCreation__header {
+  margin-bottom: 3.5rem;
+}
+.ProgramCreation__title {
+  font-size: 3.6rem;
+  margin-bottom: 1.65rem;
+  font-family: var(--remedy-Global--font-header);
+}
+.ProgramCreation__subtitle {
+  font-family: var(--remedy-Global--font-header);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: $remedy-Global--color-green;
+  text-transform: uppercase;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid $remedy-Global--color-dark-4;
+}
+.ProgramCreation__error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 110%;
+  letter-spacing: 0.03rem;
+  visibility: hidden;
+  transform: translateY(0);
+  opacity: 0;
+  transition: 0.5s;
+}
+//ProgramCreation__details-form
 
-        & .UIButton {
-          margin-left: 0.5rem;
-          span {
-            font-size: 2rem;
-            margin-right: 1rem;
-          }
-        }
-      }
-    }
-    &-dropdown {
-      & .UIDropdown__button {
-        background-color: $remedy-Global--color-dark-5;
-      }
-    }
-    &-columns {
-      display: flex;
-      margin: 0 -1rem 2.4rem;
-      &--header {
-        margin: 0 -1rem 1.2rem;
-      }
-    }
-    &-column {
-      padding: 0 1rem;
-      &--type {
-        flex: 0 0 13rem;
-        max-width: 13rem;
-      }
-      &--max {
-        flex: 0 0 27rem;
-        max-width: 27rem;
-      }
-      &--currency {
-        position: relative;
-        & .UIInput {
-          padding-left: 4.4rem;
-        }
-        &.active:before {
-          opacity: 1;
-          color: $remedy-Global--color-white;
-        }
-        &:before {
-          content: "$";
-          position: absolute;
-          text-align: center;
-          font: inherit;
-          top: 0;
-          left: 0;
-          opacity: 0.5;
-          color: $remedy-Global--color-gray;
-          width: 6.4rem;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-      &--description {
-        flex: 1 1 auto;
-        max-width: 100%;
-      }
-      &--asset {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
-      &--editor {
-        flex: 1 1 100%;
-        max-width: 100%;
-        padding: 0;
-      }
-    }
-    &-body {
-      padding: 3.2rem 1.6rem;
-      border: 1px solid $remedy-Global--color-green;
-      border-top: none;
-      background-color: $remedy-Global--color-dark-5;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-    &-item {
-      margin-bottom: 3.2rem;
-    }
-    &-add-url {
-      margin-bottom: 3.2rem;
-      color: $remedy-Global--color-green;
-      cursor: pointer;
+.ProgramCreation__details-form-body {
+  padding: 3.2rem 1.6rem;
+  border: 1px solid $remedy-Global--color-green;
+  border-top: none;
+  background-color: $remedy-Global--color-dark-5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.ProgramCreation__details-form-item {
+  margin-bottom: 3.2rem;
+}
+.ProgramCreation__details-form-tab {
+  flex: 0 0 25rem;
+  max-width: 25rem;
+  width: 100%;
+  border-top: 1px solid $remedy-Global--color-gray;
+  border-left: 1px solid $remedy-Global--color-gray;
+  border-right: 1px solid $remedy-Global--color-gray;
+  border-bottom: 1px solid $remedy-Global--color-green;
+  &--active {
+    border-color: $remedy-Global--color-green;
+    border-bottom-color: $remedy-Global--color-dark-5;
+  }
+  &--invalid {
+    border-color: $remedy-Global--color-invalid;
+    border-bottom-color: $remedy-Global--color-dark-5;
+  }
+  &--action {
+    border-width: 0 0 1px 0;
+    height: 4.6rem;
+    & .UIButton {
+      margin-left: 0.5rem;
       span {
         font-size: 2rem;
-        margin: 0 1rem;
+        margin-right: 1rem;
       }
     }
   }
-  &__confirugation-form {
-    & .ProgramCreation__label {
-      margin-bottom: 1.6rem;
+}
+.ProgramCreation__details-form-columns {
+  display: flex;
+  margin: 0 -1rem 2.4rem;
+  &--header {
+    margin: 0 -1rem 1.2rem;
+  }
+}
+.ProgramCreation__details-form-column {
+  padding: 0 1rem;
+  &--type {
+    flex: 0 0 13rem;
+    max-width: 13rem;
+  }
+  &--max {
+    flex: 0 0 27rem;
+    max-width: 27rem;
+  }
+  &--currency {
+    position: relative;
+    & .UIInput {
+      padding-left: 4.4rem;
     }
-    & .ProgramCreation__form-radios {
-      gap: 0 3.2rem;
+    &.active:before {
+      opacity: 1;
+      color: $remedy-Global--color-white;
+    }
+    &:before {
+      content: "$";
+      position: absolute;
+      text-align: center;
+      font: inherit;
+      top: 0;
+      left: 0;
+      opacity: 0.5;
+      color: $remedy-Global--color-gray;
+      width: 6.4rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
-  &__counter {
-    color: $remedy-Global--color-gray;
-    font-size: 1.4rem;
+  &--description {
+    flex: 1 1 auto;
+    max-width: 100%;
   }
-  &__label {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+  &--asset {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
-  &__textarea {
-    resize: none;
-    height: 10rem;
-    &--lg {
-      height: 21.5rem;
-    }
+  &--editor {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 0;
   }
-  &__date {
-    height: 4.4rem;
+}
+.ProgramCreation__details-form-add-url {
+  margin-bottom: 3.2rem;
+  color: $remedy-Global--color-green;
+  cursor: pointer;
+  span {
+    font-size: 2rem;
+    margin: 0 1rem;
   }
-  &__always-active {
-    margin-top: 0.6rem;
+}
+
+// ProgramCreation__actions
+.ProgramCreation__actions-btn-back {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 2.4rem;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/icon-arrow-left.svg") center/2rem 2rem
+      no-repeat;
+  }
+  &.UIButton--sm {
+    padding: 0;
+  }
+}
+.ProgramCreation__actions-label {
+  font-size: 2rem;
+}
+.ProgramCreation__actions-buttons {
+  & > .UIButton--green-outline {
+    margin-right: 2rem;
   }
 }
 // STATE
@@ -243,61 +238,64 @@
 }
 
 // COMPONENTS
+
 .Checkbox {
   display: flex;
   align-items: center;
   height: 100%;
-  &__label {
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    &::before {
-      content: "";
-      width: 1.6rem;
-      height: 1.6rem;
-      margin-right: 1.2rem;
-      background-color: transparent;
-      border: 1px solid $remedy-Global--color-gray;
-    }
-  }
-  &__input {
-    display: none;
-    &:checked + .Checkbox__label::before {
-      background: url("../../assets/images/icon-checkbox.svg") center/1.2rem
-          no-repeat,
-        $remedy-Global--color-green;
-      border: 1px solid $remedy-Global--color-green;
-    }
+}
+.Checkbox__label {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1.2rem;
+    background-color: transparent;
+    border: 1px solid $remedy-Global--color-gray;
   }
 }
+.Checkbox__input {
+  display: none;
+  &:checked + .Checkbox__label::before {
+    background: url("../../assets/images/icon-checkbox.svg") center/1.2rem
+        no-repeat,
+      $remedy-Global--color-green;
+    border: 1px solid $remedy-Global--color-green;
+  }
+}
+
 .Radio {
   display: flex;
   align-items: center;
-  &__label {
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    &::before {
-      content: "";
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-right: 1.2rem;
-      background-color: transparent;
-      border-radius: 50%;
-      box-shadow: 0 0 0 1px $remedy-Global--color-gray;
-    }
-  }
-  &__input {
-    display: none;
-    &:checked + .Radio__label::before {
-      background-color: $remedy-Global--color-green;
-      box-shadow: 0 0 0 1px $remedy-Global--color-gray,
-        inset 0 0 0 3px $remedy-Global--color-dark-2;
-    }
+}
+.Radio__label {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1.2rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $remedy-Global--color-gray;
   }
 }
+.Radio__input {
+  display: none;
+  &:checked + .Radio__label::before {
+    background-color: $remedy-Global--color-green;
+    box-shadow: 0 0 0 1px $remedy-Global--color-gray,
+      inset 0 0 0 3px $remedy-Global--color-dark-2;
+  }
+}
+
 .Tooltip {
   position: relative;
   &:hover {
@@ -305,102 +303,105 @@
       display: block;
     }
   }
-  &__icon {
-    width: 2rem;
-    height: 2rem;
-    background: url("../../assets/images/icon-tooltip.svg") center/1.5rem
-      no-repeat;
+}
+.Tooltip__icon {
+  width: 2rem;
+  height: 2rem;
+  background: url("../../assets/images/icon-tooltip.svg") center/1.5rem
+    no-repeat;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
     transition: 0.3s;
-    &:hover {
-      cursor: pointer;
-      transition: 0.3s;
-      filter: brightness(2);
-    }
-  }
-  &__body {
-    display: none;
-    position: absolute;
-    bottom: 3rem;
-    left: -1rem;
-    width: 28rem;
-    background-color: $remedy-Global--color-tooltip;
-    border: 1px solid $remedy-Global--color-gray;
-    padding: 1.2rem 1.6rem;
-    color: $remedy-Global--color-light;
-    font-size: 1.4rem;
-    line-height: 140%;
-    &::after {
-      content: "";
-      position: absolute;
-      left: 1rem;
-      top: 98%;
-      border: 1rem solid transparent;
-      border-top: 1rem solid $remedy-Global--color-tooltip;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      left: 1rem;
-      top: 100%;
-      border: 1rem solid transparent;
-      border-top: 1rem solid $remedy-Global--color-gray;
-    }
+    filter: brightness(2);
   }
 }
+.Tooltip__body {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  left: -1rem;
+  width: 28rem;
+  background-color: $remedy-Global--color-tooltip;
+  border: 1px solid $remedy-Global--color-gray;
+  padding: 1.2rem 1.6rem;
+  color: $remedy-Global--color-light;
+  font-size: 1.4rem;
+  line-height: 140%;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 98%;
+    border: 1rem solid transparent;
+    border-top: 1rem solid $remedy-Global--color-tooltip;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 100%;
+    border: 1rem solid transparent;
+    border-top: 1rem solid $remedy-Global--color-gray;
+  }
+}
+
 .File-upload {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
-  &__input {
-    &.UIInput {
-      font-size: 0;
-    }
-    &::file-selector-button {
-      display: none;
-    }
+}
+.File-upload__input {
+  &.UIInput {
+    font-size: 0;
+  }
+  &::file-selector-button {
+    display: none;
   }
 }
+
 .Editor {
   border: 1px solid rgba($remedy-Global--color-white, 0.06);
-  &__btn {
-    flex: 0 0 3.2rem;
-    max-width: 3.2rem;
-    height: 3.2rem;
-    background-position: center;
-    background-size: 2rem;
-    background-repeat: no-repeat;
+}
+.Editor__btn {
+  flex: 0 0 3.2rem;
+  max-width: 3.2rem;
+  height: 3.2rem;
+  background-position: center;
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  &:hover {
     cursor: pointer;
-    &:hover {
-      background-color: $remedy-Global--color-dark-2;
-      filter: brightness(1.2);
-    }
-    &--bold {
-      background-image: url("../../assets/images/icon-editor-bold.svg");
-    }
-    &--h1 {
-      background-image: url("../../assets/images/icon-editor-h1.svg");
-    }
-    &--h2 {
-      background-image: url("../../assets/images/icon-editor-h2.svg");
-    }
-    &--line {
-      background-image: url("../../assets/images/icon-editor-line.svg");
-    }
-    &--link {
-      background-image: url("../../assets/images/icon-editor-link.svg");
-    }
-    &--ul {
-      background-image: url("../../assets/images/icon-editor-ul.svg");
-    }
-    &--ol {
-      background-image: url("../../assets/images/icon-editor-ol.svg");
-    }
-    &--link {
-      background-image: url("../../assets/images/icon-editor-link.svg");
-    }
+    background-color: $remedy-Global--color-dark-2;
+    filter: brightness(1.2);
+  }
+  &--bold {
+    background-image: url("../../assets/images/icon-editor-bold.svg");
+  }
+  &--h1 {
+    background-image: url("../../assets/images/icon-editor-h1.svg");
+  }
+  &--h2 {
+    background-image: url("../../assets/images/icon-editor-h2.svg");
+  }
+  &--line {
+    background-image: url("../../assets/images/icon-editor-line.svg");
+  }
+  &--link {
+    background-image: url("../../assets/images/icon-editor-link.svg");
+  }
+  &--ul {
+    background-image: url("../../assets/images/icon-editor-ul.svg");
+  }
+  &--ol {
+    background-image: url("../../assets/images/icon-editor-ol.svg");
+  }
+  &--link {
+    background-image: url("../../assets/images/icon-editor-link.svg");
   }
 }
+
 .Placeholder {
   position: absolute;
   bottom: 0;
@@ -439,6 +440,7 @@
     }
   }
 }
+
 .Modal {
   position: fixed;
   width: 100%;
@@ -446,47 +448,47 @@
   top: 0;
   left: 0;
   z-index: 10;
-  &__overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(0.5rem);
-    background: rgba($remedy-Global--color-gray, 0.75);
-  }
-  &__body {
-    animation: showUp 1s 1 both;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 45rem;
-    min-height: 26rem;
-    padding: 6.4rem 3.2rem 3.2rem;
-    transform: translate(-50%, -50%);
-    background-color: $remedy-Global--color-dark-3;
-  }
-  &__close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 4.8rem;
-    height: 4.8rem;
-    background: url("../../assets/images/icon-cross.svg") center/2.4rem
-        no-repeat,
-      $remedy-Global--color-dark-3;
-    cursor: pointer;
-    &:hover {
-      background-color: $remedy-Global--color-dark-1;
-    }
-  }
-  &__text {
-    font-size: 1.6rem;
-    color: $remedy-Global--color-light;
-    margin-bottom: 3.2rem;
-    text-align: center;
+}
+.Modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(0.5rem);
+  background: rgba($remedy-Global--color-gray, 0.75);
+}
+.Modal__body {
+  animation: showUp 1s 1 both;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45rem;
+  min-height: 26rem;
+  padding: 6.4rem 3.2rem 3.2rem;
+  transform: translate(-50%, -50%);
+  background-color: $remedy-Global--color-dark-3;
+}
+.Modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: url("../../assets/images/icon-cross.svg") center/2.4rem no-repeat,
+    $remedy-Global--color-dark-3;
+  cursor: pointer;
+  &:hover {
+    background-color: $remedy-Global--color-dark-1;
   }
 }
+.Modal__text {
+  font-size: 1.6rem;
+  color: $remedy-Global--color-light;
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+
 .TimePicker {
   position: absolute;
   bottom: 4.55rem;
@@ -497,19 +499,20 @@
   font-size: 1.4rem;
   background-color: $remedy-Global--color-dark-3;
   box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
-  &__col {
-    flex: 0 0 8.6rem;
-    padding: 0.2rem 0;
-    text-align: center;
-    background-color: $remedy-Global--color-dark-2;
-    cursor: pointer;
-  }
-  &__time {
-    &--selected {
-      background-color: $remedy-Global--color-dark-1;
-    }
+}
+.TimePicker__col {
+  flex: 0 0 8.6rem;
+  padding: 0.2rem 0;
+  text-align: center;
+  background-color: $remedy-Global--color-dark-2;
+  cursor: pointer;
+}
+.TimePicker__time {
+  &--selected {
+    background-color: $remedy-Global--color-dark-1;
   }
 }
+
 .Calendar {
   display: inline-block;
   padding: 1.6rem;
@@ -518,115 +521,116 @@
   bottom: 120%;
   right: 0;
   box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
-  &__header {
-    margin-bottom: 1.6rem;
+}
+.Calendar__header {
+  margin-bottom: 1.6rem;
+}
+.Calendar__control {
+  flex: 0 0 3.2rem;
+  max-width: 3.2rem;
+  height: 3.2rem;
+  background-position: center;
+  background-size: 1.6rem;
+  background-repeat: no-repeat;
+  background-color: $remedy-Global--color-dark-3;
+  cursor: pointer;
+  &:hover {
+    background-color: $remedy-Global--color-dark-1;
   }
-  &__control {
-    flex: 0 0 3.2rem;
-    max-width: 3.2rem;
-    height: 3.2rem;
-    background-position: center;
-    background-size: 1.6rem;
-    background-repeat: no-repeat;
-    background-color: $remedy-Global--color-dark-3;
-    cursor: pointer;
-    &:hover {
-      background-color: $remedy-Global--color-dark-1;
-    }
-    &--prev {
-      background-image: url("../../assets/images/icon-chevron-left.svg");
-    }
-    &--next {
-      background-image: url("../../assets/images/icon-chevron-right.svg");
-    }
+  &--prev {
+    background-image: url("../../assets/images/icon-chevron-left.svg");
   }
-  &__month-name {
-    font-size: 1.4rem;
-  }
-  &__body {
-    font-size: 1.2rem;
-    td {
-      padding: 0.5rem 0.9rem;
-    }
-    thead tr {
-      margin-bottom: 0.2rem;
-      padding-bottom: 0.2rem;
-      border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
-      color: $remedy-Global--color-gray;
-    }
-  }
-  &__selected {
-    color: $remedy-Global--color-dark-3;
-    background-color: $remedy-Global--color-gray;
-  }
-  &__dif-month {
-    color: $remedy-Global--color-gray;
-    background-color: $remedy-Global--color-dark-2;
+  &--next {
+    background-image: url("../../assets/images/icon-chevron-right.svg");
   }
 }
+.Calendar__month-name {
+  font-size: 1.4rem;
+}
+.Calendar__body {
+  font-size: 1.2rem;
+  td {
+    padding: 0.5rem 0.9rem;
+  }
+  thead tr {
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
+    color: $remedy-Global--color-gray;
+  }
+}
+.Calendar__selected {
+  color: $remedy-Global--color-dark-3;
+  background-color: $remedy-Global--color-gray;
+}
+.Calendar__dif-month {
+  color: $remedy-Global--color-gray;
+  background-color: $remedy-Global--color-dark-2;
+}
+
 .DropdownGroup {
   background-color: $remedy-Global--color-dark-3;
-  &__close {
+}
+.DropdownGroup__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  opacity: 0;
+}
+.DropdownGroup__selected {
+  position: relative;
+  height: 4.4rem;
+  padding: 0 1.6rem;
+  background-color: $remedy-Global--color-dark-5;
+  cursor: pointer;
+  &:before {
+    content: "";
+    opacity: 0.75;
+    background-position: 50% 55%;
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    width: 4rem;
+    transition: transform 0.2s;
     position: absolute;
     top: 0;
+    bottom: 0;
     right: 0;
-    width: 4.4rem;
-    height: 4.4rem;
-    opacity: 0;
+    background-image: url("../../assets/images/icon-cross.svg");
   }
-  &__selected {
-    position: relative;
-    height: 4.4rem;
-    padding: 0 1.6rem;
-    background-color: $remedy-Global--color-dark-5;
-    cursor: pointer;
+  &--default {
+    color: $remedy-Global--color-gray;
     &:before {
-      content: "";
-      opacity: 0.75;
-      background-position: 50% 55%;
-      background-repeat: no-repeat;
-      background-size: 1.3rem;
-      width: 4rem;
-      transition: transform 0.2s;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      background-image: url("../../assets/images/icon-cross.svg");
-    }
-    &--default {
-      color: $remedy-Global--color-gray;
-      &:before {
-        background-image: url("../../assets/images/icon-arrow-down.svg");
-      }
+      background-image: url("../../assets/images/icon-arrow-down.svg");
     }
   }
-  &__list {
-    position: absolute;
-    z-index: 5;
-    list-style: none;
-    background-color: $remedy-Global--color-dark-3;
-    border: 1px solid $remedy-Global--color-gray;
-    padding: 0 1rem;
+}
+.DropdownGroup__list {
+  position: absolute;
+  z-index: 5;
+  list-style: none;
+  background-color: $remedy-Global--color-dark-3;
+  border: 1px solid $remedy-Global--color-gray;
+  padding: 0 1rem;
+}
+.DropdownGroup__item {
+  font-size: 1.4rem;
+  padding: 1rem 0.5rem;
+  &:hover {
+    background-color: $remedy-Global--color-dark-2;
+    color: $remedy-Global--color-white;
+    cursor: pointer;
   }
-  &__item {
-    font-size: 1.4rem;
-    padding: 1rem 0.5rem;
+  &--default {
+    color: $remedy-Global--color-gray;
+  }
+  &--category {
+    color: $remedy-Global--color-dark-1;
     &:hover {
-      background-color: $remedy-Global--color-dark-2;
-      color: $remedy-Global--color-white;
-      cursor: pointer;
-    }
-    &--default {
-      color: $remedy-Global--color-gray;
-    }
-    &--category {
       color: $remedy-Global--color-dark-1;
-      &:hover {
-        color: $remedy-Global--color-dark-1;
-        background-color: $remedy-Global--color-dark-3;
-        cursor: default;
-      }
+      background-color: $remedy-Global--color-dark-3;
+      cursor: default;
     }
   }
 }
