@@ -479,6 +479,19 @@ export function YourCodeHere() {
                       {`24/07/2023   18:00:00`}
                     </span>
                     <div className="ProgramCreation__date UIInput w-100" />
+                    <div className="TimePicker">
+                      <div className="row align-items-center justify-content-between">
+                        <div className="TimePicker__col">Today</div>
+                        <div className="col flex-shrink-1 text-center">at</div>
+                        <div className="TimePicker__col">
+                          <span className="TimePicker__time TimePicker__time--selected">
+                            00
+                          </span>
+                          :<span className="TimePicker__time">00</span>:
+                          <span className="TimePicker__time">00</span>
+                        </div>
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div className="col-6">
