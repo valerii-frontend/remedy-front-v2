@@ -331,6 +331,11 @@
     background-position: center;
     background-size: 2rem;
     background-repeat: no-repeat;
+    cursor: pointer;
+    &:hover {
+      background-color: $remedy-Global--color-dark-2;
+      filter: brightness(1.2);
+    }
     &--bold {
       background-image: url("../../assets/images/icon-editor-bold.svg");
     }
