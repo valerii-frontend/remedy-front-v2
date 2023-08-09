@@ -50,10 +50,10 @@ export function YourCodeHere() {
                 </div>
                 <div className="col-6">
                   <label className="File-upload">
-                    <span className="File-upload__text d-block">
+                    <span className="ProgramCreation__label d-block">
                       Program logo
                     </span>
-                    <span className="File-upload__placeholder File-upload__placeholder--empty">
+                    <span className="Placeholder Placeholder--empty Placeholder--upload">
                       Upload your program logo
                     </span>
                     <input
@@ -202,7 +202,7 @@ export function YourCodeHere() {
                           className="Checkbox__input"
                           defaultChecked
                         />
-                        <span className="Checkbox__text">Information</span>
+                        <span className="Checkbox__label">Information</span>
                       </label>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency active">
@@ -226,7 +226,7 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
-                        <span className="Checkbox__text">Low</span>
+                        <span className="Checkbox__label">Low</span>
                       </label>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
@@ -248,7 +248,7 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
-                        <span className="Checkbox__text">Medium</span>
+                        <span className="Checkbox__label">Medium</span>
                       </label>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
@@ -270,7 +270,7 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
-                        <span className="Checkbox__text">High</span>
+                        <span className="Checkbox__label">High</span>
                       </label>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
@@ -292,7 +292,7 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
-                        <span className="Checkbox__text">Critical</span>
+                        <span className="Checkbox__label">Critical</span>
                       </label>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
@@ -482,42 +482,84 @@ export function YourCodeHere() {
                 </div>
               </div>
             </div>
-            <div className="ProgramCreation__form">
+            <div className="ProgramCreation__form ProgramCreation__confirugation-form">
               <h2 className="ProgramCreation__subtitle">
                 Program configuration
               </h2>
+              <fieldset>
+                <span className="ProgramCreation__label d-block ">
+                  KYC-required
+                </span>
+                <div className="d-flex ProgramCreation__form-row ProgramCreation__form-radios ">
+                  <label className="Radio">
+                    <input
+                      value={1}
+                      name="kyc"
+                      type="radio"
+                      className="Radio__input"
+                      defaultChecked
+                    />
+                    <span className="Radio__label">Yes</span>
+                  </label>
+                  <label className="Radio">
+                    <input
+                      name="kyc"
+                      value={0}
+                      type="radio"
+                      className="Radio__input"
+                    />
+                    <span className="Radio__label">No</span>
+                  </label>
+                </div>
+              </fieldset>
               <div className="ProgramCreation__form-row row">
                 <div className="col-6">
-                  <label className="w-100">
+                  <label className="w-100 position-relative">
                     <span className="ProgramCreation__label d-block">
                       Launch date
                     </span>
-                    <input
-                      required
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter program name"
-                    />
-                    <span className="ProgramCreation__error">
-                      Use alphanumeric field with allowed special characters,
-                      spaces and upper and lowercase letters
+                    <span className="Placeholder Placeholder--filled Placeholder--calendar">
+                      {`24/07/2023   18:00:00`}
                     </span>
+                    <div className="ProgramCreation__date UIInput w-100" />
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="File-upload">
-                    <span className="File-upload__text d-block">
-                      Program logo
+                  <label className="w-100 position-relative ProgramCreation__required">
+                    <span className="ProgramCreation__label d-block">
+                      Expiration date
                     </span>
-                    <span className="File-upload__placeholder File-upload__placeholder--empty">
-                      Upload your program logo
+                    <span className="Placeholder Placeholder--empty Placeholder--calendar">
+                      {`dd/mm/yyyy`}
                     </span>
-                    <input
-                      className="UIInput w-100 File-upload__input"
-                      type="file"
-                    />
+                    <div className="ProgramCreation__date UIInput w-100" />
                   </label>
                 </div>
+                <div className="col-6"></div>
+                <div className="col-6">
+                  <div className="d-flex align-items-center gap-2 ProgramCreation__always-active">
+                    <label className="Checkbox">
+                      <input type="checkbox" className="Checkbox__input" />
+                      <span className="Checkbox__label">Always active</span>
+                    </label>
+                    <span className="Tooltip">
+                      <div className="Tooltip__icon"></div>
+                      <div className="Tooltip__body">
+                        {`Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, natus. Voluptatibus sed iure quia reprehenderit?`}
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="ProgramCreation__actions d-flex align-items-center justify-content-end">
+              <div className="ProgramCreation__actions-buttons">
+                <button className="UIButton UIButton--green-outline">
+                  Save as draft
+                </button>
+                <button className="UIButton UIButton--green">
+                  Launch program
+                </button>
               </div>
             </div>
           </div>

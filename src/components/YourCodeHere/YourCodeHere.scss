@@ -176,13 +176,12 @@
       }
     }
   }
-  &__invalid {
-    position: relative;
-    & .ProgramCreation__error {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(135%);
-      transition: 0.5s;
+  &__confirugation-form {
+    & .ProgramCreation__label {
+      margin-bottom: 1.6rem;
+    }
+    & .ProgramCreation__form-radios {
+      gap: 0 3.2rem;
     }
   }
   &__counter {
@@ -200,6 +199,21 @@
       height: 21.5rem;
     }
   }
+  &__date {
+    height: 4.4rem;
+  }
+  &__always-active {
+    margin-top: 0.6rem;
+  }
+  &__invalid {
+    position: relative;
+    & .ProgramCreation__error {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(135%);
+      transition: 0.5s;
+    }
+  }
   &__required {
     [class*="label"]:before {
       content: "*";
@@ -212,10 +226,11 @@
   display: flex;
   align-items: center;
   height: 100%;
-  &__text {
+  &__label {
     font-size: 1.4rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
     &::before {
       content: "";
       width: 1.6rem;
@@ -227,11 +242,38 @@
   }
   &__input {
     display: none;
-    &:checked + .Checkbox__text::before {
+    &:checked + .Checkbox__label::before {
       background: url("../../assets/images/icon-checkbox.svg") center/1.2rem
           no-repeat,
         $remedy-Global--color-green;
       border: 1px solid $remedy-Global--color-green;
+    }
+  }
+}
+.Radio {
+  display: flex;
+  align-items: center;
+  &__label {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &::before {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.2rem;
+      background-color: transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px $remedy-Global--color-gray;
+    }
+  }
+  &__input {
+    display: none;
+    &:checked + .Radio__label::before {
+      background-color: $remedy-Global--color-green;
+      box-shadow: 0 0 0 1px $remedy-Global--color-gray,
+        inset 0 0 0 3px $remedy-Global--color-dark-2;
     }
   }
 }
@@ -289,32 +331,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  &__text {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-  &__placeholder {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4.4rem;
-    display: flex;
-    align-items: flex-end;
-    line-height: 4.4rem;
-    padding-left: 1rem;
-    background-size: 1.6rem 1.6rem;
-    background-position: center right 1rem;
-    background-repeat: no-repeat;
-    &--empty {
-      background-image: url("../../assets/images/icon-file-upload.svg");
-      color: rgba($remedy-Global--color-gray, 0.5);
-    }
-    &--filled {
-      background-image: url("../../assets/images/icon-cross.svg");
-      color: $remedy-Global--color-white;
-    }
-  }
   &__input {
     &.UIInput {
       font-size: 0;
@@ -362,5 +378,35 @@
     &--link {
       background-image: url("../../assets/images/icon-editor-link.svg");
     }
+  }
+}
+.Placeholder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4.4rem;
+  display: flex;
+  align-items: flex-end;
+  line-height: 4.4rem;
+  padding-left: 1rem;
+  background-size: 1.6rem 1.6rem;
+  background-position: center right 1rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  &--upload {
+    background-image: url("../../assets/images/icon-file-upload.svg");
+  }
+  &--cross {
+    background-image: url("../../assets/images/icon-cross.svg");
+  }
+  &--calendar {
+    background-image: url("../../assets/images/icon-calendar.svg");
+  }
+  &--empty {
+    color: rgba($remedy-Global--color-gray, 0.5);
+  }
+  &--filled {
+    color: $remedy-Global--color-white;
   }
 }
