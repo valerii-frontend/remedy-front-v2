@@ -65,7 +65,6 @@
     visibility: hidden;
     transform: translateY(0);
     opacity: 0;
-    color: $remedy-Global--color-light;
     transition: 0.5s;
   }
   &__form {
@@ -207,11 +206,20 @@
   }
   &__invalid {
     position: relative;
+    color: $remedy-Global--color-invalid;
+    & .Placeholder {
+      color: $remedy-Global--color-invalid;
+    }
     & .ProgramCreation__error {
       opacity: 1;
+      color: inherit;
       visibility: visible;
       transform: translateY(135%);
       transition: 0.5s;
+    }
+    & .UIInput {
+      border-color: $remedy-Global--color-invalid;
+      outline-color: $remedy-Global--color-invalid;
     }
   }
   &__required {
@@ -408,5 +416,13 @@
   }
   &--filled {
     color: $remedy-Global--color-white;
+  }
+  &--link {
+    &:before {
+      content: "https://";
+      margin: 0 1.6rem 0 0.6rem;
+      padding-right: 1.6rem;
+      border-right: 1px solid $remedy-Global--color-dark-2;
+    }
   }
 }

@@ -325,15 +325,13 @@ export function YourCodeHere() {
                     </div>
                   </div>
                   <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                        defaultValue={
-                          "https://www.google.com/images/bitcoin.png"
-                        }
-                      />
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
+                      <div className="position-relative">
+                        <span className="Placeholder Placeholder--filled Placeholder--cross">
+                          {`https://google.com/bitcoin.png`}
+                        </span>
+                        <input className="UIInput w-100" type="text" />
+                      </div>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
@@ -345,12 +343,16 @@ export function YourCodeHere() {
                     </div>
                   </div>
                   <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                      />
+                    <div className="ProgramCreation__details-form-column  ProgramCreation__details-form-column--asset ProgramCreation__invalid">
+                      <div className="position-relative">
+                        <span className="Placeholder Placeholder--filled">
+                          {`random.xyz`}
+                        </span>
+                        <span className="ProgramCreation__error">
+                          Wrong asset
+                        </span>
+                        <input className="UIInput w-100" type="text" />
+                      </div>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
@@ -362,59 +364,12 @@ export function YourCodeHere() {
                   </div>
                   <div className="ProgramCreation__details-form-columns">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                      />
-                    </div>
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="Enter asset description"
-                      />
-                    </div>
-                  </div>
-                  <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                      />
-                    </div>
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="Enter asset description"
-                      />
-                    </div>
-                  </div>
-                  <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                      />
-                    </div>
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="Enter asset description"
-                      />
-                    </div>
-                  </div>
-                  <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
-                      <input
-                        className="UIInput w-100"
-                        type="text"
-                        placeholder="http://      Enter asset URL"
-                      />
+                      <div className="position-relative">
+                        <span className="Placeholder Placeholder--empty Placeholder--link">
+                          {`Enter asset URL`}
+                        </span>
+                        <input className="UIInput w-100" type="text" />
+                      </div>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
