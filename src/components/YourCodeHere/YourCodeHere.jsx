@@ -142,7 +142,7 @@ export function YourCodeHere() {
                   <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--active">
                     <div className="DropdownGroup w-100 position-relative">
                       <div className="DropdownGroup__selected d-flex align-items-center">
-                        Select asset type
+                        Websites and Applications
                         <div className="DropdownGroup__close"></div>
                       </div>
                       <ul className="DropdownGroup__list w-100 d-none ">
@@ -164,9 +164,21 @@ export function YourCodeHere() {
                         Select asset type
                       </div>
                       <ul className="DropdownGroup__list w-100">
-                        <li className="DropdownGroup__item DropdownGroup__item--default">
-                          Select asset type
+                        <li className="DropdownGroup__item">Smart Contracts</li>
+                        <li className="DropdownGroup__item">Blockchain/DLT</li>
+                        <li className="DropdownGroup__item DropdownGroup__item--category">
+                          Websites and Applications
                         </li>
+                        <li className="DropdownGroup__item">Circuit</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--invalid">
+                    <div className="DropdownGroup w-100 position-relative">
+                      <div className="DropdownGroup__selected d-flex align-items-center invalid">
+                        Blockchain
+                      </div>
+                      <ul className="DropdownGroup__list w-100 d-none">
                         <li className="DropdownGroup__item">Smart Contracts</li>
                         <li className="DropdownGroup__item">Blockchain/DLT</li>
                         <li className="DropdownGroup__item DropdownGroup__item--category">

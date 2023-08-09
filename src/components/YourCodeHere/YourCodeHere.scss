@@ -76,12 +76,18 @@
   &__details-form {
     &-tab {
       flex: 0 0 25rem;
+      max-width: 25rem;
+      width: 100%;
       border-top: 1px solid $remedy-Global--color-gray;
       border-left: 1px solid $remedy-Global--color-gray;
       border-right: 1px solid $remedy-Global--color-gray;
       border-bottom: 1px solid $remedy-Global--color-green;
       &--active {
         border-color: $remedy-Global--color-green;
+        border-bottom-color: $remedy-Global--color-dark-5;
+      }
+      &--invalid {
+        border-color: $remedy-Global--color-invalid;
         border-bottom-color: $remedy-Global--color-dark-5;
       }
       &--action {
