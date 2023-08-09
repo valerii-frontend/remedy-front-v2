@@ -481,7 +481,87 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__date UIInput w-100" />
                     <div className="TimePicker">
                       <div className="row align-items-center justify-content-between">
-                        <div className="TimePicker__col">Today</div>
+                        <div className="TimePicker__col position-relative">
+                          <span>Today</span>
+                          <div className="Calendar">
+                            <div className="Calendar__header d-flex align-items-center justify-content-between">
+                              <div className="Calendar__control Calendar__control--prev"></div>
+                              <div className="Calendar__month-name flex-grow-1 text-center">
+                                Aug 2023
+                              </div>
+                              <div className="Calendar__control Calendar__control--next"></div>
+                            </div>
+                            <table className="Calendar__body text-center">
+                              <thead>
+                                <tr>
+                                  <td>Mon</td>
+                                  <td>Tue</td>
+                                  <td>Wed</td>
+                                  <td>Thu</td>
+                                  <td>Fri</td>
+                                  <td>Sat</td>
+                                  <td>Sun</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td className="Calendar__dif-month">26</td>
+                                  <td className="Calendar__dif-month">27</td>
+                                  <td className="Calendar__dif-month">28</td>
+                                  <td className="Calendar__dif-month">29</td>
+                                  <td className="Calendar__dif-month">30</td>
+                                  <td className="Calendar__dif-month">31</td>
+                                  <td>1</td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>3</td>
+                                  <td>4</td>
+                                  <td>5</td>
+                                  <td>6</td>
+                                  <td>7</td>
+                                  <td>8</td>
+                                </tr>
+                                <tr>
+                                  <td>9</td>
+                                  <td>10</td>
+                                  <td>11</td>
+                                  <td>12</td>
+                                  <td>13</td>
+                                  <td>14</td>
+                                  <td className="Calendar__selected">15</td>
+                                </tr>
+                                <tr>
+                                  <td>16</td>
+                                  <td>17</td>
+                                  <td>18</td>
+                                  <td>19</td>
+                                  <td>20</td>
+                                  <td>21</td>
+                                  <td>22</td>
+                                </tr>
+                                <tr>
+                                  <td>23</td>
+                                  <td>24</td>
+                                  <td>25</td>
+                                  <td>26</td>
+                                  <td>27</td>
+                                  <td>28</td>
+                                  <td>29</td>
+                                </tr>
+                                <tr>
+                                  <td>30</td>
+                                  <td>31</td>
+                                  <td className="Calendar__dif-month">1</td>
+                                  <td className="Calendar__dif-month">2</td>
+                                  <td className="Calendar__dif-month">3</td>
+                                  <td className="Calendar__dif-month">4</td>
+                                  <td className="Calendar__dif-month">5</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
                         <div className="col flex-shrink-1 text-center">at</div>
                         <div className="TimePicker__col">
                           <span className="TimePicker__time TimePicker__time--selected">

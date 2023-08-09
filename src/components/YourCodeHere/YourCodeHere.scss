@@ -441,6 +441,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    backdrop-filter: blur(0.5rem);
     background: rgba($remedy-Global--color-gray, 0.75);
   }
   &__body {
@@ -484,6 +485,7 @@
   gap: 0 1.2rem;
   font-size: 1.4rem;
   background-color: $remedy-Global--color-dark-3;
+  box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
   &__col {
     flex: 0 0 8.6rem;
     padding: 0.2rem 0;
@@ -495,6 +497,60 @@
     &--selected {
       background-color: $remedy-Global--color-dark-1;
     }
+  }
+}
+.Calendar {
+  display: inline-block;
+  padding: 1.6rem;
+  background-color: $remedy-Global--color-dark-3;
+  position: absolute;
+  bottom: 120%;
+  right: 0;
+  box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
+  &__header {
+    margin-bottom: 1.6rem;
+  }
+  &__control {
+    flex: 0 0 3.2rem;
+    max-width: 3.2rem;
+    height: 3.2rem;
+    background-position: center;
+    background-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-color: $remedy-Global--color-dark-3;
+    cursor: pointer;
+    &:hover {
+      background-color: $remedy-Global--color-dark-1;
+    }
+    &--prev {
+      background-image: url("../../assets/images/icon-chevron-left.svg");
+    }
+    &--next {
+      background-image: url("../../assets/images/icon-chevron-right.svg");
+    }
+  }
+  &__month-name {
+    font-size: 1.4rem;
+  }
+  &__body {
+    font-size: 1.2rem;
+    td {
+      padding: 0.5rem 0.9rem;
+    }
+    thead tr {
+      margin-bottom: 0.2rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
+      color: $remedy-Global--color-gray;
+    }
+  }
+  &__selected {
+    color: $remedy-Global--color-dark-3;
+    background-color: $remedy-Global--color-gray;
+  }
+  &__dif-month {
+    color: $remedy-Global--color-gray;
+    background-color: $remedy-Global--color-dark-2;
   }
 }
 
