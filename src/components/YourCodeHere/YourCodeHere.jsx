@@ -140,17 +140,41 @@ export function YourCodeHere() {
               <div className="ProgramCreation__details-form-tabs">
                 <div className="ProgramCreation__details-form-row row align-items-center g-0">
                   <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--active">
-                    <UIDropdown
-                      className="w-100"
-                      title="Select asset type"
-                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                    ></UIDropdown>
+                    <div className="DropdownGroup w-100 position-relative">
+                      <div className="DropdownGroup__selected d-flex align-items-center">
+                        Select asset type
+                        <div className="DropdownGroup__close"></div>
+                      </div>
+                      <ul className="DropdownGroup__list w-100 d-none ">
+                        <li className="DropdownGroup__item DropdownGroup__item--default">
+                          Select asset type
+                        </li>
+                        <li className="DropdownGroup__item">Smart Contracts</li>
+                        <li className="DropdownGroup__item">Blockchain/DLT</li>
+                        <li className="DropdownGroup__item DropdownGroup__item--category">
+                          Websites and Applications
+                        </li>
+                        <li className="DropdownGroup__item">Circuit</li>
+                      </ul>
+                    </div>
                   </div>
                   <div className="ProgramCreation__details-form-tab">
-                    <UIDropdown
-                      title="Select asset type"
-                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                    ></UIDropdown>
+                    <div className="DropdownGroup w-100 position-relative">
+                      <div className="DropdownGroup__selected DropdownGroup__selected--default d-flex align-items-center">
+                        Select asset type
+                      </div>
+                      <ul className="DropdownGroup__list w-100">
+                        <li className="DropdownGroup__item DropdownGroup__item--default">
+                          Select asset type
+                        </li>
+                        <li className="DropdownGroup__item">Smart Contracts</li>
+                        <li className="DropdownGroup__item">Blockchain/DLT</li>
+                        <li className="DropdownGroup__item DropdownGroup__item--category">
+                          Websites and Applications
+                        </li>
+                        <li className="DropdownGroup__item">Circuit</li>
+                      </ul>
+                    </div>
                   </div>
                   <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--action flex-grow-1 d-flex align-items-center">
                     <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
