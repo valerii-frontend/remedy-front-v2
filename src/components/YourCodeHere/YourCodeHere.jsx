@@ -33,7 +33,7 @@ export function YourCodeHere() {
               <h2 className="ProgramCreation__subtitle">general information</h2>
               <div className="ProgramCreation__form-row row">
                 <div className="col-6">
-                  <label className="ProgramCreation__item--required ProgramCreation__item--invalid w-100">
+                  <label className="ProgramCreation__required ProgramCreation__item--invalid w-100">
                     <span className="ProgramCreation__label d-block">
                       Program name
                     </span>
@@ -78,7 +78,7 @@ export function YourCodeHere() {
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="ProgramCreation__item--required w-100">
+                  <label className="ProgramCreation__required w-100">
                     <span className="ProgramCreation__label d-block">
                       Chains
                     </span>
@@ -104,7 +104,7 @@ export function YourCodeHere() {
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="ProgramCreation__item--required w-100">
+                  <label className="ProgramCreation__required w-100">
                     <span className="ProgramCreation__label d-block">
                       Project categories
                     </span>
@@ -118,7 +118,7 @@ export function YourCodeHere() {
               </div>
               <div className="ProgramCreation__form-row row">
                 <div className="col-12">
-                  <label className="ProgramCreation__item--required w-100">
+                  <label className="ProgramCreation__required w-100">
                     <div className="d-flex justify-content-between w-100">
                       <span className="ProgramCreation__label d-block">
                         Program description
@@ -134,37 +134,37 @@ export function YourCodeHere() {
                 </div>
               </div>
             </form>
-            <div className="ProgramCreation__form ProgramCreation__form-details">
+            <div className="ProgramCreation__form ProgramCreation__details-form">
               <h2 className="ProgramCreation__subtitle">Program details</h2>
-              <div className="ProgramCreation__form-details-tabs">
-                <div className="ProgramCreation__form-details-row row align-items-center g-0">
-                  <div className="ProgramCreation__form-details-tab ProgramCreation__form-details-tab--active">
+              <div className="ProgramCreation__details-form-tabs">
+                <div className="ProgramCreation__details-form-row row align-items-center g-0">
+                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--active">
                     <UIDropdown
                       className="w-100"
                       title="Select asset type"
                       items={[{ title: "Item 1" }, { title: "Item 2" }]}
                     ></UIDropdown>
                   </div>
-                  <div className="ProgramCreation__form-details-tab">
+                  <div className="ProgramCreation__details-form-tab">
                     <UIDropdown
                       title="Select asset type"
                       items={[{ title: "Item 1" }, { title: "Item 2" }]}
                     ></UIDropdown>
                   </div>
-                  <div className="ProgramCreation__form-details-tab ProgramCreation__form-details-tab--action flex-grow-1 d-flex align-items-center">
+                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--action flex-grow-1 d-flex align-items-center">
                     <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
                       <span>+</span>Add asset type
                     </button>
                   </div>
                 </div>
               </div>
-              <div className="ProgramCreation__form-details-body">
+              <div className="ProgramCreation__details-form-body">
                 <div className="Product-details-form__item">
-                  <div className="ProgramCreation__form-details-columns ProgramCreation__form-details-columns--header">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
-                      <div className="d-flex align-items-center gap-2">
+                  <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
+                      <div className="d-flex align-items-center gap-2 ProgramCreation__required">
                         <span className="ProgramCreation__label mb-0">
-                          *Payout type
+                          Payout type
                         </span>
                         <span className="Tooltip">
                           <div className="Tooltip__icon"></div>
@@ -175,15 +175,15 @@ export function YourCodeHere() {
                         </span>
                       </div>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max">
                       <span className="ProgramCreation__label mb-0">
                         Payout maximum
                       </span>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
-                      <div className="d-flex align-align-items-center gap-2">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
+                      <div className="d-flex align-align-items-center gap-2 ProgramCreation__required">
                         <span className="ProgramCreation__label mb-0">
-                          *Severity description
+                          Severity description
                         </span>
                         <span className="Tooltip">
                           <div className="Tooltip__icon"></div>
@@ -195,8 +195,8 @@ export function YourCodeHere() {
                       </div>
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input
                           type="checkbox"
@@ -206,7 +206,7 @@ export function YourCodeHere() {
                         <span className="Checkbox__text">Information</span>
                       </label>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency active">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency active">
                       <input
                         className="UIInput UIInput--price w-100"
                         defaultValue={1000}
@@ -214,7 +214,7 @@ export function YourCodeHere() {
                         placeholder="100"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -223,21 +223,21 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
                         <span className="Checkbox__text">Low</span>
                       </label>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
                       <input
                         className="UIInput UIInput--price w-100"
                         type="number"
                         placeholder="100"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -245,21 +245,21 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
                         <span className="Checkbox__text">Medium</span>
                       </label>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
                       <input
                         className="UIInput UIInput--price w-100"
                         type="number"
                         placeholder="100"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -267,21 +267,21 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
                         <span className="Checkbox__text">High</span>
                       </label>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
                       <input
                         className="UIInput UIInput--price w-100"
                         type="number"
                         placeholder="100"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -289,21 +289,21 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <label className="Checkbox">
                         <input type="checkbox" className="Checkbox__input" />
                         <span className="Checkbox__text">Critical</span>
                       </label>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--max ProgramCreation__details-form-column--currency">
                       <input
                         className="UIInput UIInput--price w-100"
                         type="number"
                         placeholder="100"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -313,20 +313,20 @@ export function YourCodeHere() {
                   </div>
                 </div>
                 <div className="Product-details-form__item">
-                  <div className="ProgramCreation__form-details-columns ProgramCreation__form-details-columns--header">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                  <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ProgramCreation__required">
                       <span className="ProgramCreation__label">
-                        *Program assets
+                        Program assets
                       </span>
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <span className="ProgramCreation__label">
                         Asset description
                       </span>
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -336,7 +336,7 @@ export function YourCodeHere() {
                         }
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -345,15 +345,15 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
                         placeholder="http://      Enter asset URL"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -361,15 +361,15 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
                         placeholder="http://      Enter asset URL"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -377,15 +377,15 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
                         placeholder="http://      Enter asset URL"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -393,15 +393,15 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
                         placeholder="http://      Enter asset URL"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -409,15 +409,15 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-columns">
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                  <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                       <input
                         className="UIInput w-100"
                         type="text"
                         placeholder="http://      Enter asset URL"
                       />
                     </div>
-                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <input
                         className="UIInput w-100"
                         type="text"
@@ -425,17 +425,17 @@ export function YourCodeHere() {
                       />
                     </div>
                   </div>
-                  <div className="ProgramCreation__form-details-add-url">
+                  <div className="ProgramCreation__details-form-add-url">
                     <span>+</span>Add another URL
                   </div>
                 </div>
                 <div className="Product-details-form__item">
-                  <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--editor">
+                  <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
                     <div className="d-flex justify-content-between align-items-start">
                       <span className="ProgramCreation__label">
                         Known exceptions (out of scope)
                       </span>
-                      <span className="ProgramCreation__counter">2000</span>
+                      <span className="ProgramCreation__counter">2500</span>
                     </div>
                     <div className="ProgramCreation__editor Editor">
                       <div className="Editor__controls d-flex">
@@ -454,6 +454,32 @@ export function YourCodeHere() {
                       ></textarea>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="ProgramCreation__form ProgramCreation__details-area">
+              <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
+                <div className="ProgramCreation__required d-flex justify-content-between align-items-start">
+                  <span className="ProgramCreation__label">
+                    Program details
+                  </span>
+                  <span className="ProgramCreation__counter">4000</span>
+                </div>
+                <div className="ProgramCreation__editor Editor">
+                  <div className="Editor__controls d-flex">
+                    <div className="Editor__btn Editor__btn--bold"></div>
+                    <div className="Editor__btn Editor__btn--h1"></div>
+                    <div className="Editor__btn Editor__btn--h2"></div>
+                    <div className="Editor__btn Editor__btn--line"></div>
+                    <div className="Editor__btn Editor__btn--ul"></div>
+                    <div className="Editor__btn Editor__btn--ol"></div>
+                    <div className="Editor__btn Editor__btn--link"></div>
+                  </div>
+                  <textarea
+                    className="UIInput ProgramCreation__textarea ProgramCreation__textarea--lg w-100"
+                    required
+                    placeholder="Enter program details."
+                  ></textarea>
                 </div>
               </div>
             </div>
