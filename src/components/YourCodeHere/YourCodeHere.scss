@@ -204,28 +204,30 @@
   &__always-active {
     margin-top: 0.6rem;
   }
-  &__invalid {
-    position: relative;
+}
+// STATE
+.invalid {
+  position: relative;
+  color: $remedy-Global--color-invalid;
+  & .Placeholder {
     color: $remedy-Global--color-invalid;
-    & .Placeholder {
-      color: $remedy-Global--color-invalid;
-    }
-    & .ProgramCreation__error {
-      opacity: 1;
-      color: inherit;
-      visibility: visible;
-      transform: translateY(135%);
-      transition: 0.5s;
-    }
-    & .UIInput {
-      border-color: $remedy-Global--color-invalid;
-      outline-color: $remedy-Global--color-invalid;
-    }
   }
-  &__required {
-    [class*="label"]:before {
-      content: "*";
-    }
+  & .ProgramCreation__error {
+    opacity: 1;
+    color: inherit;
+    visibility: visible;
+    transform: translateY(135%);
+    transition: 0.5s;
+  }
+  & .UIInput {
+    border-color: $remedy-Global--color-invalid;
+    outline-color: $remedy-Global--color-invalid;
+    color: $remedy-Global--color-invalid;
+  }
+}
+.required {
+  &:before {
+    content: "*";
   }
 }
 
@@ -424,5 +426,62 @@
       padding-right: 1.6rem;
       border-right: 1px solid $remedy-Global--color-dark-2;
     }
+  }
+}
+.Modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba($remedy-Global--color-gray, 0.75);
+  }
+  &__body {
+    animation: showUp 1s 1 both;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45rem;
+    min-height: 26rem;
+    padding: 6.4rem 3.2rem 3.2rem;
+    transform: translate(-50%, -50%);
+    background-color: $remedy-Global--color-dark-3;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4.8rem;
+    height: 4.8rem;
+    background: url("../../assets/images/icon-cross.svg") center/2.4rem
+        no-repeat,
+      $remedy-Global--color-dark-3;
+    cursor: pointer;
+    &:hover {
+      background-color: $remedy-Global--color-dark-1;
+    }
+  }
+  &__text {
+    font-size: 1.6rem;
+    color: $remedy-Global--color-light;
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+}
+@keyframes showUp {
+  from {
+    opacity: 0;
+    top: 45%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
   }
 }

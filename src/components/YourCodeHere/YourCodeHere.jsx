@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { UserContainer } from "../User/UserContainer.jsx";
 import { UIDropdown } from "../UI/UIDropdown.jsx";
 import "./YourCodeHere.scss";
 
 export function YourCodeHere() {
+  const [modal, setModal] = useState(false);
   return (
     <UserContainer>
       <div className="ProgramCreation">
@@ -32,8 +33,8 @@ export function YourCodeHere() {
               <h2 className="ProgramCreation__subtitle">general information</h2>
               <div className="ProgramCreation__form-row row">
                 <div className="col-6">
-                  <label className="ProgramCreation__required ProgramCreation__invalid w-100">
-                    <span className="ProgramCreation__label d-block">
+                  <label className="invalid w-100">
+                    <span className="ProgramCreation__label d-block required">
                       Program name
                     </span>
                     <input
@@ -41,6 +42,7 @@ export function YourCodeHere() {
                       className="UIInput w-100"
                       type="text"
                       placeholder="Enter program name"
+                      defaultValue={"$05423#455:_;"}
                     />
                     <span className="ProgramCreation__error">
                       Use alphanumeric field with allowed special characters,
@@ -77,8 +79,8 @@ export function YourCodeHere() {
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="ProgramCreation__required w-100">
-                    <span className="ProgramCreation__label d-block">
+                  <label className="w-100">
+                    <span className="ProgramCreation__label d-block required">
                       Chains
                     </span>
                     <UIDropdown
@@ -103,8 +105,8 @@ export function YourCodeHere() {
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="ProgramCreation__required w-100">
-                    <span className="ProgramCreation__label d-block">
+                  <label className="w-100">
+                    <span className="ProgramCreation__label d-block required">
                       Project categories
                     </span>
                     <UIDropdown
@@ -117,9 +119,9 @@ export function YourCodeHere() {
               </div>
               <div className="ProgramCreation__form-row row">
                 <div className="col-12">
-                  <label className="ProgramCreation__required w-100">
+                  <label className="w-100">
                     <div className="d-flex justify-content-between w-100">
-                      <span className="ProgramCreation__label d-block">
+                      <span className="ProgramCreation__label d-block required">
                         Program description
                       </span>
                       <span className="ProgramCreation__counter">250</span>
@@ -161,8 +163,8 @@ export function YourCodeHere() {
                 <div className="Product-details-form__item">
                   <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
-                      <div className="d-flex align-items-center gap-2 ProgramCreation__required">
-                        <span className="ProgramCreation__label mb-0">
+                      <div className="d-flex align-items-center gap-2">
+                        <span className="ProgramCreation__label required mb-0">
                           Payout type
                         </span>
                         <span className="Tooltip">
@@ -180,8 +182,8 @@ export function YourCodeHere() {
                       </span>
                     </div>
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
-                      <div className="d-flex align-align-items-center gap-2 ProgramCreation__required">
-                        <span className="ProgramCreation__label mb-0">
+                      <div className="d-flex align-align-items-center gap-2">
+                        <span className="ProgramCreation__label required mb-0">
                           Severity description
                         </span>
                         <span className="Tooltip">
@@ -313,8 +315,8 @@ export function YourCodeHere() {
                 </div>
                 <div className="Product-details-form__item">
                   <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
-                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ProgramCreation__required">
-                      <span className="ProgramCreation__label">
+                    <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
+                      <span className="ProgramCreation__label required">
                         Program assets
                       </span>
                     </div>
@@ -343,7 +345,7 @@ export function YourCodeHere() {
                     </div>
                   </div>
                   <div className="ProgramCreation__details-form-columns">
-                    <div className="ProgramCreation__details-form-column  ProgramCreation__details-form-column--asset ProgramCreation__invalid">
+                    <div className="ProgramCreation__details-form-column  ProgramCreation__details-form-column--asset invalid">
                       <div className="position-relative">
                         <span className="Placeholder Placeholder--filled">
                           {`random.xyz`}
@@ -413,8 +415,8 @@ export function YourCodeHere() {
             </div>
             <div className="ProgramCreation__form ProgramCreation__details-area">
               <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
-                <div className="ProgramCreation__required d-flex justify-content-between align-items-start">
-                  <span className="ProgramCreation__label">
+                <div className="d-flex justify-content-between align-items-start">
+                  <span className="ProgramCreation__label required">
                     Program details
                   </span>
                   <span className="ProgramCreation__counter">4000</span>
@@ -480,8 +482,8 @@ export function YourCodeHere() {
                   </label>
                 </div>
                 <div className="col-6">
-                  <label className="w-100 position-relative ProgramCreation__required">
-                    <span className="ProgramCreation__label d-block">
+                  <label className="w-100 position-relative">
+                    <span className="ProgramCreation__label d-block required">
                       Expiration date
                     </span>
                     <span className="Placeholder Placeholder--empty Placeholder--calendar">
@@ -517,8 +519,46 @@ export function YourCodeHere() {
                 </button>
               </div>
             </div>
+            <button
+              className="UIButton UIButton--green my-5"
+              onClick={() => setModal(true)}
+            >
+              Open Modal
+            </button>
           </div>
         </div>
+        {modal && (
+          <div className="Modal">
+            <div
+              className="Modal__overlay"
+              onClick={() => setModal(false)}
+            ></div>
+            <div className="Modal__body d-flex flex-column">
+              <div
+                className="Modal__close"
+                onClick={() => setModal(false)}
+              ></div>
+              <div className="Modal__text flex-grow-1">
+                You are about to launch this program. Are you sure?
+              </div>
+              <div className="row g-5">
+                <div className="col-6">
+                  <button
+                    className="UIButton UIButton--green-outline w-100"
+                    onClick={() => setModal(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <div className="col-6">
+                  <button className="UIButton UIButton--green w-100">
+                    Launch program
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </UserContainer>
   );
