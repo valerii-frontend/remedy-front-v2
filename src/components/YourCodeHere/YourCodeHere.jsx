@@ -7,432 +7,452 @@ import "./YourCodeHere.scss";
 export function YourCodeHere() {
   return (
     <UserContainer>
-      <div className="Global__app-content-max-width">
-        <div className="Creation">
-          <div className="Creation__header">
-            <h1 className="Creation__title">New program creation</h1>
-            <div className="Creation__actions Actions-creation d-flex align-items-center justify-content-between">
-              <div className="d-flex align-items-center">
-                <button className="UIButton UIButton--sm UIButton--green-outline Actions-creation__btn-back"></button>
-                <div className="Actions-creation__label">Currencyzen</div>
-              </div>
-              <div className="Actions-creation__buttons">
-                <button className="UIButton UIButton--green-outline">
-                  Save as draft
-                </button>
-                <button className="UIButton UIButton--green" disabled>
-                  Launch program
-                </button>
-              </div>
-            </div>
-          </div>
-          <form className="Creation__form Information-form" onSubmit={() => {}}>
-            <h2 className="Creation__subtitle">general information</h2>
-            <div className="Information-form__row row">
-              <div className="col-6">
-                <label className="Creation__item--required Creation__item--invalid w-100">
-                  <span className="Creation__label d-block">Program name</span>
-                  <input
-                    required
-                    className="UIInput w-100"
-                    type="text"
-                    placeholder="Enter program name"
-                  />
-                  <span className="Creation__error">
-                    Use alphanumeric field with allowed special characters,
-                    spaces and upper and lowercase letters
-                  </span>
-                </label>
-              </div>
-              <div className="col-6">
-                <label className="File-upload">
-                  <span className="File-upload__text d-block">
-                    Program logo
-                  </span>
-                  <span className="File-upload__placeholder File-upload__placeholder--empty">
-                    Upload your program logo
-                  </span>
-                  <input
-                    className="UIInput w-100 File-upload__input"
-                    type="file"
-                  />
-                </label>
-              </div>
-            </div>
-            <div className="Information-form__row row">
-              <div className="col-6">
-                <label className="w-100">
-                  <span className="Creation__label d-block">
-                    Programming language
-                  </span>
-                  <UIDropdown
-                    className="Information-form__select"
-                    title="Select programming language"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
-                </label>
-              </div>
-              <div className="col-6">
-                <label className="Creation__item--required w-100">
-                  <span className="Creation__label d-block">Chains</span>
-                  <UIDropdown
-                    className="Information-form__select"
-                    title="Select chain"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
-                </label>
-              </div>
-            </div>
-            <div className="Information-form__row row">
-              <div className="col-6">
-                <label className="w-100">
-                  <span className="Creation__label d-block">Product types</span>
-                  <UIDropdown
-                    className="Information-form__select"
-                    title="Select product type"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
-                </label>
-              </div>
-              <div className="col-6">
-                <label className="Creation__item--required w-100">
-                  <span className="Creation__label d-block">
-                    Project categories
-                  </span>
-                  <UIDropdown
-                    className="Information-form__select"
-                    title="Select project category"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
-                </label>
-              </div>
-            </div>
-            <div className="Information-form__row row">
-              <div className="col-12">
-                <label className="Creation__item--required w-100">
-                  <div className="d-flex justify-content-between w-100">
-                    <span className="Creation__label d-block">
-                      Program description
-                    </span>
-                    <span className="Creation__counter">250</span>
+      <div className="ProgramCreation">
+        <div className="Global__app-content-max-width">
+          <div className="ProgramCreation__wrap">
+            <div className="ProgramCreation__header">
+              <h1 className="ProgramCreation__title">New program creation</h1>
+              <div className="ProgramCreation__actions d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center">
+                  <button className="UIButton UIButton--sm UIButton--green-outline ProgramCreation__actions-btn-back"></button>
+                  <div className="ProgramCreation__actions-label">
+                    Currencyzen
                   </div>
-                  <textarea
-                    className="UIInput Creation__textarea w-100"
-                    required
-                    placeholder="Enter program description"
-                  ></textarea>
-                </label>
-              </div>
-            </div>
-          </form>
-          <div className="Creation__form Program-details-form">
-            <h2 className="Creation__subtitle">Program details</h2>
-            <div className="Program-details-form__tabs">
-              <div className="Program-details-form__row row align-items-center g-0">
-                <div className="Program-details-form__tab Program-details-form__tab--active">
-                  <UIDropdown
-                    className="w-100"
-                    title="Select asset type"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
                 </div>
-                <div className="Program-details-form__tab">
-                  <UIDropdown
-                    title="Select asset type"
-                    items={[{ title: "Item 1" }, { title: "Item 2" }]}
-                  ></UIDropdown>
-                </div>
-                <div className="Program-details-form__tab Program-details-form__tab--action flex-grow-1 d-flex align-items-center">
-                  <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
-                    <span>+</span>Add asset type
+                <div className="ProgramCreation__actions-buttons">
+                  <button className="UIButton UIButton--green-outline">
+                    Save as draft
+                  </button>
+                  <button className="UIButton UIButton--green" disabled>
+                    Launch program
                   </button>
                 </div>
               </div>
             </div>
-            <div className="Program-details-form__body1">
-              <div className="Product-details-form__item">
-                <div className="Program-details-form__columns Program-details-form__columns--header">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <div className="d-flex align-items-center gap-2">
-                      <span className="Creation__label mb-0">*Payout type</span>
-                      <span className="Tooltip">
-                        <div className="Tooltip__icon"></div>
-                        <div className="Tooltip__body">
-                          {`Once checked payout’s maximum value and description become mandatory. At least one payout
-                          type’s maximum has to be $1000 or bigger.`}
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max">
-                    <span className="Creation__label mb-0">Payout maximum</span>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <div className="d-flex align-align-items-center gap-2">
-                      <span className="Creation__label mb-0">
-                        *Severity description
-                      </span>
-                      <span className="Tooltip">
-                        <div className="Tooltip__icon"></div>
-                        <div className="Tooltip__body">
-                          You have to input at least one payout type’s severity
-                          description.
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <label className="Checkbox">
-                      <input
-                        type="checkbox"
-                        className="Checkbox__input"
-                        defaultChecked
-                      />
-                      <span className="Checkbox__text">Information</span>
-                    </label>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max Program-details-form__column--currency active">
-                    <input
-                      className="UIInput UIInput--price w-100"
-                      defaultValue={1000}
-                      type="number"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter severity description"
-                      defaultValue={"Lorem ipsum dolor sit amet."}
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <label className="Checkbox">
-                      <input type="checkbox" className="Checkbox__input" />
-                      <span className="Checkbox__text">Low</span>
-                    </label>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max Program-details-form__column--currency">
-                    <input
-                      className="UIInput UIInput--price w-100"
-                      type="number"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter severity description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <label className="Checkbox">
-                      <input type="checkbox" className="Checkbox__input" />
-                      <span className="Checkbox__text">Medium</span>
-                    </label>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max Program-details-form__column--currency">
-                    <input
-                      className="UIInput UIInput--price w-100"
-                      type="number"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter severity description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <label className="Checkbox">
-                      <input type="checkbox" className="Checkbox__input" />
-                      <span className="Checkbox__text">High</span>
-                    </label>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max Program-details-form__column--currency">
-                    <input
-                      className="UIInput UIInput--price w-100"
-                      type="number"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter severity description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--type">
-                    <label className="Checkbox">
-                      <input type="checkbox" className="Checkbox__input" />
-                      <span className="Checkbox__text">Critical</span>
-                    </label>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--max Program-details-form__column--currency">
-                    <input
-                      className="UIInput UIInput--price w-100"
-                      type="number"
-                      placeholder="100"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--description">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter severity description"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="Product-details-form__item">
-                <div className="Program-details-form__columns Program-details-form__columns--header">
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <span className="Creation__label">*Program assets</span>
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <span className="Creation__label">Asset description</span>
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                      defaultValue={"https://www.google.com/images/bitcoin.png"}
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                      defaultValue={"Bitcoin logo"}
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__columns">
-                  <div className="Program-details-form__column Program-details-form__column--asset ">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="http://      Enter asset URL"
-                    />
-                  </div>
-                  <div className="Program-details-form__column Program-details-form__column--asset">
-                    <input
-                      className="UIInput w-100"
-                      type="text"
-                      placeholder="Enter asset description"
-                    />
-                  </div>
-                </div>
-                <div className="Program-details-form__add-url">
-                  <span>+</span>Add another URL
-                </div>
-              </div>
-              <div className="Product-details-form__item">
-                <div className="Program-details-form__column Program-details-form__column--editor">
-                  <div className="d-flex justify-content-between align-items-start">
-                    <span className="Creation__label">
-                      Known exceptions (out of scope)
+            <form className="ProgramCreation__form" onSubmit={() => {}}>
+              <h2 className="ProgramCreation__subtitle">general information</h2>
+              <div className="ProgramCreation__form-row row">
+                <div className="col-6">
+                  <label className="ProgramCreation__item--required ProgramCreation__item--invalid w-100">
+                    <span className="ProgramCreation__label d-block">
+                      Program name
                     </span>
-                    <span className="Creation__counter">2000</span>
-                  </div>
-                  <div className="Creation__editor Editor">
-                    <div className="Editor__controls d-flex">
-                      <div className="Editor__btn Editor__btn--bold"></div>
-                      <div className="Editor__btn Editor__btn--h1"></div>
-                      <div className="Editor__btn Editor__btn--h2"></div>
-                      <div className="Editor__btn Editor__btn--line"></div>
-                      <div className="Editor__btn Editor__btn--ul"></div>
-                      <div className="Editor__btn Editor__btn--ol"></div>
-                      <div className="Editor__btn Editor__btn--link"></div>
+                    <input
+                      required
+                      className="UIInput w-100"
+                      type="text"
+                      placeholder="Enter program name"
+                    />
+                    <span className="ProgramCreation__error">
+                      Use alphanumeric field with allowed special characters,
+                      spaces and upper and lowercase letters
+                    </span>
+                  </label>
+                </div>
+                <div className="col-6">
+                  <label className="File-upload">
+                    <span className="File-upload__text d-block">
+                      Program logo
+                    </span>
+                    <span className="File-upload__placeholder File-upload__placeholder--empty">
+                      Upload your program logo
+                    </span>
+                    <input
+                      className="UIInput w-100 File-upload__input"
+                      type="file"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className="ProgramCreation__form-row row">
+                <div className="col-6">
+                  <label className="w-100">
+                    <span className="ProgramCreation__label d-block">
+                      Programming language
+                    </span>
+                    <UIDropdown
+                      className="ProgramCreation__form-dropdown"
+                      title="Select programming language"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </label>
+                </div>
+                <div className="col-6">
+                  <label className="ProgramCreation__item--required w-100">
+                    <span className="ProgramCreation__label d-block">
+                      Chains
+                    </span>
+                    <UIDropdown
+                      className="ProgramCreation__form-dropdown"
+                      title="Select chain"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </label>
+                </div>
+              </div>
+              <div className="ProgramCreation__form-row row">
+                <div className="col-6">
+                  <label className="w-100">
+                    <span className="ProgramCreation__label d-block">
+                      Product types
+                    </span>
+                    <UIDropdown
+                      className="ProgramCreation__form-dropdown"
+                      title="Select product type"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </label>
+                </div>
+                <div className="col-6">
+                  <label className="ProgramCreation__item--required w-100">
+                    <span className="ProgramCreation__label d-block">
+                      Project categories
+                    </span>
+                    <UIDropdown
+                      className="ProgramCreation__form-dropdown"
+                      title="Select project category"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </label>
+                </div>
+              </div>
+              <div className="ProgramCreation__form-row row">
+                <div className="col-12">
+                  <label className="ProgramCreation__item--required w-100">
+                    <div className="d-flex justify-content-between w-100">
+                      <span className="ProgramCreation__label d-block">
+                        Program description
+                      </span>
+                      <span className="ProgramCreation__counter">250</span>
                     </div>
                     <textarea
-                      className="UIInput Creation__textarea Creation__textarea--lg w-100"
+                      className="UIInput ProgramCreation__textarea w-100"
                       required
-                      placeholder="Enter exceptions out of scope"
+                      placeholder="Enter program description"
                     ></textarea>
+                  </label>
+                </div>
+              </div>
+            </form>
+            <div className="ProgramCreation__form ProgramCreation__form-details">
+              <h2 className="ProgramCreation__subtitle">Program details</h2>
+              <div className="ProgramCreation__form-details-tabs">
+                <div className="ProgramCreation__form-details-row row align-items-center g-0">
+                  <div className="ProgramCreation__form-details-tab ProgramCreation__form-details-tab--active">
+                    <UIDropdown
+                      className="w-100"
+                      title="Select asset type"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </div>
+                  <div className="ProgramCreation__form-details-tab">
+                    <UIDropdown
+                      title="Select asset type"
+                      items={[{ title: "Item 1" }, { title: "Item 2" }]}
+                    ></UIDropdown>
+                  </div>
+                  <div className="ProgramCreation__form-details-tab ProgramCreation__form-details-tab--action flex-grow-1 d-flex align-items-center">
+                    <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
+                      <span>+</span>Add asset type
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="ProgramCreation__form-details-body">
+                <div className="Product-details-form__item">
+                  <div className="ProgramCreation__form-details-columns ProgramCreation__form-details-columns--header">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <div className="d-flex align-items-center gap-2">
+                        <span className="ProgramCreation__label mb-0">
+                          *Payout type
+                        </span>
+                        <span className="Tooltip">
+                          <div className="Tooltip__icon"></div>
+                          <div className="Tooltip__body">
+                            {`Once checked payout’s maximum value and description become mandatory. At least one payout
+                          type’s maximum has to be $1000 or bigger.`}
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max">
+                      <span className="ProgramCreation__label mb-0">
+                        Payout maximum
+                      </span>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <div className="d-flex align-align-items-center gap-2">
+                        <span className="ProgramCreation__label mb-0">
+                          *Severity description
+                        </span>
+                        <span className="Tooltip">
+                          <div className="Tooltip__icon"></div>
+                          <div className="Tooltip__body">
+                            You have to input at least one payout type’s
+                            severity description.
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <label className="Checkbox">
+                        <input
+                          type="checkbox"
+                          className="Checkbox__input"
+                          defaultChecked
+                        />
+                        <span className="Checkbox__text">Information</span>
+                      </label>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency active">
+                      <input
+                        className="UIInput UIInput--price w-100"
+                        defaultValue={1000}
+                        type="number"
+                        placeholder="100"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter severity description"
+                        defaultValue={"Lorem ipsum dolor sit amet."}
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <label className="Checkbox">
+                        <input type="checkbox" className="Checkbox__input" />
+                        <span className="Checkbox__text">Low</span>
+                      </label>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                      <input
+                        className="UIInput UIInput--price w-100"
+                        type="number"
+                        placeholder="100"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter severity description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <label className="Checkbox">
+                        <input type="checkbox" className="Checkbox__input" />
+                        <span className="Checkbox__text">Medium</span>
+                      </label>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                      <input
+                        className="UIInput UIInput--price w-100"
+                        type="number"
+                        placeholder="100"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter severity description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <label className="Checkbox">
+                        <input type="checkbox" className="Checkbox__input" />
+                        <span className="Checkbox__text">High</span>
+                      </label>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                      <input
+                        className="UIInput UIInput--price w-100"
+                        type="number"
+                        placeholder="100"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter severity description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--type">
+                      <label className="Checkbox">
+                        <input type="checkbox" className="Checkbox__input" />
+                        <span className="Checkbox__text">Critical</span>
+                      </label>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--max ProgramCreation__form-details-column--currency">
+                      <input
+                        className="UIInput UIInput--price w-100"
+                        type="number"
+                        placeholder="100"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--description">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter severity description"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="Product-details-form__item">
+                  <div className="ProgramCreation__form-details-columns ProgramCreation__form-details-columns--header">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <span className="ProgramCreation__label">
+                        *Program assets
+                      </span>
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <span className="ProgramCreation__label">
+                        Asset description
+                      </span>
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                        defaultValue={
+                          "https://www.google.com/images/bitcoin.png"
+                        }
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                        defaultValue={"Bitcoin logo"}
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-columns">
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset ">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="http://      Enter asset URL"
+                      />
+                    </div>
+                    <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--asset">
+                      <input
+                        className="UIInput w-100"
+                        type="text"
+                        placeholder="Enter asset description"
+                      />
+                    </div>
+                  </div>
+                  <div className="ProgramCreation__form-details-add-url">
+                    <span>+</span>Add another URL
+                  </div>
+                </div>
+                <div className="Product-details-form__item">
+                  <div className="ProgramCreation__form-details-column ProgramCreation__form-details-column--editor">
+                    <div className="d-flex justify-content-between align-items-start">
+                      <span className="ProgramCreation__label">
+                        Known exceptions (out of scope)
+                      </span>
+                      <span className="ProgramCreation__counter">2000</span>
+                    </div>
+                    <div className="ProgramCreation__editor Editor">
+                      <div className="Editor__controls d-flex">
+                        <div className="Editor__btn Editor__btn--bold"></div>
+                        <div className="Editor__btn Editor__btn--h1"></div>
+                        <div className="Editor__btn Editor__btn--h2"></div>
+                        <div className="Editor__btn Editor__btn--line"></div>
+                        <div className="Editor__btn Editor__btn--ul"></div>
+                        <div className="Editor__btn Editor__btn--ol"></div>
+                        <div className="Editor__btn Editor__btn--link"></div>
+                      </div>
+                      <textarea
+                        className="UIInput ProgramCreation__textarea ProgramCreation__textarea--lg w-100"
+                        required
+                        placeholder="Enter exceptions out of scope"
+                      ></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
