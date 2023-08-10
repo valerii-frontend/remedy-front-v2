@@ -119,7 +119,7 @@ export function YourCodeHere() {
               </div>
               <div className="ProgramCreation__form-row row">
                 <div className="col-12">
-                  <label className="w-100">
+                  <label className="w-100 invalid">
                     <div className="d-flex justify-content-between w-100">
                       <span className="ProgramCreation__label d-block required">
                         Program description
@@ -130,7 +130,11 @@ export function YourCodeHere() {
                       className="UIInput ProgramCreation__textarea w-100"
                       required
                       placeholder="Enter program description"
-                    ></textarea>
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Amet ad expedita suscipit veritatis quam voluptate iusto
+                      excepturi veniam dolore eos!
+                    </textarea>
                   </label>
                 </div>
               </div>
