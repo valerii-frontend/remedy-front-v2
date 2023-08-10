@@ -175,7 +175,43 @@ export function YourCodeHere() {
                     </ul>
                   </div>
                 </div>
-                {/* TAB BTN */}
+                {/* TAB5 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--right d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">Unactive</div>
+                  <div className="ProgramCreation__tab-close"></div>
+                  <div className="DropdownGroup w-100 position-relative d-none">
+                    <div className="DropdownGroup__selected DropdownGroup__selected--default d-flex align-items-center">
+                      Select asset type
+                    </div>
+                    <ul className="DropdownGroup__list w-100">
+                      <li className="DropdownGroup__item">Smart Contracts</li>
+                      <li className="DropdownGroup__item">Blockchain/DLT</li>
+                      <li className="DropdownGroup__item DropdownGroup__item--category">
+                        Websites and Applications
+                      </li>
+                      <li className="DropdownGroup__item">Circuit</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* TAB6 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--right ProgramCreation__tab--invalid d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">Invalid</div>
+                  <div className="ProgramCreation__tab-close"></div>
+                  <div className="DropdownGroup w-100 position-relative d-none">
+                    <div className="DropdownGroup__selected DropdownGroup__selected--default d-flex align-items-center">
+                      Select asset type
+                    </div>
+                    <ul className="DropdownGroup__list w-100">
+                      <li className="DropdownGroup__item">Smart Contracts</li>
+                      <li className="DropdownGroup__item">Blockchain/DLT</li>
+                      <li className="DropdownGroup__item DropdownGroup__item--category">
+                        Websites and Applications
+                      </li>
+                      <li className="DropdownGroup__item">Circuit</li>
+                    </ul>
+                  </div>
+                </div>
+                {/* TAB ADD NEW BTN */}
                 <div className="ProgramCreation__tab ProgramCreation__tab--add-new d-flex align-items-center flex-grow-1">
                   <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
                     <span>+</span>Add asset type

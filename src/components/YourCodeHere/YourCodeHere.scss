@@ -88,33 +88,6 @@
 .ProgramCreation__details-form-item {
   margin-bottom: 3.2rem;
 }
-.ProgramCreation__details-form-tab {
-  flex: 0 0 25rem;
-  max-width: 25rem;
-  width: 100%;
-  border-top: 1px solid $remedy-Global--color-gray;
-  border-left: 1px solid $remedy-Global--color-gray;
-  border-right: 1px solid $remedy-Global--color-gray;
-  border-bottom: 1px solid $remedy-Global--color-green;
-  &--active {
-    border-color: $remedy-Global--color-green;
-    border-bottom-color: $remedy-Global--color-dark-5;
-  }
-  &--invalid {
-    border-color: $remedy-Global--color-invalid;
-  }
-  &--action {
-    border-width: 0 0 1px 0;
-    height: 4.6rem;
-    & .UIButton {
-      margin-left: 0.5rem;
-      span {
-        font-size: 2rem;
-        margin-right: 1rem;
-      }
-    }
-  }
-}
 .ProgramCreation__details-form-columns {
   display: flex;
   margin: 0 -1rem 2.4rem;
@@ -223,6 +196,7 @@
   &--active {
     position: relative;
     border-color: $remedy-Global--color-green;
+    min-width: 20rem;
     &:before {
       content: "";
       position: absolute;
@@ -243,7 +217,8 @@
     border-color: $remedy-Global--color-invalid;
   }
   &--add-new {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    min-width: 14.8rem;
     max-width: 100%;
     border: none;
     background: none;
@@ -251,6 +226,7 @@
   }
 }
 .ProgramCreation__tab-label {
+  flex: 1 1 100px;
   white-space: nowrap;
   padding: 0 1.6rem;
   font-size: 1.6rem;
@@ -258,10 +234,13 @@
   line-height: 100%;
   letter-spacing: 0.016rem;
   color: $remedy-Global--color-light;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ProgramCreation__tab-close {
-  width: 4.4rem;
+  max-width: 4.4rem;
   height: 4.4rem;
+  flex: 0 0 4.4rem;
   background: url("../../assets/images/icon-cross.svg") center/1.2rem no-repeat;
   &:hover {
     background-color: $remedy-Global--color-dark-4;
