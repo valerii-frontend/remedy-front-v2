@@ -196,7 +196,7 @@ export function YourCodeHere() {
                 </div>
               </div>
               <div className="ProgramCreation__details-form-body">
-                <div className="Product-details-form__item">
+                <div className=".ProgramCreation__details-form-item">
                   <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                       <div className="d-flex align-items-center gap-2">
@@ -349,7 +349,7 @@ export function YourCodeHere() {
                     </div>
                   </div>
                 </div>
-                <div className="Product-details-form__item">
+                <div className=".ProgramCreation__details-form-item">
                   <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--header">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                       <span className="ProgramCreation__label required">
@@ -421,7 +421,7 @@ export function YourCodeHere() {
                     <span>+</span>Add another URL
                   </div>
                 </div>
-                <div className="Product-details-form__item">
+                <div className=".ProgramCreation__details-form-item">
                   <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
                     <div className="d-flex justify-content-between align-items-start">
                       <span className="ProgramCreation__label">
@@ -648,9 +648,9 @@ export function YourCodeHere() {
                     </span>
                     <div className="ProgramCreation__date UIInput w-100" />
                     <div className="TimePicker">
-                      <div className="row align-items-center justify-content-between">
+                      <div className="d-flex align-items-center justify-content-between h-100 px-4">
                         <div className="TimePicker__col position-relative">
-                          <span>Today</span>
+                          <span className="TimePicker__day">Today</span>
                           <div className="Calendar">
                             <div className="Calendar__controls d-flex align-items-center justify-content-between">
                               <div className="Calendar__control Calendar__control--prev"></div>
@@ -713,7 +713,7 @@ export function YourCodeHere() {
                           </div>
                         </div>
                         <div className="col flex-shrink-1 text-center">at</div>
-                        <div className="TimePicker__col">
+                        <div className="TimePicker__col d-flex justify-content-between">
                           <span className="TimePicker__time TimePicker__time--selected">
                             00
                           </span>
