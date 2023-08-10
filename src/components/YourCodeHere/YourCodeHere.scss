@@ -601,18 +601,11 @@
 .DropdownGroup {
   background-color: $remedy-Global--color-dark-3;
 }
-.DropdownGroup__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4.4rem;
-  height: 4.4rem;
-  opacity: 0;
-}
-.DropdownGroup__selected {
+.DropdownGroup__placeholder {
   position: relative;
   height: 4.4rem;
   padding: 0 1.6rem;
+  color: $remedy-Global--color-gray;
   background-color: $remedy-Global--color-dark-5;
   cursor: pointer;
   &:before {
@@ -627,13 +620,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background-image: url("../../assets/images/icon-cross.svg");
-  }
-  &--default {
-    color: $remedy-Global--color-gray;
-    &:before {
-      background-image: url("../../assets/images/icon-arrow-down.svg");
-    }
+    background-image: url("../../assets/images/icon-arrow-down.svg");
   }
 }
 .DropdownGroup__list {
@@ -651,9 +638,6 @@
     background-color: $remedy-Global--color-dark-2;
     color: $remedy-Global--color-white;
     cursor: pointer;
-  }
-  &--default {
-    color: $remedy-Global--color-gray;
   }
   &--category {
     color: $remedy-Global--color-dark-1;
