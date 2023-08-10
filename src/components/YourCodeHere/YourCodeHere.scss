@@ -20,13 +20,25 @@
 }
 .ProgramCreation__label {
   font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.014rem;
 }
 .ProgramCreation__textarea {
-  resize: none;
   height: 10rem;
+  font-family: var(--remedy-Global--font-text);
+  resize: none;
+  &.UIInput {
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
   &--lg {
     height: 21.5rem;
+    &.UIInput {
+      font-size: 1.6rem;
+    }
   }
 }
 .ProgramCreation__date {
@@ -42,15 +54,17 @@
   margin-bottom: 3.4rem;
 }
 .ProgramCreation__wrap {
-  padding: 3.2rem;
+  padding: 3.3rem;
 }
 .ProgramCreation__header {
   margin-bottom: 3.5rem;
 }
 .ProgramCreation__title {
   font-size: 3.6rem;
-  margin-bottom: 1.65rem;
+  margin-bottom: 2rem;
   font-family: var(--remedy-Global--font-header);
+  font-weight: 400;
+  line-height: 100%;
 }
 .ProgramCreation__subtitle {
   font-family: var(--remedy-Global--font-header);
@@ -58,8 +72,8 @@
   font-weight: 800;
   color: $remedy-Global--color-green;
   text-transform: uppercase;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1.6rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid $remedy-Global--color-dark-4;
 }
 .ProgramCreation__error {
@@ -120,7 +134,7 @@
       text-align: center;
       font: inherit;
       top: 0;
-      left: 0;
+      left: -1rem;
       opacity: 0.5;
       color: $remedy-Global--color-gray;
       width: 6.4rem;
@@ -440,7 +454,7 @@
   display: flex;
   align-items: flex-end;
   line-height: 4.4rem;
-  padding-left: 1rem;
+  padding-left: 1.6rem;
   background-size: 1.6rem 1.6rem;
   background-position: center right 1rem;
   background-repeat: no-repeat;
@@ -456,7 +470,7 @@
     background-size: 1.8rem;
   }
   &--empty {
-    color: rgba($remedy-Global--color-gray, 0.5);
+    color: rgba($remedy-Global--color-gray, 0.75);
   }
   &--filled {
     color: $remedy-Global--color-white;
@@ -600,10 +614,11 @@
 
 .DropdownGroup {
   background-color: $remedy-Global--color-dark-3;
+  height: 100%;
 }
 .DropdownGroup__placeholder {
   position: relative;
-  height: 4.4rem;
+  height: 100%;
   padding: 0 1.6rem;
   color: $remedy-Global--color-gray;
   background-color: $remedy-Global--color-dark-5;
