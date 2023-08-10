@@ -485,6 +485,9 @@
     }
   }
 }
+.Placeholder__date {
+  margin-right: 1.2rem;
+}
 
 .Modal {
   position: fixed;
@@ -573,6 +576,7 @@
 }
 .Calendar__controls {
   margin-bottom: 1.6rem;
+  padding: 0 0.5rem;
 }
 .Calendar__control {
   flex: 0 0 2rem;
