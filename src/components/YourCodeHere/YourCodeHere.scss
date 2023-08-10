@@ -558,23 +558,23 @@
 }
 
 .Calendar {
+  position: absolute;
+  bottom: 2.8rem;
+  right: -1.2rem;
   display: inline-block;
   padding: 1.6rem;
   background-color: $remedy-Global--color-dark-3;
-  position: absolute;
-  bottom: 120%;
-  right: 0;
   box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
 }
-.Calendar__header {
+.Calendar__controls {
   margin-bottom: 1.6rem;
 }
 .Calendar__control {
-  flex: 0 0 3.2rem;
-  max-width: 3.2rem;
-  height: 3.2rem;
+  flex: 0 0 2rem;
+  max-width: 2rem;
+  height: 2rem;
   background-position: center;
-  background-size: 1.6rem;
+  background-size: 1rem;
   background-repeat: no-repeat;
   background-color: $remedy-Global--color-dark-3;
   cursor: pointer;
@@ -592,16 +592,21 @@
   font-size: 1.4rem;
 }
 .Calendar__body {
+  display: grid;
+  grid-template-columns: repeat(7, 3.2rem);
+  grid-template-rows: repeat(7, 2.6rem);
   font-size: 1.2rem;
-  td {
-    padding: 0.5rem 0.9rem;
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  thead tr {
-    margin-bottom: 0.2rem;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
-    color: $remedy-Global--color-gray;
-  }
+}
+.Calendar__head {
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
+  color: $remedy-Global--color-gray;
 }
 .Calendar__selected {
   color: $remedy-Global--color-dark-3;
