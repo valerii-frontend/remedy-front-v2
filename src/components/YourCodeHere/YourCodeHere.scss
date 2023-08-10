@@ -30,6 +30,7 @@
   height: 10rem;
   font-family: var(--remedy-Global--font-text);
   resize: none;
+  font-weight: 500;
   &.UIInput {
     font-size: 1.4rem;
     line-height: 150%;
@@ -624,6 +625,7 @@
 .DropdownGroup {
   background-color: $remedy-Global--color-dark-3;
   height: 100%;
+  font-weight: 500;
 }
 .DropdownGroup__placeholder {
   position: relative;
