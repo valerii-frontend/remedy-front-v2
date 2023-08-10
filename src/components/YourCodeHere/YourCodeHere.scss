@@ -75,12 +75,11 @@
   opacity: 0;
   transition: 0.5s;
 }
-//ProgramCreation__details-form
 
+//ProgramCreation__details-form
 .ProgramCreation__details-form-body {
   padding: 3.2rem 1.6rem;
   border: 1px solid $remedy-Global--color-green;
-  border-top: none;
   background-color: $remedy-Global--color-dark-5;
   display: flex;
   flex-direction: column;
@@ -103,7 +102,6 @@
   }
   &--invalid {
     border-color: $remedy-Global--color-invalid;
-    border-bottom-color: $remedy-Global--color-dark-5;
   }
   &--action {
     border-width: 0 0 1px 0;
@@ -211,16 +209,70 @@
     margin-right: 2rem;
   }
 }
+
+// .ProgramCreation__tabs
+.ProgramCreation__tabs {
+  height: 4.4rem;
+}
+.ProgramCreation__tab {
+  flex: 0 1 25.2rem;
+  max-width: 25.2rem;
+  border: 1px solid $remedy-Global--color-gray;
+  background-color: $remedy-Global--color-dark-5;
+  border-bottom: none;
+  &--active {
+    position: relative;
+    border-color: $remedy-Global--color-green;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -1px;
+      left: 0;
+      background-color: $remedy-Global--color-dark-5;
+    }
+  }
+  &--left {
+    border-right: none;
+  }
+  &--right {
+    border-left: none;
+  }
+  &--invalid {
+    border-color: $remedy-Global--color-invalid;
+  }
+  &--add-new {
+    flex: 1 0 auto;
+    max-width: 100%;
+    border: none;
+    background: none;
+    padding: 0 0.4rem;
+  }
+}
+.ProgramCreation__tab-label {
+  white-space: nowrap;
+  padding: 0 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.016rem;
+  color: $remedy-Global--color-light;
+}
+.ProgramCreation__tab-close {
+  width: 4.4rem;
+  height: 4.4rem;
+  background: url("../../assets/images/icon-cross.svg") center/1.2rem no-repeat;
+  &:hover {
+    background-color: $remedy-Global--color-dark-4;
+  }
+}
+
 // STATE
 .invalid {
   position: relative;
-  color: $remedy-Global--color-invalid;
-  & .Placeholder {
-    color: $remedy-Global--color-invalid;
-  }
   & .ProgramCreation__error {
     opacity: 1;
-    color: inherit;
     visibility: visible;
     transform: translateY(135%);
     transition: 0.5s;
@@ -228,7 +280,6 @@
   & .UIInput {
     border-color: $remedy-Global--color-invalid;
     outline-color: $remedy-Global--color-invalid;
-    color: $remedy-Global--color-invalid;
   }
 }
 .required {
@@ -238,7 +289,6 @@
 }
 
 // COMPONENTS
-
 .Checkbox {
   display: flex;
   align-items: center;
@@ -424,6 +474,7 @@
   }
   &--calendar {
     background-image: url("../../assets/images/icon-calendar.svg");
+    background-size: 1.8rem;
   }
   &--empty {
     color: rgba($remedy-Global--color-gray, 0.5);

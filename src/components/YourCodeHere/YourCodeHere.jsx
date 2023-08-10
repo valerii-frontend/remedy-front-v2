@@ -137,62 +137,49 @@ export function YourCodeHere() {
             </div>
             <div className="ProgramCreation__form ProgramCreation__details-form">
               <h2 className="ProgramCreation__subtitle">Program details</h2>
-              <div className="ProgramCreation__details-form-tabs">
-                <div className="ProgramCreation__details-form-row row align-items-center g-0">
-                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--active">
-                    <div className="DropdownGroup w-100 position-relative">
-                      <div className="DropdownGroup__selected d-flex align-items-center">
+              <div className="ProgramCreation__tabs w-100 d-flex">
+                {/* TAB1 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--left d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">
+                    Websites and Applications
+                  </div>
+                  <div className="ProgramCreation__tab-close"></div>
+                </div>
+                {/* TAB2 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--active d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">
+                    Blockchain/DLT
+                  </div>
+                  <div className="ProgramCreation__tab-close"></div>
+                </div>
+                {/* TAB3 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--right ProgramCreation__tab--invalid d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">Random text</div>
+                  <div className="ProgramCreation__tab-close"></div>
+                </div>
+                {/* TAB4 */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--right ProgramCreation__tab--invalid d-flex align-items-center justify-content-between">
+                  <div className="ProgramCreation__tab-label">Random text</div>
+                  <div className="ProgramCreation__tab-close"></div>
+                  <div className="DropdownGroup w-100 position-relative d-none">
+                    <div className="DropdownGroup__selected DropdownGroup__selected--default d-flex align-items-center">
+                      Select asset type
+                    </div>
+                    <ul className="DropdownGroup__list w-100">
+                      <li className="DropdownGroup__item">Smart Contracts</li>
+                      <li className="DropdownGroup__item">Blockchain/DLT</li>
+                      <li className="DropdownGroup__item DropdownGroup__item--category">
                         Websites and Applications
-                        <div className="DropdownGroup__close"></div>
-                      </div>
-                      <ul className="DropdownGroup__list w-100 d-none ">
-                        <li className="DropdownGroup__item DropdownGroup__item--default">
-                          Select asset type
-                        </li>
-                        <li className="DropdownGroup__item">Smart Contracts</li>
-                        <li className="DropdownGroup__item">Blockchain/DLT</li>
-                        <li className="DropdownGroup__item DropdownGroup__item--category">
-                          Websites and Applications
-                        </li>
-                        <li className="DropdownGroup__item">Circuit</li>
-                      </ul>
-                    </div>
+                      </li>
+                      <li className="DropdownGroup__item">Circuit</li>
+                    </ul>
                   </div>
-                  <div className="ProgramCreation__details-form-tab">
-                    <div className="DropdownGroup w-100 position-relative">
-                      <div className="DropdownGroup__selected DropdownGroup__selected--default d-flex align-items-center">
-                        Select asset type
-                      </div>
-                      <ul className="DropdownGroup__list w-100">
-                        <li className="DropdownGroup__item">Smart Contracts</li>
-                        <li className="DropdownGroup__item">Blockchain/DLT</li>
-                        <li className="DropdownGroup__item DropdownGroup__item--category">
-                          Websites and Applications
-                        </li>
-                        <li className="DropdownGroup__item">Circuit</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--invalid">
-                    <div className="DropdownGroup w-100 position-relative">
-                      <div className="DropdownGroup__selected d-flex align-items-center invalid">
-                        Blockchain
-                      </div>
-                      <ul className="DropdownGroup__list w-100 d-none">
-                        <li className="DropdownGroup__item">Smart Contracts</li>
-                        <li className="DropdownGroup__item">Blockchain/DLT</li>
-                        <li className="DropdownGroup__item DropdownGroup__item--category">
-                          Websites and Applications
-                        </li>
-                        <li className="DropdownGroup__item">Circuit</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="ProgramCreation__details-form-tab ProgramCreation__details-form-tab--action flex-grow-1 d-flex align-items-center">
-                    <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
-                      <span>+</span>Add asset type
-                    </button>
-                  </div>
+                </div>
+                {/* TAB BTN */}
+                <div className="ProgramCreation__tab ProgramCreation__tab--add-new d-flex align-items-center flex-grow-1">
+                  <button className="UIButton UIButton--green-outline UIButton--sm d-flex align-items-center">
+                    <span>+</span>Add asset type
+                  </button>
                 </div>
               </div>
               <div className="ProgramCreation__details-form-body">
@@ -486,22 +473,22 @@ export function YourCodeHere() {
                 <div className="d-flex ProgramCreation__form-row ProgramCreation__form-radios ">
                   <label className="Radio">
                     <input
-                      value={1}
+                      value={0}
                       name="kyc"
                       type="radio"
                       className="Radio__input"
                       defaultChecked
                     />
-                    <span className="Radio__label">Yes</span>
+                    <span className="Radio__label">No</span>
                   </label>
                   <label className="Radio">
                     <input
                       name="kyc"
-                      value={0}
+                      value={1}
                       type="radio"
                       className="Radio__input"
                     />
-                    <span className="Radio__label">No</span>
+                    <span className="Radio__label">Yes</span>
                   </label>
                 </div>
               </fieldset>
