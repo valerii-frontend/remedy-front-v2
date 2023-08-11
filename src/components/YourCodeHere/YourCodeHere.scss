@@ -6,17 +6,19 @@
   background-color: $remedy-Global--color-dark-2;
   font-family: var(--remedy-Global--font-text);
 }
-.ProgramCreation__confirugation-form {
-  & .ProgramCreation__label {
-    margin-bottom: 1.6rem;
-  }
-  & .ProgramCreation__form-radios {
-    gap: 0 3.2rem;
-  }
+.ProgramCreation__form-radios {
+  gap: 0 3.3rem;
 }
 .ProgramCreation__counter {
   color: $remedy-Global--color-gray;
   font-size: 1.4rem;
+}
+.ProgramCreation__textarea-label {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.014rem;
 }
 .ProgramCreation__label {
   font-size: 1.4rem;
@@ -25,6 +27,9 @@
   font-weight: 500;
   line-height: 100%;
   letter-spacing: 0.014rem;
+  &--config {
+    margin-bottom: 2rem;
+  }
 }
 .ProgramCreation__textarea {
   height: 10rem;
@@ -46,13 +51,16 @@
   height: 4.4rem;
 }
 .ProgramCreation__always-active {
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
-.ProgramCreation__form {
-  margin-bottom: 3.2rem;
+.ProgramCreation__form-general {
+  margin-bottom: 3rem;
 }
 .ProgramCreation__form-row {
-  margin-bottom: 3.4rem;
+  margin-bottom: 3.6rem;
+  &--last {
+    margin-bottom: 3rem;
+  }
 }
 .ProgramCreation__wrap {
   padding: 3.3rem;
@@ -73,9 +81,12 @@
   font-weight: 800;
   color: $remedy-Global--color-green;
   text-transform: uppercase;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
   margin-bottom: 2rem;
   border-bottom: 1px solid $remedy-Global--color-dark-4;
+  &--details {
+    margin-bottom: 1.6rem;
+  }
 }
 .ProgramCreation__error {
   position: absolute;
@@ -99,15 +110,20 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 3.2rem;
 }
 .ProgramCreation__details-form-item {
   margin-bottom: 3.2rem;
 }
 .ProgramCreation__details-form-columns {
   display: flex;
+  align-items: center;
   margin: 0 -1rem 2.4rem;
   &--header {
-    margin: 0 -1rem 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  &--last {
+    margin-bottom: 1rem;
   }
 }
 .ProgramCreation__details-form-column {
@@ -123,7 +139,7 @@
   &--currency {
     position: relative;
     & .UIInput {
-      padding-left: 4.4rem;
+      padding-left: 3.5rem;
     }
     &.active:before {
       opacity: 1;
@@ -160,13 +176,17 @@
   }
 }
 .ProgramCreation__details-form-add-url {
-  margin-bottom: 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   color: $remedy-Global--color-green;
   cursor: pointer;
   span {
-    font-size: 2rem;
-    margin: 0 1rem;
+    font-size: 2.2rem;
+    margin-right: 1rem;
   }
+}
+.ProgramCreation__details-area {
+  margin-bottom: 3.6rem;
 }
 
 // ProgramCreation__actions
@@ -293,6 +313,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.014rem;
   &::before {
     content: "";
     width: 1.6rem;
@@ -469,6 +491,9 @@
   &--calendar {
     background-image: url("../../assets/images/icon-calendar.svg");
     background-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.016rem;
   }
   &--empty {
     color: rgba($remedy-Global--color-gray, 0.75);
@@ -478,7 +503,7 @@
   }
   &--link {
     &:before {
-      content: "https://";
+      content: "http://";
       margin: 0 1.6rem 0 0.6rem;
       padding-right: 1.6rem;
       border-right: 1px solid $remedy-Global--color-dark-2;
@@ -486,7 +511,7 @@
   }
 }
 .Placeholder__date {
-  margin-right: 1.2rem;
+  margin-right: 1.3rem;
 }
 
 .Modal {

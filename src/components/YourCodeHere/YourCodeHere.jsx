@@ -5,7 +5,7 @@ import "./YourCodeHere.scss";
 
 export function YourCodeHere() {
   const [modal, setModal] = useState(false);
-  const test = 2;
+  const test = 1;
   //  1 - first figma layout
   //  2 - states and errors
   if (test === 2) {
@@ -33,7 +33,7 @@ export function YourCodeHere() {
                   </div>
                 </div>
               </div>
-              <div className="ProgramCreation__form">
+              <div className="ProgramCreation__form-general">
                 <h2 className="ProgramCreation__subtitle">
                   general information
                 </h2>
@@ -97,7 +97,7 @@ export function YourCodeHere() {
                     </label>
                   </div>
                 </div>
-                <div className="ProgramCreation__form-row row">
+                <div className="ProgramCreation__form-row ProgramCreation__form-row--last row">
                   <div className="col-6">
                     <label className="w-100">
                       <span className="ProgramCreation__label d-block">
@@ -123,7 +123,7 @@ export function YourCodeHere() {
                     </label>
                   </div>
                 </div>
-                <div className="ProgramCreation__form-row row">
+                <div className="row">
                   <div className="col-12">
                     <label className="w-100 invalid">
                       <div className="d-flex justify-content-between w-100">
@@ -146,7 +146,9 @@ export function YourCodeHere() {
                 </div>
               </div>
               <div className="ProgramCreation__form ProgramCreation__details-form">
-                <h2 className="ProgramCreation__subtitle">Program details</h2>
+                <h2 className="ProgramCreation__subtitle ProgramCreation__subtitle--details">
+                  Program details
+                </h2>
                 <div className="ProgramCreation__tabs w-100 d-flex">
                   {/* TAB1 */}
                   <div className="ProgramCreation__tab ProgramCreation__tab--left d-flex align-items-center justify-content-between">
@@ -228,7 +230,7 @@ export function YourCodeHere() {
                         </span>
                       </div>
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
-                        <div className="d-flex align-align-items-center gap-2">
+                        <div className="d-flex align-items-center gap-2">
                           <span className="ProgramCreation__label required mb-0">
                             Severity description
                           </span>
@@ -334,7 +336,7 @@ export function YourCodeHere() {
                         />
                       </div>
                     </div>
-                    <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-columns mb-0">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                         <label className="Checkbox">
                           <input type="checkbox" className="Checkbox__input" />
@@ -408,7 +410,7 @@ export function YourCodeHere() {
                         />
                       </div>
                     </div>
-                    <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--last">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                         <div className="position-relative">
                           <span className="Placeholder Placeholder--empty Placeholder--link">
@@ -429,7 +431,7 @@ export function YourCodeHere() {
                       <span>+</span>Add another URL
                     </div>
                   </div>
-                  <div className="ProgramCreation__details-form-item">
+                  <div className="mb-0">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
                       <div className="d-flex justify-content-between align-items-start">
                         <span className="ProgramCreation__label">
@@ -625,7 +627,7 @@ export function YourCodeHere() {
                   Program configuration
                 </h2>
                 <fieldset>
-                  <span className="ProgramCreation__label d-block ">
+                  <span className="ProgramCreation__label ProgramCreation__label--config d-block ">
                     KYC-required
                   </span>
                   <div className="d-flex ProgramCreation__form-row ProgramCreation__form-radios ">
@@ -846,7 +848,7 @@ export function YourCodeHere() {
                   </div>
                 </div>
               </div>
-              <div className="ProgramCreation__form">
+              <div className="ProgramCreation__form-general">
                 <h2 className="ProgramCreation__subtitle">
                   general information
                 </h2>
@@ -909,7 +911,7 @@ export function YourCodeHere() {
                     </label>
                   </div>
                 </div>
-                <div className="ProgramCreation__form-row row">
+                <div className="ProgramCreation__form-row ProgramCreation__form-row--last row">
                   <div className="col-6">
                     <label className="w-100">
                       <span className="ProgramCreation__label d-block">
@@ -935,11 +937,11 @@ export function YourCodeHere() {
                     </label>
                   </div>
                 </div>
-                <div className="ProgramCreation__form-row row">
+                <div className="row">
                   <div className="col-12">
                     <label className="w-100">
-                      <div className="d-flex justify-content-between w-100">
-                        <span className="ProgramCreation__label d-block required">
+                      <div className="d-flex justify-content-between w-100 align-items-center mb-3">
+                        <span className="ProgramCreation__textarea-label d-block required">
                           Program description
                         </span>
                         <span className="ProgramCreation__counter">200</span>
@@ -954,7 +956,9 @@ export function YourCodeHere() {
                 </div>
               </div>
               <div className="ProgramCreation__form ProgramCreation__details-form">
-                <h2 className="ProgramCreation__subtitle">Program details</h2>
+                <h2 className="ProgramCreation__subtitle ProgramCreation__subtitle--details">
+                  Program details
+                </h2>
                 <div className="ProgramCreation__tabs w-100 d-flex">
                   <div className="ProgramCreation__tab ProgramCreation__tab--active d-flex align-items-center justify-content-between">
                     <div className="ProgramCreation__tab-label">
@@ -1006,7 +1010,7 @@ export function YourCodeHere() {
                         </span>
                       </div>
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--description">
-                        <div className="d-flex align-align-items-center gap-2">
+                        <div className="d-flex align-items-center gap-2">
                           <span className="ProgramCreation__label required mb-0">
                             Severity description
                           </span>
@@ -1112,7 +1116,7 @@ export function YourCodeHere() {
                         />
                       </div>
                     </div>
-                    <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-columns mb-0">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--type">
                         <label className="Checkbox">
                           <input type="checkbox" className="Checkbox__input" />
@@ -1148,7 +1152,7 @@ export function YourCodeHere() {
                         </span>
                       </div>
                     </div>
-                    <div className="ProgramCreation__details-form-columns">
+                    <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--last">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                         <div className="position-relative">
                           <span className="Placeholder Placeholder--empty Placeholder--link">
@@ -1169,7 +1173,7 @@ export function YourCodeHere() {
                       <span>+</span>Add another URL
                     </div>
                   </div>
-                  <div className="ProgramCreation__details-form-item">
+                  <div className="mb-0">
                     <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--editor">
                       <div className="d-flex justify-content-between align-items-start">
                         <span className="ProgramCreation__label">
@@ -1228,7 +1232,7 @@ export function YourCodeHere() {
                   Program configuration
                 </h2>
                 <fieldset>
-                  <span className="ProgramCreation__label d-block ">
+                  <span className="ProgramCreation__label ProgramCreation__label--config d-block ">
                     KYC-required
                   </span>
                   <div className="d-flex ProgramCreation__form-row ProgramCreation__form-radios ">
