@@ -375,10 +375,15 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-columns">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
                         <div className="position-relative">
-                          <span className="Placeholder Placeholder--filled Placeholder--cross">
-                            {`https://google.com/bitcoin.png`}
+                          <input
+                            className="UIInput w-100"
+                            type="text"
+                            placeholder="Enter asset description"
+                            defaultValue={`https://google.com/bitcoin.png`}
+                          />
+                          <span className="ProgramCreation__error">
+                            Wrong asset
                           </span>
-                          <input className="UIInput w-100" type="text" />
                         </div>
                       </div>
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
@@ -393,13 +398,15 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-columns">
                       <div className="ProgramCreation__details-form-column  ProgramCreation__details-form-column--asset invalid">
                         <div className="position-relative">
-                          <span className="Placeholder Placeholder--filled">
-                            {`random.xyz`}
-                          </span>
+                          <input
+                            className="UIInput w-100"
+                            type="text"
+                            placeholder="Enter asset description"
+                            defaultValue={"random.xyz"}
+                          />
                           <span className="ProgramCreation__error">
                             Wrong asset
                           </span>
-                          <input className="UIInput w-100" type="text" />
                         </div>
                       </div>
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
@@ -413,18 +420,15 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--last">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                         <div className="position-relative">
-                          <span className="Placeholder Placeholder--empty Placeholder--link">
-                            {`Enter asset URL`}
+                          <input
+                            className="UIInput w-100"
+                            type="text"
+                            placeholder="Enter asset description"
+                          />
+                          <span className="ProgramCreation__error">
+                            Wrong asset
                           </span>
-                          <input className="UIInput w-100" type="text" />
                         </div>
-                      </div>
-                      <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
-                        <input
-                          className="UIInput w-100"
-                          type="text"
-                          placeholder="Enter asset description"
-                        />
                       </div>
                     </div>
                     <div className="ProgramCreation__details-form-add-url">
@@ -1155,10 +1159,14 @@ export function YourCodeHere() {
                     <div className="ProgramCreation__details-form-columns ProgramCreation__details-form-columns--last">
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset ">
                         <div className="position-relative">
-                          <span className="Placeholder Placeholder--empty Placeholder--link">
-                            {`Enter asset URL`}
+                          <input
+                            className="UIInput w-100"
+                            type="text"
+                            placeholder="Enter asset description"
+                          />
+                          <span className="ProgramCreation__error">
+                            Wrong asset
                           </span>
-                          <input className="UIInput w-100" type="text" />
                         </div>
                       </div>
                       <div className="ProgramCreation__details-form-column ProgramCreation__details-form-column--asset">
