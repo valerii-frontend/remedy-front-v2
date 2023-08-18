@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { UserContainer } from "../User/UserContainer.jsx";
 
-import docIcon from "../../assets/images/icon-document.svg";
-import docIconDark from "../../assets/images/icon-document-dark.svg";
+import SidebarReports from "./SidebarReports.jsx";
+import ThreadReports from "./ThreadReports.jsx";
 
 import "./YourCodeHere.scss";
 
@@ -11,8 +11,15 @@ export function YourCodeHere() {
 
   return (
     <UserContainer>
-      <img src={docIcon} />
-      <img src={docIconDark} />
+      <div className="Reports">
+        <h1 className="Reports__title">
+          My Reports /The most sophisticated title
+        </h1>
+        <div className="Reports__wrapper">
+          <ThreadReports />
+          <SidebarReports />
+        </div>
+      </div>
     </UserContainer>
   );
 }
