@@ -13,7 +13,7 @@ export function YourCodeHere() {
     <UserContainer>
       <div className="Reports">
         <h1 className="Reports__title">
-          My Reports /The most sophisticated title
+          My Reports / The most sophisticated title
         </h1>
         <div className="Reports__wrapper">
           <ThreadReports />
