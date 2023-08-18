@@ -1,10 +1,13 @@
 @import "../../styles/scss-variables";
 @import "../../styles/mixins";
 
+$light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
+
 .Reports {
+  background-color: $remedy-Global--color-dark-2;
 }
 .Reports__title {
-  padding: 1.2rem 0;
+  padding: 1.5rem 0;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 100%;
@@ -15,11 +18,10 @@
 }
 
 .Thread-reports {
-  background-color: $remedy-Global--color-dark-2;
 }
 .Thread-reports__header {
   height: 4.4rem;
-  border-bottom: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
+  border-bottom: $light-border;
 }
 .Thread-reports__pin {
   flex: 0 0 4.4rem;
@@ -46,8 +48,6 @@
     background-color: $remedy-Global--color-light;
   }
 }
-.Thread-reports__tabs {
-}
 .Thread-reports__tab {
   padding: 0 1.6rem 0 2rem;
   flex: 0 1 13.6rem;
@@ -66,13 +66,93 @@
   }
 }
 
-.Thread-reports__dialog {
+.Thread-reports__log {
+  height: 700px;
 }
 .Thread-reports__date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.012rem;
+  text-align: center;
+  margin: 2rem 0;
 }
 .Thread-reports__message {
+  padding: 1.2rem 3.2rem 1.6rem;
+  &--view {
+    background-color: $remedy-Global--color-tooltip;
+  }
 }
-.d-flex {
+.Thread-reports__message-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.016rem;
+  &--new {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -2.2rem;
+      transform: translateY(-50%);
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: $remedy-Global--color-green;
+    }
+  }
 }
+.Thread-reports__message-username {
+  margin-right: 0.8rem;
+}
+.Thread-reports__message-date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.012rem;
+  color: $remedy-Global--color-gray;
+}
+.Thread-reports__message-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.016rem;
+  color: $remedy-Global--color-gray;
+  span {
+    margin: 0 0.4rem;
+    color: $remedy-Global--color-light;
+  }
+}
+.Thread-reports__message-btn {
+  margin-top: 1.6rem;
+  svg {
+    fill: currentColor;
+    margin-right: 0.8rem;
+  }
+}
+.Thread-reports__new {
+  padding: 0 0.85rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.012rem;
+  color: $remedy-Global--color-green;
+  border-bottom: $light-border;
+  line-height: 2rem;
+}
+
+.Sidebar-reports {
+  flex: 0 0 30rem;
+  max-width: 30rem;
+  border-left: $light-border;
+}
+
 .Avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: #5197fb;
+  margin-right: 1.2rem;
 }

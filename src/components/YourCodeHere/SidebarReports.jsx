@@ -1,6 +1,6 @@
 export default function SidebarReports() {
   return (
-    <div className="Reports__sidebar Sidebar-reports">
+    <div className="Sidebar-reports">
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label"></div>
         <div className="Sidebar-reports__id"></div>

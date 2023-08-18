@@ -15,7 +15,7 @@ export function YourCodeHere() {
         <h1 className="Reports__title">
           My Reports / The most sophisticated title
         </h1>
-        <div className="Reports__wrapper">
+        <div className="Reports__wrapper d-flex">
           <ThreadReports />
           <SidebarReports />
         </div>
