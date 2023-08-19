@@ -69,7 +69,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 }
 
 .Thread-reports__log {
-  min-height: 68rem;
+  min-height: 66rem;
 }
 .Thread-reports__date {
   font-size: 1.2rem;
@@ -291,10 +291,70 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   transition: 0.3s;
 }
 
+// AVATAR
 .Avatar {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
   background-color: #5197fb;
   margin-right: 1.2rem;
+  &--sm {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.2rem;
+    background-color: #8b0000;
+    margin-right: 0.9rem;
+    &:nth-child(2n) {
+      background-color: #000070;
+    }
+    &:nth-child(3n) {
+      background-color: #005c00;
+    }
+  }
+}
+
+// Sidebar
+.Sidebar-reports {
+  padding: 1.2rem 1.6rem;
+}
+.Sidebar-reports__item {
+  color: $remedy-Global--color-light;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.016rem;
+  margin-bottom: 2.6rem;
+}
+.Sidebar-reports__label {
+  color: $remedy-Global--color-gray;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.014rem;
+}
+.Sidebar-reports__status {
+}
+.Severity-dropdown {
+}
+.Sidebar-reports__link {
+  span {
+    padding: 0.2rem;
+    border-bottom: 1px solid $remedy-Global--color-light;
+  }
+}
+.Sidebar-reports__assets {
+  svg {
+    fill: $remedy-Global--color-light;
+  }
+}
+.Sidebar-reports__show-all {
+  margin-top: 1.4rem;
+  span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.014rem;
+    color: $remedy-Global--color-green;
+    padding: 0.2rem;
+    border-bottom: 1px solid $remedy-Global--color-green;
+  }
 }
