@@ -173,14 +173,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   line-height: 2rem;
 }
 
-// Sidebar-reports
-
-.Sidebar-reports {
-  flex: 0 0 30rem;
-  max-width: 30rem;
-  border-left: $light-border;
-}
-
 // Editor-reports
 
 .Editor-reports {
@@ -351,9 +343,12 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   }
 }
 
-// Sidebar
+// Sidebar-reports
 .Sidebar-reports {
   padding: 1.2rem 1.6rem;
+  flex: 0 0 30rem;
+  max-width: 30rem;
+  border-left: $light-border;
 }
 .Sidebar-reports__item {
   color: $remedy-Global--color-light;
@@ -369,11 +364,8 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   margin-bottom: 1rem;
   letter-spacing: 0.014rem;
 }
-.Sidebar-reports__status {
-}
-.Severity-dropdown {
-}
 .Sidebar-reports__link {
+  cursor: pointer;
   span {
     padding: 0.2rem;
     border-bottom: 1px solid $remedy-Global--color-light;
@@ -385,6 +377,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   }
 }
 .Sidebar-reports__show-all {
+  cursor: pointer;
   margin-top: 1.4rem;
   span {
     font-size: 1.4rem;
@@ -397,6 +390,23 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   }
 }
 
+.Sidebar-reports__controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1fr 1fr;
+  gap: 0.8rem;
+}
+.Sidebar-reports__submit {
+  grid-column: 1/-1;
+}
+.Sidebar-reports__btn {
+  background-color: $remedy-Global--color-tooltip;
+  &:hover {
+    background-color: $remedy-Global--color-dark-2;
+  }
+}
+
+// DROPDOWN
 .ReportsDropdown {
   position: relative;
   svg {
