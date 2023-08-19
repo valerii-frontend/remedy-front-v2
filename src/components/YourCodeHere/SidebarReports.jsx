@@ -1,5 +1,5 @@
-import ReportsSeverity from "../User/ReportsSeverity";
-import ReportsStatuses from "../User/ReportsStatuses";
+import ReportsSeverity from "./ReportsSeverity";
+import ReportsStatuses from "./ReportsStatuses";
 import Avatar from "./Avatar";
 import IconSvg from "./IconSvg";
 

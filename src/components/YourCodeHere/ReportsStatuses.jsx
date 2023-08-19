@@ -1,5 +1,4 @@
 import { useState } from "react";
-import IconSvg from "../YourCodeHere/IconSvg";
 
 const statuses = [
   {

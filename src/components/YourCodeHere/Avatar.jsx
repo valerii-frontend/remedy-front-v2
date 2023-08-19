@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Avatar({ small, imgPath, name }) {
+export default function Avatar({ small, img, name }) {
   const splitName = name.split(" ");
   let initials = "";
   if (splitName.length > 1) {
@@ -15,7 +15,7 @@ export default function Avatar({ small, imgPath, name }) {
         small ? "Avatar--sm" : ""
       }`}
     >
-      {imgPath ? <img src={imgPath} alt={initials} /> : initials}
+      {img ? <img src={img} alt={initials} /> : initials}
     </div>
   );
 }

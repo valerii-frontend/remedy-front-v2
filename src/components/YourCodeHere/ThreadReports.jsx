@@ -1,6 +1,7 @@
 import Avatar from "./Avatar";
 import EditorReports from "./EditorReports";
 import IconSvg from "./IconSvg";
+import userImg from "../../assets/images/user-avatar.png";
 
 export default function ThreadReports() {
   return (
@@ -25,7 +26,7 @@ export default function ThreadReports() {
           <div className="Thread-reports__date">21 Feb 2023</div>
           <div className="Thread-reports__message Thread-reports__message--view">
             <div className="d-flex">
-              <Avatar name="John" />
+              <Avatar img={userImg} name="u" />
               <div className="flex-grow-1">
                 <div className="Thread-reports__message-header">
                   <span className="Thread-reports__message-username">
