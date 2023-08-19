@@ -22,6 +22,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 .Thread-reports {
 }
 .Thread-reports__header {
+  position: relative;
   height: 4.4rem;
   border-bottom: $light-border;
 }
@@ -32,7 +33,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     fill: $remedy-Global--color-dark-1;
   }
 }
-.Thread-reports__options {
+.Thread-reports__options-icon {
   position: relative;
   flex: 0 0 4.4rem;
   max-width: 4.4rem;
@@ -48,6 +49,33 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     height: 0.3rem;
     border-radius: 50%;
     background-color: $remedy-Global--color-light;
+  }
+}
+.Thread-reports__drop-options {
+  position: absolute;
+  width: 100%;
+  max-width: 24.4rem;
+  top: 110%;
+  right: 0;
+  background-color: $remedy-Global--color-dark-3;
+  padding: 0.8rem 0.9rem;
+  list-style-type: none;
+}
+.Thread-reports__drop-options-item {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.14rem;
+  color: $remedy-Global--color-gray;
+  padding: 0.8rem 1.6rem;
+  &--active {
+    background-image: url("../../assets/images/icon-checkbox-light.svg");
+    background-position: center right 1rem;
+    background-repeat: no-repeat;
+  }
+  &:hover {
+    background-color: $remedy-Global--color-dark-2;
+    color: $remedy-Global--color-light;
   }
 }
 .Thread-reports__tab {
@@ -74,7 +102,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 .Thread-reports__date {
   font-size: 1.2rem;
   font-weight: 500;
-  line-height: 100%;
+  line-height: 125%;
   letter-spacing: 0.012rem;
   text-align: center;
   margin: 2rem 0;

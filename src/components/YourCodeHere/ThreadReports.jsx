@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Avatar from "./Avatar";
 import EditorReports from "./EditorReports";
 import IconSvg from "./IconSvg";
 import userImg from "../../assets/images/user-avatar.png";
 
 export default function ThreadReports() {
+  const [dropOptions, setDropOptions] = useState(false);
+  const [option, setOption] = useState(1);
+
   return (
     <div className="Thread-reports flex-grow-1">
       <div className="Thread-reports__header d-flex justify-content-between">
@@ -15,11 +19,40 @@ export default function ThreadReports() {
             <IconSvg name="doc" /> View Report
           </div>
         </div>
-        <div className="Thread-reports__options d-flex align-items-center justify-content-center">
+        <div
+          className="Thread-reports__options-icon d-flex align-items-center justify-content-center"
+          onClick={() => setDropOptions((p) => !p)}
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
+        {dropOptions && (
+          <ul className="Thread-reports__drop-options">
+            <li
+              className={`Thread-reports__drop-options-item ${
+                option == 1 ? "Thread-reports__drop-options-item--active" : ""
+              }`}
+              onClick={() => {
+                setDropOptions(false);
+                setOption(1);
+              }}
+            >
+              Show All Messages
+            </li>
+            <li
+              className={`Thread-reports__drop-options-item ${
+                option == 2 ? "Thread-reports__drop-options-item--active" : ""
+              }`}
+              onClick={() => {
+                setDropOptions(false);
+                setOption(2);
+              }}
+            >
+              Show only Activity Log
+            </li>
+          </ul>
+        )}
       </div>
       <div className="Thread-reports__body">
         <div className="Thread-reports__log d-flex flex-column justify-content-end">
