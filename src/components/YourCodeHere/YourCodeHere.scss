@@ -17,6 +17,8 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   background-color: $remedy-Global--color-tooltip;
 }
 
+// Thread-reports
+
 .Thread-reports {
 }
 .Thread-reports__header {
@@ -67,7 +69,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 }
 
 .Thread-reports__log {
-  height: 700px;
+  min-height: 68rem;
 }
 .Thread-reports__date {
   font-size: 1.2rem;
@@ -143,10 +145,138 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   line-height: 2rem;
 }
 
+// Sidebar-reports
+
 .Sidebar-reports {
   flex: 0 0 30rem;
   max-width: 30rem;
   border-left: $light-border;
+}
+
+// Editor-reports
+
+.Editor-reports {
+  padding: 1.6rem 0;
+}
+.Editor-reports__header {
+  padding: 0 1.6rem;
+  height: 4rem;
+  border-top: $light-border;
+  border-bottom: $light-border;
+}
+.Editor-reports__tabs {
+  padding-left: 1.6rem;
+  column-gap: 2.4rem;
+}
+.Editor-reports__tab {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.014rem;
+  border-bottom: 2px solid transparent;
+  &--active {
+    color: $remedy-Global--color-green;
+    border-bottom: 2px solid $remedy-Global--color-green;
+  }
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    border-color: $remedy-Global--color-light;
+  }
+}
+.Editor-reports__tool {
+  flex: 0 0 4rem;
+  max-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  svg {
+    fill: $remedy-Global--color-light;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $remedy-Global--color-dark-1;
+  }
+  &--selected {
+    background-color: $remedy-Global--color-dark-3;
+  }
+}
+.Editor-reports__divider {
+  width: 0.1rem;
+  flex: 0 0 0.1rem;
+  height: 1.6rem;
+  margin: 0 1.2rem;
+  background-color: $remedy-Global--color-dark-1;
+}
+.Editor-reports__text {
+  width: 100%;
+  padding: 1.2rem 3.2rem;
+  background-color: transparent;
+  height: 8.4rem;
+  resize: none;
+  border: none;
+  font-family: inherit;
+  color: $remedy-Global--color-light;
+  &:focus {
+    outline: none;
+    background-color: rgba($remedy-Global--color-green, 0.05);
+  }
+}
+.Editor-reports__actions {
+  height: 3.6rem;
+  gap: 0.8rem;
+  padding-left: 3.2rem;
+  padding-right: 1.6rem;
+}
+.Editor-reports__file {
+  border: 1px dashed $remedy-Global--color-dark-1;
+  transition: 0.3s;
+  span {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0.014rem;
+    color: $remedy-Global--color-gray;
+    transition: 0.3s;
+  }
+  svg {
+    fill: $remedy-Global--color-light;
+    margin-right: 0.8rem;
+  }
+  input {
+    display: none;
+  }
+  &:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    border-color: $remedy-Global--color-light;
+    span {
+      transition: 0.3s;
+      color: $remedy-Global--color-green;
+    }
+  }
+}
+.Editor-reports__send {
+  border: none;
+  background-color: transparent;
+  svg {
+    fill: $remedy-Global--color-dark-1;
+  }
+  &:focus {
+    outline: none;
+  }
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: $remedy-Global--color-dark-3;
+    svg {
+      fill: $remedy-Global--color-light;
+    }
+  }
 }
 
 .Avatar {
