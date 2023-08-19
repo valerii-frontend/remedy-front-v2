@@ -422,5 +422,21 @@ export default function IconSvg({ name }) {
           />
         </svg>
       );
+    case "close":
+      return (
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M11.9998 0.943764L11.056 0L5.99965 5.05615L0.943969 0.000709162L0.00016116 0.944474L5.05584 5.99992L0 11.0555L0.943808 11.9993L5.99964 6.94368L11.0562 12L12 11.0562L6.94345 5.99992L11.9998 0.943764Z"
+          />
+        </svg>
+      );
   }
 }

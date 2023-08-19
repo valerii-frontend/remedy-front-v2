@@ -38,7 +38,7 @@ export default function StatusesDropdown() {
                   ? "ReportsDropdown__item--selected"
                   : ""
               } d-flex align-items-center`}
-              key={item.icon}
+              key={item.text}
               onClick={() => {
                 setSelected(item);
                 setDrop(false);
