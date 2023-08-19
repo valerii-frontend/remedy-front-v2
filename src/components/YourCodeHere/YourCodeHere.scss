@@ -95,7 +95,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     margin-right: 0.8rem;
   }
 }
-
 .Thread-reports__log {
   min-height: 66rem;
 }
@@ -390,7 +389,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     border-bottom: 1px solid $remedy-Global--color-green;
   }
 }
-
 .Sidebar-reports__controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -616,6 +614,9 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     color: $remedy-Global--color-gray;
   }
 }
+
+// MODAL TABLE
+
 .ReportsModal__table {
   width: 100%;
   font-size: 1.6rem;
