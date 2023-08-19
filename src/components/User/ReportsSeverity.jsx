@@ -1,49 +1,48 @@
 import { useState } from "react";
 import IconSvg from "../YourCodeHere/IconSvg";
 
-export default function ReportsSeverity() {
-  const [selected, setSelected] = useState({
+const severity = [
+  {
     text: "Critical",
     icon: "drop-critical",
-  });
+  },
+  {
+    text: "High",
+    icon: "drop-high",
+  },
+  {
+    text: "Medium",
+    icon: "drop-medium",
+  },
+  {
+    text: "Low",
+    icon: "drop-low",
+  },
+  {
+    text: "Information",
+    icon: "drop-info",
+  },
+];
+
+export default function ReportsSeverity() {
+  const [selected, setSelected] = useState(severity[0]);
   const [drop, setDrop] = useState(false);
-  const severity = [
-    {
-      text: "Critical",
-      icon: "drop-critical",
-    },
-    {
-      text: "High",
-      icon: "drop-high",
-    },
-    {
-      text: "Medium",
-      icon: "drop-medium",
-    },
-    {
-      text: "Low",
-      icon: "drop-low",
-    },
-    {
-      text: "Information",
-      icon: "drop-info",
-    },
-  ];
+
   return (
-    <div className="ReportsSeverity">
+    <div className="ReportsDropdown">
       <div
-        className="ReportsSeverity__current d-inline-flex align-items-center"
+        className="ReportsDropdown__current d-inline-flex align-items-center"
         onClick={() => setDrop((prev) => !prev)}
       >
         <IconSvg name={selected.icon} /> <span>{selected.text}</span>
       </div>
       {drop && (
-        <ul className="ReportsSeverity__list">
+        <ul className="ReportsDropdown__list">
           {severity.map((item) => (
             <li
-              className={`ReportsSeverity__item d-flex align-items-center ${
+              className={`ReportsDropdown__item d-flex align-items-center ${
                 selected.text === item.text
-                  ? "ReportsSeverity__item--selected"
+                  ? "ReportsDropdown__item--selected"
                   : ""
               }`}
               key={item.icon}

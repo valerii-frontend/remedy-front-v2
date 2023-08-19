@@ -1,4 +1,5 @@
 import ReportsSeverity from "../User/ReportsSeverity";
+import ReportsStatuses from "../User/ReportsStatuses";
 import Avatar from "./Avatar";
 import IconSvg from "./IconSvg";
 
@@ -15,13 +16,11 @@ export default function SidebarReports() {
       </div>
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label">Current Status</div>
-        <div className="Sidebar-reports__status">In Progress</div>
+        <ReportsStatuses />
       </div>
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label">Severity</div>
-        <div className="Severity-dropdown">
-          <ReportsSeverity />
-        </div>
+        <ReportsSeverity />
       </div>
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label">Program Name</div>
