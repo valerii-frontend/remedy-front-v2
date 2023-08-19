@@ -1,3 +1,4 @@
+import ReportsDropdown from "../User/Reports-dropdown";
 import Avatar from "./Avatar";
 import IconSvg from "./IconSvg";
 
@@ -18,7 +19,9 @@ export default function SidebarReports() {
       </div>
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label">Severity</div>
-        <div className="Severity-dropdown">Critical</div>
+        <div className="Severity-dropdown">
+          <ReportsDropdown />
+        </div>
       </div>
       <div className="Sidebar-reports__item">
         <div className="Sidebar-reports__label">Program Name</div>
