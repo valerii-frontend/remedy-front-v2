@@ -1,9 +1,11 @@
+import { useState } from "react";
 import ReportsSeverity from "./ReportsSeverity";
 import ReportsStatuses from "./ReportsStatuses";
 import Avatar from "./Avatar";
 import IconSvg from "./IconSvg";
 
 export default function SidebarReports() {
+  const [showAll, setShowAll] = useState(false);
   return (
     <div className="Sidebar-reports d-flex flex-column">
       <div className="Sidebar-reports__data flex-grow-1">
@@ -40,8 +42,21 @@ export default function SidebarReports() {
           <div className="Sidebar-reports__assets">
             AaveDebtPositionParserType <IconSvg name="angle-arrow" />
           </div>
+          {showAll && (
+            <div className="Sidebar-reports__assets Sidebar-reports__assets--hidden">
+              {Array.apply(null, { length: 49 }).map((item, index) => {
+                return (
+                  <div className="Sidebar-reports__assets" key={index}>
+                    {index + 1} Asset <IconSvg name="angle-arrow" />
+                  </div>
+                );
+              })}
+            </div>
+          )}
           <div className="Sidebar-reports__show-all">
-            <span>Show all</span>
+            <span onClick={() => setShowAll((p) => !p)}>
+              {showAll ? "Hide" : "Show"} all
+            </span>
           </div>
         </div>
         <div className="Sidebar-reports__item">

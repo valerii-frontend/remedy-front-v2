@@ -9,7 +9,7 @@ export default function ThreadReports() {
   const [option, setOption] = useState(1);
 
   return (
-    <div className="Thread-reports flex-grow-1">
+    <div className="Thread-reports flex-grow-1 d-flex flex-column">
       <div className="Thread-reports__header d-flex justify-content-between">
         <div className="Thread-reports__pin d-flex align-items-center justify-content-center">
           <IconSvg name="pin" />
@@ -54,8 +54,8 @@ export default function ThreadReports() {
           </ul>
         )}
       </div>
-      <div className="Thread-reports__body">
-        <div className="Thread-reports__log d-flex flex-column justify-content-end">
+      <div className="Thread-reports__body flex-grow-1 d-flex flex-column">
+        <div className="Thread-reports__log d-flex flex-column justify-content-end flex-grow-1">
           <div className="Thread-reports__date">21 Feb 2023</div>
           <div className="Thread-reports__message Thread-reports__message--view">
             <div className="d-flex">
