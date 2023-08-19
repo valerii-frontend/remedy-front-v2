@@ -15,7 +15,7 @@ const statuses = [
   },
 ];
 
-export default function ReportsStatuses() {
+export default function StatusesDropdown() {
   const [selected, setSelected] = useState(statuses[0]);
   const [drop, setDrop] = useState(false);
 

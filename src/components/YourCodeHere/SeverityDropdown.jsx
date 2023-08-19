@@ -24,7 +24,7 @@ const severity = [
   },
 ];
 
-export default function ReportsSeverity() {
+export default function SeverityDropdown() {
   const [selected, setSelected] = useState(severity[0]);
   const [drop, setDrop] = useState(false);
 
