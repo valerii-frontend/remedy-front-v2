@@ -514,6 +514,9 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   height: 100%;
   z-index: 5;
 }
+.ReportsModal__header {
+  margin-bottom: 3.3rem;
+}
 .ReportsModal__body {
   position: relative;
   width: calc(100% - 30.8rem);
@@ -524,8 +527,9 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 }
 .ReportsModal__close {
   position: absolute;
-  top: 0;
-  left: calc(100% + 2rem);
+  z-index: 10;
+  top: 6.4rem;
+  right: 10.2rem;
   width: 3.2rem;
   height: 3.2rem;
   background-color: $remedy-Global--color-dark-2;
@@ -536,7 +540,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     background-color: $remedy-Global--color-dark-1;
   }
 }
-
 .ReportsModal__subtitle {
   font-size: 1.6rem;
   font-weight: 500;
@@ -592,7 +595,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     object-fit: cover;
   }
 }
-
 .ReportsModal__actions {
   .UIButton--green-outline {
     margin-right: 1.1rem;
@@ -604,10 +606,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     padding-right: 2.9rem;
   }
 }
-
-.ReportsModal__info {
-}
-
 .ReportsModal__name {
   font-size: 1.6rem;
   font-weight: 500;
@@ -617,4 +615,74 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     font: inherit;
     color: $remedy-Global--color-gray;
   }
+}
+.ReportsModal__table {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.016rem;
+  margin-bottom: 4rem;
+  td {
+    border: $light-border;
+    padding: 1.6rem 2rem;
+  }
+}
+.ReportsModal__table-title {
+  vertical-align: top;
+  width: 23.6rem;
+}
+.ReportsModal__table-content {
+  width: auto;
+  font-weight: 400;
+  span {
+    font: inherit;
+    letter-spacing: 0.016rem;
+    svg {
+      fill: $remedy-Global--color-green;
+    }
+  }
+}
+.ReportsModal__screenshots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.ReportsModal__screenshot {
+  position: relative;
+  padding: 0.6rem 2.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.014rem;
+  background: url("../../assets/images/icon-attach.svg") center left 0.8rem
+      no-repeat,
+    $remedy-Global--color-tooltip;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 3.2rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: url("../../assets/images/icon-arrow-angle.svg") center no-repeat;
+  }
+}
+
+// BUG summary
+.Bug-summary__title {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 140%;
+  margin-bottom: 1.3rem;
+}
+.Bug-summary__subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.016rem;
+  margin-bottom: 2rem;
+}
+.Bug-summary__code {
+  height: 22rem;
+  background-color: $remedy-Global--color-dark-1;
 }
