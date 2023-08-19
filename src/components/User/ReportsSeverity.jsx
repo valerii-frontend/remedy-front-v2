@@ -1,7 +1,7 @@
 import { useState } from "react";
 import IconSvg from "../YourCodeHere/IconSvg";
 
-export default function ReportsDropdown() {
+export default function ReportsSeverity() {
   const [selected, setSelected] = useState({
     text: "Critical",
     icon: "drop-critical",
@@ -30,20 +30,20 @@ export default function ReportsDropdown() {
     },
   ];
   return (
-    <div className="ReportsDropdown">
+    <div className="ReportsSeverity">
       <div
-        className="ReportsDropdown__current d-flex align-items-center"
+        className="ReportsSeverity__current d-inline-flex align-items-center"
         onClick={() => setDrop((prev) => !prev)}
       >
         <IconSvg name={selected.icon} /> <span>{selected.text}</span>
       </div>
       {drop && (
-        <ul className="ReportsDropdown__list">
+        <ul className="ReportsSeverity__list">
           {severity.map((item) => (
             <li
-              className={`ReportsDropdown__item d-flex align-items-center ${
+              className={`ReportsSeverity__item d-flex align-items-center ${
                 selected.text === item.text
-                  ? "ReportsDropdown__item--selected"
+                  ? "ReportsSeverity__item--selected"
                   : ""
               }`}
               key={item.icon}
