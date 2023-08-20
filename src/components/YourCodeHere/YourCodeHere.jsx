@@ -7,15 +7,13 @@ import ThreadReports from "./ThreadReports.jsx";
 import "./YourCodeHere.scss";
 
 export function YourCodeHere() {
-  const [modal, setModal] = useState(false);
-
   return (
     <UserContainer>
-      <div className="Reports">
+      <div className="Reports d-flex flex-column">
         <h1 className="Reports__title">
           My Reports / The most sophisticated title
         </h1>
-        <div className="Reports__wrapper d-flex">
+        <div className="Reports__wrapper d-flex flex-grow-1">
           <ThreadReports />
           <SidebarReports />
         </div>

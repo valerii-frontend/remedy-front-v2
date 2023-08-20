@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import ReportsModal from "./ReportsModal";
 import EditorReports from "./EditorReports";
 import IconSvg from "./IconSvg";
 import userImg from "../../assets/images/user-avatar.png";
 
-const MessageWithBtn = () => {
-  const [modal, setModal] = useState(true);
+const MessageWithModal = () => {
+  const [modal, setModal] = useState(false);
+  useEffect(() => {
+    if (modal) {
+      document.querySelector("body").style.overflowY = "hidden";
+    } else {
+      document.querySelector("body").style.overflowY = "auto";
+    }
+  }, [modal]);
   return (
     <>
       <div className="Thread-reports__message Thread-reports__message--view">
@@ -142,7 +149,7 @@ export default function ThreadReports() {
       <div className="Thread-reports__body flex-grow-1 d-flex flex-column">
         <div className="Thread-reports__log d-flex flex-column justify-content-end flex-grow-1">
           <LogDate date={"21 Feb 2023"} />
-          <MessageWithBtn />
+          <MessageWithModal />
           <LogDate date={"23 Feb 2023"} />
           <NewMaker />
           <Message2 />

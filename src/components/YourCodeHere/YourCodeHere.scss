@@ -3,7 +3,21 @@
 
 $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 
+::-webkit-scrollbar-track {
+  background: $remedy-Global--color-dark-5;
+}
+::-webkit-scrollbar-thumb {
+  background: $remedy-Global--color-dark-1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $remedy-Global--color-gray;
+}
+::-webkit-scrollbar {
+  width: 1.7rem;
+}
+
 .Reports {
+  min-height: 100vh;
   background-color: $remedy-Global--color-dark-2;
 }
 .Reports__title {
@@ -19,8 +33,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 
 // Thread-reports
 
-.Thread-reports {
-}
 .Thread-reports__header {
   position: relative;
   height: 4.4rem;
@@ -244,19 +256,21 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   }
 }
 .Editor-reports__actions {
-  height: 3.6rem;
+  min-height: 3.6rem;
   gap: 0.8rem;
   padding-left: 3.2rem;
   padding-right: 1.6rem;
 }
 .Editor-reports__file {
+  padding: 0 1rem;
   border: 1px dashed $remedy-Global--color-dark-1;
   transition: 0.3s;
   span {
+    text-align: center;
     font-family: inherit;
     font-size: 1.4rem;
     font-weight: 400;
-    line-height: 100%;
+    line-height: 125%;
     letter-spacing: 0.014rem;
     color: $remedy-Global--color-gray;
     transition: 0.3s;
@@ -492,17 +506,22 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 
 // MODAL
 .ReportsModal {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  min-width: 140rem;
+  height: 100vh;
   top: 0;
   left: 0;
+  padding: 6.4rem 0;
   background-color: rgba($remedy-Global--color-dark-3, 0.75);
   backdrop-filter: blur(1.2rem);
   z-index: 7;
   display: flex;
   align-items: center;
   justify-content: center;
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
 }
 .ReportsModal__overlay {
   position: absolute;
@@ -511,14 +530,15 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   width: 100%;
   height: 100%;
   z-index: 5;
+  background-color: rgba($remedy-Global--color-dark-3, 0.75);
 }
 .ReportsModal__header {
   margin-bottom: 3.3rem;
 }
 .ReportsModal__body {
-  position: relative;
-  width: calc(100% - 30.8rem);
-  height: calc(100% - 12.8rem);
+  width: 100%;
+  max-width: 113rem;
+  height: 100%;
   padding: 2.4rem 3.2rem;
   background-color: $remedy-Global--color-dark-2;
   z-index: 6;
@@ -527,7 +547,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   position: absolute;
   z-index: 10;
   top: 6.4rem;
-  right: 10.2rem;
+  right: 10.3rem;
   width: 3.2rem;
   height: 3.2rem;
   background-color: $remedy-Global--color-dark-2;

@@ -94,14 +94,15 @@ const ModalTable = () => (
 export default function ReportsModal({ close }) {
   return (
     <div className="ReportsModal">
-      <div
-        className="ReportsModal__close d-flex align-items-center justify-content-center"
-        onClick={close}
-      >
-        <IconSvg name="close" />
+      <div className="ReportsModal__overlay" onClick={close}>
+        <div
+          className="ReportsModal__close d-flex align-items-center justify-content-center"
+          onClick={close}
+        >
+          <IconSvg name="close" />
+        </div>
       </div>
-      <div className="ReportsModal__overlay" onClick={close}></div>
-      <div className="ReportsModal__body overflow-y-auto">
+      <div className="ReportsModal__body position-relative overflow-y-auto">
         <div className="ReportsModal__subtitle">Report preview</div>
         <div className="ReportsModal__header d-flex justify-content-between">
           <UserAvatar />
