@@ -44,9 +44,9 @@ const BugSummary = () => (
 );
 const TableLink = ({ link }) => {
   return (
-    <span className="d-inline-flex align-items-center">
+    <span className="ReportsModal__link d-inline-flex align-items-center">
       {link}
-      <IconSvg name="angle-arrow" />,
+      <IconSvg name="angle-arrow" />
     </span>
   );
 };

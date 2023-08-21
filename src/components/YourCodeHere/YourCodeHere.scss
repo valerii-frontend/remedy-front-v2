@@ -649,6 +649,16 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     padding: 1.6rem 2rem;
   }
 }
+.ReportsModal__link {
+  &::after {
+    content: ", ";
+  }
+  &:last-child {
+    &::after {
+      content: "";
+    }
+  }
+}
 .ReportsModal__table-title {
   vertical-align: top;
   width: 23.6rem;
