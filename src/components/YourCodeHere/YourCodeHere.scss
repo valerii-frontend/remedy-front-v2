@@ -17,7 +17,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 }
 
 .Reports {
-  min-height: 100vh;
+  min-height: calc(100vh - 6.8rem);
   background-color: $remedy-Global--color-dark-2;
 }
 .Reports__title {
@@ -108,7 +108,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   }
 }
 .Thread-reports__log {
-  min-height: 66rem;
+  //   min-height: 66rem;
 }
 .Thread-reports__date {
   font-size: 1.2rem;
