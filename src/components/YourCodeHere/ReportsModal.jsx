@@ -42,6 +42,28 @@ const BugSummary = () => (
     <div className="Bug-summary__code">CODE</div>
   </div>
 );
+const TableLink = ({ link }) => {
+  return (
+    <span className="d-inline-flex align-items-center">
+      {link}
+      <IconSvg name="angle-arrow" />,
+    </span>
+  );
+};
+const AssetScreenshot = ({ name, filled }) => {
+  let styles =
+    "ReportsModal__screenshot d-flex align-items-center justify-content-between";
+  let icon = "angle-arrow";
+  if (filled) {
+    styles += " ReportsModal__screenshot--filled";
+    icon = "close";
+  }
+  return (
+    <div className={styles}>
+      <span>{name}</span> <IconSvg name={icon} />
+    </div>
+  );
+};
 const ModalTable = () => (
   <table className="ReportsModal__table">
     <tbody>
@@ -49,43 +71,25 @@ const ModalTable = () => (
       <TableRow title="Submission Date">21 Feb 2023</TableRow>
       <TableRow title="Program Name">Most epic contest 2023</TableRow>
       <TableRow title="Asset">
-        <span>
-          Proxy and implementation
-          <IconSvg name="angle-arrow" />,
-        </span>{" "}
-        <span>
-          AaveDebtPositionParserType
-          <IconSvg name="angle-arrow" />,
-        </span>{" "}
-        <span>
-          AaveDebtPositionParserType
-          <IconSvg name="angle-arrow" />
-        </span>
+        <TableLink link="Proxy and implementation" />
+        <TableLink link="AaveDebtPositionParserType" />
+        <TableLink link="AaveDebtPositionParserType" />
       </TableRow>
       <TableRow title="Severity">Critical</TableRow>
       <TableRow title="Report content">
         <BugSummary />
       </TableRow>
       <TableRow title="Additional links">
-        <span>
-          https://www.figma.com/
-          <IconSvg name="angle-arrow" />,
-        </span>{" "}
-        <span>
-          https://immunefi.com/.com/
-          <IconSvg name="angle-arrow" />,
-        </span>{" "}
-        <span>
-          AaveDebtPositionParserType
-          <IconSvg name="angle-arrow" />
-        </span>
+        <TableLink link="https://www.figma.com/" />
+        <TableLink link="https://immunefi.com/.com/" />
+        <TableLink link="AaveDebtPositionParserType" />
       </TableRow>
       <TableRow title="Additional links">
         <div className="ReportsModal__screenshots">
-          <div className="ReportsModal__screenshot">F1 screenshot.png</div>
-          <div className="ReportsModal__screenshot">F2 screenshot.png</div>
-          <div className="ReportsModal__screenshot">F1 screenshot.png</div>
-          <div className="ReportsModal__screenshot">F2 screenshot.png</div>
+          <AssetScreenshot name="F1 screenshot.png" />
+          <AssetScreenshot name="F2 screenshot.png" />
+          <AssetScreenshot name="F1 screenshot.png" filled />
+          <AssetScreenshot name="F2 screenshot.png" />
         </div>
       </TableRow>
     </tbody>
