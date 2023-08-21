@@ -92,7 +92,6 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
 }
 .Thread-reports__tab {
   padding: 0 1.6rem 0 2rem;
-  flex: 0 1 13.6rem;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 100%;
@@ -107,9 +106,7 @@ $light-border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
     margin-right: 0.8rem;
   }
 }
-.Thread-reports__log {
-  //   min-height: 66rem;
-}
+
 .Thread-reports__date {
   font-size: 1.2rem;
   font-weight: 500;
