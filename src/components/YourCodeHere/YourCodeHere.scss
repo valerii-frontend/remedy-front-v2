@@ -14,7 +14,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   max-width: 4rem;
   margin: 2rem 5rem;
 }
-
+// ICON
 .Notification__btn {
   cursor: pointer;
   flex: 0 0 4rem;
@@ -59,6 +59,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   letter-spacing: 0.01rem;
 }
 
+// CONTENT
 .Notification__wrapper {
   position: absolute;
   top: 100%;
@@ -84,5 +85,61 @@ $border: 1px solid $remedy-Global--color-tooltip;
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+// ITEM
+.Notification__item {
+  height: 11rem;
+  padding: 1.2rem 1.6rem;
+  border-bottom: $border;
+  &:hover {
+    background-color: $remedy-Global--color-tooltip;
+  }
+}
+.Notification__item-header {
+  height: 2.4rem;
+  padding-top: 0.8rem;
+}
+.Notification__item-user-avatar {
+  flex: 0 0 3.2rem;
+  max-width: 3.2rem;
+  height: 3.2rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 1.6rem;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.Notification__item-user-name {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.016rem;
+}
+.Notification__item-user-role {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.014rem;
+  color: $remedy-Global--color-gray;
+  margin-right: 0.4rem;
+}
+.Notification__item-checkbox {
+  flex: 0 0 2.4rem;
+  height: 2.4rem;
+  &:before {
+    content: "";
+    flex: 0 0 0.8rem;
+    max-width: 0.8rem;
+    height: 0.8rem;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color: $remedy-Global--color-green;
+  }
+  &--unread {
   }
 }
