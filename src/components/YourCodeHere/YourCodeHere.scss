@@ -1,716 +1,88 @@
 @import "../../styles/scss-variables";
 @import "../../styles/mixins";
 
-// .ProgramCreation
-.ProgramCreation {
-  background-color: $remedy-Global--color-dark-2;
-  font-family: var(--remedy-Global--font-text);
-}
-.ProgramCreation__form-radios {
-  gap: 0 3.3rem;
-}
-.ProgramCreation__counter {
-  color: $remedy-Global--color-gray;
-  font-size: 1.4rem;
-}
-.ProgramCreation__textarea-label {
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.014rem;
-}
-.ProgramCreation__label {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.014rem;
-  &--config {
-    margin-bottom: 2rem;
-  }
-}
-.ProgramCreation__textarea {
-  height: 10rem;
-  font-family: var(--remedy-Global--font-text);
-  resize: none;
-  font-weight: 500;
-  &.UIInput {
-    font-size: 1.4rem;
-    line-height: 150%;
-  }
-  &--lg {
-    height: 21.5rem;
-    &.UIInput {
-      font-size: 1.6rem;
-    }
-  }
-}
-.ProgramCreation__date {
-  height: 4.4rem;
-}
-.ProgramCreation__always-active {
-  margin-top: 0.3rem;
-}
-.ProgramCreation__form-general {
-  margin-bottom: 3rem;
-}
-.ProgramCreation__form-row {
-  margin-bottom: 3.6rem;
-  &--last {
-    margin-bottom: 3rem;
-  }
-}
-.ProgramCreation__wrap {
-  padding: 3.3rem;
-}
-.ProgramCreation__header {
-  margin-bottom: 3.5rem;
-}
-.ProgramCreation__title {
-  font-size: 3.6rem;
-  margin-bottom: 2rem;
-  font-family: var(--remedy-Global--font-header);
-  font-weight: 400;
-  line-height: 100%;
-}
-.ProgramCreation__subtitle {
-  font-family: var(--remedy-Global--font-header);
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: $remedy-Global--color-green;
-  text-transform: uppercase;
-  padding-bottom: 0.8rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid $remedy-Global--color-dark-4;
-  &--details {
-    margin-bottom: 1.6rem;
-  }
-}
-.ProgramCreation__error {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 1.2rem;
-  line-height: 110%;
-  letter-spacing: 0.03rem;
-  visibility: hidden;
-  transform: translateY(0);
-  opacity: 0;
-  transition: 0.5s;
+$border: 1px solid $remedy-Global--color-tooltip;
+
+.UserContainer__main {
+  background-color: $remedy-Global--color-dark-5;
 }
 
-//ProgramCreation__details-form
-.ProgramCreation__details-form-body {
-  padding: 3.2rem 1.6rem;
-  border: 1px solid $remedy-Global--color-green;
-  background-color: $remedy-Global--color-dark-5;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin-bottom: 3.2rem;
-}
-.ProgramCreation__details-form-item {
-  margin-bottom: 3.2rem;
-}
-.ProgramCreation__details-form-columns {
+.Notification {
   display: flex;
   align-items: center;
-  margin: 0 -1rem 2.4rem;
-  &--header {
-    margin-bottom: 1.2rem;
-  }
-  &--last {
-    margin-bottom: 1rem;
-  }
-}
-.ProgramCreation__details-form-column {
-  padding: 0 1rem;
-  &--type {
-    flex: 0 0 13rem;
-    max-width: 13rem;
-  }
-  &--max {
-    flex: 0 0 27rem;
-    max-width: 27rem;
-  }
-  &--currency {
-    position: relative;
-    & .UIInput {
-      padding-left: 3.5rem;
-    }
-    &.active:before {
-      opacity: 1;
-      color: $remedy-Global--color-white;
-    }
-    &:before {
-      content: "$";
-      position: absolute;
-      text-align: center;
-      font: inherit;
-      top: 0;
-      left: -1rem;
-      opacity: 0.5;
-      color: $remedy-Global--color-gray;
-      width: 6.4rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  &--description {
-    flex: 1 1 auto;
-    max-width: 100%;
-  }
-  &--asset {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  &--editor {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 0;
-  }
-}
-.ProgramCreation__details-form-add-url {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: $remedy-Global--color-green;
-  cursor: pointer;
-  span {
-    font-size: 2.2rem;
-    margin-right: 1rem;
-  }
-}
-.ProgramCreation__details-area {
-  margin-bottom: 3.6rem;
+  justify-content: center;
+  max-width: 4rem;
+  margin: 2rem 5rem;
 }
 
-// ProgramCreation__actions
-.ProgramCreation__actions-btn-back {
-  position: relative;
-  width: 4rem;
+.Notification__btn {
+  cursor: pointer;
+  flex: 0 0 4rem;
   height: 4rem;
-  margin-right: 2.4rem;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../../assets/images/icon-arrow-left.svg") center/2rem 2rem
-      no-repeat;
-  }
-  &.UIButton--sm {
-    padding: 0;
-  }
-}
-.ProgramCreation__actions-label {
-  font-size: 2rem;
-}
-.ProgramCreation__actions-buttons {
-  & > .UIButton--green-outline {
-    margin-right: 2rem;
-  }
-}
-
-// .ProgramCreation__tabs
-.ProgramCreation__tabs {
-  height: 4.4rem;
-}
-.ProgramCreation__tab {
-  flex: 0 1 25.2rem;
-  max-width: 25.2rem;
-  border: 1px solid $remedy-Global--color-gray;
-  background-color: $remedy-Global--color-dark-5;
-  border-bottom: none;
-  &--active {
-    position: relative;
-    border-color: $remedy-Global--color-green;
-    min-width: 20rem;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -1px;
-      left: 0;
-      background-color: $remedy-Global--color-dark-5;
-    }
-  }
-  &--left {
-    border-right: none;
-  }
-  &--right {
-    border-left: none;
-  }
-  &--invalid {
-    border-color: $remedy-Global--color-invalid;
-  }
-  &--add-new {
-    flex: 1 1 auto;
-    min-width: 14.8rem;
-    max-width: 100%;
-    border: none;
-    background: none;
-    padding: 0 0.4rem;
-  }
-}
-.ProgramCreation__tab-label {
-  flex: 1 1 100px;
-  white-space: nowrap;
-  padding: 0 1.6rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.016rem;
-  color: $remedy-Global--color-light;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ProgramCreation__tab-close {
-  max-width: 4.4rem;
-  height: 4.4rem;
-  flex: 0 0 4.4rem;
-  background: url("../../assets/images/icon-cross.svg") center/1.2rem no-repeat;
+  max-width: 4rem;
+  border-radius: 50%;
+  transition: background-color 200ms;
   &:hover {
-    background-color: $remedy-Global--color-dark-4;
-  }
-}
-
-// STATE
-.invalid {
-  position: relative;
-  & .ProgramCreation__error {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(135%);
-    transition: 0.5s;
-  }
-  & .UIInput {
-    border-color: $remedy-Global--color-invalid;
-    outline-color: $remedy-Global--color-invalid;
-  }
-}
-.required {
-  &:before {
-    content: "*";
-  }
-}
-
-// COMPONENTS
-.Checkbox {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-.Checkbox__label {
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: 0.014rem;
-  &::before {
-    content: "";
-    width: 1.6rem;
-    height: 1.6rem;
-    margin-right: 1.2rem;
-    background-color: transparent;
-    border: 1px solid $remedy-Global--color-gray;
-  }
-}
-.Checkbox__input {
-  display: none;
-  &:checked + .Checkbox__label::before {
-    background: url("../../assets/images/icon-checkbox.svg") center/1.2rem
-        no-repeat,
-      $remedy-Global--color-green;
-    border: 1px solid $remedy-Global--color-green;
-  }
-}
-
-.Radio {
-  display: flex;
-  align-items: center;
-}
-.Radio__label {
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  &::before {
-    content: "";
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 1.2rem;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px $remedy-Global--color-gray;
-  }
-}
-.Radio__input {
-  display: none;
-  &:checked + .Radio__label::before {
-    background-color: $remedy-Global--color-green;
-    box-shadow: 0 0 0 1px $remedy-Global--color-gray,
-      inset 0 0 0 3px $remedy-Global--color-dark-2;
-  }
-}
-
-.Tooltip {
-  position: relative;
-  &:hover {
-    .Tooltip__body {
-      display: block;
-    }
-  }
-}
-.Tooltip__icon {
-  width: 2rem;
-  height: 2rem;
-  background: url("../../assets/images/icon-tooltip.svg") center/1.5rem
-    no-repeat;
-  transition: 0.3s;
-  &:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    filter: brightness(2);
-  }
-}
-.Tooltip__body {
-  display: none;
-  position: absolute;
-  bottom: 3rem;
-  left: -1rem;
-  width: 28rem;
-  background-color: $remedy-Global--color-tooltip;
-  border: 1px solid $remedy-Global--color-gray;
-  padding: 1.2rem 1.6rem;
-  color: $remedy-Global--color-light;
-  font-size: 1.4rem;
-  line-height: 140%;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 1rem;
-    top: 98%;
-    border: 1rem solid transparent;
-    border-top: 1rem solid $remedy-Global--color-tooltip;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    left: 1rem;
-    top: 100%;
-    border: 1rem solid transparent;
-    border-top: 1rem solid $remedy-Global--color-gray;
-  }
-}
-
-.File-upload {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.File-upload__input {
-  &.UIInput {
-    font-size: 0;
-  }
-  &::file-selector-button {
-    display: none;
-  }
-}
-
-.Editor {
-  border: 1px solid rgba($remedy-Global--color-white, 0.06);
-}
-.Editor__btn {
-  flex: 0 0 3.2rem;
-  max-width: 3.2rem;
-  height: 3.2rem;
-  background-position: center;
-  background-size: 2rem;
-  background-repeat: no-repeat;
-  &:hover {
-    cursor: pointer;
-    background-color: $remedy-Global--color-dark-2;
-    filter: brightness(1.2);
-  }
-  &--bold {
-    background-image: url("../../assets/images/icon-editor-bold.svg");
-  }
-  &--h1 {
-    background-image: url("../../assets/images/icon-editor-h1.svg");
-  }
-  &--h2 {
-    background-image: url("../../assets/images/icon-editor-h2.svg");
-  }
-  &--line {
-    background-image: url("../../assets/images/icon-editor-line.svg");
-  }
-  &--link {
-    background-image: url("../../assets/images/icon-editor-link.svg");
-  }
-  &--ul {
-    background-image: url("../../assets/images/icon-editor-ul.svg");
-  }
-  &--ol {
-    background-image: url("../../assets/images/icon-editor-ol.svg");
-  }
-  &--link {
-    background-image: url("../../assets/images/icon-editor-link.svg");
-  }
-}
-
-.Placeholder {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4.4rem;
-  display: flex;
-  align-items: flex-end;
-  line-height: 4.4rem;
-  padding-left: 1.6rem;
-  background-size: 1.6rem 1.6rem;
-  background-position: center right 1rem;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  &--upload {
-    background-image: url("../../assets/images/icon-file-upload.svg");
-  }
-  &--cross {
-    background-image: url("../../assets/images/icon-cross.svg");
-  }
-  &--calendar {
-    background-image: url("../../assets/images/icon-calendar.svg");
-    background-size: 1.8rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-    letter-spacing: 0.016rem;
-  }
-  &--empty {
-    color: rgba($remedy-Global--color-gray, 0.75);
+    background-color: rgba($remedy-Global--color-white, 0.05);
   }
   &--filled {
-    color: $remedy-Global--color-white;
-  }
-  &--link {
-    &:before {
-      content: "http://";
-      margin: 0 1.6rem 0 0.6rem;
-      padding-right: 1.6rem;
-      border-right: 1px solid $remedy-Global--color-dark-2;
+    svg {
+      fill: $remedy-Global--color-green;
     }
   }
-}
-.Placeholder__date {
-  margin-right: 1.3rem;
-}
-
-.Modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-.Modal__overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(0.5rem);
-  background: rgba($remedy-Global--color-gray, 0.75);
-}
-.Modal__body {
-  animation: showUp 1s 1 both;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 45rem;
-  min-height: 26rem;
-  padding: 6.4rem 3.2rem 3.2rem;
-  transform: translate(-50%, -50%);
-  background-color: $remedy-Global--color-dark-3;
-}
-.Modal__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: url("../../assets/images/icon-cross.svg") center/1rem no-repeat,
-    $remedy-Global--color-dark-3;
-  cursor: pointer;
-  &:hover {
-    background-color: $remedy-Global--color-dark-1;
-  }
-}
-.Modal__text {
-  font-size: 1.6rem;
-  color: $remedy-Global--color-light;
-  margin-bottom: 3.2rem;
-  text-align: center;
-}
-
-.TimePicker {
-  position: absolute;
-  bottom: 4.55rem;
-  right: 0;
-  width: 24rem;
-  height: 6rem;
-  background-color: $remedy-Global--color-dark-3;
-  box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.012rem;
-}
-.TimePicker__col {
-  flex: 0 0 8.6rem;
-  padding: 0.5rem 0.8rem;
-  text-align: center;
-  background-color: $remedy-Global--color-dark-2;
-  cursor: pointer;
-}
-.TimePicker__time {
-  &--selected {
-    background-color: $remedy-Global--color-dark-1;
-  }
-}
-.TimePicker__day {
-  font-size: 1.4rem;
-}
-
-.Calendar {
-  position: absolute;
-  bottom: 2.7rem;
-  right: 0.2rem;
-  display: inline-block;
-  padding: 1.6rem;
-  background-color: $remedy-Global--color-dark-3;
-  box-shadow: 0 0 0.5rem 0.2rem rgba($remedy-Global--color-gray, 0.1);
-}
-.Calendar__controls {
-  margin-bottom: 1.6rem;
-  padding: 0 0.5rem;
-}
-.Calendar__control {
-  flex: 0 0 2rem;
-  max-width: 2rem;
-  height: 2rem;
-  background-position: center;
-  background-size: 1rem;
-  background-repeat: no-repeat;
-  background-color: $remedy-Global--color-dark-3;
-  cursor: pointer;
-  &:hover {
-    background-color: $remedy-Global--color-dark-1;
-  }
-  &--prev {
-    background-image: url("../../assets/images/icon-chevron-left.svg");
-  }
-  &--next {
-    background-image: url("../../assets/images/icon-chevron-right.svg");
-  }
-}
-.Calendar__month-name {
-  font-size: 1.4rem;
-}
-.Calendar__body {
-  display: grid;
-  grid-template-columns: repeat(7, 3.2rem);
-  grid-template-rows: repeat(7, 2.6rem);
-  font-size: 1.2rem;
-  & > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.Calendar__head {
-  margin-bottom: 0.3rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid rgba($remedy-Global--color-gray, 0.5);
-  color: $remedy-Global--color-gray;
-}
-.Calendar__selected {
-  color: $remedy-Global--color-dark-3;
-  background-color: $remedy-Global--color-gray;
-}
-.Calendar__dif-month {
-  color: $remedy-Global--color-gray;
-  background-color: $remedy-Global--color-dark-2;
-}
-
-.DropdownGroup {
-  background-color: $remedy-Global--color-dark-3;
-  height: 100%;
-  font-weight: 500;
-}
-.DropdownGroup__placeholder {
-  position: relative;
-  height: 100%;
-  padding: 0 1.6rem;
-  color: $remedy-Global--color-gray;
-  background-color: $remedy-Global--color-dark-5;
-  cursor: pointer;
-  &:before {
+  &--unread:before {
     content: "";
-    opacity: 0.75;
-    background-position: 50% 55%;
-    background-repeat: no-repeat;
-    background-size: 1.3rem;
-    width: 4rem;
-    transition: transform 0.2s;
+    z-index: 2;
+    background: #80edb0;
+    border-radius: 0.6rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    transition: box-shadow 0.2s;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-image: url("../../assets/images/icon-arrow-down.svg");
+    top: 1.1rem;
+    right: 1.25rem;
   }
 }
-.DropdownGroup__list {
+.Notification__badge {
   position: absolute;
-  z-index: 5;
-  list-style: none;
-  background-color: $remedy-Global--color-dark-3;
-  border: 1px solid $remedy-Global--color-gray;
-  padding: 0 1rem;
-}
-.DropdownGroup__item {
-  font-size: 1.4rem;
-  padding: 1rem 0.5rem;
-  &:hover {
-    background-color: $remedy-Global--color-dark-2;
-    color: $remedy-Global--color-white;
-    cursor: pointer;
-  }
-  &--category {
-    color: $remedy-Global--color-dark-1;
-    &:hover {
-      color: $remedy-Global--color-dark-1;
-      background-color: $remedy-Global--color-dark-3;
-      cursor: default;
-    }
-  }
+  top: 0;
+  right: -1.2rem;
+  width: 2.4rem;
+  height: 1.8rem;
+  border-radius: 1.8rem;
+  background-color: $remedy-Global--color-green;
+  color: $remedy-Global--color-dark-3;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01rem;
 }
 
-@keyframes showUp {
-  from {
-    opacity: 0;
-    top: 45%;
-  }
-  to {
-    opacity: 1;
-    top: 50%;
+.Notification__wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 62rem;
+  min-height: 30rem;
+  background-color: $remedy-Global--color-dark-3;
+  border: $border;
+}
+.Notification__header {
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.016rem;
+  border-bottom: $border;
+}
+.Notification__header-text {
+  color: $remedy-Global--color-light;
+  &--green {
+    cursor: pointer;
+    color: $remedy-Global--color-green;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
