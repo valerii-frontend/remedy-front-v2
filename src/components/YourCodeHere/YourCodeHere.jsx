@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserContainer } from "../User/UserContainer.jsx";
 import avatar1 from "../../assets/images/user-avatar.png";
+import avatar2 from "../../assets/images/avatar.svg";
 
 import "./YourCodeHere.scss";
 import IconSvg from "./IconSvg.jsx";
@@ -18,10 +19,54 @@ const Header = () => (
     </span>
   </div>
 );
-const Item = ({ id }) => {
+const ItemBody1 = () => (
+  <>
+    <div className="Notification__item-text">
+      started reviewing the{" "}
+      <span className="Notification__item-text-white">
+        The most sophisticated Hunter report’s title
+      </span>
+    </div>
+  </>
+);
+const ItemBody2 = () => (
+  <>
+    <div className="Notification__item-text">
+      started reviewing the{" "}
+      <span className="Notification__item-text-white">
+        You have earned{" "}
+        <b className="Notification__item-text-link Notification__item-text-link--white">
+          Top Performer{" "}
+          <span className="Notification__item-text-tooltip">
+            In top 20% by received payouts quantity in September
+          </span>
+        </b>
+        achievement!
+      </span>
+    </div>
+  </>
+);
+const ItemBody3 = () => (
+  <>
+    <div className="Notification__item-text">
+      <span className="Notification__item-text-white">The </span>
+      <b className="Notification__item-text-link">
+        Decentralized interoperability network{" "}
+        <span className="Notification__item-text-tooltip">
+          Lorem ipsum dolor sit amet.
+        </span>
+      </b>
+      <span className="Notification__item-text-white">
+        program by<b>Polygon</b> was updated.
+      </span>
+    </div>
+  </>
+);
+
+const Item = ({ id, children }) => {
   const [checkedInp, setCheckedInp] = useState(true);
   return (
-    <div className="Notification__item">
+    <div className="Notification__item d-flex flex-column">
       <div className="d-flex align-items-center justify-content-between Notification__item-header">
         <div className="d-flex Notification__item-user">
           <div className="Notification__item-user-avatar">
@@ -53,6 +98,18 @@ const Item = ({ id }) => {
           </div>
         </div>
       </div>
+      <div className="Notification__item-body flex-grow-1">{children}</div>
+      <div className="Notification__item-footer d-flex justify-content-between">
+        <div className="Notification__item-footer-event d-flex">
+          <div className="Notification__item-footer-avatar">
+            <img src={avatar2} alt="test" />
+          </div>
+          <div className="Notification__item-footer-text">
+            Decentralized interoperability network
+          </div>
+        </div>
+        <div className="Notification__item-footer-date">Jul 29 09:00</div>
+      </div>
     </div>
   );
 };
@@ -71,9 +128,15 @@ export function YourCodeHere() {
         {showNotification && (
           <div className="Notification__wrapper">
             <Header />
-            <Item id={1} />
-            <Item id={2} />
-            <Item id={3} />
+            <Item id={1}>
+              <ItemBody1 />
+            </Item>
+            <Item id={2}>
+              <ItemBody2 />
+            </Item>
+            <Item id={3}>
+              <ItemBody3 />
+            </Item>
           </div>
         )}
       </div>
