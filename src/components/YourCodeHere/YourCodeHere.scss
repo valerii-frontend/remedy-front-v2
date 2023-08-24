@@ -131,15 +131,56 @@ $border: 1px solid $remedy-Global--color-tooltip;
 .Notification__item-checkbox {
   flex: 0 0 2.4rem;
   height: 2.4rem;
-  &:before {
+}
+.Notification__item-checkbox-input {
+  display: none;
+  &:checked + .Notification__item-checkbox-label {
+    background-color: transparent;
+  }
+}
+.Notification__item-checkbox-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.4rem;
+  max-width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 0 0.8rem 0.8rem;
+  border-radius: 50%;
+  &::before {
     content: "";
     flex: 0 0 0.8rem;
-    max-width: 0.8rem;
+    max-width: 0.8em;
     height: 0.8rem;
-    transform: translate(50%, -50%);
-    border-radius: 50%;
     background-color: $remedy-Global--color-green;
+    border-radius: 50%;
   }
-  &--unread {
+  &--empty {
+    border: 1px solid $remedy-Global--color-dark-1;
+    &::before {
+      background-color: transparent;
+    }
   }
+  &:hover {
+    .Notification__item-checkbox-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.Notification__item-checkbox-tooltip {
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  right: calc(100% + 0.6rem);
+  padding: 0.4rem;
+  color: $remedy-Global--color-light;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 133.333%;
+  letter-spacing: 0.012rem;
+  background-color: $remedy-Global--color-tooltip;
+  opacity: 0;
+  visibility: hidden;
 }
