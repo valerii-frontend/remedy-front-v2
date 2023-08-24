@@ -59,7 +59,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   letter-spacing: 0.01rem;
 }
 
-// CONTENT
+// WRAPPER
 .Notification__wrapper {
   position: absolute;
   top: 100%;
@@ -97,6 +97,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
     background-color: rgba($remedy-Global--color-dark-5, 0.75);
   }
 }
+// HEADER
 .Notification__item-header {
   height: 2.4rem;
   padding-top: 0.8rem;
@@ -187,7 +188,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   visibility: hidden;
 }
 .Notification__item-body {
-  padding-left: 4.4rem;
+  padding-left: 4.8rem;
   margin-bottom: 1.4rem;
 }
 // TEXT
@@ -200,6 +201,10 @@ $border: 1px solid $remedy-Global--color-tooltip;
 }
 .Notification__item-text-white {
   color: $remedy-Global--color-light;
+  svg {
+    position: relative;
+    top: -0.2rem;
+  }
 }
 .Notification__item-text-link {
   cursor: pointer;
@@ -234,9 +239,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
 }
 // FOOTER
 .Notification__item-footer {
-  padding-left: 4.4rem;
-}
-.Notification__item-footer-event {
+  padding-left: 4.8rem;
 }
 .Notification__item-footer-avatar {
   flex: 0 0 2rem;

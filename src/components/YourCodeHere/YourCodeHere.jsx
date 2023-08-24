@@ -78,9 +78,51 @@ const ItemBody4 = () => (
     </div>
   </>
 );
+const ItemBody5 = () => (
+  <>
+    <div className="Notification__item-text">
+      changed severity{" "}
+      <span className="Notification__item-text-white">
+        <IconSvg name="drop-critical" /> Critical{" "}
+      </span>{" "}
+      to{" "}
+      <span className="Notification__item-text-white">
+        <IconSvg name="drop-high" /> High
+      </span>{" "}
+      in{" "}
+      <span className="Notification__item-text-link Notification__item-text-link--white">
+        {`The most sophisticated Hunter report’s title`}
+      </span>
+    </div>
+  </>
+);
 
-const Item = ({ id, children }) => {
+const ItemCheckbox = ({ id }) => {
   const [checkedInp, setCheckedInp] = useState(true);
+  return (
+    <div className="d-flex align-items-center justify-content-center Notification__item-checkbox Notification__item-checkbox--unread">
+      <input
+        className="Notification__item-checkbox-input"
+        type="checkbox"
+        id={id}
+        defaultChecked
+        value={checkedInp}
+        onChange={() => setCheckedInp((p) => !p)}
+      />
+      <label
+        className={`Notification__item-checkbox-label ${
+          checkedInp ? "" : "Notification__item-checkbox-label--empty"
+        }`}
+        htmlFor={id}
+      >
+        <span className="Notification__item-checkbox-tooltip">
+          Mark as {checkedInp ? "read" : "unread"}
+        </span>
+      </label>
+    </div>
+  );
+};
+const Item = ({ id, children }) => {
   return (
     <div className="Notification__item d-flex flex-column">
       <div className="d-flex align-items-center justify-content-between Notification__item-header">
@@ -92,26 +134,7 @@ const Item = ({ id, children }) => {
         </div>
         <div className="d-flex flex-grow-1 justify-content-end">
           <div className="Notification__item-user-role">Organization user</div>
-          <div className="d-flex align-items-center justify-content-center Notification__item-checkbox Notification__item-checkbox--unread">
-            <input
-              className="Notification__item-checkbox-input"
-              type="checkbox"
-              id={id}
-              defaultChecked
-              value={checkedInp}
-              onChange={() => setCheckedInp((p) => !p)}
-            />
-            <label
-              className={`Notification__item-checkbox-label ${
-                checkedInp ? "" : "Notification__item-checkbox-label--empty"
-              }`}
-              htmlFor={id}
-            >
-              <span className="Notification__item-checkbox-tooltip">
-                Mark as {checkedInp ? "read" : "unread"}
-              </span>
-            </label>
-          </div>
+          <ItemCheckbox id={id} />
         </div>
       </div>
       <div className="Notification__item-body flex-grow-1">{children}</div>
@@ -129,6 +152,7 @@ const Item = ({ id, children }) => {
     </div>
   );
 };
+
 export function YourCodeHere() {
   const [showNotification, setShowNotification] = useState(false);
   return (
@@ -155,6 +179,9 @@ export function YourCodeHere() {
             </Item>
             <Item id={4}>
               <ItemBody4 />
+            </Item>
+            <Item id={5}>
+              <ItemBody5 />
             </Item>
           </div>
         )}
