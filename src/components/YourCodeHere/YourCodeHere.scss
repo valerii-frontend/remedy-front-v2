@@ -94,7 +94,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   padding: 1.2rem 1.6rem;
   border-bottom: $border;
   &:hover {
-    // background-color: $remedy-Global--color-tooltip;
+    background-color: rgba($remedy-Global--color-dark-5, 0.75);
   }
 }
 .Notification__item-header {
@@ -128,6 +128,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   color: $remedy-Global--color-gray;
   margin-right: 0.4rem;
 }
+// CHECKBOX
 .Notification__item-checkbox {
   flex: 0 0 2.4rem;
   height: 2.4rem;
@@ -189,6 +190,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   padding-left: 4.4rem;
   margin-bottom: 1.4rem;
 }
+// TEXT
 .Notification__item-text {
   font-size: 1.4rem;
   font-weight: 400;
@@ -230,6 +232,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   line-height: 133.333%;
   letter-spacing: 0.012rem;
 }
+// FOOTER
 .Notification__item-footer {
   padding-left: 4.4rem;
 }

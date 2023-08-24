@@ -57,8 +57,24 @@ const ItemBody3 = () => (
         </span>
       </b>
       <span className="Notification__item-text-white">
-        program by<b>Polygon</b> was updated.
+        program by <b>Polygon</b> was updated.
       </span>
+    </div>
+  </>
+);
+const ItemBody4 = () => (
+  <>
+    <div className="Notification__item-text">
+      The{" "}
+      <span className="Notification__item-text-white">
+        Decentralized interoperability network{" "}
+      </span>{" "}
+      by{" "}
+      <span className="Notification__item-text-white">
+        Super Duper long company name
+      </span>{" "}
+      was updated.{" "}
+      <span className="Notification__item-text-link">Update note</span>
     </div>
   </>
 );
@@ -136,6 +152,9 @@ export function YourCodeHere() {
             </Item>
             <Item id={3}>
               <ItemBody3 />
+            </Item>
+            <Item id={4}>
+              <ItemBody4 />
             </Item>
           </div>
         )}
