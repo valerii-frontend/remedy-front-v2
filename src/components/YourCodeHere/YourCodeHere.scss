@@ -68,6 +68,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   min-height: 30rem;
   background-color: $remedy-Global--color-dark-3;
   border: $border;
+  border-bottom: none;
 }
 .Notification__header {
   padding: 1.6rem;
@@ -201,6 +202,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
 }
 .Notification__item-text-white {
   color: $remedy-Global--color-light;
+  letter-spacing: 0.014rem;
   svg {
     position: relative;
     top: -0.2rem;
@@ -210,6 +212,7 @@ $border: 1px solid $remedy-Global--color-tooltip;
   cursor: pointer;
   position: relative;
   color: $remedy-Global--color-green;
+  letter-spacing: 0.014rem;
   &--white {
     color: $remedy-Global--color-light;
   }
