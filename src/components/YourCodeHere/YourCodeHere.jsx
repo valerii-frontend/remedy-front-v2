@@ -1,5 +1,13 @@
+import { UserContainer } from "../User/UserContainer";
+import Profile from "./Profile";
 import "./YourCodeHere.scss";
 
 export function YourCodeHere() {
-  return <div>1</div>;
+  return (
+    <UserContainer>
+      <div className="Global__app-content-max-width">
+        <Profile />
+      </div>
+    </UserContainer>
+  );
 }
