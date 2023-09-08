@@ -111,6 +111,7 @@ export default function ProfileLeft() {
       <ProfileHeader />
       <ProfileDescription />
       <ProfileCounters />
+      <ProfileSubtitle>Work Experience</ProfileSubtitle>
     </div>
   );
 }
