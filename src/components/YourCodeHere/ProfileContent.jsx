@@ -39,8 +39,13 @@ const ProfileHeaderLinks = () => (
 );
 const ProfileHeader = () => (
   <div className="Profile__header">
-    <div className="Profile__header-avatar">
-      <img src={photoImg} alt="photo" />
+    <div className="Profile__header--top d-flex justify-content-between">
+      <div className="Profile__header-avatar">
+        <img src={photoImg} alt="photo" />
+      </div>
+      <div className="Profile__header--dropdown d-flex align-items-center justify-content-center ">
+        <IconSvg name="dots" />
+      </div>
     </div>
     <div className="Profile__header-name">
       kemmio <IconSvg name="hexens-logo" />
@@ -53,7 +58,7 @@ const ProfileHeader = () => (
 );
 export default function ProfileContent() {
   return (
-    <div className="Profile__content">
+    <div className="Profile__content flex-grow-1">
       <ProfileHeader />
     </div>
   );
