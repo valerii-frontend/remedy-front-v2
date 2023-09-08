@@ -1,6 +1,12 @@
 @import "../../styles/scss-variables";
 @import "../../styles/mixins";
 
+$letterSpacing014: 0.014rem;
+
+.UserContainer__nav {
+  flex: 0 0 24.4rem;
+}
+
 // BANNER
 .Profile__banner {
   height: 14.8rem;
@@ -14,7 +20,7 @@
 .Profile__edit-cover {
   font-size: 1.4rem;
   font-weight: 500;
-  letter-spacing: 0.014rem;
+  letter-spacing: $letterSpacing014;
   padding: 0.8rem 2rem;
   color: $remedy-Global--color-light;
   svg {
@@ -29,8 +35,7 @@
   }
 }
 
-// CONTENT WRAP
-.Profile__row {
+.Profile__wrap {
   padding: 3.2rem;
   gap: 0 3.2rem;
 }
@@ -38,6 +43,7 @@
 // LEFT CONTENT
 .Profile__header {
   margin-top: -6.4rem;
+  margin-bottom: 3.4rem;
 }
 .Profile__header-avatar {
   max-width: 12rem;
@@ -69,7 +75,7 @@
 .Profile__header-name {
   font-family: var(--remedy-Global--font-header);
   font-size: 3.2rem;
-  line-height: 100%;
+  line-height: 1;
   margin-bottom: 0.8rem;
   svg {
     width: 2rem;
@@ -80,8 +86,8 @@
 .Profile__header-contacts {
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.014rem;
+  line-height: 1;
+  letter-spacing: $letterSpacing014;
   margin-bottom: 2.8rem;
 }
 .Profile__header-links {
@@ -97,6 +103,21 @@
     width: 1.6rem;
     height: 1.6rem;
     fill: $remedy-Global--color-light;
+  }
+}
+
+.Profile__text {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: $letterSpacing014;
+  letter-spacing: 0.14px;
+  &--subtitle {
+    color: $remedy-Global--color-gray;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+  &--first {
+    margin-bottom: 1.4rem;
   }
 }
 

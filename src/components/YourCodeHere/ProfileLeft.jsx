@@ -56,10 +56,30 @@ const ProfileHeader = () => (
     <ProfileHeaderLinks />
   </div>
 );
-export default function ProfileContent() {
+const ProfileSubtitle = ({ children }) => (
+  <h3 className="Profile__text Profile__text--subtitle">{children}</h3>
+);
+const ProfileDescription = () => {
+  return (
+    <>
+      <h3 className="Profile__text Profile__text--first Profile__text--subtitle">
+        About
+      </h3>
+      <div className="Profile__text">
+        Extensive experience in Financial Reporting and Analysis, Donor database
+        systems and data warehouse environment, Audits and Reviews,
+        Forecasting/Trend Projection, Contract Management, and Investment
+        Strategies including risk/return valuation concepts.
+      </div>
+    </>
+  );
+};
+
+export default function ProfileLeft() {
   return (
     <div className="Profile__content flex-grow-1">
       <ProfileHeader />
+      <ProfileDescription />
     </div>
   );
 }
