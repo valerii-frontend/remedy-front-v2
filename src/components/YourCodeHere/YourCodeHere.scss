@@ -106,23 +106,49 @@ $letterSpacing014: 0.014rem;
   }
 }
 
+// DESCRIPTION
+.Profile__description {
+  margin-bottom: 3rem;
+}
 .Profile__text {
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: $letterSpacing014;
-  letter-spacing: 0.14px;
   &--subtitle {
     color: $remedy-Global--color-gray;
     margin-bottom: 2rem;
     line-height: 1;
   }
-  &--first {
+  &--mb-14 {
     margin-bottom: 1.4rem;
+  }
+}
+.Profile__counter {
+  flex: 0 1 12.5rem;
+}
+.Profile__counter-number {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  span {
+    color: $remedy-Global--color-green;
+  }
+}
+.Profile__counter-text {
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  svg {
+    flex: 0 0 1.2rem;
+    max-width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.8rem;
+    fill: $remedy-Global--color-gray;
   }
 }
 
 // RIGHT BAR
 .Profile__side {
-  flex: 0 0 36.4rem;
-  max-width: 36.4rem;
+  flex: 0 0 32%;
+  max-width: 32%;
 }

@@ -56,30 +56,61 @@ const ProfileHeader = () => (
     <ProfileHeaderLinks />
   </div>
 );
-const ProfileSubtitle = ({ children }) => (
-  <h3 className="Profile__text Profile__text--subtitle">{children}</h3>
+const ProfileSubtitle = ({ children, mb }) => (
+  <h3
+    className={`Profile__text Profile__text--subtitle ${
+      mb ? "Profile__text--mb-" + mb : ""
+    }`}
+  >
+    {children}
+  </h3>
 );
 const ProfileDescription = () => {
   return (
-    <>
-      <h3 className="Profile__text Profile__text--first Profile__text--subtitle">
-        About
-      </h3>
+    <div className="Profile__description">
+      <ProfileSubtitle mb="14">About</ProfileSubtitle>
       <div className="Profile__text">
         Extensive experience in Financial Reporting and Analysis, Donor database
         systems and data warehouse environment, Audits and Reviews,
         Forecasting/Trend Projection, Contract Management, and Investment
         Strategies including risk/return valuation concepts.
       </div>
-    </>
+    </div>
   );
 };
+const ProfileCounter = ({ number, children, isYears }) => (
+  <div className="Profile__counter">
+    <div className="Profile__counter-number">
+      {isYears && <span>{"<"}</span>}
+      {number}
+    </div>
+    <div className="Profile__counter-text d-flex align-items-center">
+      {children}
+    </div>
+  </div>
+);
+const ProfileCounters = () => (
+  <div className="Profile__counters d-flex justify-content-between">
+    <ProfileCounter isYears number={17}>
+      Years Experience
+    </ProfileCounter>
+    <ProfileCounter number={"93,773"}>Reports triaged</ProfileCounter>
+    <ProfileCounter number={773}>Programs triaged</ProfileCounter>
+    <ProfileCounter number={17}>
+      Rejected Reports <IconSvg name="info" />
+    </ProfileCounter>
+    <ProfileCounter number={"6,274"}>
+      Closed Reports <IconSvg name="info" />
+    </ProfileCounter>
+  </div>
+);
 
 export default function ProfileLeft() {
   return (
     <div className="Profile__content flex-grow-1">
       <ProfileHeader />
       <ProfileDescription />
+      <ProfileCounters />
     </div>
   );
 }
