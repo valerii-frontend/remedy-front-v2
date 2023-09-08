@@ -5,9 +5,7 @@ import "./YourCodeHere.scss";
 export function YourCodeHere() {
   return (
     <UserContainer>
-      <div className="Global__app-content-max-width">
-        <Profile />
-      </div>
+      <Profile />
     </UserContainer>
   );
 }

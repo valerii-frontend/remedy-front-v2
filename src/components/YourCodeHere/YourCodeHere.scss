@@ -1,2 +1,30 @@
 @import "../../styles/scss-variables";
 @import "../../styles/mixins";
+
+// BANNER
+.Profile__banner {
+  height: 14.8rem;
+  padding: 0.8rem 3.2rem;
+  img {
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+}
+.Profile__edit-cover {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.014rem;
+  padding: 0.8rem 2rem;
+  color: $remedy-Global--color-light;
+  svg {
+    margin-right: 0.8rem;
+    fill: $remedy-Global--color-light;
+  }
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: rgba($remedy-Global--color-gray, 0.2);
+  }
+}
