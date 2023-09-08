@@ -8,7 +8,7 @@ export default function Profile() {
     <div className="Profile w-100">
       <Banner />
       <div className="Global__app-content-max-width">
-        <div className="Profile__row">
+        <div className="Profile__row d-flex">
           <Content />
           <Side />
         </div>

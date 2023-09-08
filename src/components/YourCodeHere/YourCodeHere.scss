@@ -28,3 +28,69 @@
     background-color: rgba($remedy-Global--color-gray, 0.2);
   }
 }
+
+// CONTENT WRAP
+.Profile__row {
+  padding: 3.2rem;
+  row-gap: 3.2rem;
+}
+
+// LEFT CONTENT
+.Profile__content {
+  flex: 1 1 auto;
+}
+.Profile__header {
+  margin-top: -6.4rem;
+}
+.Profile__header-avatar {
+  max-width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.8rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.Profile__header-name {
+  font-family: var(--remedy-Global--font-header);
+  font-size: 3.2rem;
+  line-height: 100%;
+  margin-bottom: 0.8rem;
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: $remedy-Global--color-green;
+  }
+}
+.Profile__header-contacts {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.014rem;
+  margin-bottom: 2.8rem;
+}
+.Profile__header-links {
+  .UIButton {
+    margin-right: 1.8rem;
+  }
+}
+.Profile__header-link {
+  flex: 0 0 3.6rem;
+  max-width: 3.6rem;
+  height: 3.6rem;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $remedy-Global--color-light;
+  }
+}
+
+// RIGHT BAR
+.Profile__side {
+  flex: 0 0 36.4rem;
+  max-width: 36.4rem;
+}
