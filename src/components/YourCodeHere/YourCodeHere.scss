@@ -7,6 +7,9 @@ $letterSpacing014: 0.014rem;
   flex: 0 0 24.4rem;
 }
 
+.Profile {
+  background-color: $remedy-Global--color-dark-2;
+}
 // BANNER
 .Profile__banner {
   height: 14.8rem;
@@ -14,7 +17,7 @@ $letterSpacing014: 0.014rem;
   img {
     object-fit: cover;
     object-position: center;
-    z-index: -1;
+    z-index: 0;
   }
 }
 .Profile__edit-cover {
@@ -23,6 +26,7 @@ $letterSpacing014: 0.014rem;
   letter-spacing: $letterSpacing014;
   padding: 0.8rem 2rem;
   color: $remedy-Global--color-light;
+  z-index: 1;
   svg {
     margin-right: 0.8rem;
     fill: $remedy-Global--color-light;
@@ -44,6 +48,7 @@ $letterSpacing014: 0.014rem;
 .Profile__header {
   margin-top: -6.4rem;
   margin-bottom: 3.4rem;
+  z-index: 1;
 }
 .Profile__header-avatar {
   max-width: 12rem;
@@ -116,7 +121,7 @@ $letterSpacing014: 0.014rem;
   letter-spacing: $letterSpacing014;
   &--subtitle {
     color: $remedy-Global--color-gray;
-    margin-bottom: 2rem;
+    margin-bottom: 2.8rem;
     line-height: 1;
   }
   &--mb-14 {
@@ -148,6 +153,63 @@ $letterSpacing014: 0.014rem;
     margin-left: 0.8rem;
     fill: $remedy-Global--color-gray;
   }
+}
+
+// EXPERIENCE
+.Profile__expirience {
+  padding-left: 1.4rem;
+}
+.Profile__list-item {
+  padding-bottom: 3.3rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    left: -1px;
+    width: 0.2rem;
+    height: 100%;
+    background-color: rgba($remedy-Global--color-dark-1, 0.5);
+  }
+  &:last-of-type:before {
+    display: none;
+  }
+}
+.Profile__list-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.016rem;
+  margin-bottom: 1.3rem;
+  padding-left: 1.4rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: $remedy-Global--color-green;
+    box-shadow: 0 0 0 0.2rem $remedy-Global--color-dark-2,
+      0 0 0 0.4rem rgba($remedy-Global--color-dark-1, 0.5);
+  }
+}
+.Profile__list-link {
+  cursor: pointer;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $remedy-Global--color-green;
+  }
+}
+.Profile__list-date {
+  padding-left: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  color: $remedy-Global--color-gray;
 }
 
 // RIGHT BAR

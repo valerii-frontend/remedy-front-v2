@@ -38,7 +38,7 @@ const ProfileHeaderLinks = () => (
   </div>
 );
 const ProfileHeader = () => (
-  <div className="Profile__header">
+  <div className="Profile__header position-relative">
     <div className="Profile__header--top d-flex justify-content-between">
       <div className="Profile__header-avatar">
         <img src={photoImg} alt="photo" />
@@ -104,14 +104,55 @@ const ProfileCounters = () => (
     </ProfileCounter>
   </div>
 );
-
+const ProfileListItem = ({ title, link, date }) => (
+  <div className="Profile__list-item position-relative">
+    <div className="Profile__list-title d-flex align-items-center position-relative">
+      {title}
+      {link && (
+        <a href={link} className="Profile__list-link">
+          <IconSvg name="angle-arrow" />
+        </a>
+      )}
+    </div>
+    <div className="Profile__list-date">{date}</div>
+  </div>
+);
+const ProfileExpirience = () => (
+  <>
+    <ProfileSubtitle>Work Experience</ProfileSubtitle>
+    <div className="Profile__expirience">
+      <ProfileListItem
+        title={"Co-Founder, CTO at Hexens"}
+        link={"#"}
+        date={"Jun 2023 – Present (3 years 8 months)"}
+      />
+      <ProfileListItem
+        title={"Cyber Security Lecturer at Armsec foundation"}
+        date={"Jun 2016 – Present (7 years 8 months)"}
+      />
+      <ProfileListItem
+        title={"Chief Technology Officer at 1guard"}
+        date={"Sep 2017 – Jan 2021 (3 years 5 months)"}
+      />
+      <ProfileListItem
+        title={"Computer Science Lecturer at Russian - Armenian University"}
+        link={"#"}
+        date={"Jun 2017 – Jun 2018 (1 year 1 month)"}
+      />
+      <ProfileListItem
+        title={"Penetration Tester at Defence Group"}
+        date={"May 2016 – Sep 2017 (1 year 5 months)"}
+      />
+    </div>
+  </>
+);
 export default function ProfileLeft() {
   return (
     <div className="Profile__content flex-grow-1">
       <ProfileHeader />
       <ProfileDescription />
       <ProfileCounters />
-      <ProfileSubtitle>Work Experience</ProfileSubtitle>
+      <ProfileExpirience />
     </div>
   );
 }
