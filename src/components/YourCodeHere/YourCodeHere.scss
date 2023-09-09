@@ -225,6 +225,9 @@ $letterSpacing014: 0.014rem;
 // PORTFOLIO
 .Profile__portfolio {
   margin-bottom: 4.4rem;
+  & .Profile__label {
+    margin-bottom: 1.1rem;
+  }
 }
 .Profile__portfolio-header {
   margin-bottom: 2rem;
@@ -239,12 +242,11 @@ $letterSpacing014: 0.014rem;
   border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
   padding: 1.6rem 1.4rem 1.6rem;
 }
-.Profile__portfolio-title {
+.Profile__label {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.016rem;
-  margin-bottom: 1.1rem;
   svg {
     width: 1.6rem;
     height: 1.6rem;
@@ -268,18 +270,27 @@ $letterSpacing014: 0.014rem;
 
 // ACTIVITY
 .Profile__activity {
+  & .Profile__label {
+    margin-bottom: 0.7rem;
+  }
 }
 .Profile__activity-header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
 }
-.Profile__activity-tabs {
-  gap: 1.6rem;
+.Profile__activity-month {
+  margin-bottom: 0.8rem;
+}
+.Profile__activity-content {
 }
 
+.Profile__activity-tabs {
+  gap: 2.4rem;
+  margin-bottom: 3.1rem;
+}
 .Profile__activity-tab {
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 0.8rem;
+  padding-bottom: 0.6rem;
   border-bottom: 2px solid transparent;
   letter-spacing: $letterSpacing014;
   &--active {
@@ -287,8 +298,60 @@ $letterSpacing014: 0.014rem;
     border-color: $remedy-Global--color-green;
   }
 }
-.Profile__activity-tab--active {
+.Profile__activity-avatar {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 1rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  background-color: $remedy-Global--color-white;
+  overflow: hidden;
+  z-index: 1;
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
+.Profile__activity-info {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  padding-left: 3.8rem;
+}
+.Profile__activity-total {
+  color: $remedy-Global--color-gray;
+  margin-right: 1.1rem;
+}
+.Profile__activity-findings {
+  gap: 1.6rem;
+}
+.Profile__activity-type {
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.4rem;
+    margin-top: -0.2rem;
+  }
+}
+.Profile__activity-list {
+  padding: 0;
+  list-style: none;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.3rem;
+    width: 0.2rem;
+    height: 100%;
+    background-color: rgba($remedy-Global--color-dark-1, 0.5);
+    z-index: 0;
+  }
+}
+.Profile__activity-item {
+  padding: 2.4rem 0;
+}
+
 // LINK
 .Profile__link {
   font-size: 1.4rem;
