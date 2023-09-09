@@ -117,10 +117,10 @@ const ProfileListItem = ({ title, link, date }) => (
     <div className="Profile__list-date">{date}</div>
   </div>
 );
-const ProfileExpirience = () => (
-  <>
+const ProfileExperience = () => (
+  <div className="Profile__experience">
     <ProfileSubtitle>Work Experience</ProfileSubtitle>
-    <div className="Profile__expirience">
+    <ul className="Profile__list">
       <ProfileListItem
         title={"Co-Founder, CTO at Hexens"}
         link={"#"}
@@ -143,8 +143,24 @@ const ProfileExpirience = () => (
         title={"Penetration Tester at Defence Group"}
         date={"May 2016 – Sep 2017 (1 year 5 months)"}
       />
-    </div>
-  </>
+    </ul>
+  </div>
+);
+const ProfileEducation = () => (
+  <div className="Profile__education">
+    <ProfileSubtitle>Education</ProfileSubtitle>
+    <ul className="Profile__list">
+      <ProfileListItem
+        title={"Computer Science at Russian - Armenian University"}
+        link={"#"}
+        date={"Sep 2017– Sep 2018 (1 year 1 month)"}
+      />
+      <ProfileListItem
+        title={"Cyber Security Lecturer at Armsec foundation"}
+        date={"Jun 2016 – Present (7 years 8 months)"}
+      />
+    </ul>
+  </div>
 );
 export default function ProfileLeft() {
   return (
@@ -152,7 +168,8 @@ export default function ProfileLeft() {
       <ProfileHeader />
       <ProfileDescription />
       <ProfileCounters />
-      <ProfileExpirience />
+      <ProfileExperience />
+      <ProfileEducation />
     </div>
   );
 }
