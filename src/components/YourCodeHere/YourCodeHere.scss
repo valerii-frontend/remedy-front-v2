@@ -256,7 +256,7 @@ $letterSpacing014: 0.014rem;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.014rem;
+  letter-spacing: $letterSpacing014;
 }
 .Profile__portfolio-date {
   font-size: 1.2rem;
@@ -267,15 +267,41 @@ $letterSpacing014: 0.014rem;
 }
 
 // ACTIVITY
+.Profile__activity {
+}
+.Profile__activity-header {
+  margin-bottom: 2rem;
+}
+.Profile__activity-tabs {
+  gap: 1.6rem;
+}
 
+.Profile__activity-tab {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.8rem;
+  border-bottom: 2px solid transparent;
+  letter-spacing: $letterSpacing014;
+  &--active {
+    color: $remedy-Global--color-green;
+    border-color: $remedy-Global--color-green;
+  }
+}
+.Profile__activity-tab--active {
+}
 // LINK
 .Profile__link {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.014rem;
+  letter-spacing: $letterSpacing014;
   color: $remedy-Global--color-green;
   cursor: pointer;
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: $remedy-Global--color-green;
+  }
 }
 // RIGHT BAR
 .Profile__side {

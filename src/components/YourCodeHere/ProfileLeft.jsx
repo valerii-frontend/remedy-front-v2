@@ -162,10 +162,15 @@ const ProfileEducation = () => (
     </ul>
   </div>
 );
+const ProfileSeeAll = ({ children }) => (
+  <div className="Profile__link d-flex align-items-center justify-content-center">
+    {children}
+  </div>
+);
 const ProfilePortfolioHeader = () => (
   <div className="Profile__portfolio-header d-flex justify-content-between align-items-center ">
     <ProfileSubtitle>{"Security portfolio (6)"}</ProfileSubtitle>
-    <div className="Profile__link">See all</div>
+    <ProfileSeeAll>See all</ProfileSeeAll>
   </div>
 );
 const ProfilePortfolioItem = ({ title, link, company, date }) => (
@@ -213,16 +218,24 @@ const ProfilePortfolio = () => (
     <ProfilePortfolioItems />
   </div>
 );
+const ProfileActivityTabs = () => (
+  <div className="Profile__activity-tabs d-flex">
+    <div className="Profile__activity-tab Profile__activity-tab--active d-flex align-items-center justify-content-center">
+      2023
+    </div>
+    <div className="Profile__activity-tab">2022</div>
+    <div className="Profile__activity-tab flex-grow-1 d-flex justify-content-end">
+      <ProfileSeeAll>
+        See all <IconSvg name="angle-arrow" />
+      </ProfileSeeAll>
+    </div>
+  </div>
+);
 const ProfileActivity = () => (
   <div className="Profile__activity">
-    <ProfileSubtitle>Activity as Security Expert</ProfileSubtitle>
     <div className="Profile__activity-header">
-      <div className="Profile__activity-tabs">
-        <div className="Profile__activity-tab Profile__activity-tab--active">
-          2023
-        </div>
-        <div className="Profile__activity-tab">2022</div>
-      </div>
+      <ProfileSubtitle>Activity as Security Expert</ProfileSubtitle>
+      <ProfileActivityTabs />
     </div>
   </div>
 );
