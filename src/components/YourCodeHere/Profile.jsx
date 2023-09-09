@@ -1,7 +1,7 @@
 import Banner from "./ProfileBanner";
-import Left from "./ProfileLeft";
+import Left from "./ProfileContent";
 import Side from "./ProfileSide";
-import { ProfileActivity } from "./ProfileLeft";
+import { ProfileActivity } from "./ProfileContent";
 
 export default function Profile() {
   return (

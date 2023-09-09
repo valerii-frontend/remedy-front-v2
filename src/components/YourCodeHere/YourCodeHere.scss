@@ -372,3 +372,36 @@ $letterSpacing014: 0.014rem;
   flex: 0 0 32%;
   max-width: 32%;
 }
+.Profile__side-item {
+  & .Profile__label {
+    line-height: 150%;
+  }
+  padding: 2.4rem;
+  background-color: $remedy-Global--color-dark-3;
+}
+.Profile__diagram {
+  margin: 3.4rem 0 3rem;
+  img {
+    max-width: 100%;
+    min-height: 24rem;
+    object-fit: contain;
+  }
+}
+.Profile__side-header {
+  font-size: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+.Profile__side-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.4rem;
+}
+.Profile__side-skill {
+  padding: 0.9rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.014rem;
+  background-color: $remedy-Global--color-dark-2;
+}

@@ -357,7 +357,7 @@ export const ProfileActivity = () => (
     </div>
   </div>
 );
-export default function ProfileLeft() {
+export default function ProfileContent() {
   return (
     <div className="Profile__content flex-grow-1">
       <ProfileHeader />
