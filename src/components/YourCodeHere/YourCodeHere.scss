@@ -109,6 +109,9 @@ $letterSpacing014: 0.014rem;
     height: 1.6rem;
     fill: $remedy-Global--color-light;
   }
+  &:hover {
+    background-color: rgba($remedy-Global--color-dark-1, 0.5);
+  }
 }
 
 // DESCRIPTION
@@ -221,7 +224,7 @@ $letterSpacing014: 0.014rem;
 
 // PORTFOLIO
 .Profile__portfolio {
-  margin-bottom: 4rem;
+  margin-bottom: 4.4rem;
 }
 .Profile__portfolio-header {
   margin-bottom: 2rem;
@@ -262,6 +265,8 @@ $letterSpacing014: 0.014rem;
   letter-spacing: 0.012rem;
   color: $remedy-Global--color-gray;
 }
+
+// ACTIVITY
 
 // LINK
 .Profile__link {

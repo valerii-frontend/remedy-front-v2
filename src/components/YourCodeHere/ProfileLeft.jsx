@@ -162,6 +162,12 @@ const ProfileEducation = () => (
     </ul>
   </div>
 );
+const ProfilePortfolioHeader = () => (
+  <div className="Profile__portfolio-header d-flex justify-content-between align-items-center ">
+    <ProfileSubtitle>{"Security portfolio (6)"}</ProfileSubtitle>
+    <div className="Profile__link">See all</div>
+  </div>
+);
 const ProfilePortfolioItem = ({ title, link, company, date }) => (
   <div className="Profile__portfolio-item d-flex flex-column">
     <div className="Profile__portfolio-item-content flex-grow-1">
@@ -178,32 +184,45 @@ const ProfilePortfolioItem = ({ title, link, company, date }) => (
     <div className="Profile__portfolio-date">{date}</div>
   </div>
 );
+const ProfilePortfolioItems = () => (
+  <div className="Profile__portfolio-items">
+    <ProfilePortfolioItem
+      title="Winner of PHDays VII"
+      link="#"
+      company="HackQuest"
+      date="May 2017"
+    />
+    <ProfilePortfolioItem
+      title="Winner of PHDays VII"
+      link="#"
+      company="HackQuest"
+      date="May 2017"
+    />
+    <ProfilePortfolioItem
+      title="Winner of PHDays VII"
+      link="#"
+      company="HackQuest"
+      date="May 2017"
+    />
+    <ProfilePortfolioItem title="Paradigm CTF – 2nd Place" date="Aug 2022" />
+  </div>
+);
 const ProfilePortfolio = () => (
   <div className="Profile__portfolio">
-    <div className="Profile__portfolio-header d-flex justify-content-between align-items-center ">
-      <ProfileSubtitle>{"Security portfolio (6)"}</ProfileSubtitle>
-      <div className="Profile__link">See all</div>
-    </div>
-    <div className="Profile__portfolio-items">
-      <ProfilePortfolioItem
-        title="Winner of PHDays VII"
-        link="#"
-        company="HackQuest"
-        date="May 2017"
-      />
-      <ProfilePortfolioItem
-        title="Winner of PHDays VII"
-        link="#"
-        company="HackQuest"
-        date="May 2017"
-      />
-      <ProfilePortfolioItem
-        title="Winner of PHDays VII"
-        link="#"
-        company="HackQuest"
-        date="May 2017"
-      />
-      <ProfilePortfolioItem title="Paradigm CTF – 2nd Place" date="Aug 2022" />
+    <ProfilePortfolioHeader />
+    <ProfilePortfolioItems />
+  </div>
+);
+const ProfileActivity = () => (
+  <div className="Profile__activity">
+    <ProfileSubtitle>Activity as Security Expert</ProfileSubtitle>
+    <div className="Profile__activity-header">
+      <div className="Profile__activity-tabs">
+        <div className="Profile__activity-tab Profile__activity-tab--active">
+          2023
+        </div>
+        <div className="Profile__activity-tab">2022</div>
+      </div>
     </div>
   </div>
 );
@@ -216,6 +235,7 @@ export default function ProfileLeft() {
       <ProfileExperience />
       <ProfileEducation />
       <ProfilePortfolio />
+      <ProfileActivity />
     </div>
   );
 }
