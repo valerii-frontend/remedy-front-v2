@@ -115,18 +115,19 @@ $letterSpacing014: 0.014rem;
 .Profile__description {
   margin-bottom: 3rem;
 }
+.Profile__description-header {
+  margin-bottom: 1.4rem;
+}
 .Profile__text {
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: $letterSpacing014;
-  &--subtitle {
-    color: $remedy-Global--color-gray;
-    margin-bottom: 2.8rem;
-    line-height: 1;
-  }
-  &--mb-14 {
-    margin-bottom: 1.4rem;
-  }
+}
+.Profile__subtitle {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: $remedy-Global--color-gray;
 }
 .Profile__counters {
   margin-bottom: 4.4rem;
@@ -156,6 +157,10 @@ $letterSpacing014: 0.014rem;
 }
 
 // EXPERIENCE & EDU LIST
+.Profile__experience-header,
+.Profile__education-header {
+  margin-bottom: 2.8rem;
+}
 .Profile__list {
   list-style: none;
   padding-left: 1.4rem;
@@ -214,6 +219,59 @@ $letterSpacing014: 0.014rem;
   color: $remedy-Global--color-gray;
 }
 
+// PORTFOLIO
+.Profile__portfolio {
+  margin-bottom: 4rem;
+}
+.Profile__portfolio-header {
+  margin-bottom: 2rem;
+}
+.Profile__portfolio-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.Profile__portfolio-item {
+  min-height: 10.8rem;
+  border: 1px solid rgba($remedy-Global--color-dark-1, 0.5);
+  padding: 1.6rem 1.4rem 1.6rem;
+}
+.Profile__portfolio-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.016rem;
+  margin-bottom: 1.1rem;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $remedy-Global--color-green;
+    margin-left: 0.5rem;
+  }
+}
+.Profile__portfolio-company {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.014rem;
+}
+.Profile__portfolio-date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  color: $remedy-Global--color-gray;
+}
+
+// LINK
+.Profile__link {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.014rem;
+  color: $remedy-Global--color-green;
+  cursor: pointer;
+}
 // RIGHT BAR
 .Profile__side {
   flex: 0 0 32%;

@@ -56,19 +56,15 @@ const ProfileHeader = () => (
     <ProfileHeaderLinks />
   </div>
 );
-const ProfileSubtitle = ({ children, mb }) => (
-  <h3
-    className={`Profile__text Profile__text--subtitle ${
-      mb ? "Profile__text--mb-" + mb : ""
-    }`}
-  >
-    {children}
-  </h3>
+const ProfileSubtitle = ({ children }) => (
+  <h3 className="Profile__subtitle">{children}</h3>
 );
 const ProfileDescription = () => {
   return (
     <div className="Profile__description">
-      <ProfileSubtitle mb="14">About</ProfileSubtitle>
+      <div className="Profile__description-header">
+        <ProfileSubtitle>About</ProfileSubtitle>
+      </div>
       <div className="Profile__text">
         Extensive experience in Financial Reporting and Analysis, Donor database
         systems and data warehouse environment, Audits and Reviews,
@@ -119,7 +115,9 @@ const ProfileListItem = ({ title, link, date }) => (
 );
 const ProfileExperience = () => (
   <div className="Profile__experience">
-    <ProfileSubtitle>Work Experience</ProfileSubtitle>
+    <div className="Profile__experience-header">
+      <ProfileSubtitle>Work Experience</ProfileSubtitle>
+    </div>
     <ul className="Profile__list">
       <ProfileListItem
         title={"Co-Founder, CTO at Hexens"}
@@ -128,7 +126,7 @@ const ProfileExperience = () => (
       />
       <ProfileListItem
         title={"Cyber Security Lecturer at Armsec foundation"}
-        date={"Jun 2016 – Present (7 years 8 months)"}
+        date={"2016 – Present (7 years 8 months)"}
       />
       <ProfileListItem
         title={"Chief Technology Officer at 1guard"}
@@ -148,7 +146,9 @@ const ProfileExperience = () => (
 );
 const ProfileEducation = () => (
   <div className="Profile__education">
-    <ProfileSubtitle>Education</ProfileSubtitle>
+    <div className="Profile__education-header">
+      <ProfileSubtitle>Education</ProfileSubtitle>
+    </div>
     <ul className="Profile__list">
       <ProfileListItem
         title={"Computer Science at Russian - Armenian University"}
@@ -156,10 +156,55 @@ const ProfileEducation = () => (
         date={"Sep 2017– Sep 2018 (1 year 1 month)"}
       />
       <ProfileListItem
-        title={"Cyber Security Lecturer at Armsec foundation"}
-        date={"Jun 2016 – Present (7 years 8 months)"}
+        title={"Penetration Tester at Defence Group"}
+        date={"May 2016 – Sep 2017 (1 year 5 months)"}
       />
     </ul>
+  </div>
+);
+const ProfilePortfolioItem = ({ title, link, company, date }) => (
+  <div className="Profile__portfolio-item d-flex flex-column">
+    <div className="Profile__portfolio-item-content flex-grow-1">
+      <h4 className="Profile__portfolio-title d-flex align-items-center">
+        {title}
+        {link && (
+          <a href={link}>
+            <IconSvg name="angle-arrow" />
+          </a>
+        )}
+      </h4>
+      {company && <div className="Profile__portfolio-company">{company}</div>}
+    </div>
+    <div className="Profile__portfolio-date">{date}</div>
+  </div>
+);
+const ProfilePortfolio = () => (
+  <div className="Profile__portfolio">
+    <div className="Profile__portfolio-header d-flex justify-content-between align-items-center ">
+      <ProfileSubtitle>{"Security portfolio (6)"}</ProfileSubtitle>
+      <div className="Profile__link">See all</div>
+    </div>
+    <div className="Profile__portfolio-items">
+      <ProfilePortfolioItem
+        title="Winner of PHDays VII"
+        link="#"
+        company="HackQuest"
+        date="May 2017"
+      />
+      <ProfilePortfolioItem
+        title="Winner of PHDays VII"
+        link="#"
+        company="HackQuest"
+        date="May 2017"
+      />
+      <ProfilePortfolioItem
+        title="Winner of PHDays VII"
+        link="#"
+        company="HackQuest"
+        date="May 2017"
+      />
+      <ProfilePortfolioItem title="Paradigm CTF – 2nd Place" date="Aug 2022" />
+    </div>
   </div>
 );
 export default function ProfileLeft() {
@@ -170,6 +215,7 @@ export default function ProfileLeft() {
       <ProfileCounters />
       <ProfileExperience />
       <ProfileEducation />
+      <ProfilePortfolio />
     </div>
   );
 }
