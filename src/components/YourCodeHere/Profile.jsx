@@ -1,7 +1,7 @@
 import Banner from "./ProfileBanner";
 import Left from "./ProfileLeft";
 import Side from "./ProfileSide";
-import Activity from "./ProfileActivity";
+import { ProfileActivity } from "./ProfileLeft";
 
 export default function Profile() {
   return (
@@ -12,7 +12,7 @@ export default function Profile() {
           <Left />
           <Side />
         </div>
-        <Activity />
+        <ProfileActivity />
       </div>
     </div>
   );

@@ -339,7 +339,7 @@ const ProfileActivityList = () => (
     />
   </ul>
 );
-const ProfileActivity = () => (
+export const ProfileActivity = () => (
   <div className="Profile__activity">
     <div className="Profile__activity-header">
       <ProfileSubtitle>Activity as Security Expert</ProfileSubtitle>
@@ -366,7 +366,6 @@ export default function ProfileLeft() {
       <ProfileExperience />
       <ProfileEducation />
       <ProfilePortfolio />
-      <ProfileActivity />
     </div>
   );
 }

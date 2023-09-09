@@ -40,7 +40,7 @@ $letterSpacing014: 0.014rem;
 }
 
 .Profile__wrap {
-  padding: 3.2rem;
+  padding: 3.2rem 3.2rem 0;
   gap: 0 3.2rem;
 }
 
@@ -270,6 +270,7 @@ $letterSpacing014: 0.014rem;
 
 // ACTIVITY
 .Profile__activity {
+  padding: 0 3.2rem 3.2rem;
   & .Profile__label {
     margin-bottom: 0.7rem;
   }
@@ -280,12 +281,11 @@ $letterSpacing014: 0.014rem;
 .Profile__activity-month {
   margin-bottom: 0.8rem;
 }
-.Profile__activity-content {
-}
 
 .Profile__activity-tabs {
   gap: 2.4rem;
   margin-bottom: 3.1rem;
+  max-width: calc(68% - 2.2rem);
 }
 .Profile__activity-tab {
   font-size: 1.4rem;
@@ -364,6 +364,7 @@ $letterSpacing014: 0.014rem;
     width: 1.2rem;
     height: 1.2rem;
     fill: $remedy-Global--color-green;
+    margin-left: 0.4rem;
   }
 }
 // RIGHT BAR
