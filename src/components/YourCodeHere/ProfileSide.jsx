@@ -93,9 +93,8 @@ const ProfileTriageItem = ({ variant, label, percent, num }) => (
     </div>
   </div>
 );
-const ProfileTriageBox = () => (
-  <div className="Profile__side-item">
-    <ProfileTriageHeader />
+const ProfileTriageItems = () => (
+  <>
     <ProfileTriageItem
       variant="1"
       label="Dual-Confirmed Reports"
@@ -114,6 +113,12 @@ const ProfileTriageBox = () => (
       num={44}
       percent={3}
     />
+  </>
+);
+const ProfileTriageBox = () => (
+  <div className="Profile__side-item">
+    <ProfileTriageHeader />
+    <ProfileTriageItems />
   </div>
 );
 
