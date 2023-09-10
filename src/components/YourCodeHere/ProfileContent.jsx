@@ -178,7 +178,7 @@ const ProfilePortfolioHeader = () => (
 const ProfilePortfolioItem = ({ title, link, company, date }) => (
   <div className="Profile__portfolio-item d-flex flex-column">
     <div className="Profile__portfolio-item-content flex-grow-1">
-      <h4 className="Profile__label d-flex align-items-center">
+      <h4 className="Profile__label Profile__label--portfolio d-flex align-items-center">
         {title}
         {link && (
           <a href={link}>
@@ -255,7 +255,7 @@ const ProfileActivityItemInfo = ({ findings }) => (
 );
 const ProfileActivityItem = ({ name, findings, avatar }) => (
   <li className="Profile__activity-item">
-    <h3 className="Profile__label d-flex align-items-center">
+    <h3 className="Profile__label Profile__label--activity d-flex align-items-center">
       <img
         src={avatar}
         className="Profile__activity-avatar position-relative"

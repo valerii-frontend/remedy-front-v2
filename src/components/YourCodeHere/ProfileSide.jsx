@@ -1,5 +1,6 @@
 import diagram from "../../assets/images/profile/radar.png";
 import triageChart from "../../assets/images/profile/donut-chart.png";
+import bugsChart from "../../assets/images/profile/donut-chart2.png";
 import badge1 from "../../assets/images/profile/badge-1.png";
 import badge2 from "../../assets/images/profile/badge-2.png";
 import badge3 from "../../assets/images/profile/badge-3.png";
@@ -21,7 +22,9 @@ const badges = [badge1, badge2, badge3, badge4];
 
 const ProfileDiagramHeader = () => (
   <>
-    <h3 className="Profile__label">Cybersecurity / Smart Contract Auditor</h3>
+    <h3 className="Profile__label Profile__label--side">
+      Cybersecurity / Smart Contract Auditor
+    </h3>
     <div className="Profile__diagram">
       <img src={diagram} />
     </div>
@@ -50,7 +53,7 @@ const ProfileDiagramBox = () => (
 );
 const ProfileAchievementsHeader = () => (
   <div className="Profile__achievements-header d-flex justify-content-between align-items-center">
-    <h3 className="Profile__label">Achievements</h3>
+    <h3 className="Profile__label Profile__label--side">Achievements</h3>
     <span className="Profile__link">See All</span>
   </div>
 );
@@ -71,8 +74,10 @@ const ProfileAchievementsBox = () => (
 );
 const ProfileTriageHeader = () => (
   <div className="Profile__triage-header d-flex">
-    <h3 className="Profile__label flex-grow-1">Triage Accuracy</h3>
-    <div className="Profile__triage-chart">
+    <h3 className="Profile__label Profile__label--side flex-grow-1">
+      Triage Accuracy
+    </h3>
+    <div className="Profile__chart">
       <img src={triageChart} />
     </div>
   </div>
@@ -121,13 +126,26 @@ const ProfileTriageBox = () => (
     <ProfileTriageItems />
   </div>
 );
-
+const ProfileReportedBugsBox = () => (
+  <div className="Profile__side-item">
+    <h3 className="Profile__label Profile__label--reports">
+      Reported Bugs Severity
+    </h3>
+    <div className="Profile__reports d-flex align-items-end">
+      <div className="flex-grow-1">content</div>
+      <div className="Profile__chart">
+        <img src={bugsChart} />
+      </div>
+    </div>
+  </div>
+);
 export default function ProfileSide() {
   return (
     <div className="Profile__side">
       <ProfileDiagramBox />
       <ProfileAchievementsBox />
       <ProfileTriageBox />
+      <ProfileReportedBugsBox />
     </div>
   );
 }

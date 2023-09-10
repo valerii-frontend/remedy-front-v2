@@ -225,9 +225,6 @@ $letterSpacing014: 0.014rem;
 // PORTFOLIO
 .Profile__portfolio {
   margin-bottom: 4.4rem;
-  & .Profile__label {
-    margin-bottom: 1.1rem;
-  }
 }
 .Profile__portfolio-header {
   margin-bottom: 2rem;
@@ -253,6 +250,20 @@ $letterSpacing014: 0.014rem;
     fill: $remedy-Global--color-green;
     margin-left: 0.5rem;
   }
+  &--reports {
+    line-height: 150%;
+    margin-bottom: 2.4rem;
+  }
+  &--portfolio {
+    margin-bottom: 1.1rem;
+  }
+  &--activity {
+    margin-bottom: 0.7rem;
+  }
+  &--side {
+    line-height: 150%;
+    margin-bottom: 0;
+  }
 }
 .Profile__portfolio-company {
   font-size: 1.4rem;
@@ -271,9 +282,6 @@ $letterSpacing014: 0.014rem;
 // ACTIVITY
 .Profile__activity {
   padding: 0 3.2rem 3.2rem;
-  & .Profile__label {
-    margin-bottom: 0.7rem;
-  }
 }
 .Profile__activity-header {
   margin-bottom: 2.2rem;
@@ -374,12 +382,11 @@ $letterSpacing014: 0.014rem;
 }
 .Profile__side-item {
   margin-bottom: 1.7rem;
-  & .Profile__label {
-    line-height: 150%;
-    margin-bottom: 0;
-  }
   padding: 2.4rem;
   background-color: $remedy-Global--color-dark-3;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 // DIAGRAM
 .Profile__diagram {
@@ -432,11 +439,12 @@ $letterSpacing014: 0.014rem;
 .Profile__triage-header {
   margin-bottom: 1.8rem;
 }
-.Profile__triage-chart {
+.Profile__chart {
   margin-top: 0.6rem;
   flex: 0 0 40%;
   max-width: 40%;
   img {
+    width: 100%;
     max-width: 100%;
     height: auto;
   }
