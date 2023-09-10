@@ -10,6 +10,43 @@ $letterSpacing014: 0.014rem;
 .Profile {
   background-color: $remedy-Global--color-dark-2;
 }
+.Profile__square-btn {
+  width: 3.8rem;
+  height: 3.8rem;
+  margin-top: 6.4rem;
+  svg {
+    fill: $remedy-Global--color-light;
+  }
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: $remedy-Global--color-tooltip;
+  }
+  &--close {
+    max-width: 3.8rem;
+    top: 3.2rem;
+    right: 3.2rem;
+    z-index: 15;
+    margin: 0;
+  }
+}
+.Profile-modal {
+  padding: 6.4rem 3.2rem;
+  z-index: 20;
+  overflow: auto;
+}
+.Profile-modal__overlay {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 14;
+}
+.Profile-modal__content {
+  max-width: 113.2rem;
+  min-width: 99.2rem;
+  z-index: 15;
+}
+
 // BANNER
 .Profile__banner {
   height: 14.8rem;
@@ -61,20 +98,6 @@ $letterSpacing014: 0.014rem;
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
-}
-.Profile__header--dropdown {
-  width: 3.8rem;
-  height: 3.8rem;
-  margin-top: 6.4rem;
-  svg {
-    fill: $remedy-Global--color-light;
-  }
-  transition: 0.3s;
-  &:hover {
-    transition: 0.3s;
-    cursor: pointer;
-    background-color: $remedy-Global--color-tooltip;
   }
 }
 .Profile__header-name {
@@ -391,14 +414,14 @@ $letterSpacing014: 0.014rem;
 .Profile__side-label {
   font-size: 1.2rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
   letter-spacing: 0.012rem;
   margin-bottom: 0;
   &--reports {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
   &--triage {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.2rem;
   }
 }
 .Profile__side-percent {

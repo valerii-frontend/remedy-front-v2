@@ -11,11 +11,13 @@ const ProfileHeaderSocialLink = ({ children }) => (
     {children}
   </a>
 );
-const ProfileHeaderLinks = () => (
+const ProfileHeaderLinks = ({ isModal }) => (
   <div className="Profile__header-links d-flex">
-    <button className="UIButton UIButton--green UIButton--sm">
-      Edit profile
-    </button>
+    {!isModal && (
+      <button className="UIButton UIButton--green UIButton--sm">
+        Edit profile
+      </button>
+    )}
     <ProfileHeaderSocialLink>
       <IconSvg name="telegram-logo" />
     </ProfileHeaderSocialLink>
@@ -39,15 +41,17 @@ const ProfileHeaderLinks = () => (
     </ProfileHeaderSocialLink>
   </div>
 );
-const ProfileHeader = () => (
+const ProfileHeader = ({ isModal }) => (
   <div className="Profile__header position-relative">
     <div className="Profile__header--top d-flex justify-content-between">
       <div className="Profile__header-avatar">
         <img src={photoImg} alt="photo" />
       </div>
-      <div className="Profile__header--dropdown d-flex align-items-center justify-content-center ">
-        <IconSvg name="dots" />
-      </div>
+      {!isModal && (
+        <div className="Profile__square-btn d-flex align-items-center justify-content-center ">
+          <IconSvg name="dots" />
+        </div>
+      )}
     </div>
     <div className="Profile__header-name">
       kemmio <IconSvg name="hexens-logo" />
@@ -55,7 +59,7 @@ const ProfileHeader = () => (
     <div className="Profile__header-contacts">
       email@example.com / Remedy Triager
     </div>
-    <ProfileHeaderLinks />
+    <ProfileHeaderLinks isModal={isModal} />
   </div>
 );
 const ProfileSubtitle = ({ children }) => (
@@ -357,10 +361,10 @@ export const ProfileActivity = () => (
     </div>
   </div>
 );
-export default function ProfileContent() {
+export default function ProfileContent({ isModal }) {
   return (
     <div className="Profile__content flex-grow-1">
-      <ProfileHeader />
+      <ProfileHeader isModal={isModal} />
       <ProfileDescription />
       <ProfileCounters />
       <ProfileExperience />
