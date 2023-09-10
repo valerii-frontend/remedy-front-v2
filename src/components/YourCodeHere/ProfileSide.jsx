@@ -1,4 +1,5 @@
 import diagram from "../../assets/images/profile/radar.png";
+import triageChart from "../../assets/images/profile/donut-chart.png";
 import badge1 from "../../assets/images/profile/badge-1.png";
 import badge2 from "../../assets/images/profile/badge-2.png";
 import badge3 from "../../assets/images/profile/badge-3.png";
@@ -68,12 +69,60 @@ const ProfileAchievementsBox = () => (
     <ProfileAchievementsBadges />
   </div>
 );
+const ProfileTriageHeader = () => (
+  <div className="Profile__triage-header d-flex">
+    <h3 className="Profile__label flex-grow-1">Triage Accuracy</h3>
+    <div className="Profile__triage-chart">
+      <img src={triageChart} />
+    </div>
+  </div>
+);
+const ProfileTriageItem = ({ variant, label, percent, num }) => (
+  <div className="Profile__triage-item">
+    <h4 className="Profile__triage-label d-flex align-items-center justify-content-between">
+      {label}
+      <span className="Profile__triage-percent">
+        {percent}% <span>({num})</span>
+      </span>
+    </h4>
+    <div className="Profile__triage-line">
+      <div
+        className={`Profile__triage-fill Profile__triage-fill--${variant}`}
+        style={{ width: `${percent}%` }}
+      ></div>
+    </div>
+  </div>
+);
+const ProfileTriageBox = () => (
+  <div className="Profile__side-item">
+    <ProfileTriageHeader />
+    <ProfileTriageItem
+      variant="1"
+      label="Dual-Confirmed Reports"
+      num={1359}
+      percent={93}
+    />
+    <ProfileTriageItem
+      variant="2"
+      label="Triager-Confirmed, Organization-Rejected"
+      num={58}
+      percent={4}
+    />
+    <ProfileTriageItem
+      variant="3"
+      label="Triager-Rejected, Organization-Confirmed"
+      num={44}
+      percent={3}
+    />
+  </div>
+);
 
 export default function ProfileSide() {
   return (
     <div className="Profile__side">
       <ProfileDiagramBox />
       <ProfileAchievementsBox />
+      <ProfileTriageBox />
     </div>
   );
 }

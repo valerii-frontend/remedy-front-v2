@@ -394,9 +394,6 @@ $letterSpacing014: 0.014rem;
   font-size: 1.4rem;
   margin-bottom: 1.8rem;
 }
-.Profile__achievements-header {
-  margin-bottom: 2.4rem;
-}
 .Profile__side-skills {
   list-style: none;
   padding: 0;
@@ -413,6 +410,7 @@ $letterSpacing014: 0.014rem;
 }
 // ACHIEVEMENTS
 .Profile__achievements-header {
+  margin-bottom: 2.4rem;
 }
 .Profile__side-badges {
   margin: 0;
@@ -428,5 +426,56 @@ $letterSpacing014: 0.014rem;
     max-width: 100%;
     height: auto;
     object-fit: cover;
+  }
+}
+// TRIAGE
+.Profile__triage-header {
+  margin-bottom: 1.8rem;
+}
+.Profile__triage-chart {
+  margin-top: 0.6rem;
+  flex: 0 0 40%;
+  max-width: 40%;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.Profile__triage-item {
+  margin-bottom: 3rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.Profile__triage-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  margin-bottom: 1.4rem;
+}
+.Profile__triage-percent {
+  font: inherit;
+  span {
+    font: inherit;
+    color: $remedy-Global--color-gray;
+  }
+}
+.Profile__triage-line {
+  height: 0.4rem;
+  border-radius: 0.4rem;
+  background-color: rgba($remedy-Global--color-dark-1, 0.5);
+}
+.Profile__triage-fill {
+  height: 0.4rem;
+  border-radius: 0.4rem;
+  &--1 {
+    background-color: $remedy-Global--color-green;
+  }
+  &--2 {
+    background-color: $remedy-Global--color-blue;
+  }
+  &--3 {
+    background-color: $remedy-Global--color-violet;
   }
 }
