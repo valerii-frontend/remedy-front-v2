@@ -252,7 +252,7 @@ $letterSpacing014: 0.014rem;
   }
   &--reports {
     line-height: 150%;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.6rem;
   }
   &--portfolio {
     margin-bottom: 1.1rem;
@@ -388,6 +388,26 @@ $letterSpacing014: 0.014rem;
     margin-bottom: 0;
   }
 }
+.Profile__side-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012rem;
+  margin-bottom: 0;
+  &--reports {
+    margin-bottom: 1.2rem;
+  }
+  &--triage {
+    margin-bottom: 1.4rem;
+  }
+}
+.Profile__side-percent {
+  font: inherit;
+  span {
+    font: inherit;
+    color: $remedy-Global--color-gray;
+  }
+}
 // DIAGRAM
 .Profile__diagram {
   margin: 3.4rem 0 3rem;
@@ -455,20 +475,6 @@ $letterSpacing014: 0.014rem;
     margin-bottom: 0;
   }
 }
-.Profile__triage-label {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.012rem;
-  margin-bottom: 1.4rem;
-}
-.Profile__triage-percent {
-  font: inherit;
-  span {
-    font: inherit;
-    color: $remedy-Global--color-gray;
-  }
-}
 .Profile__triage-line {
   height: 0.4rem;
   border-radius: 0.4rem;
@@ -486,4 +492,45 @@ $letterSpacing014: 0.014rem;
   &--3 {
     background-color: $remedy-Global--color-violet;
   }
+}
+// REPORTS
+.Profile__reports-list {
+  margin: 0;
+  padding: 0 2rem 0 0;
+  list-style: none;
+}
+.Profile__reports-item {
+  margin-bottom: 1.2rem;
+  &:last-of-type {
+    margin-bottom: 0;
+    margin-top: 1.6rem;
+  }
+}
+.Profile__reports-label {
+  &:before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+  }
+  &--medium:before {
+    background-color: $remedy-Global--color-green;
+  }
+  &--info:before {
+    background-color: $remedy-Global--color-violet;
+  }
+  &--low:before {
+    background-color: $remedy-Global--color-blue;
+  }
+  &--high:before {
+    background-color: $remedy-Global--color-yellow;
+  }
+  &--critical:before {
+    background-color: $remedy-Global--color-red;
+  }
+}
+.Profile__reports-total {
+  font: inherit;
+  color: $remedy-Global--color-gray;
 }
