@@ -1,7 +1,7 @@
 import bannerImg from "../../assets/images/profile/banner.png";
 import IconSvg from "./IconSvg";
 
-export default function ProfileBanner({ isModal }) {
+const ProfileBanner = ({ isModal }) => {
   return (
     <div className="Profile__banner position-relative d-flex align-items-end justify-content-end">
       <img
@@ -17,4 +17,6 @@ export default function ProfileBanner({ isModal }) {
       )}
     </div>
   );
-}
+};
+
+export default ProfileBanner;
