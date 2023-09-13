@@ -32,12 +32,13 @@ export const ProfileSeeAll = ({ children }) => (
 
 export default function Profile({ isModal }) {
   useEffect(() => {
-    if (!isModal) {
-      return null;
-    }
-    document.body.classList.add("Global__no-scroll");
-    return () => document.body.classList.remove("Global__no-scroll");
-  }, []);
+    const handleBodyScroll = () => {
+      document.body.classList.toggle("Global__no-scroll", isModal);
+    };
+
+    handleBodyScroll();
+    return () => handleBodyScroll();
+  }, [isModal]);
   return (
     <div className="Profile w-100 position-relative">
       {isModal && (
