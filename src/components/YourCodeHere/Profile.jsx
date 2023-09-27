@@ -33,7 +33,8 @@ export const ProfileSeeAll = ({ children }) => (
 export default function Profile({ isModal }) {
   useEffect(() => {
     const handleBodyScroll = () => {
-      document.body.classList.toggle("Global__no-scroll", isModal);
+      if (isModal) document.body.classList.add("Global__no-scroll");
+      else document.body.classList.remove("Global__no-scroll");
     };
 
     handleBodyScroll();
